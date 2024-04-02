@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { login, loginProcess, register, registerProcess } = require("../controllers/authentication");
+const { login, loginProcess, register, registerProcess, logout } = require("../controllers/authentication");
 const { uploadAvatar } = require("../middleware/uploadAvatar");
 const { registerValidation, loginValidation } = require("../middleware/validation");
 const { checkIsGuest } = require("../middleware");
@@ -16,7 +16,9 @@ registerProcess)
 // /autenticacion
 router.get("/iniciar", checkIsGuest, login); 
 
-router.post("/iniciar", loginValidation, loginProcess) // /autenticacion/iniciar
+router.post("/iniciar", loginValidation, loginProcess); // /autenticacion/iniciar
+
+router.get("/cerrar-sesion", logout);
 
 
 module.exports = router;
