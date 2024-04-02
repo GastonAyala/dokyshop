@@ -1,0 +1,76 @@
+<h1>Lista de usuarios</h1>
+<div class="dashUser-topbar">
+    <form class="dash-searchForm" action="/admin/usuarios/buscar" method="get">
+        <label for="dashUserSearch"></label>
+        <input type="text" placeholder="Buscar Usuario" name="dashUserSearch" id="dashUserSearch" value="">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <div class="dashUserFilter">
+        <form class="dashUserFilter-form" action="/admin/usuarios/buscar" method="get">
+            <span>Mostrar:</span>
+            <select name="roleFilter" id="roleFilter">
+                <option value="REGULAR">Regular</option>
+                <option value="ADMIN">Admin</option>
+            </select>
+            <button type="submit">Filtrar</button>
+        </form>
+    </div>
+</div>
+
+<% if (dashUserSearch) { %>
+    <div class="col-12 text-center dashSearchTitle">
+        <h2>Resultado de la busqueda: <%= dashUserSearch %></h2>
+    </div>
+<% if (!users.length) { %>
+    <div class="col-12 text-center text-danger dashSearchNoResults">
+        <h3>*No hay usuarios que coincidan con la búsqueda*</h3>
+    </div>
+<% } %>
+<% } else { %>
+    <div class="col-12 text-center dashSearchTitle">
+        <h2>Resultado del filtrado de: <%= roleFilter %></h2>
+    </div>
+<% } %>
+
+<table class="listUsertable">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Avatar</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Provincia</th>
+            <th scope="col">Código Postal</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% users.forEach(u => { %>
+            <tr>
+                <th scope="row"><%= u.id %></th>
+                <td>
+                    <img class="listUserAvatar" src="/images/avatar/<%= u.avatar %>" alt="avatar image">
+                </td>
+                <td><%= u.name %></td>
+                <td><%= u.email %></td>
+                <td><%= u.phone %></td>
+                <td><%= u.adressInfo.adress %></td>
+                <td><%= u.adressInfo.city %></td>
+                <td><%= u.adressInfo.province %></td>
+                <td><%= u.adressInfo.zipcode %></td>
+                <td class="listUserRole"><%= u.role %></td>
+                <td>
+                    <div class="dashUser-Actions" role="group">
+                        <a class="editUserButton" href="/admin/editar-usuario/<%= u.id %>">Editar</a>
+                        <a class="deleteUserButton" href="/admin/eliminar-usuario/?id=<%= u.id %>&name=<%= u.name %>">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

@@ -2,7 +2,7 @@
 
 .main-footer {
     font-family: var(--familyOpenSans);
-    font-weight: bold;
+    font-weight: bold !important;
     background-color: var(--amarillo);
     display: flex;
     flex-direction: row;
@@ -25,6 +25,10 @@
 }
 
 /* ----- ENLACES ----- */
+.main-footer h3 {
+    font-weight: bold !important;
+}
+
 
 .main-footer div.links-container {
     display: flex;
@@ -39,7 +43,8 @@
     text-align: center;
 }
 
-.main-footer div.links-container nav.links-nav {}
+.main-footer div.links-container nav.links-nav {
+}
 
 .main-footer div.links-container .links-nav ul {
     text-align: center;

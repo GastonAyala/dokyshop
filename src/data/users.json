@@ -5,22 +5,73 @@
       "email": "nadia@gmail.com",
       "password": "$2a$12$O2CKzd.IBo2TChZ7qwTOteRXqyLuiXGy8gEpln9sMG.yT/oN.AmCW",
       "role": "REGULAR",
-      "avatar": "perfilUser.jpg"
+      "avatar": "perfilUser.png",
+      "phone": "",
+      "adressInfo": {
+         "adress": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
    },
    {
       "id": 2,
       "name": "Gaston Ayala",
-      "email": "ayala@gmail.com",
-      "password": "$2a$12$mcGup7xHLF1C8HrlUO3M9uAZ8o1q5WypVWN.vh.0dywO3Z4kjkbUO",
-      "role": "REGULAR",
-      "avatar": "perfilUser.jpg"
+      "email": "gastonayala@gmail.com",
+      "password": "$2a$12$XacbRN5iTgZzl8drF3RdOOfvGmnslAjjERiGZUDJL.iCS3ProRbNW",
+      "role": "ADMIN",
+      "avatar": "avatar-1711948831309.jpg",
+      "phone": "",
+      "adressInfo": {
+         "adress": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
    },
    {
       "id": 3,
       "name": "ADRIANA ESCUBILLA",
       "email": "escubilla@gmail.com",
       "password": "$2a$12$deNCD8sRPI2MFcPdceryZOLBeXRLNC8zXhIRnIt0r/Nvl3GqQZQnu",
+      "role": "ADMIN",
+      "avatar": "avatar-1712043239095.jpg",
+      "phone": "",
+      "adressInfo": {
+         "adress": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
+   },
+   {
+      "id": 4,
+      "name": "prueba",
+      "email": "prueba@gmail.com",
+      "password": "$2a$12$pYn2PmBsCKNLw.lzPTgDEOJyrA/IR4WR1qunq3pyI4cgjLawaPFfC",
       "role": "REGULAR",
-      "avatar": "perfilUser.jpg"
+      "avatar": "avatar-1712043945480.jpg",
+      "phone": "",
+      "adressInfo": {
+         "adress": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
+   },
+   {
+      "id": 5,
+      "name": "prueba01",
+      "email": "prueba01@gmail.com",
+      "password": "$2a$12$TfjaFgZTWjS32pZZkNYjsenaQYwS.iK3QZ/aEWoMg2LaNMzIy9.B6",
+      "role": "REGULAR",
+      "avatar": "avatar-1712083308612.jpg",
+      "phone": "1125658045",
+      "adressInfo": {
+         "adress": "Calle Falsa 123",
+         "city": "Quilmes Oeste",
+         "province": "Buenos Aires",
+         "zipcode": "1881"
+      }
    }
 ]

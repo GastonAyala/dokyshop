@@ -1,0 +1,173 @@
+.dashUser-topbar {
+    display: flex;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashUser-topbar .dash-searchForm {
+    background-color: var(--amarillo);
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.dashUser-topbar .dash-searchForm:hover {
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+
+.dashUser-topbar .dash-searchForm label {
+
+}
+
+.dashUser-topbar .dash-searchForm input {
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: var(--amarillo);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.dashUser-topbar .dash-searchForm button {
+    background-color: var(--amarillo);
+    border: none;
+    font-size: 1.1rem;
+}
+
+.dashUser-topbar .dash-searchForm button i {}
+
+.dashUser-topbar .dashUserFilter {
+    background-color: var(--amarillo);
+    color: var(--gris);
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.dashUser-topbar .dashUserFilter:hover {
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+
+.dashUser-topbar .dashUserFilter .dashUserFilter-form {
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.dashUser-topbar .dashUserFilter .dashUserFilter-form select {
+    border: none;
+    outline: none;
+    background-color: var(--amarillo);
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.dashUser-topbar .dashUserFilter .dashUserFilter-form select option {
+    font-weight: bold;
+}
+
+.dashUser-topbar .dashUserFilter .dashUserFilter-form button {
+    background-color: var(--amarillo);
+    font-weight: bold;
+    border: none;
+    padding-left: 15px;
+}
+
+
+/* TABLA */
+
+.listUsertable {
+    border-collapse: collapse;
+    max-width: 100vw;
+    height: 71vh;
+    overflow-y: scroll;
+    display: block;
+}
+
+.listUsertable:-webkit-scrollbar {
+    width: 8px;
+}
+
+.listUsertable::-webkit-scrollbar-thumb {
+    background-color: var(--gris);
+    border-radius: 20px;
+}
+.listUsertable thead {
+    text-align: center;
+    border-bottom: 1px solid var(--gris);
+}
+
+.listUsertable thead tr {}
+
+.listUsertable thead tr th {
+    padding: 0.5rem;
+    columns: var(--gris);
+}
+
+.listUsertable tbody {
+    text-align: center;
+    border-bottom: 1px solid var(--gris);
+}
+
+.listUsertable tbody tr {
+    border-bottom: 1px solid var(--gris);
+}
+
+.listUsertable tbody tr th {}
+
+.listUsertable tbody tr td {
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.listUsertable tbody tr .listUserRole {
+    color: var(--naranjaig);
+}
+
+.listUsertable tbody tr td .listUserAvatar {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.listUsertable tbody tr td .dashUser-actions {}
+
+.listUsertable tbody tr td .dashUser-Actions .editUserButton {
+    padding: 5px 15px;
+    border-radius: 10%;
+    background-color: var(--marron);
+    transition: all 0.5s;
+}
+
+.listUsertable tbody tr td .dashUser-Actions .editUserButton:hover {
+    background-color: rgba(197, 149, 0, 1);
+}
+
+.listUsertable tbody tr td .dashUser-Actions .deleteUserButton {
+    padding: 5px 15px;
+    border-radius: 10%;
+    background-color: var(--naranjaig);
+    transition: all 0.5s;
+}
+
+.listUsertable tbody tr td .dashUser-Actions .deleteUserButton:hover {
+    background-color: rgba(199, 69, 0, 1);
+}

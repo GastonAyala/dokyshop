@@ -1,0 +1,52 @@
+.dashUser-topbar {
+}
+
+.dashUser-topbar .dashUser-container {
+    background-color: var(--amarillo);
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.dashUser-topbar .dashUser-container:hover {
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+
+.dashUser-topbar .dashUser-container a {}
+
+.dashUser-topbar .dashUser-container a i {}
+
+.editUser-container {
+    background-color: var(--amarillo);
+    max-width: 1200px;
+    display: flex;
+}
+
+.editUser-container form {
+    font-weight: bold;
+}
+
+.editUser-container form div {
+
+}
+
+.editUser-container form div .userAvatarInput {
+
+}
+
+.editUser-container form div .userAvatarInput label {
+
+}
+.editUser-container form div .userAvatarInput .userAvatarimg-Container {
+    width: 100%;
+}
+.editUser-container form div .userAvatarInput img {
+    width: 10vw;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.editUser-container form div .userAvatarInput input {
+    padding-top: 20px;
+}

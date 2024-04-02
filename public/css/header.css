@@ -60,6 +60,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font-size: calc(0.6rem + 0.6vw);
 }
 
 .main-header .search-bar .search-form label {}
@@ -116,10 +117,29 @@
 .main-header .top-bar .user-nav .user-list li a {
     font-size: 1.4rem;
     padding: 0 10px;
-    font-size: calc(1rem + 0.6vw);
+    font-size: calc(0.8rem + 0.6vw);
 }
 .main-header .top-bar .user-nav .user-list li a:hover {
     border-bottom: 3px solid var(--amarilloPastel);
+}
+.main-header .top-bar .user-nav .user-list .user-avatar-list  {
+    
+}
+.main-header .top-bar .user-nav .user-list .user-avatar-list a{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+
+
+.main-header .top-bar .user-nav .user-list .user-avatar-list a .profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: calc(1rem + 0.6vw);
 }
 
 .main-header .top-bar .user-nav .user-list li span {
@@ -138,7 +158,7 @@
 
 .main-header .top-bar .buy-cart-container .buy-cart {}
 
-.main-header .top-bar .buy-cart-container .buy-cart i {vertical-align: middle;}
+.main-header .top-bar .buy-cart-container .buy-cart i {vertical-align: baseline;}
 
      /* ----- MAIN-NAV ----- */
 
@@ -218,7 +238,6 @@
     /* ----- TOB-BAR ----- */
     
     .main-header .top-bar {
-        gap: 0;
     }
     
     .main-header .top-bar .free-ship {}
@@ -272,7 +291,9 @@
         font-size: 0.7rem;
         padding: 0;
     }
-
+    
+    
+    
     .main-header .top-bar .user-nav .user-list li span {
 
     }
@@ -292,7 +313,9 @@
     .main-header .top-bar .buy-cart-container .buy-cart {
 }
     
-    .main-header .top-bar .buy-cart-container .buy-cart i {font-size: calc(1.2rem + 0.6vw);}
+    .main-header .top-bar .buy-cart-container .buy-cart i {
+        font-size: calc(1.2rem + 0.6vw);
+    }
 
     /* ----- MAIN-NAV ----- */
     
@@ -419,16 +442,14 @@
 
     .main-header .top-bar .buy-cart-container {
         order: 5;
-        right: 110px;
         position: absolute;
         top: 122px;
         z-index: 100;
-        font-size: calc(0.53rem + 0.6vw);
     }
     
     .main-header .top-bar .buy-cart-container .buy-cart {}
     
-    .main-header .top-bar .buy-cart-container .buy-cart i {font-size: calc(1.5rem + 0.6vw);}
+    .main-header .top-bar .buy-cart-container .buy-cart i {font-size: calc(1.4rem + 0.6vw);}
 
     /* ----- MAIN-NAV ----- */
     

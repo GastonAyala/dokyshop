@@ -1,18 +1,22 @@
 const express = require("express");
 const router = express.Router();
-const {uploadRegister} = require('../middleware/uploasRegister')
 
-const authController = require('../controllers/authentication');
-const { loginValidation, registerValidation } = require("../middleware/validation/auth.validation");
+const { login, loginProcess, register, registerProcess } = require("../controllers/authentication");
+const { uploadAvatar } = require("../middleware/uploadAvatar");
+const { registerValidation, loginValidation } = require("../middleware/validation");
+const { checkIsGuest } = require("../middleware");
 
+router.get("/registro", checkIsGuest, register);   // autenticacion/registro
+
+router.post("/registro", 
+uploadAvatar.fields([{name: 'avatar'}]), 
+registerValidation,
+registerProcess)
 
 // /autenticacion
-router.get("/iniciar", authController.login); 
-router.post("/iniciar",loginValidation, authController.loginProcess) // /autenticacion/iniciar
+router.get("/iniciar", checkIsGuest, login); 
 
-
-router.get("/registro", authController.register);   // autenticacion/registro
-router.post("/registro", uploadRegister.fields([{name: 'avatar'}]), registerValidation,authController.registerProcess)
+router.post("/iniciar", loginValidation, loginProcess) // /autenticacion/iniciar
 
 
 module.exports = router;

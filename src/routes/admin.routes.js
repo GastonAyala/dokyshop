@@ -1,30 +1,42 @@
 const express = require('express');
 const router = express.Router();
-const adminController = require("../controllers/admin");
-const { uploadProducts } = require("../middleware/uploadFiles")
+
+const { uploadProducts } = require("../middleware/uploadFiles");
+const { uploadAvatar } = require('../middleware/uploadAvatar');
+
+const { checkIsAdmin } = require('../middleware');
+
+const { list, search, create, store, edit, update, deleteProduct, destroy } = require('../controllers/admin');
+const { userList, userEdit, editProcess, deleteUser, destroyUser, userSearch } = require('../controllers/admin/users');
+
 // /admin
-router.get("/productos", adminController.list);
-router.get("/productos/buscar", adminController.search)
+router.get("/productos", checkIsAdmin, list);
+router.get("/productos/buscar", checkIsAdmin, search)
 
-router.get("/crear-producto", adminController.create);
-router.post("/crear-producto",uploadProducts.fields([
-    { name: "imagePrimary", maxCount: 1}, 
-    { name:"imagesSecondary", maxCount: 1 }]),
-     adminController.store);
+router.get("/crear-producto", checkIsAdmin, create);
+router.post("/crear-producto", uploadProducts.fields([
+    { name: "imagePrimary", maxCount: 1 },
+    { name: "imagesSecondary", maxCount: 1 }]), store);
 
 
-router.get("/editar-producto/:id", adminController.edit);
+router.get("/editar-producto/:id", checkIsAdmin, edit);
 router.put("/editar-producto/:id", uploadProducts.fields([
     { name: "imagePrimary", maxCount: 1 },
     { name: "imagesSecondary", maxCount: 1 }
-]), adminController.update);  
+]), update);
+
+router.get('/eliminar', checkIsAdmin, deleteProduct)
+router.delete('/eliminar/:id', destroy)
 
 
+// /admin/usuarios
+router.get("/usuarios", checkIsAdmin, userList);
+router.get("/usuarios/buscar", checkIsAdmin, userSearch);
 
-router.get('/eliminar', adminController.deleteProduct)  // "/admin/eliminar"
-router.delete('/eliminar/:id', adminController.destroy) // "/admin/eliminar-producto"
-   
+router.get("/editar-usuario/:id", checkIsAdmin, userEdit);
+router.put("/editar-usuario/:id", uploadAvatar.fields([{name: "avatar", maxCount: 1}]), editProcess);
 
-
+router.get("/eliminar-usuario", checkIsAdmin, deleteUser)
+router.delete("/eliminar-usuario/:id", destroyUser)
 
 module.exports = router;

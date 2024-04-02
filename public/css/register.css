@@ -22,10 +22,10 @@ main.register-main h1{
 }
 .imgProductForm{
  width: 100%;
- margin: auto;
+ margin: 0 auto;
  height: auto;
  padding: 30px;
- /* display: flex; */
+ display: flex;
  flex-wrap: wrap;
  justify-content: center;
 }
@@ -40,6 +40,15 @@ main.register-main form.form-principal{
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+}
+main.register-main form.form-principal .registerAvatarInput {
+    text-align: center;
+}
+
+main.register-main form.form-principal .registerAvatarError {
+    width: 100%;
+    text-align: center;
+    color: var();
 }
 
 main.register-main form.form-principal .contenedor-form{
@@ -212,8 +221,14 @@ p.text-danger-error{
 }
 
 main.register-main label.form-label{
-    display: flex;
-    justify-content: center;
+    
+display: flex;
+    
+justify-content: center;
+    
+align-items: center;
+    
+width: 100%;
 }
 
 

@@ -1,0 +1,57 @@
+.usersProfile {}
+
+.usersProfile h1 {
+    font-weight: bold;
+    margin: 0;
+    color: var(--amarillo);
+    margin-top: 20px;
+}
+
+.usersProfile .profile-container {}
+
+.usersProfile .profile-container form {
+    background-color: var(--amarillo);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.usersProfile .profile-container form label {
+    font-weight: bold;
+}
+.usersProfile .profile-container form .avatarImg-container {
+}
+
+.usersProfile .profile-container form .avatarImg-container label {
+    text-align: center;
+}
+.usersProfile .profile-container form .avatarImg-container label p {
+    margin: 0;
+}
+
+.usersProfile .profile-container form .avatarImg-container label img {
+    object-fit: contain;
+    border-radius: 50%;
+    width: 60%;
+    margin: 15px auto;
+}
+
+
+.usersProfile .profile-container form.avatarImg-container label input {}
+
+
+.usersProfile .profile-container form .userName-container {}
+
+.usersProfile .profile-container form .userName-container label {}
+
+.usersProfile .profile-container form .userName-container input {}
+
+.usersProfile .profile-container form .usersBtn {
+    
+}
+
+.usersProfile .profile-container form .usersBtn .usersSave {
+    font-weight: bold;
+}
+
+.usersProfile .profile-container form .usersBtn .userReset {
+    font-weight: bold;
+}

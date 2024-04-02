@@ -1,0 +1,9 @@
+<div class="card w-80 p-4">
+	<div class="card-body">
+	  <h5 class="card-title"><strong>¿Seguro deseas eliminar este usuario? :</strong> <%= name %></h5>
+	  <form action="/admin/eliminar-usuario/<%= id %>?_method=DELETE" method="POST">
+		<button type="submit" class="btn btn-danger">ELIMINAR</button>
+	    <a href="/admin/usuarios" class="btn btn-primary">CANCELAR</a>
+	  </form>
+	</div>
+</div>

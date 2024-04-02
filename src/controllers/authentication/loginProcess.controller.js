@@ -1,4 +1,3 @@
-const { compareSync } = require('bcryptjs');
 const { loadData } = require('../../data');
 const { validationResult } = require("express-validator")
 
@@ -6,15 +5,12 @@ module.exports = (req, res) => {
    const errors = validationResult(req)
 
    if (errors.isEmpty()) {
-
-      const { email, password, remember } = req.body;
+      const { remember } = req.body;
       const users = loadData("users");  // todos lo sdatos de .json
 
-      const userFind = users.find((u) => u.email === email) // busca coincidencia del email que llega del body con el email del json 
+      const userFind = users.find((u) => u.email === req.body.email.toLowerCase()); // busca coincidencia del email que llega del body con el email del json 
 
-      isValidPassword = compareSync(password, userFind.password)
-
-      const { name, role, avatar } = userFind
+      const { name, email, role, avatar } = userFind;
 
       req.session.userLogin = {
          name,
@@ -23,15 +19,14 @@ module.exports = (req, res) => {
          avatar
       };
 
-      if (remember) res.cookie("userLogin", req.session.userLogin, { maxAge: 6000 * 30 })
+      if (remember) res.cookie("userLogin", req.session.userLogin, { maxAge: (60000 * 10 ) * 6})
 
-      res.redirect("/");
-      return;
+      return res.redirect("/");
+      
    }
 
    res.render("./authentication/login", {
       old: req.body,
       errorsLog: errors.mapped()
-   })
-
-}
+   });
+};

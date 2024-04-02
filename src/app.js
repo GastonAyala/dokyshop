@@ -16,6 +16,7 @@ const productRoutes = require('./routes/product.routes');
 const authRoutes = require('./routes/auth.routes');
 const cartRoutes = require('./routes/cart.routes');
 const adminRoutes = require('./routes/admin.routes');
+const userRoutes = require('./routes/users.routes')
 
 
 
@@ -40,6 +41,7 @@ app.use(insertDataLocals) // usuario logueado y tiene acceso a session
 app.use("/", otherRoutes);
 app.use("/productos", productRoutes);
 app.use("/autenticacion", authRoutes)
+app.use("/usuario", userRoutes)
 app.use("/carrito-compra", cartRoutes)
 app.use("/admin", adminRoutes);
 

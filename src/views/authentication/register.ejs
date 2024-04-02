@@ -8,17 +8,12 @@
             <h1>Formulario de registro</h1>
         
         <form class="form-principal" action="/autenticacion/registro" method="post" enctype="multipart/form-data">
-                
                 <div class="imgProductForm">
-                    <label for="productImg" class="form-label"
-                      >
-                      <img src="/images/avatar/User-avatar.svg.png" alt="default product img" />
+                    <label for="productImg" class="form-label">
+                      <img src="/images/avatar/perfilUser.png" alt="default product img" />
                     </label>
-                    <input type="file" class="form-control" name="avatar" id="Img"/>
-                    <p class="msg-error"><%= locals.errors?.avatar?.msg %></p>
-                    
-                 
-                          
+                    <input class="registerAvatarInput" type="file" class="form-control" name="avatar" id="productImg"/>
+                    <p class="text-danger-error registerAvatarError"><%= locals.errors?.avatar?.msg %></p>
                 </div>
                 
                 <div class="contenedor-form" >

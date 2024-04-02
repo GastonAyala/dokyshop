@@ -17,3 +17,6 @@
 @import './adminSearchProduct.css';
 @import './listProduct.css';
 @import './searchResults.css';
+@import './userProfile.css';
+@import './adminListUser.css';
+@import './adminEditUser.css';

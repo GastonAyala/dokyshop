@@ -19,13 +19,18 @@
             </form>
         </div>
         <nav class="user-nav" id="user-nav">
-            <ul class="user-list"></ul>
+            <ul class="user-list">
             <% if (!locals.userLogin) { %>
                 <li><a href="/autenticacion/iniciar">Iniciar sesión</a></li>
                 <li><span class="separator">|</span></li>
                 <li><a href="/autenticacion/registro">Registrate</a></li>
             <% } else {  %>
-                <li><a href="autenticacion/perfil">Perfil<i class="ms-1 fas fa-address-card"></i></a></li>
+                <li class="user-avatar-list">
+                    <a href="/usuario/perfil">
+                        <img class="profile-avatar" src="/images/avatar/<%= locals.userLogin.avatar %>" alt="avatar image">
+                        <%= locals.userLogin.name %>
+                    </a>
+                </li>
               <% } %> 
             </ul>
         </nav>
@@ -38,7 +43,9 @@
         <ul class="main-list" id="main-list">
             <li class="list-index"><a class="a-index" href="/">INICIO</a></li>
             <li class="list-products"><a class="a-products" href="/productos">PRODUCTOS</a></li>
-            <li class="list-index"><a class="a-index" href="/admin/productos">ADMINISTRADOR</a></li>
+            <% if (locals.userLogin?.role === "ADMIN") { %>
+                <li class="list-index"><a class="a-index" href="/admin/productos">ADMINISTRADOR</a></li>
+            <% } %>
             <li class="list-contact"><a class="a-contact" href="/#footer">CONTACTO</a></li>
         </ul>
     </nav>

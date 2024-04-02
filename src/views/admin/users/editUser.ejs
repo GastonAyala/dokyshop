@@ -1,0 +1,36 @@
+<h1>Editar usuario</h1>
+<div class="dashUser-topbar">
+    <div class="dashUser-container">
+        <a href="/admin/usuarios">
+            <i class="fa-solid fa-arrow-left px-3"></i>
+            Volver al listado de usuarios
+        </a>
+    </div>
+</div>
+
+<div class="editUser-container container-fluid my-5 card">
+    <form action="/admin/editar-usuario/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="userAvatarInput col-12 my-5 px-5">
+                <label class="form-label" for="avatar">
+                    Foto de perfil
+                    <div class="userAvatarimg-Container">
+                        <img src="/images/avatar/<%= user.avatar %>" alt="user avatar">
+                    </div>
+                    <input type="file" name="avatar" id="avatar" accept="img/*">
+                </label>
+            </div>
+            <div class="col-6 my-3">
+                <label class="form-label" for="name">Nombre</label>
+                <input class="form-control form-control-sm" type="text" name="name" id="name" value="<%= user.name %>" placeholder="<%= user.name %>">
+            </div>
+            <div class="col-6 my-3">
+                <label class="form-label" for="role">Rol</label>
+                <input class="form-control form-control-sm" type="text" name="role" id="role" value="<%= user.role %>" placeholder="<%= user.role %>">
+            </div>
+        <div class="d-flex justify-content-center gap-2 my-5 usersBtn">
+            <button type="submit" class="btn btn-outline-success usersSave">Guardar cambios</button>
+            <button type="reset" class="btn btn-outline-danger userReset">Cancelar cambios</button>
+        </div>
+    </form>
+</div>
