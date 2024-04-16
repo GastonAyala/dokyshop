@@ -23,6 +23,7 @@ A todas las personas que tienen mascota/s. Y deceen su bienestar brindandole los
 - Patricia Isabel Gonzalez, Pcia. de Bs.As., hobbie: Tocar la guitarra.-
 - Sofia Alejandra Rojas Mosqueira, Pcia. de Bs. As.,  Hobby: Jugar a la play.
 - Ricardina Zabala, Pcia. Bs As., Hobby: me gusta el arte en general y jugar juegos :>
+-Marcos Borquez, Pcia. Neuquen, Villa Angostura, Hobby: Me gusta la musica, la electronica, la programacion y el trekking.
 
 ### Sitios de Referencia
 
