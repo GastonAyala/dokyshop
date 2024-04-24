@@ -17,7 +17,7 @@ module.exports = (req, res) => {
                 avatar: avatarImage ? avatarImage[0]?.filename : u.avatar
             };
 
-            const oldAvatarPath = path.join(__dirname, "../../../public/images/avatar/" + u.avatar)
+            const oldAvatarPath = path.join(__dirname, "../../../../public/images/avatar/" + u.avatar)
             const existOldImg = fs.existsSync(oldAvatarPath);
             if (existOldImg) {
                 if (u.avatar !== "perfilUser.png" && avatarImage?.length) {

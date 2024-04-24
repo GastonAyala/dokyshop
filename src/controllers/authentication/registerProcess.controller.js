@@ -16,8 +16,8 @@ module.exports = (req, res) =>{
          role: 'REGULAR',
          avatar: req.files.avatar ? req.files.avatar[0].filename : "perfilUser.png",
          phone: "",
-         adressInfo: {
-            adress: "",
+         addresses: {
+            street: "",
             city: "",
             province: "",
             zipcode: "",

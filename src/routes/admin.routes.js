@@ -16,13 +16,13 @@ router.get("/productos/buscar", checkIsAdmin, search)
 router.get("/crear-producto", checkIsAdmin, create);
 router.post("/crear-producto", uploadProducts.fields([
     { name: "imagePrimary", maxCount: 1 },
-    { name: "imagesSecondary", maxCount: 1 }]), store);
+    { name: "imagesSecondary", maxCount: 3 }]), store);
 
 
 router.get("/editar-producto/:id", checkIsAdmin, edit);
 router.put("/editar-producto/:id", uploadProducts.fields([
     { name: "imagePrimary", maxCount: 1 },
-    { name: "imagesSecondary", maxCount: 1 }
+    { name: "imagesSecondary", maxCount: 3 }
 ]), update);
 
 router.get('/eliminar', checkIsAdmin, deleteProduct)

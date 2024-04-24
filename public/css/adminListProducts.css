@@ -210,7 +210,7 @@
     color: var(--verde);
 }
 
-.dashboard-content .listProduct-table tbody tr td.td-stock {
+.dashboard-content .listProduct-table tbody tr td.td-quantity {
     color: var(--negro);
 }
 

@@ -7,8 +7,8 @@
       "role": "REGULAR",
       "avatar": "perfilUser.png",
       "phone": "",
-      "adressInfo": {
-         "adress": "",
+      "addresses": {
+         "street": "",
          "city": "",
          "province": "",
          "zipcode": ""
@@ -22,11 +22,11 @@
       "role": "ADMIN",
       "avatar": "avatar-1711948831309.jpg",
       "phone": "",
-      "adressInfo": {
-         "adress": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
+      "addresses": {
+         "street": "Calle Falsa 123",
+         "city": "Quilmes Oeste",
+         "province": "Buenos Aires",
+         "zipcode": "1881"
       }
    },
    {
@@ -37,23 +37,8 @@
       "role": "ADMIN",
       "avatar": "avatar-1712043239095.jpg",
       "phone": "",
-      "adressInfo": {
-         "adress": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
-      }
-   },
-   {
-      "id": 4,
-      "name": "prueba",
-      "email": "prueba@gmail.com",
-      "password": "$2a$12$pYn2PmBsCKNLw.lzPTgDEOJyrA/IR4WR1qunq3pyI4cgjLawaPFfC",
-      "role": "REGULAR",
-      "avatar": "avatar-1712043945480.jpg",
-      "phone": "",
-      "adressInfo": {
-         "adress": "",
+      "addresses": {
+         "street": "",
          "city": "",
          "province": "",
          "zipcode": ""
@@ -61,17 +46,42 @@
    },
    {
       "id": 5,
-      "name": "prueba01",
-      "email": "prueba01@gmail.com",
+      "name": "Omar Piñeiro",
+      "email": "omarp@gmail.com",
       "password": "$2a$12$TfjaFgZTWjS32pZZkNYjsenaQYwS.iK3QZ/aEWoMg2LaNMzIy9.B6",
       "role": "REGULAR",
       "avatar": "avatar-1712083308612.jpg",
       "phone": "1125658045",
-      "adressInfo": {
-         "adress": "Calle Falsa 123",
-         "city": "Quilmes Oeste",
+      "addresses": {
+         "street": "Calle Falsa 123",
+         "city": "Temperley  ",
          "province": "Buenos Aires",
-         "zipcode": "1881"
+         "zipcode": "1834"
       }
+   },
+   {
+      "id": 6,
+      "name": "Ricardina Zabala",
+      "email": "rica@gmail.com",
+      "password": "$2a$12$JaSitbcjJ8MEgvoHIx2VmOWOMWC4M4VyHVG4vMYV.Y3Hm8ErZ0AtG",
+      "role": "ADMIN",
+      "avatar": "avatar-1713842376982.jpg",
+      "phone": "",
+      "addresses": {
+         "street": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
+   },
+   {
+      "id": 8,
+      "name": "Marcos Borquez",
+      "email": "marcos@gmail.com",
+      "password": "$2a$12$APovxajp4ES5jC6Cw/4okO.FJDFklLEDJNGkYcWoxCKh8AVXQ29Gm",
+      "role": "ADMIN",
+      "avatar": "avatar-1713924989846.png",
+      "phone": "",
+      "addresses": {}
    }
 ]

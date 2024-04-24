@@ -234,7 +234,7 @@ main.login-main form.form-principal .contenedor-button .inicio a.crear-cuenta{}
 /*LOGIN ESCRITORIO */
 @media (min-width: 1024px) {
 main.login-main{
-    height: 500px;
+    height: 595px;
 }
 
 main.login-main h1.titulo-login{

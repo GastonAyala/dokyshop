@@ -11,12 +11,13 @@ module.exports = (req, res) => {
 
     const userDestroy = users.find(u => u.id === +id);
 
-    const pathAvatar = path.join(__dirname, "../../../public/images/avatar/" + userDestroy.avatar);
+    const pathAvatar = path.join(__dirname, "../../../../public/images/avatar/" + userDestroy.avatar);
+
     const existsFile = fs.existsSync(pathAvatar);
 
-    if (existsFile) {
+    if(existsFile) {
         fs.unlinkSync(pathAvatar)
-    };
+    }
 
     saveData(userLessOne, "users");
 

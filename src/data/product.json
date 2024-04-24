@@ -2,11 +2,11 @@
    {
       "id": 1,
       "title": "Juguete Para Perro Gigwi Duraspikes Conejo Celeste Extra Durable",
-      "categorySelect": "Juguetes",
+      "subsubcategory": "Juguetes",
       "description": "La serie de juguetes Gigwi Duraspikes se caracteriza por su resistencia, lo que la hace ideal para perros de mordida fuerte. Se presentan en diferentes modelos y colores, y permitirán que tu mascota limpie sus dientes al mismo tiempo que se divierte gracias a sus 'espinas' de caucho de alta dureza.",
       "price": 25.534,
       "sale": 7,
-      "stock": 23,
+      "quantity": 23,
       "color": "Celeste",
       "imagePrimary": "Gigwi.webp",
       "imagesSecondary": [
@@ -16,11 +16,11 @@
    {
       "id": 2,
       "title": "Pelota Chuckit Kick Fetch",
-      "categorySelect": "Juguetes",
+      "subcategory": "Juguetes",
       "description": "Esta pelota tiene una forma especial que facilita a tu perro la tarea de agarrarla y alcanzártela para una diversión sin límites. Está fabricado con espuma súper resistente y sus costuras se encuentran reforzadas para garantizar su durabilidad. Medidas de diámetro: 14 cm.",
       "price": 35.903,
       "sale": 5,
-      "stock": 25,
+      "quantity": 25,
       "color": "Naranja",
       "imagePrimary": "pelotaChuckit.webp",
       "imagesSecondary": [
@@ -30,11 +30,11 @@
    {
       "id": 3,
       "title": "Juguetes Didacticos Para Gatos",
-      "categorySelect": "Juguetes",
+      "subcategory": "Juguetes",
       "description": "Explorer es un juguete de habilidad para gatos, que estimula el instinto depredador del animal, favorece el ejercicio físico y mental y lo obliga a comer más despacio",
       "price": 44.234,
       "sale": 5,
-      "stock": 22,
+      "quantity": 22,
       "color": "Blanco, Verde",
       "imagePrimary": "didactico1.webp",
       "imagesSecondary": [
@@ -44,11 +44,11 @@
    {
       "id": 4,
       "title": "Tunel Gato Combinable",
-      "categorySelect": "Juguetes",
+      "subcategory": "Juguetes",
       "description": "Este túnel para gatos permitirá que tu mascota juegue, se divierta durante horas, tenga su espacio y pueda descansar. Este accesorio es totalmente seguro y se pliega para poder almacenarlo y transportarlo.",
       "price": 6.098,
       "sale": 20,
-      "stock": 10,
+      "quantity": 10,
       "color": "Varios",
       "imagePrimary": "tunel1.webp",
       "imagesSecondary": [
@@ -58,11 +58,11 @@
    {
       "id": 5,
       "title": "Chapita Identificatoria Glam Small Bone",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Chapitas identificatorias esmaltadas en bronce y embellecidas con brillantes resplandecientes. Cada medalla es una pequeña joya realizada con materiales hipoalergénicos. Este producto se puede personalizar hasta con 4 líneas de 15 caracteres cada una en su parte posterior.",
       "price": 35.093,
       "sale": 10,
-      "stock": 19,
+      "quantity": 19,
       "color": "Varios",
       "imagePrimary": "chapita.webp",
       "imagesSecondary": [
@@ -72,11 +72,11 @@
    {
       "id": 6,
       "title": "Pechera Arnes Tela Talle 5",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Esta pechera es ideal para perros que disfruten de correr durante sus paseos o de acompañar a sus dueños en sus aventuras al aire libre. Tanto la parte superior como la inferior brindan un ajuste seguro alrededor del pecho y el cuello de su mascota.",
       "price": 30.924,
       "sale": 15,
-      "stock": 17,
+      "quantity": 17,
       "color": "Varios",
       "imagePrimary": "pechera.webp",
       "imagesSecondary": [
@@ -86,11 +86,11 @@
    {
       "id": 7,
       "title": "Rascador Para Gatos Fat Cat Carton Infinit",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Este rascador de Fat Cat le encantará a tu gato ya que contiene hierba gatera para atraerlo, que se divierta y así fortalecer sus uñas y cuidar tus muebles. Son adecuados para gatos de cualquier edad. Además, viene con un juguete para gatos gratis como valor agregado.",
       "price": 22.517,
       "sale": 20,
-      "stock": 8,
+      "quantity": 8,
       "color": "Marron",
       "imagePrimary": "rascador.webp",
       "imagesSecondary": [
@@ -100,11 +100,11 @@
    {
       "id": 8,
       "title": "Pack 6 Pelotas 3,5 Cm",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Surtido de pelotas en tela con un cascabel interior",
       "price": 3.21,
       "sale": 5,
-      "stock": 22,
+      "quantity": 22,
       "color": "Varios",
       "imagePrimary": "pelota.webp",
       "imagesSecondary": [
@@ -114,11 +114,11 @@
    {
       "id": 9,
       "title": "SWEATER LANA BEWARE",
-      "categorySelect": "Indumentaria",
+      "subcategory": "Indumentaria",
       "description": "Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.",
       "price": 20.998,
       "sale": 10,
-      "stock": 25,
+      "quantity": 25,
       "color": "Verde",
       "imagePrimary": "sweater.webp",
       "imagesSecondary": [
@@ -128,11 +128,11 @@
    {
       "id": 10,
       "title": "SWEATER LANA BEWARE ROJO",
-      "categorySelect": "Indumentaria",
+      "subcategory": "Indumentaria",
       "description": "Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.",
       "price": 20.998,
       "sale": 10,
-      "stock": 23,
+      "quantity": 23,
       "color": "Rojo",
       "imagePrimary": "sweater2.webp",
       "imagesSecondary": [
@@ -142,11 +142,11 @@
    {
       "id": 11,
       "title": "SWEATER LANA GUARDAS ASPEN VERDE MILITAR",
-      "categorySelect": "Indumentaria",
+      "subcategory": "Indumentaria",
       "description": "Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.",
       "price": 20.998,
       "sale": 5,
-      "stock": 17,
+      "quantity": 17,
       "color": "Verde",
       "imagePrimary": "sweater3.webp",
       "imagesSecondary": [
@@ -156,11 +156,11 @@
    {
       "id": 12,
       "title": "SWEATER LANA GUARDAS ASPEN BEIGE",
-      "categorySelect": "Indumentaria",
+      "subcategory": "Indumentaria",
       "description": "Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.",
       "price": 20.998,
       "sale": 5,
-      "stock": 19,
+      "quantity": 19,
       "color": "Verde",
       "imagePrimary": "sweater4.webp",
       "imagesSecondary": [
@@ -170,11 +170,11 @@
    {
       "id": 13,
       "title": "Juguete Para Perro Kong Squeezz Hueso Medium C/Sonajero",
-      "categorySelect": "Juguetes",
+      "subcategory": "Juguetes",
       "description": "Kong Squeezz Hueso Medium C/Sonajero es un juguete dentalque que le ayudará a mantener limpios los dientes, sino que también aliviará el dolor de la dentición, medida Medium con Sonajero.",
       "price": 5400,
       "sale": 5,
-      "stock": 15,
+      "quantity": 15,
       "color": "Azul",
       "imagePrimary": "hueso.webp",
       "imagesSecondary": [
@@ -184,11 +184,11 @@
    {
       "id": 14,
       "title": "Ratitas x 3",
-      "categorySelect": "Juguetes",
+      "subcategory": "Juguetes",
       "description": "Ratitas de goma para el entretenimiento de nuestra mascota, en variaos colores a elección.-",
       "price": 5000,
       "sale": 5,
-      "stock": 20,
+      "quantity": 20,
       "color": "rojo, negro, azul",
       "imagePrimary": "imagePrimary-1710302039305.jpg",
       "imagesSecondary": [
@@ -199,11 +199,11 @@
    {
       "id": 15,
       "title": "Rascadores",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Practico accesorio para nuestra mascota.  Se trata de un instinto que no pueden evitar porque además de afilarse las uñas, rascar es parte del proceso para marcar el territorio. Esto contribuye a la salud mental y emocional de tu gato.-",
       "price": 15000,
       "sale": 10,
-      "stock": 30,
+      "quantity": 30,
       "color": "negro, gris",
       "imagePrimary": "imagePrimary-1710302235102.png",
       "imagesSecondary": [
@@ -213,11 +213,11 @@
    {
       "id": 16,
       "title": "Correa Star Wars Darth Vader Perro Peq",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Correa de paseo de Star Wars Darth Vader de la línea Disney con simpáticos estampados de la serie animada. Posee una hebilla resistente a los tirones, posee una arándela útil para colgar los accesorios para las bolsas de residuos. Medida aproximada: 100 cm.",
       "price": 8000,
       "sale": 5,
-      "stock": 30,
+      "quantity": 30,
       "color": "negro",
       "imagePrimary": "imagePrimary-1710449097063.webp",
       "imagesSecondary": [
@@ -227,11 +227,11 @@
    {
       "id": 17,
       "title": "Indumentaria canina",
-      "categorySelect": "Indumentaria",
+      "subcategory": "Indumentaria",
       "description": "Indumentaria de calidad para nuestro perrudos de todo terreno, de raza pequeña a grande, varios modelos y colores, dependiendo también las estaciones del año.",
       "price": 12000,
       "sale": 10,
-      "stock": 30,
+      "quantity": 30,
       "color": "rojo, negro, azul",
       "imagePrimary": "imagePrimary-1710302993109.webp",
       "imagesSecondary": [
@@ -241,11 +241,11 @@
    {
       "id": 18,
       "title": "camas",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Casa de tela Nº 3 de máxima calidad y algodón. Estructura en placa poliéster de 20 mm, es un lugar ideal para tu mascota para descansar y jugar. Está revestida por una funda de peluche extra suave. El relleno es de goma espuma y base de nylon antideslizante. Medidas: 45 cm frente X 45 cm altura x 55 cm profundidad.\r\nRECOMENDADOS",
       "price": 35000,
       "sale": 15,
-      "stock": 15,
+      "quantity": 15,
       "color": "rojo, negro, azul",
       "imagePrimary": "imagePrimary-1710303214272.webp",
       "imagesSecondary": [
@@ -255,11 +255,11 @@
    {
       "id": 19,
       "title": "Transportador",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Transportadores de alta calidad y resistentes.  Los transportadores son recomendado en particular para viajes largos. También para las visitas al vet. En esta última es necesario que tu gato se sienta resguardado ante la vulnerabilidad que ellos saben que presentan.",
       "price": 40000,
       "sale": 10,
-      "stock": 15,
+      "quantity": 15,
       "color": "negro, gris",
       "imagePrimary": "imagePrimary-1710303693542.webp",
       "imagesSecondary": [
@@ -269,15 +269,15 @@
    {
       "id": 20,
       "title": "Rascador Para Gatos 2 Pisos 80 Cm",
-      "categorySelect": "Accesorios",
+      "subcategory": "Accesorios",
       "description": "Este rascador CanCat de dos niveles brindará diversión a tu gato, permitirá que pueda limar sus uñas, arañar y que tenga un lugar para jugar y descansar. Altura: 80 cm.",
       "price": 75000,
       "sale": 20,
-      "stock": 15,
+      "quantity": 15,
       "color": "negro",
       "imagePrimary": "imagePrimary-1711424077491.webp",
       "imagesSecondary": [
-         "no-image.png"
+         "imagesSecondary-171382177879745.jpg"
       ]
    }
 ]

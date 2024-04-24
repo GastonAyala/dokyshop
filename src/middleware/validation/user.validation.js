@@ -25,7 +25,8 @@ const fieldName = body('name')
     .isLength({ min: 5, max: 50})
     .withMessage("Debe tener un mínimo de 5 y máximo 50 caracteres");
 
-const fieldAdress = body("adress")
+const fieldstreet = body("street")
+    .optional({checkFalsy: true})
     .isAlphanumeric("es-ES", {ignore: " "})
     .withMessage("El campo Dirección debe ser alfanumérico")
     .bail()
@@ -33,6 +34,7 @@ const fieldAdress = body("adress")
     .withMessage("La dirección debe tener un mínimo de 5 y máximo 50 caracteres");
 
 const fieldCity = body("city")
+    .optional({checkFalsy: true})
     .isAlpha("es-ES", {ignore: " "})
     .withMessage("No se permiten caracteres especiales y números")
     .bail()
@@ -41,6 +43,7 @@ const fieldCity = body("city")
 
 
 const fieldProvince = body("province")
+    .optional({checkFalsy: true})
     .isAlpha("es-ES", {ignore: " "})
     .withMessage("No se permiten caracteres especiales y números")
     .bail()
@@ -48,13 +51,15 @@ const fieldProvince = body("province")
     .withMessage("El nombre de ciudad debe tener un mínimo de 5 y máximo de 50 caracteres");
 
 const fieldZipcode = body("zipcode")
-.isNumeric()
-.withMessage("El campo Código postal debe ser numérico")
-.bail()
-.isLength({min: 4, max: 4})
-.withMessage("La longitud debe ser de 4 numéros")
+   .optional({checkFalsy: true})
+   .isNumeric()
+   .withMessage("El campo Código postal debe ser numérico")
+   .bail()
+   .isLength({min: 4, max: 4})
+   .withMessage("La longitud debe ser de 4 numéros")
 
 const fieldPhone = body("phone")
+    .optional({checkFalsy: true})
     .isNumeric()
     .withMessage("El campo Teléfono postal debe ser numérico")
     .bail()
@@ -62,5 +67,5 @@ const fieldPhone = body("phone")
     .withMessage("La longitud debe ser de mínimo 10 y máximo 13 numéros")
 
 module.exports = {
-    updateUserValidation: [fieldAvatar, fieldName, fieldAdress, fieldCity, fieldProvince, fieldZipcode, fieldPhone]
+    updateUserValidation: [fieldAvatar, fieldName, fieldstreet, fieldCity, fieldProvince, fieldZipcode, fieldPhone]
 };

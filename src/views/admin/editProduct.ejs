@@ -33,6 +33,7 @@
             name="imagesSecondary"
             id="imagesSecondary"
             accept="img/*"
+            multiple
           />
         </div>
       </div>
@@ -51,18 +52,18 @@
           />
         </div>
         <div class="createProductForm-category col-6 my-3">
-          <label for="categorySelect" class="form-label"
+          <label for="category" class="form-label"
             >Categoría <span class="text-danger">*</span></label
           >
           <select
             class="form-select form-select-sm text-center"
-            name="categorySelect"
+            name="category"
             aria-label="Desplegar las opciones"
-            id="categorySelect"
+            id="category"
           >
-            <option <%= product.categorySelect === "Indumentaria" ? "selected" : null %> value="Indumentaria">Indumentaria</option>
-            <option <%= product.categorySelect === "Accesorios" ? "selected" : null %> value="Accesorios">Accesorios</option>
-            <option <%= product.categorySelect === "Juguetes" ? "selected" : null %> value="Juguetes">Juguetes</option>
+            <option <%= product.category === "Indumentaria" ? "selected" : null %> value="Indumentaria">Indumentaria</option>
+            <option <%= product.category === "Accesorios" ? "selected" : null %> value="Accesorios">Accesorios</option>
+            <option <%= product.category === "Juguetes" ? "selected" : null %> value="Juguetes">Juguetes</option>
           </select>
         </div>
         <div class="createProductForm-description col-6 my-3">
@@ -103,16 +104,16 @@
             placeholder=""
           />
         </div>
-        <div class="createProductForm-stock col-6 my-3">
-          <label for="stock" class="form-label"
-            >Stock <span class="text-danger">*</span></label
+        <div class="createProductForm-quantity col-6 my-3">
+          <label for="quantity" class="form-label"
+            >quantity <span class="text-danger">*</span></label
           >
           <input
             type="number"
             class="form-control form-control-sm border-0 text-center"
-            name="stock"
-            id="stock"
-            value="<%= product.stock %>"
+            name="quantity"
+            id="quantity"
+            value="<%= product.quantity %>"
             placeholder=""
           />
         </div>

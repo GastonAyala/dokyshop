@@ -60,11 +60,11 @@
     padding: 0 20px;
 }
 
-.createProductForm-container .createProductForm .createProductForm-category .categorySelect {}
+.createProductForm-container .createProductForm .createProductForm-category .category {}
 
-.createProductForm-container .createProductForm .createProductForm-category .categorySelect label {}
+.createProductForm-container .createProductForm .createProductForm-category .category label {}
 
-.createProductForm-container .createProductForm .createProductForm-category .categorySelect option {}
+.createProductForm-container .createProductForm .createProductForm-category .category option {}
 
 /* description */
 
@@ -98,17 +98,17 @@
 
 .createProductForm-container .createProductForm .createProductForm-sale input {}
 
-/* stock */
+/* quantity */
 
-.createProductForm-container .createProductForm .createProductForm-stock {
+.createProductForm-container .createProductForm .createProductForm-quantity {
     padding: 0 20px;
 }
 
-.createProductForm-container .createProductForm .createProductForm-stock label {}
+.createProductForm-container .createProductForm .createProductForm-quantity label {}
 
-.createProductForm-container .createProductForm .createProductForm-stock input {}
+.createProductForm-container .createProductForm .createProductForm-quantity input {}
 
-/* stock */
+/* quantity */
 
 .createProductForm-container .createProductForm .createProductForm-color {
     padding: 0 20px;

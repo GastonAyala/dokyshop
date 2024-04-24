@@ -34,29 +34,29 @@
                 </div>
 
                 <div class="userName-container d-flex flex-column mb-3">
-                    <label for="adress">Dirección</label>
-                    <input type="text" class="form-control form-control-sm" name="adress" id="adress" value="<%= locals.errors ? locals.old.adress : locals.user.adressInfo.adress %>" placeholder="<%= locals.user?.adressInfo.adress %>">
+                    <label for="street">Dirección</label>
+                    <input type="text" class="form-control form-control-sm" name="street" id="street" value="<%= locals.errors ? locals.old.street : locals.user.addresses.street %>" placeholder="<%= locals.user?.addresses.street %>">
                     <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.adress?.msg %></div>
+                        <div class="form-text fs-5 text-danger"><%= errors?.street?.msg %></div>
                     <% } %>
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="city">Ciudad</label>
-                    <input type="text" class="form-control form-control-sm" name="city" id="city" value="<%= locals.errors ? locals.old.city : locals.user.adressInfo.city %>" placeholder="<%= locals.user?.city %>">
+                    <input type="text" class="form-control form-control-sm" name="city" id="city" value="<%= locals.errors ? locals.old.city : locals.user.addresses.city %>" placeholder="<%= locals.user?.city %>">
                     <% if (locals.errors) { %>
                         <div class="form-text fs-5 text-danger"><%= errors?.city?.msg %></div>
                     <% } %>
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="province">Provincia</label>
-                    <input type="text" class="form-control form-control-sm" name="province" id="province" value="<%= locals.errors ? locals.old.province : locals.user.adressInfo.province %>" placeholder="<%= locals.user?.province %>">
+                    <input type="text" class="form-control form-control-sm" name="province" id="province" value="<%= locals.errors ? locals.old.province : locals.user.addresses.province %>" placeholder="<%= locals.user?.province %>">
                     <% if (locals.errors) { %>
                         <div class="form-text fs-5 text-danger"><%= errors?.province?.msg %></div>
                     <% } %>
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="zipcode">Código postal</label>
-                    <input type="text" class="form-control form-control-sm" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.adressInfo.zipcode %>" placeholder="<%= locals.user?.zipcode %>">
+                    <input type="text" class="form-control form-control-sm" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.addresses.zipcode %>" placeholder="<%= locals.user?.zipcode %>">
                     <% if (locals.errors) { %>
                         <div class="form-text fs-5 text-danger"><%= errors?.zipcode?.msg %></div>
                     <% } %>

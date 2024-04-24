@@ -15,7 +15,7 @@
         <div class="imgProductForm col-12 my-5 px-5">
           <label for="productImg" class="form-label col-7"
             >Imagen principal 
-            <img src="/images/other/no-image.png" alt="default product img" />
+            <img src="/images/products/no-image.png" alt="default product img" />
           </label>
           <input
             type="file"
@@ -33,7 +33,7 @@
             type="file"
             class="form-control form-control-sm"
             name="imagesSecondary"
-            id="Imagesecondary"
+            id="Imagesecondary" multiple
           />
         </div>
       </div>
@@ -52,14 +52,14 @@
           />
         </div>
         <div class="createProductForm-category col-6 my-3">
-          <label for="categorySelect" class="form-label"
+          <label for="category" class="form-label"
             >Categoría <span class="text-danger">*</span></label
           >
           <select
             class="form-select form-select-sm text-center"
-            name="categorySelect"
+            name="category"
             aria-label="Desplegar las opciones"
-            id="categorySelect"
+            id="category"
           >
             <option value="Indumentaria">Indumentaria</option>
             <option value="Accesorios">Accesorios</option>
@@ -103,15 +103,15 @@
             placeholder=""
           />
         </div>
-        <div class="createProductForm-stock col-6 my-3">
-          <label for="stock" class="form-label"
-            >Stock <span class="text-danger">*</span></label
+        <div class="createProductForm-quantity col-6 my-3">
+          <label for="quantity" class="form-label"
+            >quantity <span class="text-danger">*</span></label
           >
           <input
             type="number"
             class="form-control form-control-sm border-0 text-center"
-            name="stock"
-            id="stock"
+            name="quantity"
+            id="quantity"
             value="0"
             placeholder=""
           />

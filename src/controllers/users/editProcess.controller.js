@@ -10,7 +10,7 @@ module.exports = (req, res) => {
         const users = loadData("users");
 
         const { id } = req.params;
-        const { name, adress, city, province, zipcode, phone } = req.body;
+        const { name, street, city, province, zipcode, phone } = req.body;
         const avatarImage = req.files?.avatar;
     
         const usersMapped = users.map(u => {
@@ -19,8 +19,8 @@ module.exports = (req, res) => {
                     ...u,
                     name: name ? name.trim() : u.name,
                     avatar: avatarImage ? avatarImage[0]?.filename : u.avatar,
-                    adressInfo : {
-                        adress : adress ? adress.trim() : u.adress,
+                    addresses : {
+                        street : street ? street.trim() : u.street,
                         city: city ? city.trim() : u.city,
                         province: province ? province.trim() : u.province,
                         zipcode: zipcode ? zipcode.trim() : u.zipcode,

@@ -5,7 +5,7 @@ const { loadData, saveData } = require('../../data');
 
 module.exports = (req, res) => {
    
-    const {title, categorySelect, description, price, sale, stock, color} = req.body;
+    const {title, category, description, price, sale, quantity, color} = req.body;
        
     let products = loadData();
         
@@ -19,11 +19,11 @@ module.exports = (req, res) => {
     const newProduct = {
         id: newId,
         title: title.trim(),
-        categorySelect: categorySelect?.trim(), 
+        category: category?.trim(), 
         description: description.trim(),             // trim() quita los espacios(delante, entre y final de una palabra)
         price: +price,
         sale: +sale,
-        stock: +stock,
+        quantity: +quantity,
         color: color.trim(),
         imagePrimary: req.files.imagePrimary?.length ? req.files.imagePrimary[0]?.filename : ["no-image.png"],
         imagesSecondary: newImages.length ? newImages : ["no-image.png"]    

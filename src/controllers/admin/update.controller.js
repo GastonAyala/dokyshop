@@ -5,7 +5,7 @@ const fs = require('fs');
 module.exports = (req,res) => {
     const products = loadData()
     const { id } = req.params;
-    const { title, categorySelect, description, price, sale, stock, color } = req.body
+    const { title, category, description, price, sale, quantity, color } = req.body
 
     let newImages = [];
     if(req.files.imagesSecondary?.length) {
@@ -18,11 +18,11 @@ module.exports = (req,res) => {
             const productEdited = {
                 ...p,
                 title: title.trim(),
-                categorySelect: categorySelect?.trim(),
+                category: category?.trim(),
                 description: description.trim(),
                 price: +price,
                 sale: +sale,
-                stock: +stock,
+                quantity: +quantity,
                 color: color.trim(),
                 imagePrimary: req.files.imagePrimary?.length ? req.files.
                 imagePrimary[0]?.filename : p.imagePrimary,
