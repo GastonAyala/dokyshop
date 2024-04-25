@@ -8,7 +8,9 @@
       "price": 25.534,
       "sale": 7,
       "quantity": 23,
-      "color": "Celeste",
+      "color": [
+         "Celeste"
+      ],
       "available": true,
       "imagePrimary": "Gigwi.webp",
       "imagesSecondary": [
@@ -24,7 +26,9 @@
       "price": 35.903,
       "sale": 5,
       "quantity": 25,
-      "color": "Naranja",
+      "color": [
+         "Naranja"
+      ],
       "available": true,
       "imagePrimary": "pelotaChuckit.webp",
       "imagesSecondary": [
@@ -40,7 +44,9 @@
       "price": 44.234,
       "sale": 5,
       "quantity": 22,
-      "color": "Blanco, Verde",
+      "color": [
+         "Blanco, Verde"
+      ],
       "available": true,
       "imagePrimary": "didactico1.webp",
       "imagesSecondary": [
@@ -56,7 +62,9 @@
       "price": 6.098,
       "sale": 20,
       "quantity": 10,
-      "color": "Varios",
+      "color": [
+         "Multicolor"
+      ],
       "available": true,
       "imagePrimary": "tunel1.webp",
       "imagesSecondary": [
@@ -72,7 +80,9 @@
       "price": 35.093,
       "sale": 10,
       "quantity": 19,
-      "color": "Varios",
+      "color": [
+         "Multicolor"
+      ],
       "available": true,
       "imagePrimary": "chapita.webp",
       "imagesSecondary": [
@@ -88,7 +98,9 @@
       "price": 30.924,
       "sale": 15,
       "quantity": 17,
-      "color": "Varios",
+      "color": [
+         "Multicolor"
+      ],
       "available": true,
       "imagePrimary": "pechera.webp",
       "imagesSecondary": [
@@ -104,7 +116,9 @@
       "price": 22.517,
       "sale": 20,
       "quantity": 8,
-      "color": "Marron",
+      "color": [
+         "Marron"
+      ],
       "available": true,
       "imagePrimary": "rascador.webp",
       "imagesSecondary": [
@@ -120,7 +134,9 @@
       "price": 3.21,
       "sale": 5,
       "quantity": 22,
-      "color": "Varios",
+      "color": [
+         "Multicolor"
+      ],
       "available": true,
       "imagePrimary": "pelota.webp",
       "imagesSecondary": [
@@ -136,7 +152,9 @@
       "price": 20.998,
       "sale": 10,
       "quantity": 25,
-      "color": "Verde",
+      "color": [
+         "Verde"
+      ],
       "available": true,
       "imagePrimary": "sweater.webp",
       "imagesSecondary": [
@@ -152,7 +170,9 @@
       "price": 20.998,
       "sale": 10,
       "quantity": 23,
-      "color": "Rojo",
+      "color": [
+         "Red"
+      ],
       "available": true,
       "imagePrimary": "sweater2.webp",
       "imagesSecondary": [
@@ -168,7 +188,9 @@
       "price": 20.998,
       "sale": 5,
       "quantity": 17,
-      "color": "Verde",
+      "color": [
+         "Verde"
+      ],
       "available": true,
       "imagePrimary": "sweater3.webp",
       "imagesSecondary": [
@@ -184,7 +206,9 @@
       "price": 20.998,
       "sale": 5,
       "quantity": 19,
-      "color": "Verde",
+      "color": [
+         "Verde"
+      ],
       "available": true,
       "imagePrimary": "sweater4.webp",
       "imagesSecondary": [
@@ -200,7 +224,9 @@
       "price": 5400,
       "sale": 5,
       "quantity": 15,
-      "color": "Azul",
+      "color": [
+         "Blue"
+      ],
       "available": true,
       "imagePrimary": "hueso.webp",
       "imagesSecondary": [
@@ -216,7 +242,9 @@
       "price": 5000,
       "sale": 5,
       "quantity": 20,
-      "color": "rojo, negro, azul",
+      "color": [
+         "Red, Black, Blue"
+      ],
       "available": true,
       "imagePrimary": "imagePrimary-1710302039305.jpg",
       "imagesSecondary": [
@@ -233,7 +261,9 @@
       "price": 15000,
       "sale": 10,
       "quantity": 30,
-      "color": "negro, gris",
+      "color": [
+         "Black, gris"
+      ],
       "available": true,
       "imagePrimary": "imagePrimary-1710302235102.png",
       "imagesSecondary": [
@@ -249,7 +279,9 @@
       "price": 8000,
       "sale": 5,
       "quantity": 30,
-      "color": "negro",
+      "color": [
+         "Black"
+      ],
       "available": true,
       "imagePrimary": "imagePrimary-1710449097063.webp",
       "imagesSecondary": [
@@ -265,7 +297,9 @@
       "price": 12000,
       "sale": 10,
       "quantity": 30,
-      "color": "rojo, negro, azul",
+      "color": [
+         "Multicolor"
+      ],
       "available": true,
       "imagePrimary": "imagePrimary-1710302993109.webp",
       "imagesSecondary": [
@@ -281,7 +315,9 @@
       "price": 35000,
       "sale": 15,
       "quantity": 15,
-      "color": "rojo, negro, azul",
+      "color": [
+         "Red, Black, Blue"
+      ],
       "available": true,
       "imagePrimary": "imagePrimary-1710303214272.webp",
       "imagesSecondary": [
@@ -297,7 +333,9 @@
       "price": 40000,
       "sale": 10,
       "quantity": 15,
-      "color": "negro, gris",
+      "color": [
+         "Black, gris"
+      ],
       "available": true,
       "imagePrimary": "imagePrimary-1710303693542.webp",
       "imagesSecondary": [
@@ -313,7 +351,9 @@
       "price": 75000,
       "sale": 20,
       "quantity": 15,
-      "color": "negro",
+      "color": [
+         "Black"
+      ],
       "available": true,
       "imagePrimary": "imagePrimary-1711424077491.webp",
       "imagesSecondary": [

@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'role'
       })
       user.belongsTo(models.address, {
-        foreignKey: 'addressId',
+        foreignKey: 'userId',
         as: 'address'
       })
     }
@@ -28,10 +28,11 @@ module.exports = (sequelize, DataTypes) => {
     roleId: DataTypes.INTEGER,
     avatar: DataTypes.INTEGER,
     phone: DataTypes.INTEGER,
-    addressId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'user',
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE'
   });
 
 

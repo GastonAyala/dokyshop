@@ -4,7 +4,7 @@ body{
 main.register-main{
     width: 100%;
     margin: auto;
-    background: linear-gradient(rgb(231 232 233 / 70%), rgb(232 233 235 / 80%)), url(/images/other/fondo-login.jpeg);
+    background: linear-gradient(rgb(231 232 233 / 70%), rgb(232 233 235 / 80%)), url(/images/authentication/fondo-login.jpeg);
     background-position: center center;
     background-size: cover;
     padding-top: 20px;

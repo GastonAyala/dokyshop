@@ -4,7 +4,7 @@ body{
 }
 
 main.login-main{
-    background: linear-gradient(rgba(200, 205, 218, 0.7), rgba(200, 205, 218, 0.8)), url(/images/other/fondo-login.jpeg);
+    background: linear-gradient(rgba(200, 205, 218, 0.7), rgba(200, 205, 218, 0.8)), url(/images/authentication/fondo-login.jpeg);
     background-position: center center;
     background-size: cover;
 }

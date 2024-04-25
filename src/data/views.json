@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "home"
+    },
+    {
+        "id": 2,
+        "name": "results"
+    },
+    {
+        "id": 3,
+        "name": "login"
+    },
+    {
+        "id": 4,
+        "name": "register"
+    },
+    {
+        "id": 5,
+        "name": "profile"
+    },
+    {
+        "id": 6,
+        "name": "listProduct"
+    },
+    {
+        "id": 7,
+        "name": "productDetail"
+    }
+]

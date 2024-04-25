@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Multicolor",
+        "hex": null,
+        "rgb": null
+    },
+    {
+        "id": 2,
+        "name": "Red",
+        "hex": "ff0000",
+        "rgb": "255,0,0"
+    },
+    {
+        "id": 3,
+        "name": "Blue",
+        "hex": "0000FF",
+        "rgb": "0,0,255"
+    }
+]

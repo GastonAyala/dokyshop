@@ -45,7 +45,7 @@
       }
    },
    {
-      "id": 5,
+      "id": 4,
       "name": "Omar Piñeiro",
       "email": "omarp@gmail.com",
       "password": "$2a$12$TfjaFgZTWjS32pZZkNYjsenaQYwS.iK3QZ/aEWoMg2LaNMzIy9.B6",
@@ -60,7 +60,7 @@
       }
    },
    {
-      "id": 6,
+      "id": 5,
       "name": "Ricardina Zabala",
       "email": "rica@gmail.com",
       "password": "$2a$12$JaSitbcjJ8MEgvoHIx2VmOWOMWC4M4VyHVG4vMYV.Y3Hm8ErZ0AtG",
@@ -75,7 +75,7 @@
       }
    },
    {
-      "id": 8,
+      "id": 6,
       "name": "Marcos Borquez",
       "email": "marcos@gmail.com",
       "password": "$2a$12$APovxajp4ES5jC6Cw/4okO.FJDFklLEDJNGkYcWoxCKh8AVXQ29Gm",

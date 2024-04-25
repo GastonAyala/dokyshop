@@ -12,12 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       address.hasOne(models.user, {
-        foreignKey: 'addressId',
-        as: 'users'
+        foreignKey: 'userId',
+        as: 'user'
       })
     }
   }
   address.init({
+    addressId: DataTypes.INTEGER,
     street: DataTypes.STRING,
     city: DataTypes.STRING,
     province: DataTypes.STRING,
@@ -25,6 +26,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'address',
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE'
   });
   return address;
 };

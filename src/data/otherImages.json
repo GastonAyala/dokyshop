@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "view": "home",
+        "images": [
+            {
+                "file": "FAQ.jpg"
+            },
+            {
+                "file": "vet-gato.jpg"
+            },
+            {
+                "file": "accesorios.png"
+            },
+            {
+                "file": "indumentaria.png"
+            },
+            {
+                "file": "juguetes.png"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "view": "results",
+        "images": [
+            {
+                "file": "fondoSearchNotFound.jpg"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "view": "login",
+        "images": [
+            {
+                "file": "fondo-login.jpeg"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "view": "register",
+        "images": [
+            {
+                "file": "fondo-login.jpeg"
+            }
+        ]
+    }
+]

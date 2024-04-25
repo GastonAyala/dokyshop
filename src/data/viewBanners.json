@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "view": "home",
+        "banners": [
+            {
+                "file": "carrousel-2.png",
+                "title": null,
+                "subtitle": null
+            },
+            {
+                "file": "carrousel-1.png",
+                "title": null,
+                "subtitle": null
+            }
+        ]
+    }
+]

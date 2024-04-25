@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "total": 21400,
+        "user": "omarp@gmail.com",
+        "state": "pending",
+        "products": [
+            {
+                "name": "Correa Star Wars Darth Vader Perro Peq",
+                "quantity": 2
+            },
+            {
+                "name": "Juguete Para Perro Kong Squeezz Hueso Medium C/Sonajero",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "total": 75000,
+        "user": "gastonayala@gmail.com",
+        "state": "completed",
+        "products": [
+            {
+                "name": "Rascador Para Gatos 2 Pisos 80 Cm",
+                "quantity": 1
+            }
+        ]
+    }
+]

@@ -21,15 +21,14 @@ module.exports = {
       roleId: {
         type: Sequelize.INTEGER,
         defaultValue: '1',
-
         references: {
           model: {
             tableName:'roles'
           },
           key: 'id'
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       avatar: {
         type: Sequelize.STRING(30),
@@ -37,18 +36,6 @@ module.exports = {
       },
       phone: {
         type: Sequelize.INTEGER(13)
-      },
-      addressId: {
-        type: Sequelize.INTEGER,
-        
-        references: {
-          model: {
-            tableName:'addresses'
-          },
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
