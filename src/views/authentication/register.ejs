@@ -1,71 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head',  {view: "Registrate", bootstrapCSSDisabled:true, gliderCSSDisabled:true}) %>
+<%- include('../partials/head', {view: "Registrate" , bootstrapCSSDisabled:true, gliderCSSDisabled:true}) %>
+
     <body>
         <%- include('../partials/header') %>
-        
-        <main class="register-main">
-            <h1>Formulario de registro</h1>
-        
-        <form class="form-principal" action="/autenticacion/registro" method="post" enctype="multipart/form-data">
-                <div class="imgProductForm">
-                    <label for="productImg" class="form-label">
-                      <img src="/images/avatar/default/perfilUser.png" alt="default product img" />
-                    </label>
-                    <input class="registerAvatarInput" type="file" class="form-control" name="avatar" id="productImg"/>
-                    <p class="text-danger-error registerAvatarError"><%= locals.errors?.avatar?.msg %></p>
+
+            <main class="register-main">
+                <div class="contenedor-registro">
+                    <form class="form-principal" action="/autenticacion/registro" method="post"
+                        enctype="multipart/form-data">
+                        <h1>Registrarse</h1>
+                        <div class="imgProductForm">
+                            <label for="productImg" class="form-label">
+                                <img src="/images/avatar/default/perfilUser.png" alt="default product img" />
+                            </label>
+                            <input class="registerAvatarInput" type="file" class="form-control" name="avatar"
+                                id="productImg" />
+                            <p class="text-danger-error registerAvatarError">
+                                <%= locals.errors?.avatar?.msg %>
+                            </p>
+                        </div>
+
+                        <div class="contenedor-form">
+                            <div class="nombre">
+                                <% if (locals.errors) { %>
+                                        <p class="text-danger-error">
+                                            <%= locals.errors?.name?.msg %>
+                                        </p>
+                                        <% } %>
+                                            <input type="text" class="" name="name" placeholder="Nombre completo"
+                                                id="nombre" value="<%= locals.old?.name %>" />
+                            </div>
+
+                            <div class="email">
+                                <% if (locals.errors) { %>
+                                        <p class="text-danger-error">
+                                            <%= locals.errors?.email?.msg %>
+                                        </p>
+                                        <% } %>
+                                            <input class="" type="email" name="email" placeholder="Ingrese su email"
+                                                id="email" value="<%= locals.old?.email %>" />
+                            </div>
+
+                            <div class="contrasenia">
+                                <% if (locals.errors) { %>
+                                        <p class="text-danger-error">
+                                            <%= locals.errors?.password?.msg %>
+                                        </p>
+                                        <% } %>
+                                            <input class="" type="password" name="password" id="contrasenia"
+                                                placeholder="Contraseña" value="<%= locals.old?.password %>" />
+                            </div>
+                        </div>
+
+                        <div class="contenedor-button">
+                            <div class="boton">
+                                <button class="submit" type="submit">Crear cuenta</button>
+                            </div>
+                            <div class="inicio">
+                                <p>¿Ya tienes cuenta?</p>
+                                <a class="inicio-session" href="/autenticacion/iniciar">INICIAR SESIÓN</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                
-                <div class="contenedor-form" >
-                    <div class="nombre">
-                        <% if (!locals.errors) { %>
-                          <label for="nombre">Nombre Completo</label>  
-                        <% } else { %>
-                          <p class="text-danger-error"><%= locals.errors?.name?.msg %></p>  
-                        <% }  %>
-                        <input type="text" class="" name="name" placeholder="Nombre Completo" id="nombre" value="<%= locals.old?.name %>">
-                        
-                    </div>
-
-                    <div class="email">
-                        <% if (!locals.errors) { %>
-                           <label for="email">Email</label>
-                        <% } else { %>
-                           <p class="text-danger-error"><%= locals.errors?.email?.msg %></p>
-                        <% }  %>
-                        <input class="" type="email" name="email" placeholder="Ingrese su email" id="email" value="<%= locals.old?.email %>">
-                    </div>
-
-                    <div class="contrasenia">
-                        <% if (!locals.errors) { %>
-                            <label for="contrasenia">Contraseña</label>
-                        <% } else { %>
-                             <p class="text-danger-error"><%= locals.errors?.password?.msg %></p>
-                        <% }  %>
-                        <input class="" type="password" name="password" id="contrasenia" placeholder="contraseña" value="<%= locals.old?.password %>">
-                    </div>   
-                </div>
-
-                <div class="recaptcha">
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                <div class="g-recaptcha" data-sitekey="6Lcq3V0pAAAAAFNz9XNCyzY9K-QFdt0p5Wau2LVf"></div>
-                
-            </div>
-                <div class="contenedor-button">
-                    <div class="boton">
-                        <button class="submit" type="submit">Crear cuenta</button>
-                        <a href="https://api.whatsapp.com/send?phone=1122882788" class="whatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                    <div class="inicio">   
-                        <p>¿Ya tienes cuenta?</p>
-                        <a class="inicio-session" href="/autenticacion/iniciar">INICIAR SESION</a>
-                    </div>
-                </div>
-            </form>
-            
-        </main>
-        <%- include('../partials/footer') %>
-
-        <%- include('../partials/scripts', {disabledBootstrapJS:true, disabledGliderJS:true}) %>
+            </main>
+            <%- include('../partials/footer') %> <%- include('../partials/scripts', {disabledBootstrapJS:true,
+                    disabledGliderJS:true}) %>
     </body>
+
 </html>
