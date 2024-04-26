@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      order.belongsToMany(models.product, {
+      orderproduct.belongsToMany(models.product, {
         through: 'orderproducts',
       })
-      product.belongsToMany(models.order, {
+      orderproduct.belongsToMany(models.order, {
         through: 'orderproducts',
       })
     }

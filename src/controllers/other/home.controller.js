@@ -1,6 +1,11 @@
-const { loadData } = require('../../data')
+const db = require('../../database/models');
 
-module.exports = (req, res)=>{
-    const product = loadData()
-    res.render("other/home", {product})
+module.exports = (req, res) => {
+    db.product.findAll()
+    .then(products => {
+        res.render("other/home", {products})
+    })
+    .catch(err => {
+        res.send(err.message)
+    })
 }
