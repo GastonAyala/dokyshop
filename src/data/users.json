@@ -83,5 +83,35 @@
       "avatar": "avatar-1713924989846.png",
       "phone": "",
       "addresses": {}
+   },
+   {
+      "id": 7,
+      "name": "ADRIANA ESCUBILLA",
+      "email": "adriana@gmail.com",
+      "password": "$2a$12$7TpuLEmzO.7P7e40mo.3AeHi2pu.WxoBeAQrOMl3ZNfuJwznJ5mi6",
+      "role": "ADMIN",
+      "avatar": "perfilUser.png",
+      "phone": "",
+      "addresses": {
+         "street": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
+   },
+   {
+      "id": 8,
+      "name": "ADRIANA ESCUBILLA",
+      "email": "adrianaa@gmail.com",
+      "password": "$2a$12$3jYHnLFFUyZsZqeLV2iJTOtDm/XOeGQeBA19iE.bB3ISaDWrEXsXu",
+      "role": "ADMIN",
+      "avatar": "perfilUser.png",
+      "phone": "",
+      "addresses": {
+         "street": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
    }
 ]
