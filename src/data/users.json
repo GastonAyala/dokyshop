@@ -83,5 +83,20 @@
       "avatar": "avatar-1713924989846.png",
       "phone": "",
       "addresses": {}
+   },
+   {
+      "id": 7,
+      "name": "ADRIANA ESCUBILLA",
+      "email": "adrianaa@gmail.com",
+      "password": "$2a$12$OIT6uB9qp8u5nSCyYlJskufb4Z0V/yZkHYPJLZcz7Z5bZPZL97iqy",
+      "role": "ADMIN",
+      "avatar": "perfilUser.png",
+      "phone": "",
+      "addresses": {
+         "street": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
    }
 ]
