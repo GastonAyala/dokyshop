@@ -11,6 +11,19 @@ body {}
     background-size: cover;
 }
 
+.imgProductForm input[type="file"]::file-selector-button {
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: var(--amarillo);
+    transition: 1s;
+  }
+  
+.imgProductForm input[type="file"]::file-selector-button:hover {
+    background-color:var(--naranjaig);
+    color: var(--blanco);
+}
+
 main .contenedor-registro{
     padding-top: 2em;
 }
@@ -28,7 +41,6 @@ main.register-main h1 {
     width: 100%;
     margin: 0 auto;
     height: auto;
-    /* padding: 30px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -48,7 +60,7 @@ main.register-main form.form-principal {
 }
 
 main.register-main form.form-principal .registerAvatarInput {
-    width: 132px;
+    width: 135px;
     text-align: center;
 }
 
@@ -156,7 +168,6 @@ main.register-main form.form-principal .contenedor-button p {
     margin: 20px 0;
     width: 50%;
     text-align: center;
-    font-weight: bold;
 }
 
 main.register-main form.form-principal .contenedor-button a.inicio-session {

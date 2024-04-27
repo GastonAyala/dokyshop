@@ -4,7 +4,7 @@ const { loadData } = require('../../data');
 const { compareSync } = require('bcryptjs');
 const path = require('path');
 const regExPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
-const expReg = /.png|.jpg|.jpeg|.webp/i;
+const expReg = /.png|.jpg|.jpeg|.webp|.gif/i;
 
 
 const fieldEmaildDefault = body("email")
