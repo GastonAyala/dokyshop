@@ -1,12 +1,60 @@
-const { loadData } = require("../../data")
-
+const db = require('../../database/models');
+const { Op }  = require('sequelize');
 
 module.exports = (req, res) => {
-    const {productSearched} = req.query
-    const products = loadData()
+    let {productSearched, page, offset} = req.query
 
-    productsFilter = products.filter(p => p.title.toLowerCase().includes(productSearched.toLowerCase()) || p.description.toLowerCase().includes(productSearched.toLowerCase()))
+    if(!page) page = 1
+    
+    if(!offset) offset = 0
 
+    db.product.findAndCountAll({
+        limit: 5,
+        offset: +offset,
+        where: {
+            [Op.or]: {
+                title: {
+                    [Op.like] : `%${productSearched}%`
+                },
+                description: {
+                    [Op.like] : `%${productSearched}%`
+                },
+            },
+        },
+        attributes: {
+            exclude: [
+                "categoryId",
+                "subcategoryId",
+                "description",
+                "sale",
+                "quantity",
+                "colorId",
+                "available",
+                "createdAt",
+                "updatedAt"
+            ],
+        },
+    })
+    .then(products => {
+        const count = products.count;
+        const totalPages = count/5;
+        const plusPage = +page + 1;
+        const plusOffset = +offset + 5
+        const lessPage = +page - 1;
+        const lessOffset = +offset - 5
 
-    res.render("other/results", {products: productsFilter, productSearched})
-}
+        res.render("other/results", {
+            products: products.rows,
+            count,
+            productSearched,
+            page : plusPage,
+            lessPage,
+            lessOffset,
+            offset: plusOffset,
+            totalPages
+        })
+    })
+    .catch(err => {
+        res.send(err.message)
+    })
+};
