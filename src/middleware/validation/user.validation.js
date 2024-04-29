@@ -1,6 +1,6 @@
 const { body } = require("express-validator");
 const path = require('path')
-const regExpFiles = /.png|.jpg|.jpeg|.webp/i;
+const regExpFiles = /.png|.jpg|.jpeg|.webp|.gif/i;
 
 const fieldAvatar = body('avatar')
 .custom((value, {req}) => {
