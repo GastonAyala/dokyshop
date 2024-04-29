@@ -3,13 +3,11 @@
 }
 
 .main-home .carousel .carousel-inner {
-    max-height: 400px;
 }
 
 .main-home .carousel .carousel-item img {
-    width: 90%;
-    height: 100%;
-    object-fit: contain;
+    width: 100%;
+    max-height: 600px;
 }
 
 .main-home .icons-container {
@@ -51,15 +49,12 @@
     text-align: center;
 }
 
-.main-home .container-products .product .figure{
-position: relative;
-}
+.main-home .container-products .product .figure{position: relative;}
 
 .main-home .container-products .product .figure .product-image {
     height: 300px;
     width: 306px;
     border-radius: 21px;
-    margin: 0 20px;
 }
 
 .main-home .container-products .product .figure .product-name {
@@ -369,6 +364,7 @@ position: relative;
     }
 
     .main-home .container-products .product .figure .product-image{
+    margin: 0 10px;
     }
 
     .main-home .container-products .product .figure .product-name{
@@ -382,7 +378,6 @@ position: relative;
 
     .carousel-item img {
         width: 100%;
-        height: 50vh;
         object-fit: fill; /* O el estilo que desees, puede ser contain en lugar de cover */
     }
     
@@ -474,6 +469,10 @@ position: relative;
         display: block;
     }
 
+    .main-home .container-products .product .figure{
+        margin: 40px 40px;
+    }
+
     .main-home .container-products .product .figure .product-image{
         filter: brightness(1) saturate(1) contrast(0.8);
         transform: scale(1) translateZ(0);
@@ -486,11 +485,12 @@ position: relative;
         transform: scale(1.05) translateZ(0);
     }
 
-    .main-home .container-products .product .figure .product-name{
+    .main-home .container-products .product .figure .product-name{ 
     }
 
     .main-home .container-products .product .figure .product-image{
-}
+       
+    }
     .main-home .recommendedProd-container h2 {
     }
     
