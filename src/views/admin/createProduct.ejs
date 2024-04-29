@@ -51,21 +51,41 @@
             placeholder=""
           />
         </div>
+
+
+        <!-----category-->
         <div class="createProductForm-category col-6 my-3">
           <label for="category" class="form-label"
-            >Categoría <span class="text-danger">*</span></label
-          >
+            >Categoría <span class="text-danger">*</span></label>
           <select
             class="form-select form-select-sm text-center"
             name="category"
             aria-label="Desplegar las opciones"
-            id="category"
-          >
-            <option value="Indumentaria">Indumentaria</option>
-            <option value="Accesorios">Accesorios</option>
-            <option value="Juguetes">Juguetes</option>
+            id="category">
+            <% category.forEach(c=> { %>
+              <option <%=locals.old?.category===c.name ? "selected" : null %> value="<%= c.id %>"><%= c.name %>
+              </option>
+              <% }) %>
           </select>
         </div>
+
+        <!-----category-->
+        <div class="createProductForm-category col-6 my-3">
+          <label for="subcategory" class="form-label"
+            >Categoría <span class="text-danger">*</span></label>
+          <select
+            class="form-select form-select-sm text-center"
+            name="subcategory"
+            aria-label="Desplegar las opciones"
+            id="subcategory">
+            <% subcategory.forEach(sc=> { %>
+              <option <%=locals.old?.subcategory===sc.name ? "selected" : null %> value="<%= sc.id %>"><%= sc.name %>
+              </option>
+              <% }) %>
+          </select>
+        </div>
+
+        <!----description-->
         <div class="createProductForm-description col-6 my-3">
           <label for="description" class="form-label"
             >Descripción <span class="text-danger">*</span></label
@@ -128,6 +148,13 @@
             placeholder="Colores separados por comas"
           />
         </div>
+
+        <!---available-->
+        <div class="mb-3 form-check form-switch col-4">
+          <input class="form-check-input" type="checkbox" id="available" name="available" checked>
+          <label class="form-check-label" for="available">Disponible</label>
+        </div>
+
         <button
           type="submit"
           class="createdProd-CreateBtn btn btn-success col-3 my-3 mx-auto">

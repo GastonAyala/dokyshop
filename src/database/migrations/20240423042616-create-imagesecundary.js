@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       file: {
-        type: Sequelize.STRING(35)
+        type: Sequelize.STRING(45)
       },
       productId: {
         type: Sequelize.INTEGER,
