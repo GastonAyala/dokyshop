@@ -506,7 +506,7 @@
 @media (min-width: 769px) {
     .carousel-item img {
         width: 100%;
-        height: 50vh;
+        /* height: 50vh; */
         object-fit: fill;
     }
 
