@@ -73,6 +73,10 @@ main.login-main form.form-principal .recordar{
   margin: 0px 20px 0px 10px;
 }
 
+main.login-main form.form-principal .recordar .div{
+  display: flex;
+}
+
 main.login-main form.form-principal .recordar input.checkbox{}
 
 main.login-main form.form-principal .recordar label.recordar{
@@ -123,9 +127,9 @@ main.login-main form.form-principal .contenedor-button .inicio a.crear-cuenta{
   display: block;
   text-decoration: none;
   text-align: center;
-  font-size: 1rem;
+  font-size: 14px;
   color: var(--naranja);
-  font-weight: 600;
+  font-weight: bold;
   padding-bottom: 10px;
 }
 

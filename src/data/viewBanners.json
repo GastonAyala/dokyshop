@@ -4,12 +4,17 @@
         "view": "home",
         "banners": [
             {
-                "file": "carrousel-2.png",
+                "file": "banner-1.png",
                 "title": null,
                 "subtitle": null
             },
             {
-                "file": "carrousel-1.png",
+                "file": "banner-2.png",
+                "title": null,
+                "subtitle": null
+            },
+            {
+                "file": "banner-3.png",
                 "title": null,
                 "subtitle": null
             }
