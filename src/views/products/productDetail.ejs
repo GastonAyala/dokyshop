@@ -5,29 +5,31 @@
     <%- include('../partials/header') %>
 
     <main class="productDetail">
-
-        
-
         <div class="thumbnails-container">
-            <figure class="thumb-img-container"><img class="thumb-img" src="/images/products/<%= product.imagePrimary%>" alt="producto 1"></figure>
-            <figure class="thumb-img-container"><img class="thumb-img" src="/images/products/<%= product.imagesSecondary%>" alt="producto 1"></figure>
-           
+            <figure class="thumb-img-container"><img class="thumb-img" src="/images/products/<%= product.imagePrincipal%>" alt="producto 1"></figure>
+            
+            <% product.imagesecondaries.forEach(img => { %>
+                <figure class="thumb-img-container">
+                    <img class="thumb-img" src="/images/products/<%= img.file%>" alt="product image secondary">
+                </figure>
+            <% }) %>
         </div>
-        
+    
         <div class="glider-contain prodDetail-glider-container">
             <div class="glider prodDetail-glider">
+                
               <div class="prodDetail-content-container">
                 <figure class="prodDetail-image-container">
-                    <img src="/images/products/<%= product.imagePrimary%>" alt="producto 1">
+                    <img src="/images/products/<%= product.imagePrincipal%>" alt="producto 1">
                 </figure>
               </div>
-    
-              <div class="prodDetail-content-container">
-                <figure class="prodDetail-image-container">
-                    <img src="/images/products/<%= product.imagesSecondary%>" alt="producto 1">
-                </figure>
-              </div>
-
+              <% product.imagesecondaries.forEach(img => { %>
+                <div class="prodDetail-content-container">
+                  <figure class="prodDetail-image-container">
+                      <img src="/images/products/<%= img.file%>" alt="producto 1">
+                  </figure>
+                </div>
+             <% }) %>
         </div>
           
             <button aria-label="Previous" class="glider-prev">
@@ -38,6 +40,7 @@
             </button>
             <div role="tablist" class="dots"></div>
         </div>
+
         <div class="prodDetail-container">
             <div class="breadcrumb-container">
                 <nav class="breadcrum">
@@ -80,18 +83,16 @@
 
         <div class="relatedProduct-container">
             <h2 class="relatedProduct-title">Productos relacionados</h2>
-            
-            
-        
-             
+
            <% for( let i = 0; i < listProduct.length && i< 4; i++ ) { %>
             <% const product = listProduct[i] %>
              <article class="relatedProd">
                 <figure class="relatedProd-img-container">
                     <a href="/productos/detalle/<%= product.id%>">
-                        <img class="relatedProd-img" src="/images/products/<%= product.imagePrimary%>" alt="related product 1">
+                        <img class="relatedProd-img" src="/images/products/<%= product.imagePrincipal%>" alt="related product 1">
                     </a>
                 </figure>
+
                 <div class="relatedProd-description">
                     <a href="/productos/detalle/<%= product.id%>">
                         <h5><%= product.title%></h5>
@@ -100,14 +101,7 @@
                     <a class="relatedProd-buycart" href="/carrito-compra"><i class="fa-solid fa-cart-plus"></i></a>
                 </div>    
             </article>
-              
-             <% } %>
-
-           
-
-            
-
-           
+            <% } %>
         </div>
         
     </main>

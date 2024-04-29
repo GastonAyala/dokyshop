@@ -11,18 +11,26 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      product.hasMany(models.imagesecondary, {
+        foreignKey: 'productId',
+        as: 'imagesecondaries'
+      })
+
       product.belongsTo(models.category, {
         foreignKey: 'categoryId',
         as: 'category'
       })
+
       product.belongsTo(models.subcategory, {
         foreignKey: 'subcategoryId',
         as: 'subcategory'
       })
+
       product.belongsTo(models.color, {
         foreignKey: 'colorId',
         as: 'color'
       })
+
       product.belongsToMany(models.order, {
         through: 'orderproducts',
         as: 'orders'

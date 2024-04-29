@@ -1,11 +1,42 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require('../../database/models');
 
-const { loadData } = require('../../data')
 module.exports = (req, res)=>{
     const {id} = req.params;
-    const products = loadData();
-    const productFind = products.find(p => p.id === +id);
-
-    const listProduct = loadData()
-    res.render("products/productDetail", {product : productFind, toThousand, listProduct})
+    db.product.findByPk(id,{
+        attributes: {
+            exclude: [
+                "createdAt",
+                "updatedAt"
+            ]
+        },
+        include: [{
+            association: "imagesecondaries",
+            attributes: ["file"]
+        }],
+    })
+    .then(product => {
+        db.product.findAll({
+            limit: 4,
+            attributes: {
+                exclude: [
+                    "categoryId",
+                    "subcategoryId",
+                    "description",
+                    "sale",
+                    "quantity",
+                    "colorId",
+                    "available",
+                    "createdAt",
+                    "updatedAt"
+                ]
+            }
+        })
+        .then(products => {
+            res.render("products/productDetail", {product, toThousand, listProduct: products})
+        })
+        .catch(err => {
+            err.message
+        })
+    })
 }

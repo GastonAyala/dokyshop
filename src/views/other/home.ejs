@@ -85,11 +85,10 @@
             <% for( let i = 0; i < products.length && i< 4; i++ ) { %>
                 <% const p = products[i] %>
              
-         
             <article class="recommendedProd">
                 
                 <figure class="recommended-img-container">
-                    <a href="/productos/detalle/<%= p.id %>"><img src="/images/products/<%= p.imagePrimary%>" alt="recommended products" ></a>
+                    <a href="/productos/detalle/<%= p.id %>"><img src="/images/products/<%= p.imagePrincipal%>" alt="recommended products" ></a>
                 </figure>
                 <div class="recommendedProd-description">
                     <a href="/productos/detalle/<%= p.id %>">

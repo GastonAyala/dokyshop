@@ -1,7 +1,7 @@
 'use strict';
 const productsJSON = require('../../data/product.json');
 
-const imagesecundariesDBMapped = productsJSON.map(p => {
+const imagesecondariesDBMapped = productsJSON.map(p => {
   const images = p.imagesSecondary.map(img => {
     return {
       file: img,
@@ -15,10 +15,10 @@ const imagesecundariesDBMapped = productsJSON.map(p => {
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('imagesecundaries', imagesecundariesDBMapped, {});
+    await queryInterface.bulkInsert('imagesecondaries', imagesecondariesDBMapped, {});
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('imagesecundaries', null, {});
+    await queryInterface.bulkDelete('imagesecondaries', null, {});
   }
 };
