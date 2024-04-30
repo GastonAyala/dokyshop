@@ -61,6 +61,37 @@ Armar la Daly en base a lo que hablamos hoy.
 Hacer lo de las retrospectivas, corregir las incidencias del sprint 1 y armar la del 2
 Tratar de terminar de ver lo del proyecto, para poder armar los partials.
 
-# DAILY 2- 25/02
-- 
+# DAILY 2- 27/04
+## Ricardina:
+- que hice ayer-:
+Implemente cambiar los estilos de la vista Login y Register para que esten lo mas parecido posible.
+- Que estoy haciendo hoy:
+Cambiando las fotos del Home ya que no pertenecer a un banner y se deforman las fotos.- 
+- Que impedimentos tube:
+No pude cambiar las dimenciones del Recaptcha para que se adapte a Movile, y optamos por sacarlo por el momento. 
+
+## Marcos:
+- Que hice ayer-:
+Comence con la implementacion del UPDATE, refactorizar el Edith Controller.
+- Que estoy haciendo hoy:
+Continua con la implementacion del Controller Edit.- 
+- Que impedimentos tuve:
+Estoy un poco atrasado en la clase, estoy viendo los temas que competa para adquirir mejor los conocimientos y poder cumplimplementar mi incidencia a la brevedad.
+
+## Gaston:
+- Que hice ayer-:
+Refactorice la vista de Home para que consuma la info de la Base de Datos.- 
+Refactorice la vista de Detalle de Producto para que consuma la info de la Base de Datos.-
+- Que estoy haciendo hoy:
+Implemente el Search con los operadores Like y Or.-
+Desarrollando el paginador de los producto.- 
+
+## Adriana:
+- Que hice ayer-:
+Refactorice la vista de Crear producto para que consuma la info de la Base de Datos.-
+Creando la funcionalidad de crear producto.-  
+- Que estoy haciendo hoy:
+Agregar la implementacion de agregar imagenes Principal y secundarias.-
+- WQue impedimentos tuve:
+No podia agregar las imagenes secundarias por un pequeño error en constraint en migraciones de las imagenes secundarias, que aceptaba un string maximo de 35 caracteres, y con esa modificacion se pudo solicionar.-
 
