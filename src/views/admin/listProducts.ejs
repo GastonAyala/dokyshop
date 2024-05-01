@@ -15,14 +15,22 @@
   <div class="dash-filter">
     <form class="dash-filterForm" action="/admin/productos/buscar" method="get">
       <span>Mostrar:</span>
-      <select name="filterSelect" id="filterSelect">
+      <select name="categorySearch" id="categorySearch">
         <% categories.forEach(c => { %>
-          <option value="<%= c.name %>"><%= c.name %></option>
-        <% }) %>
-        
-        <% subcategories.forEach(sc => { %>
-          <option value="<%= sc.name %>"><%= sc.name %></option>
-        <% }) %>
+          <option value="<%= c.id %>"><%= c.name %></option>
+        <% }) %>        
+      </select>
+      <button type="submit">Filtrar</button>
+    </form>
+  </div>
+
+  <div class="dash-filter">
+    <form class="dash-filterForm" action="/admin/productos/buscar" method="get">
+      <span>Mostrar:</span>
+      <select name="subcategorySearch" id="subcategorySearch">
+        <% subcategories.forEach(c => { %>
+          <option value="<%= c.id %>"><%= c.name %></option>
+        <% }) %>        
       </select>
       <button type="submit">Filtrar</button>
     </form>
@@ -41,7 +49,7 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Imagen</th>
-      <th scope="col">Imagen Secundarias</th>
+      <th scope="col">Imagenes Secundarias</th>
       <th scope="col">Titulo</th>
       <th scope="col">Categoría</th>
       <th scope="col">Subcategoría</th>
@@ -79,8 +87,28 @@
       </td>
       <td><%= p.available %></td>
       <td>
-        <div class="dash-actionButtons" role="group">
-          <a class="infoButton" href="/productos/detalle/<%= p.id %>">Info</a>
+        <div class="dash-actionButtons btn-group" role="group">
+          <button class="infoButton btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Info</button>
+          <ul class="dropdown-menu bg-primary text-light">
+            <div class="d-flex">
+              <table>
+                <thead>
+                  <tr >
+                    <th class="text-light">Creado en:</th>
+                    <th class="text-light">Actualizado en:</th>
+                    <th class="text-light">Eliminado en:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><%= p.createdAt.toISOString().split('T')[0] %></td>
+                    <td><%= p.updatedAt.toISOString().split('T')[0] %></td>
+                    <td><%= p.deletedAt?.toISOString().split('T')[0] %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </ul>
           <a class="editButton" href="/admin/editar-producto/<%= p.id %>">Editar</a>
           <a class="deleteButton" href="/admin/eliminar?id=<%= p.id %>&title=<%= p.title %>">Eliminar</a>
         </div>
