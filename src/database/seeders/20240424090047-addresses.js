@@ -4,7 +4,6 @@ const usersJSON = require('../../data/users.json');
 
 const addressesDBMapped = usersJSON.map(u => {
   return {
-    userId: u.id,
     street: u.addresses.street && u.addresses.street !== "" ? u.addresses.street : null,
     city: u.addresses.city && u.addresses.city !== "" ? u.addresses.city : null,
     province: u.addresses.province && u.addresses.province !== "" ? u.addresses.province : null,
