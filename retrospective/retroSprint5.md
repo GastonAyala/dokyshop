@@ -33,3 +33,5 @@ organizarnos mejor.-
 - No estar al dia con las tareas.-
 - No terminar las tareas a tiempo.-
 - Responsabilizar a los demas integrantes mis tareas.- 
+
+![estrellaRetro-5.jpg](/retrospective/estrellaRetro-4.jpg)
