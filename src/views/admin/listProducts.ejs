@@ -67,7 +67,9 @@
   <% products.forEach(p => { %>
     <tr>
       <th scope="row"><%=p.id%></th>
-      <td><img class="dash-img-product" src="/images/products/<%= p.imagePrincipal %>" alt="product image"/></td>
+      <td>
+        <img class="dash-img-product" src="/images/products/<% if (p.imagePrincipal === "no-image.png") { %>default/<% }%><%= p.imagePrincipal %>" alt="product image"/>
+      </td>
       
       <td>
          <% p.imagesecondaries.forEach(img => { %>
