@@ -1,0 +1,60 @@
+<h1>Lista de ordenes</h1>
+
+<table class="listOrdertable">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Total</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Productos</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% orders.forEach(o => { %>
+            <tr>
+                <th class="text-warning" scope="row"><%= o.id %></th>
+                <td class="text-primary"><%= o.state === 'pending' ? 'pendiente' : 'completado' %></td>
+                <td ><%= o.total %></td>
+                <td><%= o.user.email %></td>
+                <td>
+                  <ul>
+                    <% for( let i = 0; i < o.products.length; i++ ) { %>
+                    <li>
+                        <%= o.products[i].title %>
+                    </li>
+                    <% } %>
+                  </ul>
+                </td>
+                <td>
+                    <div class="dashOrder-Actions btn-group gap-2 px-5"  role="group">
+                        <button class="infoButton btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Info</button>
+                        <ul class="dropdown-menu bg-primary text-light">
+                          <div class="d-flex">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th class="text-light">Creado en:</th>
+                                  <th class="text-light">Actualizado en:</th>
+                                  <th class="text-light">Eliminado en:</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><%= o.createdAt.toISOString().split('T')[0] %></td>
+                                  <td><%= o.updatedAt.toISOString().split('T')[0] %></td>
+                                  <td><%= o.deletedAt?.toISOString().split('T')[0] %></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </ul>
+                        <a class="editUserButton" href="/admin/editar-orden/<%= o.id %>">Editar</a>
+                        <a class="deleteUserButton" href="/admin/eliminar-orden/?id=<%= o.id %>">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

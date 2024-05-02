@@ -33,6 +33,8 @@ module.exports = (sequelize, DataTypes) => {
 
       product.belongsToMany(models.order, {
         through: 'orderproducts',
+        foreignKey: 'productId',
+        otherKey: 'orderId',
         as: 'orders'
       })
     }
@@ -51,6 +53,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'product',
+    onUpdate: 'CASCADE',
+    onDelete: "CASCADE",
     paranoid: true
   });
   return product;

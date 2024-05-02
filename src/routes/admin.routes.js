@@ -8,6 +8,7 @@ const { checkIsAdmin } = require('../middleware');
 
 const { list, search, create, store, edit, update, deleteProduct, destroy } = require('../controllers/admin');
 const { userList, userEdit, editProcess, deleteUser, destroyUser, userSearch } = require('../controllers/admin/users');
+const { orderList } = require('../controllers/admin/orders');
 
 // /admin
 router.get("/productos", checkIsAdmin, list);
@@ -38,5 +39,9 @@ router.put("/editar-usuario/:id", uploadAvatar.fields([{name: "avatar", maxCount
 
 router.get("/eliminar-usuario", checkIsAdmin, deleteUser)
 router.delete("/eliminar-usuario/:id", destroyUser)
+
+
+// admin/ordenes
+router.get("/ordenes", checkIsAdmin, orderList);
 
 module.exports = router;
