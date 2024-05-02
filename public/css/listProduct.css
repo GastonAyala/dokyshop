@@ -1,10 +1,12 @@
+.list-product {height: 100%;}
+
 .list-product .listProd-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 50px;
 }
 
 .list-product .listProd-container h2 {

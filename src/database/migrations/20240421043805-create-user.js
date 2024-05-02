@@ -37,6 +37,18 @@ module.exports = {
       phone: {
         type: Sequelize.INTEGER(13)
       },
+      addressId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: {
+            tableName: "addresses"
+          },
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

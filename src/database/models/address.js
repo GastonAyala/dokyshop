@@ -12,13 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       address.hasOne(models.user, {
-        foreignKey: 'userId',
-        as: 'user'
+        foreignKey: 'addressId',
+        as: 'users'
       })
     }
   }
   address.init({
-    addressId: DataTypes.INTEGER,
     street: DataTypes.STRING,
     city: DataTypes.STRING,
     province: DataTypes.STRING,
