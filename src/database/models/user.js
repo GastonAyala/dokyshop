@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'addressId',
         as: 'address'
       })
+
+      user.hasMany(models.order, {
+        foreignKey: 'userId',
+        as: 'orders'
+      })
     }
   }
   user.init({
@@ -32,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'user',
+    paranoid: true,
     onUpdate: 'CASCADE',
     onDelete: 'CASCADE'
   });
