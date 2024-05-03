@@ -18,6 +18,24 @@
   </div>
 </div>
 
+<% if (!orders.length) { %>
+    <div class="col-12 text-center text-danger dashSearchNoResults">
+        <h3>*No hay ordenes que coincidan con la búsqueda*</h3>
+    </div>
+<% } %>
+
+<% if (dashOrderSearch) { %>
+    <div class="col-12 text-center dashSearchTitle">
+        <h2>Resultado de la busqueda: <%= dashOrderSearch %></h2>
+    </div>
+<% } %>
+
+<% if (statusFilter) { %>
+    <div class="col-12 text-center dashSearchTitle">
+        <h2>Resultado del filtrado del estado: <%= statusFilter == 'pending' ? 'PENDIENTE' : statusFilter == 'completed' ? "COMPLETO" : "CANCELADO" %></h2>
+    </div>
+<% } %>
+
 <table class="listOrdertable">
     <thead>
         <tr>
@@ -47,9 +65,9 @@
                     <% } %>
                   </ul>
                 </td>
-                <td><%= o.createdAt %></td>
-                <td><%= o.updatedAt %></td>
-                <td><%= o.deletedAt %></td>
+                <td><%= o.createdAt.toISOString().split('T')[0] %></td>
+                <td><%= o.updatedAt.toISOString().split('T')[0] %></td>
+                <td><%= o.deletedAt?.toISOString().split('T')[0] %></td>
             </tr>
         <% }) %>
     </tbody>
