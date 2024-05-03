@@ -47,9 +47,9 @@
                     <% } %>
                   </ul>
                 </td>
-                <td><%= o.createdAt.toISOString().split('T')[0] %></td>
-                <td><%= o.updatedAt.toISOString().split('T')[0] %></td>
-                <td><%= o.deletedAt?.toISOString().split('T')[0] %></td>
+                <td><%= o.createdAt %></td>
+                <td><%= o.updatedAt %></td>
+                <td><%= o.deletedAt %></td>
             </tr>
         <% }) %>
     </tbody>
