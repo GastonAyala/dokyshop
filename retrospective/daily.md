@@ -61,7 +61,7 @@ Armar la Daly en base a lo que hablamos hoy.
 Hacer lo de las retrospectivas, corregir las incidencias del sprint 1 y armar la del 2
 Tratar de terminar de ver lo del proyecto, para poder armar los partials.
 
-# DAILY 2- 27/04
+#  SPLIN 6 -- DAILY 2- 27/04
 ## Ricardina:
 - que hice ayer-:
 Implemente cambiar los estilos de la vista Login y Register para que esten lo mas parecido posible.
@@ -94,4 +94,41 @@ Creando la funcionalidad de crear producto.-
 Agregar la implementacion de agregar imagenes Principal y secundarias.-
 - WQue impedimentos tuve:
 No podia agregar las imagenes secundarias por un pequeño error en constraint en migraciones de las imagenes secundarias, que aceptaba un string maximo de 35 caracteres, y con esa modificacion se pudo solicionar.-
+
+
+# DAILY 3- 03/05/2024
+## Ricardina:
+- que hice ayer-:
+Implementando la funcionalidad de preguntas frecuentes con su correspondiente Vista (dandole estilos con css), implementacion de la ruta y contolador.
+- Que estoy haciendo hoy:
+Sigo con la implementacion de la vista Preguntas frecuentes.- 
+- Que impedimentos tuve:
+Tuve inconvenientes con la iteración en las clases de Bootstrap, me daba problemas porque se repetían los estilos al presionar el botón para desplegar (lo hacían todos a la misma vez), lo solucioné dándole al json un nuevo campo para iterarlo en el forEach.-
+
+## Marcos:
+- Que hice ayer:
+Terminando la funcionalidad del UPDATE, con la implementacion de cargar las imagenes secundarias.
+- Que estoy haciendo hoy:
+Continue con la carga de la imagenes secundarias y lo pude implementar.- 
+- Que impedimentos tuve:
+No pude desarrollar borrar las imagenes secundarias una ves cargadas.-
+
+## Gaston:
+- Que hice ayer-:
+Refactorice la Vista "Order" y la funcionalidad de buscador con su correspondiente controlador conjuntamente a base de datos.-
+Refactorice los controladores de Login y register.-
+Modifique los middleware de checkAdmin y LoginSession.-
+- Que impedimentos tuve:
+Tuve problemas en hacer un "where" sobre una asociacion de un modelo, lo cual lo pude solucionar investigando por internet y la documentacion.-    
+
+## Nicolas:
+- Que hice ayer-:
+Ayer me encargué de la refactorización de eliminación del producto
+- Que estoy haciendo hoy:
+Hoy comencé con la refactorización de la edición de perfil de usuario.-
+- Que impedimentos tuve:
+Los impedimentos que tuve fueron tanto la imagen primaria como las secundarias que al momento de eliminarlas, solo se eliminaban de la base de datos, pero pude solucionarlo.-
+
+
+
 
