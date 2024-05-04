@@ -73,7 +73,7 @@
       
       <td>
          <% p.imagesecondaries.forEach(img => { %>
-      <img class="dash-img-product" src="/images/products/<%= img.file %>" alt="product image"/>
+      <img class="dash-img-product" src="/images/products/<% if (img.file === "no-image.png") { %>default/<% }%><%= img.file %>" alt="product secondary image"/>
       <% }) %>
     </td>
       
