@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'imagesecondary',
+    paranoid: true
   });
   return imagesecondary;
 };

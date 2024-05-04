@@ -10,7 +10,7 @@
                 <div class="avatarImg-container d-flex flex-column mb-3 mt-5">
                     <label for="avatar">
                         <p>Imagen de perfil</p>
-                        <img src="/images/avatar/<%= locals.userLogin?.avatar %>" alt="profile avatar image">
+                        <img class="listUserAvatar" src="/images/avatar<% if ( locals.userLogin.avatar == 'perfilUser.png') { %>/default<% } %>/<%= locals.userLogin.avatar %>" alt="avatar image">
                         <input type="file" class="form-control form-control-sm" name="avatar" id="avatar" accept="img/*">
                         <% if (locals.errors) { %>
                             <div class="form-text fs-5 text-danger"><%= errors?.avatar?.msg %></div>
@@ -56,9 +56,9 @@
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="zipcode">Código postal</label>
-                    <input type="text" class="form-control form-control-sm" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.addresses.zipcode %>" placeholder="<%= locals.user?.zipcode %>">
+                    <input type="text" class="form-control form-control-sm" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.addresses.zipCode %>" placeholder="<%= locals.user?.zipCode %>">
                     <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.zipcode?.msg %></div>
+                        <div class="form-text fs-5 text-danger"><%= errors?.zipCode?.msg %></div>
                     <% } %>
                 </div>
 
