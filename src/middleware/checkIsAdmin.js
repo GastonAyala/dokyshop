@@ -1,18 +1,31 @@
-const { loadData } = require("../data")
+const db = require("../database/models");
 
-module.exports = (req, res, next) => {
-    const users = loadData("users");
-
-    if (req.session.userLogin && req.session.userLogin.role === "ADMIN") {
-        const userFind = users.find(u => u.email === req.session.userLogin.email)
-        if (userFind) {
-            if (userFind.role === "ADMIN")
-
-            return next();
-        }
-        else {
-            return res.redirect("/");
-        }
-    };
+module.exports = async (req, res, next) => {
+    if (req.session.userLogin ) {
+        const users = await db.user.findAll({
+            include: ['role'],
+            where: {
+                email: req.session.userLogin.email
+            }
+        });
+    
+        const roles = await db.role.findAll({
+            where: {
+                name: "ADMIN"
+            }
+        });
+    
+        const adminRoleId = roles[0].dataValues.id
+        
+        if (req.session.userLogin && req.session.userLogin.roleId === adminRoleId) {
+            if (users.length) {
+                return next();
+            }
+            else {
+                return res.redirect("/");
+            }
+        };
+    }
+    
     return res.redirect("/");
 };

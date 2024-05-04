@@ -4,19 +4,37 @@ module.exports = (req, res) => {
     db.otherImage.findAll({
         where: {
             viewId: 1
+        },
+        attributes: {
+            exclude: [
+                "createdAt",
+                "updatedAt"
+            ]
         }
     })
     .then((images) => {
         db.product.findAll({
-            limit: 4
+            limit: 4,
+            attributes: {
+                exclude: [
+                    "categoryId",
+                    "subcategoryId",
+                    "description",
+                    "sale",
+                    "quantity",
+                    "colorId",
+                    "available",
+                    "createdAt",
+                    "updatedAt"
+                ]
+            }
         })
-    .then(products => {
-        res.render("other/home", { products, images })
-    })
-    .catch(err => {
-        res.send(err.message)
-    })
-
-    })
+        .then(products => {
+            res.render("other/home", { products, images })
+        })
+        .catch(err => {
+            res.send(err.message)
+        })
     
-}
+    })
+};

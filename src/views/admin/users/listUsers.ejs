@@ -9,8 +9,9 @@
         <form class="dashUserFilter-form" action="/admin/usuarios/buscar" method="get">
             <span>Mostrar:</span>
             <select name="roleFilter" id="roleFilter">
-                <option value="REGULAR">Regular</option>
-                <option value="ADMIN">Admin</option>
+                <% roles.forEach(r => { %>
+                    <option value="<%= r.id %>"><%= r.name %></option>
+                <% }) %>
             </select>
             <button type="submit">Filtrar</button>
         </form>
@@ -34,22 +35,43 @@
         </tr>
     </thead>
     <tbody>
-        <% user.forEach(u => { %>
+        <% users.forEach(u => { %>
             <tr>
                 <th scope="row"><%= u.id %></th>
                 <td>
-                    <img class="listUserAvatar" src="/images/avatar/<%= u.avatar %>" alt="avatar image">
+                    <img class="listUserAvatar" src="/images/avatar<% if (u.avatar == 'perfilUser.png') { %>/default<% } %>/<%= u.avatar %>" alt="avatar image">
                 </td>
                 <td><%= u.name %></td>
                 <td><%= u.email %></td>
                 <td><%= u.phone %></td>
-                <td><%= u.addresses.street %></td>
-                <td><%= u.addresses.city %></td>
-                <td><%= u.addresses.province %></td>
-                <td><%= u.addresses.zipcode %></td>
-                <td class="listUserRole"><%= u.role %></td>
+                <td><%= u.address.street %></td>
+                <td><%= u.address.city %></td>
+                <td><%= u.address.province %></td>
+                <td><%= u.address.zipCode %></td>
+                <td class="listUserRole"><%= u.role.name %></td>
                 <td>
-                    <div class="dashUser-Actions" role="group">
+                    <div class="dashUser-Actions btn-group gap-2" role="group">
+                        <button class="infoButton btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Info</button>
+                        <ul class="dropdown-menu bg-primary text-light">
+                          <div class="d-flex">
+                            <table>
+                              <thead>
+                                <tr >
+                                  <th class="text-light">Creado en:</th>
+                                  <th class="text-light">Actualizado en:</th>
+                                  <th class="text-light">Eliminado en:</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><%= u.createdAt.toISOString().split('T')[0] %></td>
+                                  <td><%= u.updatedAt.toISOString().split('T')[0] %></td>
+                                  <td><%= u.deletedAt?.toISOString().split('T')[0] %></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </ul>
                         <a class="editUserButton" href="/admin/editar-usuario/<%= u.id %>">Editar</a>
                         <a class="deleteUserButton" href="/admin/eliminar-usuario/?id=<%= u.id %>&name=<%= u.name %>">Eliminar</a>
                     </div>
