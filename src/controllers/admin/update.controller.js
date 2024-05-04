@@ -1,61 +1,82 @@
-const { loadData, saveData } = require("../../data");
+const db = require("../../database/models");
 const path = require('path');
 const fs = require('fs');
+const product = require("../../database/models/product");
 
-module.exports = (req,res) => {
-    const products = loadData()
+module.exports = (req, res) => {
     const { id } = req.params;
-    const { title, category, description, price, sale, quantity, color } = req.body
+    const { title, category, subcategory, description, price, sale, quantity, color, available } = req.body;
 
-    let newImages = [];
-    if(req.files.imagesSecondary?.length) {
-        newImages = req.files.imagesSecondary?.map((img) => img.filename)
-    }
-    
-
-    const productsMap = products.map((p) => {
-        if (p.id === +id) {
-            const productEdited = {
-                ...p,
-                title: title.trim(),
-                category: category?.trim(),
-                description: description.trim(),
-                price: +price,
-                sale: +sale,
-                quantity: +quantity,
-                color: color.trim(),
-                imagePrimary: req.files.imagePrimary?.length ? req.files.
-                imagePrimary[0]?.filename : p.imagePrimary,
-                imagesSecondary: newImages.length ? newImages : p.imagesSecondary
-            };
-            const oldImgPath = path.join(__dirname, "../../../public/images/products/" + p.imagePrimary)
-            const existOldImg = fs.existsSync(oldImgPath)
-            if (existOldImg) {
-                if (req.files.imagePrimary?.length) {
-                    if (productEdited.imagePrimary === req.files.imagePrimary[0]?.filename) {
-                            fs.unlinkSync(oldImgPath)
-                    }
-                }
-            }
-            
-
-            for (let i = 0; i < p.imagesSecondary.length; i++) {
-                let imgSecondary =  p.imagesSecondary[i];
-                let OldImgSecondaryPath = path.join(__dirname, "../../../public/images/products/" + imgSecondary)
-                let existOldSecondaryImg = fs.existsSync(OldImgSecondaryPath)
-                if (existOldSecondaryImg) {
-                    if(newImages.length) {
-                        fs.unlinkSync(OldImgSecondaryPath)
-                    }
-                } 
-            }
-            return productEdited
+    db.product.findAll({
+        include:["imagesecondaries"],
+        where: { id: +id }
+    })
+    .then(product => {
+        let newImages = [];
+        if (req.files.imagesSecondary?.length) {
+            newImages = req.files.imagesSecondary.map((img) => ({
+                file: img.filename,
+                productId: +id
+            }));
         }
-        return p;
+        if (req.files.imagePrimary?.length) {
+            const pathImagePrincipal = path.join(__dirname,"../../../public/images/products/" + product[0].imagePrincipal)
+            const existsImagePrincipal = fs.existsSync(pathImagePrincipal) 
+            if (existsImagePrincipal) {
+            if (pathImagePrincipal !== "no-image.png")
+            fs.unlinkSync(pathImagePrincipal)
+        }
+        }
+        db.product.update({
+            title: title.trim(),
+            categoryId: +category?.trim(),
+            subcategoryId: +subcategory?.trim(),
+            description: description.trim(),
+            price: +price,
+            sale: +sale,
+            quantity: +quantity,
+            colorId: null,
+            available: available === "on",
+            imagePrincipal: req.files.imagePrimary?.length && req.files.imagePrimary[0]?.filename
+        }, {
+            where: { id: +id }
+        })
+        .then(() => {
+            if (req.files.imagesSecondary?.length) {
+                product[0].imagesecondaries.forEach(image => {
+                    const pathImageSecondary = path.join(__dirname,"../../../public/images/products/" + image.file)
+                    const existsImageSecondary = fs.existsSync(pathImageSecondary) 
+                    if (existsImageSecondary) {
+                        if (pathImageSecondary !== "no-image.png")
+                        fs.unlinkSync(pathImageSecondary)
+                    }
+                })   
+            }
+            db.imagesecondary.destroy({ where: { productId: id } })
+            .then(() => {
+                if (newImages.length > 0) {
+                    db.imagesecondary.bulkCreate(newImages)
+                    .then(() => {
+                        res.redirect("/admin/productos");
+                    })
+                    .catch(err => {
+                        res.status(500).send(err.message);
+                    });
+                } else {
+                    res.redirect("/admin/productos");
+                }
+            })
+            .catch(err => {
+                res.status(500).send(err.message);
+            });
+        })
+        .catch(err => {
+            res.status(500).send(err.message);
+        });
+    })
+    .catch(err => {
+        res.status(500).send(err.message);
     });
+};
 
-    saveData(productsMap);
 
-    res.redirect("/admin/productos")
-
-}
