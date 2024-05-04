@@ -19,7 +19,6 @@ const productsDBMapped = productsJSON.map(p => {
     price: p.price,
     sale: p.sale,
     quantity: p.quantity,
-    colorId: color ? color.id : null,
     available: p.available,
     imagePrincipal: p.imagePrimary
   }

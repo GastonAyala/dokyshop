@@ -2,27 +2,34 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('colors', {
+    await queryInterface.createTable('colorproducts', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING(50)
+      colorId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'colors'
+          },
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
-      theme: {
-        type: Sequelize.STRING(50)
-      },
-      group: {
-        type: Sequelize.STRING(50)
-      },
-      hex: {
-        type: Sequelize.STRING(6)
-      },
-      rgb: {
-        type: Sequelize.STRING(12)
+      productId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'products'
+          },
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +44,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('colors');
+    await queryInterface.dropTable('colorproducts');
   }
 };

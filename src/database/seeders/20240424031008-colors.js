@@ -4,6 +4,8 @@ const colorsJSON = require('../../data/colors.json');
 const colorsDBMapped = colorsJSON.map(c => {
   return {
     name: c.name,
+    theme: c.theme,
+    group: c.group,
     hex: c.hex,
     rgb: c.rgb
   };

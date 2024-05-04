@@ -51,18 +51,6 @@ module.exports = {
       quantity: {
         type: Sequelize.INTEGER
       },
-      colorId: {
-        type: Sequelize.INTEGER,
-
-        references:{
-          model:{
-            tableName: 'colors'
-          },
-          key: 'id'
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      },
       available: {
         type: Sequelize.BOOLEAN
       },
