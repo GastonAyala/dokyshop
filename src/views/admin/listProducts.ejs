@@ -57,7 +57,7 @@
       <th scope="col">Precio</th>
       <th scope="col">Descuento</th>
       <th scope="col">Cantidad</th>
-      <th scope="col">Colores</th>
+      <th scope="col">Color</th>
       <th scope="col">Disponible</th>
       <th scope="col">Acciones</th>
     </tr>
@@ -76,7 +76,6 @@
       <img class="dash-img-product" src="/images/products/<% if (img.file === "no-image.png") { %>default/<% }%><%= img.file %>" alt="product secondary image"/>
       <% }) %>
     </td>
-      
       <td><%= p.title %></td>
       <td><%= p.category.name %></td>
       <td><%= p.subcategory.name %></td>
@@ -85,7 +84,11 @@
       <td class="td-sale"><%= p.sale %></td>
       <td class="td-quantity"><%= p.quantity %></td>
       <td class="td-colors">
-        <%= p.colorId %>
+        <% if (p.color === 'Multicolor') { %>
+          <div class="imgMulticolorDiv"><img src="/images/products/multicolor.jpg" alt=""></div>
+        <% } else { %>
+        <i style="color: <%= p.color %>;border: 1px solid black;border-radius: 10px;" class="fa-solid fa-circle"></i>
+        <% } %>
       </td>
       <td><%= p.available %></td>
       <td>

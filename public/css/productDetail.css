@@ -109,6 +109,17 @@
     width: 100%;
     font-size: 1.6rem;
 }
+.productDetail .prodDetail-container .prodDetail-colors{
+    width: 100%;
+}
+.productDetail .prodDetail-container .prodDetail-colors .imgMulticolorDiv {
+    width: 100%;
+    margin: auto;
+}
+
+.productDetail .prodDetail-container .prodDetail-colors .imgMulticolorDiv img {
+    width: 20px;
+}
 
 .productDetail .prodDetail-container .product-quantity-container {
     display: flex;

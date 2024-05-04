@@ -62,6 +62,14 @@
             </div>
             <h2 class="prodDetail-title"><%= product.title%></h2>
             <p class="prodDetail-price">$<%= product.price%></p>
+            <div class="prodDetail-colors">
+                <% if (product.color === 'Multicolor') { %>
+                    <div class="imgMulticolorDiv"><img src="/images/products/multicolor.jpg" alt=""></div>
+                  <% } else { %>
+                  <i style="color: <%= product.color %>;border: 1px solid black;border-radius: 10px;" class="fa-solid fa-circle"></i>
+                <% } %>
+            </div>
+        
             <div class="product-quantity-container">
                     <button class="decrease-button">-</button>
                     <div class="quantity">  

@@ -12,7 +12,7 @@ module.exports = (req, res) => {
         price: +price,
         sale: +sale,
         quantity: +quantity,
-        colorId: null,
+        color: color,
         available: available === "on",
         imagePrincipal: req.files.imagePrimary?.length
             ? req.files.imagePrimary[0]?.filename
@@ -20,19 +20,21 @@ module.exports = (req, res) => {
     })
     .then((product) => {
         let newImages = [];
-        if (req.files.imagesSecondary?.length) {
+        if (req.files?.imagesSecondary?.length) {
             newImages = req.files.imagesSecondary?.map((img) => {
                 return {
                     file: img.filename,
                     productId: product.id
                 }
             })
-        } else {
-            newImages = [{ file: "no-image.png", productId: product.id }]
+            db.imagesecondary.bulkCreate(newImages)
+            .then(() => {
+                return res.redirect(`/admin/productos`)
+            })
+            .catch(err => {
+                res.send(err.message)
+            })
         }
-        db.imagesecondary.bulkCreate(newImages)
-        .then(() => {
-            return res.redirect(`/admin/productos`)
-        })  
+        return res.redirect(`/admin/productos`)
     })
 };

@@ -26,13 +26,6 @@ module.exports = (sequelize, DataTypes) => {
         as: 'subcategory'
       })
 
-      product.belongsToMany(models.color, {
-        through: 'colorproducts',
-        foreignKey: 'productId',
-        otherKey: 'colorId',
-        as: 'colors'
-      })
-
       product.belongsToMany(models.order, {
         through: 'orderproducts',
         foreignKey: 'productId',
@@ -50,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     sale: DataTypes.INTEGER,
     quantity: DataTypes.INTEGER,
     available: DataTypes.BOOLEAN,
+    color: DataTypes.STRING,
     imagePrincipal: DataTypes.STRING
   }, {
     sequelize,
