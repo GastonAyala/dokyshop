@@ -1,11 +1,40 @@
 const db = require('../../database/models');
 
 module.exports = (req, res) => {
-    db.product.findAll()
-    .then(products => {
-        res.render("other/home", {products})
+    db.otherImage.findAll({
+        where: {
+            viewId: 1
+        },
+        attributes: {
+            exclude: [
+                "createdAt",
+                "updatedAt"
+            ]
+        }
     })
-    .catch(err => {
-        res.send(err.message)
+    .then((images) => {
+        db.product.findAll({
+            limit: 4,
+            attributes: {
+                exclude: [
+                    "categoryId",
+                    "subcategoryId",
+                    "description",
+                    "sale",
+                    "quantity",
+                    "colorId",
+                    "available",
+                    "createdAt",
+                    "updatedAt"
+                ]
+            }
+        })
+        .then(products => {
+            res.render("other/home", { products, images })
+        })
+        .catch(err => {
+            res.send(err.message)
+        })
+    
     })
-}
+};

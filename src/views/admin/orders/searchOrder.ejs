@@ -1,0 +1,74 @@
+<h1>Lista de ordenes</h1>
+<div class="dashUser-topbar">
+  <form class="dash-searchForm" action="/admin/ordenes/buscar" method="get">
+      <label for="dashOrderSearch"></label>
+      <input type="text" placeholder="Buscar orden" name="dashOrderSearch" id="dashOrderSearch" value="">
+      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+  <div class="dashUserFilter">
+      <form class="dashUserFilter-form" action="/admin/ordenes/buscar" method="get">
+          <span>Mostrar:</span>
+          <select name="statusFilter" id="statusFilter">
+              <option value="completed">Completado</option>
+              <option value="pending">Pendiente</option>
+              <option value="canceled">Cancelado</option>
+          </select>
+          <button type="submit">Filtrar</button>
+      </form>
+  </div>
+</div>
+
+<% if (!orders.length) { %>
+    <div class="col-12 text-center text-danger dashSearchNoResults">
+        <h3>*No hay ordenes que coincidan con la búsqueda*</h3>
+    </div>
+<% } %>
+
+<% if (dashOrderSearch) { %>
+    <div class="col-12 text-center dashSearchTitle">
+        <h2>Resultado de la busqueda: <%= dashOrderSearch %></h2>
+    </div>
+<% } %>
+
+<% if (statusFilter) { %>
+    <div class="col-12 text-center dashSearchTitle">
+        <h2>Resultado del filtrado del estado: <%= statusFilter == 'pending' ? 'PENDIENTE' : statusFilter == 'completed' ? "COMPLETO" : "CANCELADO" %></h2>
+    </div>
+<% } %>
+
+<table class="listOrdertable">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Total</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Productos</th>
+            <th scope="col">Creado</th>
+            <th scope="col">Actualizado</th>
+            <th scope="col">Eliminado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% orders.forEach(o => { %>
+            <tr>
+                <th class="text-warning" scope="row"><%= o.id %></th>
+                <td class="text-primary"><%= o.state == 'pending' ? 'PENDIENTE' : o.state == 'completed' ? "COMPLETO" : "CANCELADO" %></td>
+                <td ><%= o.total %></td>
+                <td><%= o.user.email %></td>
+                <td>
+                  <ul>
+                    <% for( let i = 0; i < o.products.length; i++ ) { %>
+                    <li>
+                        <%= o.products[i].title %>
+                    </li>
+                    <% } %>
+                  </ul>
+                </td>
+                <td><%= o.createdAt.toISOString().split('T')[0] %></td>
+                <td><%= o.updatedAt.toISOString().split('T')[0] %></td>
+                <td><%= o.deletedAt?.toISOString().split('T')[0] %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

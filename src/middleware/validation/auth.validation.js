@@ -1,11 +1,9 @@
-
+const db = require('../../database/models');
 const { body } = require('express-validator');
-const { loadData } = require('../../data');
 const { compareSync } = require('bcryptjs');
 const path = require('path');
 const regExPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
-const expReg = /.png|.jpg|.jpeg|.webp/i;
-
+const expReg = /.png|.jpg|.jpeg|.webp|.gif/i;
 
 const fieldEmaildDefault = body("email")
     .notEmpty()
@@ -34,22 +32,25 @@ const fieldName = body('name')
     .isLength({ min: 5, max: 50 })
     .withMessage("Debe tener un minimo de 5 caracteres!")
 
-const fieldEmail = fieldEmaildDefault.custom((value, { req }) => {
-    const users = loadData("users");
-    const existUsers = users.find(u => u.email === value.trim());
+const fieldEmail = fieldEmaildDefault.custom(async (value, { req }) => {
+    const userFind = await db.user.findAll({
+        where: { email: value.trim() }
+    })
 
-    if (existUsers) {
-        throw new Error("Ya existe un usuario registrado con ese email!")
+    if (userFind.length) {
+        if (userFind[0].dataValues.email === value) {
+            throw new Error("Ya existe un usuario registrado con ese email!")
+        }
     }
-    return true;
-});
+    return true
+})
 
 const fieldPassword = body("password")
-.notEmpty()
-.withMessage("El campo contraseña es requerido!").bail()
-.isLength( { min: 8, max: 16} )
-.withMessage("Longitud invalida!").bail()
-.matches(regExPass).withMessage("Contraseña debe contener al menos una mayuscula una minuscula y un  numero!")
+    .notEmpty()
+    .withMessage("El campo contraseña es requerido!").bail()
+    .isLength({ min: 8, max: 16 })
+    .withMessage("Longitud invalida!").bail()
+    .matches(regExPass).withMessage("Contraseña debe contener al menos una mayuscula una minuscula y un  numero!")
 
 
 // Login
@@ -59,15 +60,16 @@ const loginEmail = body("email")
     .withMessage("El campo email es requerido!").bail()
     .isEmail()
     .withMessage("Debe completar un email valido!").bail()
-    .custom((value, {req})=>{
-        const users = loadData("users");
-        const existUsers = users.find(u => u.email === value.trim())
-    
-        if(!existUsers){
+    .custom( async (value, { req }) => {
+        const userFind = await db.user.findAll({
+            where: { email: value.trim() }
+        })
+
+        if (!userFind.length) {
             throw new Error("Datos ingresados incorrectos!")
         }
         return true
-    
+
     });
 
 const logindPassword = body("password")
@@ -78,17 +80,19 @@ const logindPassword = body("password")
     .matches(regExPass)
     .withMessage("Dato invalido")
     .bail()
-    .custom((value, { req }) => {
-        const users = loadData("users");
-        const { email } = req.body
-        const existUsers = users.find(u => u.email === email)
-        const isValidPassword = compareSync(value, existUsers.password)
+    .custom(async (value, { req }) => {
+        const { email } = req.body;
+        const userFind = await db.user.findAll({
+            where: { email }
+        })
+        
+        const isValidPassword = compareSync(value, userFind[0].dataValues.password)
         if (!isValidPassword) {
             throw new Error("Credenciales inválidas");
         }
         return true
     });
-      
+
 module.exports = {
     registerValidation: [imageAvatar, fieldName, fieldEmail, fieldPassword],
     loginValidation: [loginEmail, logindPassword],

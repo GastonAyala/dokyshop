@@ -46,7 +46,7 @@
         <ul class="main-list" id="main-list">
             <li class="list-index"><a class="a-index" href="/">INICIO</a></li>
             <li class="list-products"><a class="a-products" href="/productos">PRODUCTOS</a></li>
-            <% if (locals.userLogin?.role === "ADMIN") { %>
+            <% if (locals.userLogin?.roleId === 2) { %>
                 <li class="list-index"><a class="a-index" href="/admin/productos">ADMINISTRADOR</a></li>
             <% } %>
             <li class="list-contact"><a class="a-contact" href="/#footer">CONTACTO</a></li>

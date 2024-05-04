@@ -1,0 +1,72 @@
+.listOrdertable {
+    border-collapse: collapse;
+    max-width: 100vw;
+    height: 71vh;
+    overflow-y: scroll;
+    display: block;
+}
+
+.listOrdertable:-webkit-scrollbar {
+    width: 8px;
+}
+
+.listOrdertable:-webkit-scrollbar-thum {
+    background-color: var(--gris);
+    border-radius: 20px;
+}
+
+.listOrdertable thead{
+    text-align: center;
+    border-bottom: 1px solid var(--gris);
+}
+.listOrdertable thead tr {}
+
+.listOrdertable thead tr th {
+    padding: 0.5rem;
+    columns: var(--gris);
+}
+
+.listOrdertable tbody {
+    text-align: center;
+    border-bottom: 1px solid var(--gris);
+}
+
+.listOrdertable tbody tr {
+    border-bottom: 1px solid var(--gris);
+}
+
+.listOrdertable tbody tr th {}
+
+.listOrdertable tbody tr td {
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.listOrdertable tbody tr td .orderProductsTitle {
+    color: var(--naranja) !important;
+
+}
+
+.listOrdertable tbody tr td .dashOrder-Actions {}
+
+.listOrdertable tbody tr td .dashOrder-Actions .editUserButton {
+    padding: 5px 15px;
+    border-radius: 10%;
+    background-color: var(--marron);
+    transition: all 0.5s;
+}
+
+.listOrdertable tbody tr td .dashOrder-Actions .editUserButton:hover {
+    background-color: rgba(197, 149, 0, 1);
+}
+
+.listOrdertable tbody tr td .dashOrder-Actions .deleteUserButton {
+    padding: 5px 15px;
+    border-radius: 10%;
+    background-color: var(--naranjaig);
+    transition: all 0.5s;
+}
+
+.listOrdertable tbody tr td .dashOrder-Actions .deleteUserButton:hover {
+    background-color: rgba(199, 69, 0, 1);
+}

@@ -1,21 +1,25 @@
-const { loadData } = require('../../data');
+const db = require('../../database/models');
 const { validationResult } = require("express-validator")
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
    const errors = validationResult(req)
 
    if (errors.isEmpty()) {
       const { remember } = req.body;
-      const users = loadData("users");  // todos lo sdatos de .json
+      const userFind = await db.user.findOne({
+         where: { email: req.body.email.toLowerCase() },
+         attributes: {
+            exclude: ['password']
+         },
+      })
 
-      const userFind = users.find((u) => u.email === req.body.email.toLowerCase()); // busca coincidencia del email que llega del body con el email del json 
-
-      const { name, email, role, avatar } = userFind;
+      const { id, name, email, roleId, avatar } = userFind;
 
       req.session.userLogin = {
+         id,
          name,
          email,
-         role,
+         roleId,
          avatar
       };
 

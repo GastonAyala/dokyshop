@@ -1,6 +1,7 @@
 :root {
     /* COLORES */
     --amarillo: #FDBC00;
+    --amarilloSuave:#eae2b7;
     --marron: #EFB810;
     --amarilloPastel: #F8DF94;
     --marronclaro: #fff2cc;
@@ -13,6 +14,8 @@
     --naranjaig: #eb8459;
     --verde: #81db81;
     --verdeOscuro: #88bb88;
+    --naranja:#ff611b;
+    --rojo: #ff0000;
 
 
     /* TIPOGRAFIAS */

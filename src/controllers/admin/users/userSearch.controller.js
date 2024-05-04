@@ -1,20 +1,40 @@
-const { loadData } = require("../../../data");
+const db = require('../../../database/models');
+const { Op } = require('sequelize');
 
 module.exports = (req, res) => {
-    const { dashUserSearch, roleFilter } = req.query
-    const users = loadData("users");
-    const usersFilter = users.filter(u => 
-        u.id == dashUserSearch ||
-        u.name.toLowerCase().includes(dashUserSearch?.toLowerCase()) ||
-        u.email.toLowerCase().includes(dashUserSearch?.toLowerCase()) ||
-        u.role.toLowerCase().includes(roleFilter?.toLowerCase())
-    );
+    const { dashUserSearch, roleFilter } = req.query;
 
-    res.render("admin/users/searchUser", {
-        users : usersFilter, dashUserSearch, roleFilter
-    }, (err, contentView) => {
-        err && res.send(err.message)
-
-        res.render("partials/dashboard", { contentView })
-    });
+    db.role.findAll()
+    .then(roles => {
+        db.user.findAll({
+            include: ['role','address'],
+            attributes: {
+                exclude: 'password'
+            },
+            where: {
+                [Op.or]: {
+                    id: dashUserSearch ? dashUserSearch : null,
+                    name: {
+                        [Op.like]: `%${dashUserSearch}%`
+                    },
+                    email: {
+                        [Op.like]: `%${dashUserSearch}%`
+                    },
+                    roleId: roleFilter ? roleFilter : null,
+                }
+            }
+        })
+        .then(users => {
+            res.render("admin/users/searchUser", {
+                users, roles, dashUserSearch, roleFilter
+            },
+            (err, contentView) => {
+                err && res.send(err.message)
+                res.render("partials/dashboard", { contentView })
+            });
+        })
+    })
+    .catch(err => {
+        res.send(err.message)
+    })
 };

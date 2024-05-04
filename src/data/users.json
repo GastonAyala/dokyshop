@@ -65,14 +65,9 @@
       "email": "rica@gmail.com",
       "password": "$2a$12$JaSitbcjJ8MEgvoHIx2VmOWOMWC4M4VyHVG4vMYV.Y3Hm8ErZ0AtG",
       "role": "ADMIN",
-      "avatar": "avatar-1713842376982.jpg",
+      "avatar": "avatar-1714199937620.gif",
       "phone": "",
-      "addresses": {
-         "street": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
-      }
+      "addresses": {}
    },
    {
       "id": 6,
@@ -83,20 +78,5 @@
       "avatar": "avatar-1713924989846.png",
       "phone": "",
       "addresses": {}
-   },
-   {
-      "id": 7,
-      "name": "ADRIANA ESCUBILLA",
-      "email": "adrianaa@gmail.com",
-      "password": "$2a$12$OIT6uB9qp8u5nSCyYlJskufb4Z0V/yZkHYPJLZcz7Z5bZPZL97iqy",
-      "role": "ADMIN",
-      "avatar": "perfilUser.png",
-      "phone": "",
-      "addresses": {
-         "street": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
-      }
    }
 ]

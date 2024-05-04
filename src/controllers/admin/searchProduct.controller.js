@@ -1,13 +1,36 @@
-const { loadData } = require('../../data');
+const db = require('../../database/models');
+const { Op } = require('sequelize').Sequelize;
 
 module.exports = (req, res) => {
-    const { dashboardKeywords, filterSelect } = req.query
-    const products = loadData()
-    const productsFilter = products.filter(p => p.id == dashboardKeywords || p.title.toLowerCase().includes(dashboardKeywords?.toLowerCase()) || p.description.toLowerCase().includes(dashboardKeywords?.toLowerCase()) || p.category.toLowerCase().includes(filterSelect?.toLowerCase()))
+    const { dashboardKeywords, categorySearch, subcategorySearch } = req.query;
 
-    res.render("admin/searchProducResults", { products: productsFilter, dashboardKeywords, filterSelect}, (err, contentView) => {
-        err && res.send(err.message)
-
-        res.render("partials/dashboard", {contentView})
+    db.product.findAll({
+        include: ['imagesecondaries', 'category', 'subcategory'],
+        where: {
+            [Op.or]: {
+                title: {
+                    [Op.like]: `%${dashboardKeywords}%`
+                },
+                description: {
+                    [Op.like]: `%${dashboardKeywords}%`
+                },
+                categoryId: categorySearch ? categorySearch : null,
+                subcategoryId: subcategorySearch ? subcategorySearch : null
+            },
+        },
     })
-}
+    .then(products => {
+        const categoryPromise = db.category.findAll()
+        const subcategoryPromise = db.subcategory.findAll()
+        Promise.all([categoryPromise, subcategoryPromise])
+        .then(([categories, subcategories]) => {
+            res.render("admin/searchProducResults", { products, dashboardKeywords, categorySearch, subcategorySearch, categories, subcategories }, (err, contentView) => {
+                err && res.send(err.message)
+                res.render("partials/dashboard", { contentView })
+            })
+        })
+    })
+    .catch(err =>{
+        res.send(err.message)
+    })
+};

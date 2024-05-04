@@ -8,10 +8,11 @@ const { checkIsAdmin } = require('../middleware');
 
 const { list, search, create, store, edit, update, deleteProduct, destroy } = require('../controllers/admin');
 const { userList, userEdit, editProcess, deleteUser, destroyUser, userSearch } = require('../controllers/admin/users');
+const { orderList, searchOrder } = require('../controllers/admin/orders');
 
 // /admin
 router.get("/productos", checkIsAdmin, list);
-router.get("/productos/buscar", checkIsAdmin, search)
+router.get("/productos/buscar", checkIsAdmin, search);
 
 router.get("/crear-producto", checkIsAdmin, create);
 router.post("/crear-producto", uploadProducts.fields([
@@ -25,8 +26,8 @@ router.put("/editar-producto/:id", uploadProducts.fields([
     { name: "imagesSecondary", maxCount: 3 }
 ]), update);
 
-router.get('/eliminar', checkIsAdmin, deleteProduct)
-router.delete('/eliminar/:id', destroy)
+router.get('/eliminar', checkIsAdmin, deleteProduct);
+router.delete('/eliminar/:id', destroy);
 
 
 // /admin/usuarios
@@ -36,7 +37,12 @@ router.get("/usuarios/buscar", checkIsAdmin, userSearch);
 router.get("/editar-usuario/:id", checkIsAdmin, userEdit);
 router.put("/editar-usuario/:id", uploadAvatar.fields([{name: "avatar", maxCount: 1}]), editProcess);
 
-router.get("/eliminar-usuario", checkIsAdmin, deleteUser)
-router.delete("/eliminar-usuario/:id", destroyUser)
+router.get("/eliminar-usuario", checkIsAdmin, deleteUser);
+router.delete("/eliminar-usuario/:id", destroyUser);
+
+
+// admin/ordenes
+router.get("/ordenes", checkIsAdmin, orderList);
+router.get("/ordenes/buscar", checkIsAdmin, searchOrder);
 
 module.exports = router;
