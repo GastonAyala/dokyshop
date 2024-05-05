@@ -1,6 +1,8 @@
 const db = require('../../database/models');
 
 module.exports = (req, res) => {
+    db.faq.findAll()
+    .then((faqs) =>{
     db.otherImage.findAll({
         where: {
             viewId: 1
@@ -30,11 +32,13 @@ module.exports = (req, res) => {
             }
         })
         .then(products => {
-            res.render("other/home", { products, images })
+            res.render("other/home", { products, images, faqs })
         })
         .catch(err => {
             res.send(err.message)
         })
     
     })
+    
+})
 };

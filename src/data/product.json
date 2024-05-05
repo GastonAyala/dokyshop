@@ -9,7 +9,7 @@
       "sale": 7,
       "quantity": 23,
       "color": [
-         "Celeste"
+         "LightBlue"
       ],
       "available": true,
       "imagePrimary": "Gigwi.webp",
@@ -27,7 +27,7 @@
       "sale": 5,
       "quantity": 25,
       "color": [
-         "Naranja"
+         "Coral"
       ],
       "available": true,
       "imagePrimary": "pelotaChuckit.webp",
@@ -45,7 +45,7 @@
       "sale": 5,
       "quantity": 22,
       "color": [
-         "Blanco, Verde"
+         "White"
       ],
       "available": true,
       "imagePrimary": "didactico1.webp",
@@ -117,7 +117,7 @@
       "sale": 20,
       "quantity": 8,
       "color": [
-         "Marron"
+         "DarkGoldenrod"
       ],
       "available": true,
       "imagePrimary": "rascador.webp",
@@ -153,7 +153,7 @@
       "sale": 10,
       "quantity": 25,
       "color": [
-         "Verde"
+         "OliveDrab"
       ],
       "available": true,
       "imagePrimary": "sweater.webp",
@@ -189,7 +189,7 @@
       "sale": 5,
       "quantity": 17,
       "color": [
-         "Verde"
+         "OliveDrab"
       ],
       "available": true,
       "imagePrimary": "sweater3.webp",
@@ -207,7 +207,7 @@
       "sale": 5,
       "quantity": 19,
       "color": [
-         "Verde"
+         "RosyBrown"
       ],
       "available": true,
       "imagePrimary": "sweater4.webp",
@@ -243,7 +243,7 @@
       "sale": 5,
       "quantity": 20,
       "color": [
-         "Red, Black, Blue"
+         "Multicolor"
       ],
       "available": true,
       "imagePrimary": "imagePrimary-1710302039305.jpg",
@@ -262,7 +262,7 @@
       "sale": 10,
       "quantity": 30,
       "color": [
-         "Black, gris"
+         "Black"
       ],
       "available": true,
       "imagePrimary": "imagePrimary-1710302235102.png",
@@ -298,7 +298,7 @@
       "sale": 10,
       "quantity": 30,
       "color": [
-         "Multicolor"
+         "Red"
       ],
       "available": true,
       "imagePrimary": "imagePrimary-1710302993109.webp",
@@ -316,7 +316,7 @@
       "sale": 15,
       "quantity": 15,
       "color": [
-         "Red, Black, Blue"
+         "Multicolor"
       ],
       "available": true,
       "imagePrimary": "imagePrimary-1710303214272.webp",
@@ -334,7 +334,7 @@
       "sale": 10,
       "quantity": 15,
       "color": [
-         "Black, gris"
+         "Multicolor"
       ],
       "available": true,
       "imagePrimary": "imagePrimary-1710303693542.webp",

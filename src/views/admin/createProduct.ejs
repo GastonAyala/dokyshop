@@ -13,7 +13,7 @@
     <form class="createProductForm" action="/admin/crear-producto" method="post"  enctype="multipart/form-data">
       <div class="col-6">
         <div class="imgProductForm col-12 my-5 px-5">
-          <label for="productImg" class="form-label col-7"
+          <label for="imagePrimary" class="form-label col-7"
             >Imagen principal 
             <img src="/images/products/default/no-image.png" alt="default product img" />
           </label>
@@ -21,19 +21,19 @@
             type="file"
             class="form-control form-control-sm"
             name="imagePrimary"
-            id="productImg"
+            id="imagePrimary"
             accept="img/*"
           />
         </div>
         <div class="imgProductForm col-12 my-5 px-5">
-          <label for="productImg" class="form-label col-7"
+          <label for="imagesSecondary" class="form-label col-7"
             >Imagenes Secundarias
           </label>
           <input
             type="file"
             class="form-control form-control-sm"
             name="imagesSecondary"
-            id="Imagesecondary" multiple
+            id="imagesSecondary" multiple
           />
         </div>
       </div>
@@ -136,17 +136,17 @@
             placeholder=""
           />
         </div>
+
         <div class="createProductForm-color col-6 my-3">
           <label for="color" class="form-label"
-            >Color <span class="text-danger">*</span></label>
-          <input
-            type="text"
-            class="form-control form-control-sm border-0 text-center"
-            name="color"
-            id="color"
-            value=""
-            placeholder="Colores separados por comas"
-          />
+            >Color <span class="text-danger">*</span>
+          </label>
+          <select class="form-select" name="color" id="color" aria-label="multiple select color">
+            <option selected value="Multiclor">Multicolor</option>
+          <% colors.forEach(c => { %>
+            <option value="<%= c.name %>" style="background-color:<%= c.name %>"  ><%= c.name %></option>
+          <% }) %>
+        </select>
         </div>
 
         <!---available-->

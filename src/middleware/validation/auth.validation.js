@@ -33,16 +33,18 @@ const fieldName = body('name')
     .withMessage("Debe tener un minimo de 5 caracteres!")
 
 const fieldEmail = fieldEmaildDefault.custom(async (value, { req }) => {
-    const userFind = await db.user.findAll({
-        where: { email: value.trim() }
-    })
-
-    if (userFind.length) {
-        if (userFind[0].dataValues.email === value) {
-            throw new Error("Ya existe un usuario registrado con ese email!")
+    try {
+        const userFind = await db.user.findAll({
+            where: { email: value.trim() }
+        })
+        if (userFind.length) {
+            if (userFind[0].email === value) {
+              throw new Error("Ya existe un usuario registrado con ese email!")
+            }
         }
+    } catch (error) {
+        throw error
     }
-    return true
 })
 
 const fieldPassword = body("password")
@@ -54,22 +56,23 @@ const fieldPassword = body("password")
 
 
 // Login
-
 const loginEmail = body("email")
     .notEmpty()
     .withMessage("El campo email es requerido!").bail()
     .isEmail()
     .withMessage("Debe completar un email valido!").bail()
     .custom( async (value, { req }) => {
-        const userFind = await db.user.findAll({
-            where: { email: value.trim() }
-        })
-
-        if (!userFind.length) {
-            throw new Error("Datos ingresados incorrectos!")
+        try {
+            const userFind = await db.user.findAll({
+                where: { email: value.trim() }
+            })
+    
+            if (!userFind.length) {
+                throw new Error("Datos ingresados incorrectos!")
+            }
+        } catch (error) {
+            throw error
         }
-        return true
-
     });
 
 const logindPassword = body("password")
@@ -81,16 +84,19 @@ const logindPassword = body("password")
     .withMessage("Dato invalido")
     .bail()
     .custom(async (value, { req }) => {
-        const { email } = req.body;
-        const userFind = await db.user.findAll({
-            where: { email }
-        })
-        
-        const isValidPassword = compareSync(value, userFind[0].dataValues.password)
-        if (!isValidPassword) {
-            throw new Error("Credenciales inválidas");
+        try {
+            const { email } = req.body;
+            const userFind = await db.user.findAll({
+                where: { email }
+            })
+            
+            const isValidPassword = compareSync(value, userFind[0].password)
+            if (!isValidPassword) {
+                throw new Error("Credenciales inválidas");
+            }
+        } catch (error) {
+            throw error
         }
-        return true
     });
 
 module.exports = {
