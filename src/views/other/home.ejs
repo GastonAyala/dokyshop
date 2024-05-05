@@ -123,20 +123,13 @@
                 <div class="pet-content">
                     <ul class="pet-list">
                         <li>
-                            <a href="/preguntas-frecuentes"> <i class="fa-solid fa-paw"></i> PREGUNTAS FRECUENTES:</a>
+                            <a href="/preguntas-frecuentes"> PREGUNTAS FRECUENTES:</a>
                         </li>
+                    <% faqs.forEach(f => { %>
                         <li>
-                            <a href="/preguntas-frecuentes"><i class="fa-solid fa-paw"></i> ¿CÓMO COMPRAR?</a>
+                            <a href="/preguntas-frecuentes#<%= f.class %>"><i class="fa-solid fa-paw"></i> <%= f.title %></a>
                         </li>
-                        <li>
-                            <a href="/preguntas-frecuentes"><i class="fa-solid fa-paw"></i> ENVIOS</a>
-                        </li>
-                        <li>
-                            <a href="/preguntas-frecuentes"><i class="fa-solid fa-paw"></i> ¿SE PUEDE COMPRAR EN CUOTAS?</a>
-                        </li>
-                        <li>
-                            <a href="/preguntas-frecuentes"><i class="fa-solid fa-paw"></i> MEDIOS DE PAGO</a>
-                        </li>
+                    <% }) %>
                     </ul>
                 </div>
             </div>
