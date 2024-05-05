@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   view.init({
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    entity: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'view',

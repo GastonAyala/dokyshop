@@ -4,19 +4,24 @@
         "view": "home",
         "images": [
             {
-                "file": "FAQ.jpg"
+                "file": "FAQ.jpg",
+                "type": "petsection"
             },
             {
-                "file": "vet-gato.jpg"
+                "file": "vet-gato.jpg",
+                "type": "petsection"
             },
             {
-                "file": "accesorios.png"
+                "file": "accesorios.png",
+                "type": "category"
             },
             {
-                "file": "indumentaria.png"
+                "file": "indumentaria.png",
+                "type": "category"
             },
             {
-                "file": "juguetes.png"
+                "file": "juguetes.png",
+                "type": "category"
             }
         ]
     },
@@ -25,16 +30,19 @@
         "view": "results",
         "images": [
             {
-                "file": "fondoSearchNotFound.jpg"
+                "file": "fondoSearchNotFound.jpg",
+                "type": "background"
             }
         ]
     },
     {
         "id": 3,
+       
         "view": "login",
         "images": [
             {
-                "file": "fondo-login.jpeg"
+                "file": "fondo-login.jpeg",
+                "type": "background"
             }
         ]
     },
@@ -43,7 +51,8 @@
         "view": "register",
         "images": [
             {
-                "file": "fondo-login.jpeg"
+                "file": "fondo-login.jpeg",
+                "type": "background"
             }
         ]
     }

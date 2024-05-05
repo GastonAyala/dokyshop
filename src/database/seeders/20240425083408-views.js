@@ -3,6 +3,7 @@
 const viewsJSON = require('../../data/views.json');
 const viewsDBMapped = viewsJSON.map(v => {
   return {
+    entity: v.entity,
     name: v.name
   }
 })
