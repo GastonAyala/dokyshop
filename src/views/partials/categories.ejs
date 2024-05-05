@@ -1,0 +1,16 @@
+<div class="container-products">
+    <% otherImages.forEach(otherImg => { %>
+        <% subcategories.forEach(sc => { %>
+            <% if (sc.name.toLowerCase() == otherImg.name.split('.')[0].toLowerCase()) { %>
+                <article class="product">
+                    <a href="#"></a>
+                        <figure class="figure">
+                            <img src="/images/categories/<%= otherImg.name %>" alt="Indumentaria" class="product-image">
+                            <h6 class="product-name"><%= sc.name.toUpperCase() %></h6>
+                        </figure>
+                    </a>
+                </article>
+            <% } %>
+        <% }) %>
+    <% }) %>
+</div>
