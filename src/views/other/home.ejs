@@ -59,7 +59,11 @@
 
         <div class="pet-section">
             <div class="image-with-list">
-                <img src="/images/other/FAQ.jpg" alt="Mascotas" class="full-width-image">
+                <% otherImages.forEach(otherImg => { %>
+                    <% if (otherImg.name === 'FAQ.jpg') { %>
+                        <img src="/images/other/<%= otherImg.name %>" alt="faq image" class="full-width-image">
+                    <% } %>
+                <% }) %>
                 <div class="pet-content">
                     <ul class="pet-list">
                         <li>
@@ -74,7 +78,11 @@
                 </div>
             </div>
             <div class="new-image-container">
-                <img src="/images/other/vet-gato.jpg" alt="Nueva Imagen">
+                <% otherImages.forEach(otherImg => { %>
+                    <% if (otherImg.name === 'vet-gato.jpg') { %>
+                        <img src="/images/other/<%= otherImg.name %>" alt="veterinary image">
+                    <% } %>
+                <% }) %>
                 <div class="overlay-content">
                     <h3 class="overlay-text">Te recomendamos los mejores veterinarios</h3>
                     <button class="overlay-button-left">Ver más</button>
@@ -83,7 +91,6 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <%- include('../partials/footer') %>
