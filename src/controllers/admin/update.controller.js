@@ -35,7 +35,7 @@ module.exports = (req, res) => {
             price: +price,
             sale: +sale,
             quantity: +quantity,
-            colorId: null,
+            color: color,
             available: available === "on",
             imagePrincipal: req.files.imagePrimary?.length && req.files.imagePrimary[0]?.filename
         }, {
@@ -60,23 +60,14 @@ module.exports = (req, res) => {
                         res.redirect("/admin/productos");
                     })
                     .catch(err => {
-                        res.status(500).send(err.message);
+                        res.send(err.message);
                     });
                 } else {
                     res.redirect("/admin/productos");
                 }
             })
-            .catch(err => {
-                res.status(500).send(err.message);
-            });
         })
-        .catch(err => {
-            res.status(500).send(err.message);
-        });
     })
-    .catch(err => {
-        res.status(500).send(err.message);
-    });
 };
 
 
