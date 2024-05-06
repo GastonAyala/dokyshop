@@ -108,5 +108,20 @@
          "province": "",
          "zipcode": ""
       }
+   },
+   {
+      "id": 9,
+      "name": "Pedro",
+      "email": "pedro@gmail.com",
+      "password": "$2a$12$GD8B7Tur018xlIjEaTjFFenLD6t0p0MJNtK5WZjD7WbRTopL0Qteu",
+      "role": "REGULAR",
+      "avatar": "avatar-1714989279256.gif",
+      "phone": "",
+      "addresses": {
+         "street": "",
+         "city": "",
+         "province": "",
+         "zipcode": ""
+      }
    }
 ]

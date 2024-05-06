@@ -1,34 +1,35 @@
-const { loadData, saveData } = require("../../../data")
+const db = require('../../../database/models');
 const path = require('path');
 const fs = require('fs')
 
-module.exports = (req, res) => {
-    const users = loadData("users");
-    const { id } = req.params;
-    const { name, role } = req.body;
-    const avatarImage = req.files?.avatar;
+module.exports = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { name, role } = req.body; 
+        const avatarImage = req.files?.avatar;
 
-    const usersMapped = users.map(u => {
-        if(u.id === +id) {
-            const userEdited = {
-                ...u,
-                name: name ? name.trim() : u.name,
-                role: role ? role.trim().toUpperCase() : u.role,
-                avatar: avatarImage ? avatarImage[0]?.filename : u.avatar
+        const userToEdit = await db.user.findAll({
+            include: ['role'],
+            where: {id}
+        });
+        const userEdited = await db.user.update({
+            name: name ? name.trim() : null,
+            role: role ? role.trim().toUpperCase() : null,
+            avatar: avatarImage?.length && avatarImage[0]?.filename
+        },
+        {
+            where: { id: +id }
+        })
+        const oldAvatarPath = path.join(__dirname, "../../../../public/images/avatar/" + userToEdit[0].avatar);
+        const existOldImg = fs.existsSync(oldAvatarPath);
+        if (existOldImg) {
+            if (userEdited[0].avatar !== "perfilUser.png" && avatarImage?.length) {
+                fs.unlinkSync(oldAvatarPath);
             };
-
-            const oldAvatarPath = path.join(__dirname, "../../../../public/images/avatar/" + u.avatar)
-            const existOldImg = fs.existsSync(oldAvatarPath);
-            if (existOldImg) {
-                if (u.avatar !== "perfilUser.png" && avatarImage?.length) {
-                    fs.unlinkSync(oldAvatarPath);
-                };
-            };
-            return userEdited
         };
-        return u
-    });
-    saveData(usersMapped, "users");
+        return res.redirect("/admin/usuarios")
 
-    return res.redirect("/admin/usuarios")
-}
+    } catch (err) {
+        return res.send(err.message)
+    }
+};

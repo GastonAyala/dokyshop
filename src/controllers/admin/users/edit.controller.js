@@ -1,18 +1,23 @@
-const db=require("../../../database/models")
+const db = require("../../../database/models")
 
-
-module.exports = (req, res) => {
-    const { id } = req.params;
-    db.user.findOne({where:{id:+id}})
-    .then((userFind)=>{
-        return res.render("admin/users/editUser", { user : userFind},
-        (err, contentView) => {
-        err && res.send(err.message)
-        res.render("partials/dashboard", {
-            contentView
+module.exports = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await db.user.findByPk(id,
+            {
+                attributes: { exclude : ['password','addressId', 'createdAt', 'updatedAt', 'deletedAt']},
+                include: ['role', {association: 'address', attributes: { exclude: ['createdAt', 'updatedAt', 'deletedAt'] }}]
+            }
+        )
+        const roles = await db.role.findAll()
+        return res.render("admin/users/editUser", { user, roles },
+            (err, contentView) => {
+            err && res.send(err.message)
+            return res.render("partials/dashboard", {
+                contentView
+            });
         });
-    });
-    })
-     
-    
+    } catch (err) {
+        return res.send(err.message)
+    }
 };

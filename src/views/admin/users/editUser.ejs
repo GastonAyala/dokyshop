@@ -15,19 +15,24 @@
                 <label class="form-label" for="avatar">
                     Foto de perfil
                     <div class="userAvatarimg-Container">
-                        <img src="/images/avatar/<%= user.avatar %>" alt="user avatar">
+                        <img src="/images/avatar<% if (user.avatar == 'perfilUser.png') { %>/default<% } %>/<%= user.avatar %>" alt="user avatar">
                     </div>
                     <input type="file" name="avatar" id="avatar" accept="img/*">
                 </label>
             </div>
             <div class="col-6 my-3">
                 <label class="form-label" for="name">Nombre</label>
-                <input class="form-control form-control-sm" type="text" name="name" id="name" value="<%= user.name %>" placeholder="<%= user.name %>">
+                <input class="form-control form-control-sm text-center" type="text" name="name" id="name" value="<%= user.name %>" placeholder="<%= user.name %>">
             </div>
             <div class="col-6 my-3">
                 <label class="form-label" for="role">Rol</label>
-                <input class="form-control form-control-sm" type="text" name="role" id="role" value="<%= user.role %>" placeholder="<%= user.role %>">
+                <select class="form-select form-select-sm text-center" name="role" aria-label="Desplegar las opciones" id="role">
+                    <% roles.forEach(r => { %>
+                        <option  <% if (user.roleId == r.id) { %><%= 'selected' %><% } %> value="<%= r.id %>"><%= r.name %></option>
+                    <% }) %>
+                </select>
             </div>
+        </div>
         <div class="d-flex justify-content-center gap-2 my-5 usersBtn">
             <button type="submit" class="btn btn-outline-success usersSave">Guardar cambios</button>
             <button type="reset" class="btn btn-outline-danger userReset">Cancelar cambios</button>
