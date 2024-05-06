@@ -1,25 +1,23 @@
-const { loadData, saveData } = require("../../../data")
+const db = require('../../../database/models');
 const path = require('path');
 const fs = require('fs');
 
-
-module.exports = (req, res) => {
-    const users = loadData("users")
-    const { id } = req.params;
-
-    const userLessOne = users.filter(u => u.id !== +id);
-
-    const userDestroy = users.find(u => u.id === +id);
-
-    const pathAvatar = path.join(__dirname, "../../../../public/images/avatar/" + userDestroy.avatar);
-
+module.exports = async (req, res) => {
+    const { id } = req.params
+    const userToDestroy = await db.user.findByPk(id, {
+        attributes: { exclude: ['password']}
+    })
+   
+    const pathAvatar = path.join(__dirname, "../../../../public/images/avatar/" + userToDestroy.avatar);
     const existsFile = fs.existsSync(pathAvatar);
 
-    if(existsFile) {
+    if(existsFile && pathAvatar !== "perfilUser.png") {
         fs.unlinkSync(pathAvatar)
     }
-
-    saveData(userLessOne, "users");
-
+    const userDestroyed = await db.user.destroy({
+        where: {
+            id
+        }
+    })
     return res.redirect("/admin/usuarios")
 };
