@@ -12,6 +12,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING(100)
       },
+      type: {
+        type: Sequelize.STRING(10)
+      },
       viewId: {
         type: Sequelize.INTEGER,
 

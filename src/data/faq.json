@@ -1,0 +1,62 @@
+[
+    {
+        "id":1,
+        "class":"One",
+        "title": "¿Cómo puedo contactar al servicio de atención al cliente?",
+        "paragraph": "Si tenes alguna consulta, podes escribirnos al whatsapp (011) 9 4493-2370, o a nuestro gmail dokyshop@gmail.com, de Lunes a Viernes de 9 a 18hs."
+    },
+    {
+        "id":2,
+        "class":"Two",
+        "title": "¿Cuáles son los métodos de pago aceptados?",
+        "paragraph": "Aceptamos tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal y transferencias bancarias."
+    },
+    {
+        "id":3,
+        "class":"Three",
+        "title": "¿Cuáles son las políticas de devolución y reembolso?",
+        "paragraph": "Si no está satisfecho con su compra, aceptamos devoluciones dentro de los 30 días posteriores a la recepción del producto."
+    },
+    {
+        "id":4,
+        "class":"Four",
+        "title": "¿Cuánto tiempo tarda en llegar mi pedido?",
+        "paragraph": "El tiempo de entrega depende de su ubicación y del método de envío seleccionado. Por lo general, los pedidos dentro del país se entregan en 7 días."
+    },
+    {
+        "id":5,
+        "class":"Five",
+        "title": "¿Ofrecen envío internacional?",
+        "paragraph": "Sí, ofrecemos envíos internacionales a la mayoría de los países. Los tiempos de entrega y costos pueden variar según el destino."
+    },
+    {
+        "id":6,
+        "class":"Six",
+        "title": "¿Qué debo hacer si mi producto llega dañado?",
+        "paragraph": "Lamentamos cualquier inconveniente. Por favor, póngase en contacto con nuestro equipo de atención al cliente dentro de los 3 días posteriores a la recepción del producto para que podamos resolver el problema lo antes posible."
+    },
+    {
+        "id":7,
+        "class":"Seven",
+        "title": "¿Puedo cancelar mi pedido después de realizarlo?",
+        "paragraph": "Si su pedido aún no ha sido enviado, puede cancelarlo contactando a nuestro servicio al cliente. Una vez que el pedido haya sido enviado, ya no se puede cancelar."
+    },
+    {
+        "id":8,
+        "class":"Eight",
+        "title": "¿Qué productos ofrecen?",
+        "paragraph": "En nuestra tienda, ofrecemos una amplia variedad de productos para perros y gatos, incluyendo juguetes, accesorios e indumentaria. En la sección de juguetes, encontrarás desde pelotas y mordedores hasta juguetes interactivos diseñados para mantener entretenidas a tus mascotas. Nuestros accesorios incluyen una variedad de correas, collares, comederos, bebederos y otros artículos esenciales para tu mascota. Además, también contamos con una selección de indumentaria que incluye abrigos, suéteres y accesorios para que tu mascota luzca con estilo en cualquier ocasión."
+    },
+    {
+        "id":9,
+        "class":"Nine",
+        "title": "¿Tienen productos para mascotas de todas las edades?",
+        "paragraph": "Sí, ofrecemos una amplia gama de productos adecuados para mascotas de todas las edades, desde cachorros y gatitos hasta perros y gatos mayores."
+    },
+    {
+        "id":10,
+        "class":"Ten",
+        "title": "¿Qué debo hacer si no encuentro un producto específico en su tienda?",
+        "paragraph": "Si no encuentras un producto específico en nuestra tienda, por favor, ponte en contacto con nuestro equipo de atención al cliente y estaremos encantados de ayudarte a encontrarlo o de considerar la posibilidad de añadirlo a nuestro inventario."
+    }
+]

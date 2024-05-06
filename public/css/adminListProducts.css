@@ -178,6 +178,7 @@
 .dashboard-content .listProduct-table tbody tr td {
     padding: 0.5rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .dashboard-content .listProduct-table tbody tr td .dash-img-product{
@@ -208,6 +209,15 @@
 
 .dashboard-content .listProduct-table tbody tr td.td-sale {
     color: var(--verde);
+}
+
+.dashboard-content .listProduct-table tbody tr td.td-colors .imgMulticolorDiv {
+    width: 20px;
+    margin: auto;
+}
+
+.dashboard-content .listProduct-table tbody tr td.td-colors .imgMulticolorDiv img {
+    width: 100%;
 }
 
 .dashboard-content .listProduct-table tbody tr td.td-quantity {
