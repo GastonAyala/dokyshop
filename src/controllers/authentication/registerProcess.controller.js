@@ -25,9 +25,10 @@ module.exports =  async (req, res) =>{
       })
 
       return res.redirect("/autenticacion/iniciar");
+   } else {
+      res.render("./authentication/register", {
+         old: req.body, 
+         errors: errors.mapped()
+      })
    }
-   res.render("./authentication/register", {
-      old: req.body, 
-      errors: errors.mapped()
-   })
-}
+};

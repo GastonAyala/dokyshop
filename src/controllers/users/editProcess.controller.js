@@ -2,17 +2,15 @@ const db = require("../../database/models")
 const path = require('path');
 const fs = require('fs');
 const { validationResult } = require("express-validator");
-const { where } = require("sequelize");
 
 module.exports = (req, res) => {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-        const { id } = req.params;
         const { name, street, city, province, zipcode, phone } = req.body;
         const avatarImage = req.files?.avatar;
         db.user.update({
-            avatar: avatarImage ? avatarImage[0]?.filename : null,
+            avatar: avatarImage?.length && avatarImage[0]?.filename,
             name: name.trim() ? name : null,
             phone: phone ? phone : null,
         }, { where: { id: req.session?.userLogin?.id } })
@@ -39,13 +37,17 @@ module.exports = (req, res) => {
                 return res.redirect("/usuario/perfil")
             })
 
-
     } else {
-        return res.render("users/profile", {
-            old: req.body,
-            errors: errors.mapped()
-        });
-    }
-
-
-}
+        const { id } = req.session?.userLogin
+        db.user.findByPk(id, {
+            include: ['address']
+        })
+        .then(user => {
+            return res.render("users/profile", {
+                user,
+                old: req.body,
+                errors: errors.mapped()
+            });
+        })
+    };
+};

@@ -27,8 +27,8 @@
             <% } else {  %>
                 <li class="user-avatar-list">
                     <a href="/usuario/perfil">
-                        <img class="profile-avatar" src="/images/avatar/<%= locals.userLogin.avatar %>" alt="avatar image">
-                        <%= locals.userLogin.name %>
+                        <img class="profile-avatar" src="/images/avatar<% if (locals.userLogin?.avatar == 'perfilUser.png') { %>/default<% } %>/<%= locals.userLogin?.avatar %>" alt="avatar image">
+                        <%= locals.userLogin?.name %>
                     </a>
                 </li>
                 <li class="user-logout">

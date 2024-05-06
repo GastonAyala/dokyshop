@@ -26,11 +26,10 @@ module.exports = async (req, res) => {
       if (remember) res.cookie("userLogin", req.session.userLogin, { maxAge: (60000 * 10 ) * 6})
 
       return res.redirect("/");
-      
+   } else {
+      res.render("./authentication/login", {
+         old: req.body,
+         errorsLog: errors.mapped()
+      });
    }
-
-   res.render("./authentication/login", {
-      old: req.body,
-      errorsLog: errors.mapped()
-   });
 };

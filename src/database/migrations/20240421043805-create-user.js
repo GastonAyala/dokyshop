@@ -35,7 +35,7 @@ module.exports = {
         defaultValue: 'perfilUser.png'
       },
       phone: {
-        type: Sequelize.INTEGER(13)
+        type: Sequelize.STRING(13)
       },
       addressId: {
         type: Sequelize.INTEGER,
