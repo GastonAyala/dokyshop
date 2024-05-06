@@ -4,13 +4,13 @@
 <body>
     <%- include('../partials/header') %>
     <main class="usersProfile">
-        <h1 class="text-center">Hola <%= locals.userLogin?.name %></h1>
+        <h1 class="text-center">Hola <%= user?.name %></h1>
         <div class="profile-container container my-2 mx-auto row ">
-            <form class="col-12 col-md-6 mx-auto my-4 gap-3 card" action="/usuario/perfil/editar/<%= locals.user?.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="col-12 col-md-6 mx-auto my-4 gap-3 card" action="/usuario/perfil/editar/<%= user?.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="avatarImg-container d-flex flex-column mb-3 mt-5">
                     <label for="avatar">
                         <p>Imagen de perfil</p>
-                        <img class="listUserAvatar" src="/images/avatar<% if ( locals.userLogin.avatar == 'perfilUser.png') { %>/default<% } %>/<%= locals.userLogin.avatar %>" alt="avatar image">
+                        <img class="listUserAvatar" src="/images/avatar<% if ( user.avatar == 'perfilUser.png') { %>/default<% } %>/<%= user.avatar %>" alt="avatar image">
                         <input type="file" class="form-control form-control-sm" name="avatar" id="avatar" accept="img/*">
                         <% if (locals.errors) { %>
                             <div class="form-text fs-5 text-danger"><%= errors?.avatar?.msg %></div>
@@ -20,14 +20,14 @@
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="name">Nombre completo</label>
-                    <input type="text" class="form-control form-control-sm" name="name" id="name" value="<%= locals.errors ? locals.old.name : locals.user.name %>" placeholder="<%= locals.user?.name %>">
+                    <input type="text" class="form-control form-control-sm" name="name" id="name" value="<%= locals.errors ? locals.old.name : user.name %>" placeholder="<%= user?.name %>">
                     <% if (locals.errors) { %>
                         <div class="form-text fs-5 text-danger"><%= errors?.name?.msg %></div>
                     <% } %>
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="phone">Teléfono</label>
-                    <input type="text" class="form-control form-control-sm" name="phone" id="phone" value="<%= locals.errors ? locals.old.phone : locals.user.phone %>" placeholder="<%= locals.user?.phone %>">
+                    <input type="text" class="form-control form-control-sm" name="phone" id="phone" value="<%= locals.errors ? locals.old.phone : user.phone %>" placeholder="<%= user?.phone %>">
                     <% if (locals.errors) { %>
                         <div class="form-text fs-5 text-danger"><%= errors?.phone?.msg %></div>
                     <% } %>
@@ -35,30 +35,30 @@
 
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="street">Dirección</label>
-                    <input type="text" class="form-control form-control-sm" name="street" id="street" value="<%= locals.errors ? locals.old.street : locals.user.addresses.street %>" placeholder="<%= locals.user?.addresses.street %>">
+                    <input type="text" class="form-control form-control-sm" name="street" id="street" value="<%= locals.errors ? locals.old.street : user.address.street %>" placeholder="<%= user?.address.street %>">
                     <% if (locals.errors) { %>
                         <div class="form-text fs-5 text-danger"><%= errors?.street?.msg %></div>
                     <% } %>
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="city">Ciudad</label>
-                    <input type="text" class="form-control form-control-sm" name="city" id="city" value="<%= locals.errors ? locals.old.city : locals.user.addresses.city %>" placeholder="<%= locals.user?.city %>">
+                    <input type="text" class="form-control form-control-sm" name="city" id="city" value="<%= locals.errors ? locals.old.city : user.address.city %>" placeholder="<%= user?.city %>">
                     <% if (locals.errors) { %>
                         <div class="form-text fs-5 text-danger"><%= errors?.city?.msg %></div>
                     <% } %>
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="province">Provincia</label>
-                    <input type="text" class="form-control form-control-sm" name="province" id="province" value="<%= locals.errors ? locals.old.province : locals.user.addresses.province %>" placeholder="<%= locals.user?.province %>">
+                    <input type="text" class="form-control form-control-sm" name="province" id="province" value="<%= locals.errors ? locals.old.province : user.address.province %>" placeholder="<%= user?.province %>">
                     <% if (locals.errors) { %>
                         <div class="form-text fs-5 text-danger"><%= errors?.province?.msg %></div>
                     <% } %>
                 </div>
                 <div class="userName-container d-flex flex-column mb-3">
                     <label for="zipcode">Código postal</label>
-                    <input type="text" class="form-control form-control-sm" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.addresses.zipCode %>" placeholder="<%= locals.user?.zipCode %>">
+                    <input type="text" class="form-control form-control-sm" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : user.address.zipCode %>" placeholder="<%= user?.zipCode %>">
                     <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.zipCode?.msg %></div>
+                        <div class="form-text fs-5 text-danger"><%= errors?.zipcode?.msg %></div>
                     <% } %>
                 </div>
 

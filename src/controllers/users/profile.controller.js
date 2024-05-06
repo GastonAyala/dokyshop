@@ -1,7 +1,13 @@
-const { loadData } = require("../../data");
-
+const { where } = require("sequelize");
+const db = require("../../database/models")
 module.exports = (req, res) => {
-    const users = loadData("users");    
-    const userFind = users.find(u => u.email === req.session?.userLogin?.email)
-    res.render("users/profile", {user : userFind})
+    const { id } = req.session.userLogin
+
+    db.user.findByPk(id, { include: "address" })
+    .then((user) => {
+         res.render("users/profile", { user, address: user.address })
+    })
+    .catch(function(e){
+        console.log("Error")
+    })
 };
