@@ -1,0 +1,125 @@
+.main-faq{
+    margin: 23px;
+}
+
+.main-faq .main-div{
+    margin: auto;
+    max-width: 700px;
+}
+
+.main-faq .main-div .accordion{
+}
+
+.main-faq .main-div .accordion h1{
+    margin-bottom: 25px;
+}
+
+.main-faq .main-div .accordion p{
+    margin-bottom: 45px;
+}
+
+.main-faq .main-div .accordion-item{
+}
+
+.main-faq .main-div .accordion-item:not(:first-of-type){
+    border: 1px solid #0003 !important;
+}
+
+.main-faq .main-div .accordion-item .accordion-header{
+}
+
+.main-faq .main-div .accordion-item .accordion-header .accordion-button{}
+
+.main-faq .main-div .accordion-item .accordion-header .accordion-button:not(.collapsed){
+    color: var(--marron);
+    font-weight: 600;
+    background-color: unset;
+}
+
+.main-faq .main-div .accordion-item .accordion-collapse{
+}
+
+.main-faq .main-div .accordion-item .accordion-body{
+}
+
+/* -------- TABLET VIEW -------- */
+
+@media (min-width: 426px) {
+
+    .main-faq{
+    }
+    
+    .main-faq .main-div{
+    }
+    
+    .main-faq .main-div .accordion{
+    }
+    
+    .main-faq .main-div .accordion h1{
+    }
+    
+    .main-faq .main-div .accordion p{
+    }
+    
+    .main-faq .main-div .accordion-item{
+    }
+    
+    .main-faq .main-div .accordion-item .accordion-header{
+    }
+    
+    .main-faq .main-div .accordion-item .accordion-header .accordion-button{
+    }
+    
+    .main-faq .main-div .accordion-item .accordion-collapse{
+    }
+    
+    .main-faq .main-div .accordion-item .accordion-body{
+    } 
+    
+}
+
+/* -------- DESKTOP VIEW -------- */
+
+@media (min-width: 769px) {
+
+    .main-faq{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    
+    .main-faq .main-div{
+    max-width: 1900px;
+    display: flex;
+    }
+    
+    .main-faq .main-div .accordion{
+    width: 500px;
+    margin-right: 10px;
+    margin-top: 20px;
+    }
+    
+    .main-faq .main-div .accordion h1{
+    font-size: 30px;
+    }
+    
+    .main-faq .main-div .accordion p{
+    }
+    
+    .main-faq .main-div .accordion-item{
+    }
+    
+    .main-faq .main-div .accordion-item .accordion-header{
+    }
+    
+    .main-faq .main-div .accordion-item .accordion-header .accordion-button{
+    }
+    
+    .main-faq .main-div .accordion-item .accordion-collapse{
+    }
+    
+    .main-faq .main-div .accordion-item .accordion-body{
+    max-width: 584px;
+    }
+        
+}

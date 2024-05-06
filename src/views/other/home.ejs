@@ -4,37 +4,14 @@
 <%- include('../partials/head', {view: "Articulos para mascotas", gliderCSSDisabled:true}) %>
 
 <body>
+    <%- include('../partials/dot') %>
+
     <%- include('../partials/header') %>
 
     <main class="main-home">
-        <!-- Carrusel -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/images/banners/banner-1.png" class="d-block w-100" alt="Indumentaria">
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/banners/banner-2.png" class="d-block w-100" alt="Nueva Imagen">    
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/banners/banner-3.png" class="d-block w-100" alt="Nueva Imagen">    
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-   
+        <!-- Carousel -->
+        <%- include('../partials/carousel') %>
+
         <div class="icons-container">
             <div class="icons">
                 <i class="fa-solid fa-truck-fast"></i>
@@ -60,88 +37,52 @@
             <h5 class="sale-title">VENTA DE LOS MEJORES Y MAS LINDOS PRODUCTOS PARA TUS MASCOTAS!</h5>
         </div>
 
-        <div class="container-products">
-            <!-- CARD 1 -->
-            <article class="product">
-                <a href="#">
-                    <figure class="figure">
-                    <img src="/images/categories/indumentaria.png" alt="Indumentaria" class="product-image">
-                    <h6 class="product-name">INDUMENTARIA</h6>
-                </figure>
-                </a>
-            </article>
-            <!-- CARD 2 -->
-            <article class="product">
-                <a href="#">
-                <figure class="figure">
-                    <img src="/images/categories/accesorios.png" alt="ACCESORIOS" class="product-image accesorios-image">
-                    <h6 class="product-name">ACCESORIOS</h6>
-                </figure>
-                </a>
-            </article>
-
-            <!-- CARD 3 -->
-
-            <article class="product">
-                <a href="#">
-                <figure class="figure">
-                    <img src="/images/categories/juguetes.png" alt="Juguetes" class="product-image">
-                    <h6 class="product-name">JUGUETES</h6>
-                </figure>
-                </a>
-            </article>
-        </div>
+        <%- include('../partials/categories') %>
 
         <div class="recommendedProd-container">
             <h2>Productos recomendados</h2>
-            
-            <% for( let i = 0; i < products.length && i< 4; i++ ) { %>
-                <% const p = products[i] %>
-             
-            <article class="recommendedProd">
-                
-                <figure class="recommended-img-container">
-                    <a href="/productos/detalle/<%= p.id %>"><img src="/images/products/<%= p.imagePrincipal%>" alt="recommended products" ></a>
-                </figure>
-                <div class="recommendedProd-description">
-                    <a href="/productos/detalle/<%= p.id %>">
-                        <h5><%= p.title%></h5>
-                    </a>
-                    <p>$ <%= p.price%></p>
-                    <a class="recommendedProd-buyCart" href="/carrito-compra"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>
-            </article>
-            
-           <% } %> 
+            <% products.forEach(p => { %>
+                <article class="recommendedProd">
+                    <figure class="recommended-img-container">
+                        <a href="/productos/detalle/<%= p.id %>"><img src="/images/products/<%= p.imagePrincipal%>" alt="recommended products" ></a>
+                    </figure>
+                    <div class="recommendedProd-description">
+                        <a href="/productos/detalle/<%= p.id %>">
+                            <h5><%= p.title%></h5>
+                        </a>
+                        <p>$ <%= p.price%></p>
+                        <a class="recommendedProd-buyCart" href="/carrito-compra"><i class="fa-solid fa-cart-plus"></i></a>
+                    </div>
+                </article>
+          <% }) %>
         </div>
-
-      
 
         <div class="pet-section">
             <div class="image-with-list">
-                <img src="/images/other/FAQ.jpg" alt="Mascotas" class="full-width-image">
+                <% otherImages.forEach(otherImg => { %>
+                    <% if (otherImg.name === 'FAQ.jpg') { %>
+                        <img src="/images/other/<%= otherImg.name %>" alt="faq image" class="full-width-image">
+                    <% } %>
+                <% }) %>
                 <div class="pet-content">
                     <ul class="pet-list">
                         <li>
-                            <a href="/preguntas-frecuentes"> <i class="fa-solid fa-paw"></i> PREGUNTAS FRECUENTES:</a>
+                            <a href="/preguntas-frecuentes"> PREGUNTAS FRECUENTES:</a>
                         </li>
+                    <% faqs.forEach(f => { %>
                         <li>
-                            <a href="/preguntas-frecuentes"><i class="fa-solid fa-paw"></i> ¿CÓMO COMPRAR?</a>
+                            <a href="/preguntas-frecuentes#<%= f.class %>"><i class="fa-solid fa-paw"></i> <%= f.title %></a>
                         </li>
-                        <li>
-                            <a href="/preguntas-frecuentes"><i class="fa-solid fa-paw"></i> ENVIOS</a>
-                        </li>
-                        <li>
-                            <a href="/preguntas-frecuentes"><i class="fa-solid fa-paw"></i> ¿SE PUEDE COMPRAR EN CUOTAS?</a>
-                        </li>
-                        <li>
-                            <a href="/preguntas-frecuentes"><i class="fa-solid fa-paw"></i> MEDIOS DE PAGO</a>
-                        </li>
+                    <% }) %>
                     </ul>
                 </div>
             </div>
             <div class="new-image-container">
-                <img src="/images/other/vet-gato.jpg" alt="Nueva Imagen">
+                <% otherImages.forEach(otherImg => { %>
+                    <% if (otherImg.name === 'vet-gato.jpg') { %>
+                        <img src="/images/other/<%= otherImg.name %>" alt="veterinary image">
+                    <% } %>
+                <% }) %>
                 <div class="overlay-content">
                     <h3 class="overlay-text">Te recomendamos los mejores veterinarios</h3>
                     <button class="overlay-button-left">Ver más</button>
@@ -149,16 +90,12 @@
                     <p class="additional-text-right">Peluquería canina</p>
                 </div>
             </div>
-    
         </div>
-        
-        
     </main>
 
     <%- include('../partials/footer') %>
 
-    <%- include('../partials/scripts', {disabledGliderJS:true}) %>
+    <%- include('../partials/scripts', {disabledGliderJS:true, activeDotJS:true}) %>
 
 </body>
-
 </html>

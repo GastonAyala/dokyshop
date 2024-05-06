@@ -16,39 +16,34 @@ module.exports = (req, res) => {
             name: name.trim() ? name : null,
             phone: phone ? phone : null,
         }, { where: { id: req.session?.userLogin?.id } })
-            .then((userUpdated) => {
-                db.address.findAll({
-                    where:{addresId:id}
-                }).then({
-                    
-                })
-                db.address.update({
-                    street,
-                    city,
-                    province,
-                    zipCode,
-                },{where:req.session?.userLogin?.id,
-                    active: true
-                })
-           const oldAvatarPath = path.join(__dirname, "../../../public/images/avatar/" + avatarImage)
-                const existOldImg = fs.existsSync(oldAvatarPath);
+                .then(()=>{
+                    db.address.update({
+                        street,
+                        city,
+                        province,
+                        zipCode,
+                    }, {
+                        where: +req.session?.userLogin?.id,
+                    })})
+                        .then(() => {
+                            const oldAvatarPath = path.join(__dirname, "../../../public/images/avatar/" + avatarImage)
+                            const existOldImg = fs.existsSync(oldAvatarPath);
+                            if (existOldImg) {
+                                if (userUpdated.avatar !== "perfilUser.png" && avatarImage?.length) {
+                                    if (userEdited.avatar === avatarImage[0]?.filename) {
+                                        fs.unlinkSync(oldAvatarPath);
+                                    };
+                                }
+                            }
+                            return res.redirect("/usuario/perfil")
+                        })
 
-                if (existOldImg) {
-                    if (userUpdated.avatar !== "perfilUser.png" && avatarImage?.length) {
-                        if (userEdited.avatar === avatarImage[0]?.filename) {
-                            fs.unlinkSync(oldAvatarPath);
-                        };
-                    }
-                };
- })
-// Revisar arriba----
-                
-               
-        return res.redirect("/usuario/perfil");
-    };
 
+            }
+        
     return res.render("users/profile", {
-        old: req.body,
-        errors: errors.mapped()
-    });
-};
+            old: req.body,
+            errors: errors.mapped()
+        });
+}
+        

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head', {view: "Preguntas frecuentes" , gliderCSSDisabled:true}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main class="main-faq">
+                <div class="main-div">
+                    <div class="accordion">
+                        <h1>Preguntas frecuentes</h1>
+                        <p>En <var>DokyShop</var>, entendemos que tus perros y gatos son más que simples mascotas; son
+                            parte de tu familia. Por eso, nos esforzamos por ofrecer productos de alta calidad que
+                            satisfagan todas las necesidades de tus amigos peludos. Para ayudarte a tener la mejor
+                            <code>experiencia</code> posible con nosotros, hemos recopilado una lista de preguntas
+                            frecuentes que abordan diversos temas relacionados con nuestro sitio.</p>
+                    </div>
+                    <div>
+                        <% faqs.forEach(f=> { %>
+                            <div class="accordion-item" id="<%= f.class %>">
+                                <h2 class="accordion-header" id="panelsStayOpen-heading<%= f.class %>">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapse<%= f.class %>" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapse<%= f.class %>">
+                                        <%= f.title %>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapse<%= f.class %>" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-heading<%= f.class %>">
+                                    <div class="accordion-body">
+                                        <%= f.paragraph %>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </main>
+
+            <%- include('../partials/footer') %> <%- include('../partials/scripts', {disabledGliderJS:true}) %>
+    </body>
+
+</html>

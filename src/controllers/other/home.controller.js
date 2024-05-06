@@ -1,40 +1,31 @@
 const db = require('../../database/models');
 
 module.exports = (req, res) => {
-    db.otherImage.findAll({
+    const viewPromsie = db.view.findOne({
         where: {
-            viewId: 1
+            name: 'home'
         },
-        attributes: {
-            exclude: [
-                "createdAt",
-                "updatedAt"
-            ]
-        }
+        include: [{
+            association: "banners",
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        },
+        {
+            association: "otherImages",
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        }],
+        attributes: { exclude: ['createdAt', 'updatedAt'] }
     })
-    .then((images) => {
-        db.product.findAll({
-            limit: 4,
-            attributes: {
-                exclude: [
-                    "categoryId",
-                    "subcategoryId",
-                    "description",
-                    "sale",
-                    "quantity",
-                    "colorId",
-                    "available",
-                    "createdAt",
-                    "updatedAt"
-                ]
-            }
-        })
-        .then(products => {
-            res.render("other/home", { products, images })
-        })
-        .catch(err => {
-            res.send(err.message)
-        })
-    
+    const subcategoriesPromsie = db.subcategory.findAll()
+    const productsPromise = db.product.findAll({
+        limit: 4,
+        attributes: { exclude: ["categoryId", "subcategoryId", "description", "sale", "quantity", "color", "available", "createdAt", "updatedAt"]}
+    })
+    const faqPromise = db.faq.findAll()
+    Promise.all([viewPromsie, subcategoriesPromsie  ,productsPromise, faqPromise])
+    .then(([views, subcategories ,products, faqs]) => {
+        return res.render("other/home", { banners: views.banners, otherImages: views.otherImages, subcategories, products, faqs })
+    })
+    .catch(err => {
+        res.send(err.message)
     })
 };

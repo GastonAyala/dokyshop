@@ -1,0 +1,53 @@
+.hidden-div {
+    z-index: 111;
+    width: 100vw;
+    position: fixed;
+    backdrop-filter: blur(5px);
+}
+
+.hidden{
+    display: none;
+    backdrop-filter: unset;
+}
+
+.hidden-div .div-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hidden-div .div-dot .spinner {
+    background: #f5dad8;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    aspect-ratio: 1;
+    animation: rotate 6s linear infinite;
+}
+
+.hidden-div .div-dot .spinner img {
+    display: block;
+    width: 100%;
+    animation: bounce 0.2s linear infinite alternate;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(-5%);
+    }
+
+    to {
+        transform: translateY(10%);
+    }
+}
