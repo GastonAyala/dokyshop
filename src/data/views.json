@@ -1,30 +1,42 @@
 [
     {
         "id": 1,
+        "entity": "other",
         "name": "home"
     },
     {
         "id": 2,
+        "entity": "other",
         "name": "results"
     },
     {
         "id": 3,
-        "name": "login"
+        "entity": "other",
+        "name": "faq"
     },
     {
         "id": 4,
-        "name": "register"
+        "entity": "authentication",
+        "name": "login"
     },
     {
         "id": 5,
-        "name": "profile"
+        "entity": "authentication",
+        "name": "register"
     },
     {
         "id": 6,
-        "name": "listProduct"
+        "entity": "users",
+        "name": "profile"
     },
     {
         "id": 7,
+        "entity": "products",
+        "name": "listProduct"
+    },
+    {
+        "id": 8,
+        "entity": "products",
         "name": "productDetail"
     }
 ]

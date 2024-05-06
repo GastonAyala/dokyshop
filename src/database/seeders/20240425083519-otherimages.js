@@ -8,6 +8,7 @@ const otherImagesDBMapped = otherImagesJSON.map(otherImg => {
   const otherImages = otherImg.images.map(img => {
     return {
       name: img.file,
+      type: img.type,
       viewId: view ? view.id : null
     };
   });

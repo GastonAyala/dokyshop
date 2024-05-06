@@ -3,13 +3,13 @@
 const productsJSON = require('../../data/product.json');
 const categoriesJSON = require('../../data/categories.json');
 const subcategoriesJSON = require('../../data/subcategories.json');
-const colorsJSON = require('../../data/colors.json');
-
 
 const productsDBMapped = productsJSON.map(p => {
   const category = categoriesJSON.find(c => c.name === p.category)
   const subcategory = subcategoriesJSON.find(sc => sc.name === p.subcategory)
-  const color = colorsJSON.find(col => col.name.includes(p.color))
+  const colorsMapped = p.color.map(p => {
+      return p
+  });
 
   return {
     title: p.title,
@@ -19,8 +19,8 @@ const productsDBMapped = productsJSON.map(p => {
     price: p.price,
     sale: p.sale,
     quantity: p.quantity,
-    colorId: color ? color.id : null,
     available: p.available,
+    color: colorsMapped,
     imagePrincipal: p.imagePrimary
   }
 })

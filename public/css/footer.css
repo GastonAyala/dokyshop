@@ -48,6 +48,7 @@
 
 .main-footer div.links-container .links-nav ul {
     text-align: center;
+    padding-left: 0;
 }
 
 .main-footer div.links-container .links-nav ul li {}
@@ -77,7 +78,9 @@
 
 .main-footer .contact-container nav.contact-nav {}
 
-.main-footer .contact-container .contact-nav ul {}
+.main-footer .contact-container .contact-nav ul {
+    padding-left: 0;
+}
 
 .main-footer .contact-container .contact-nav ul li {}
 
@@ -116,6 +119,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    padding-left: 0;
 }
 
 .main-footer .socials-container .socials-nav ul li {

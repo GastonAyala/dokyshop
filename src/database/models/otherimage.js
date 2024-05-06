@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   otherImage.init({
     name: DataTypes.STRING,
+    type: DataTypes.STRING,
     viewId: DataTypes.INTEGER
   }, {
     sequelize,
