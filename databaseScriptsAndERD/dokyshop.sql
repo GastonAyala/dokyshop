@@ -28,10 +28,10 @@ CREATE TABLE `addresses` (
   `city` varchar(50) DEFAULT NULL,
   `province` varchar(50) DEFAULT NULL,
   `zipCode` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-INSERT INTO `addresses` VALUES (1,NULL,NULL,NULL,NULL,'2024-05-05 20:41:10','2024-05-05 20:41:10'),(2,'Calle Falsa 123','Quilmes Oeste','Buenos Aires',1881,'2024-05-05 20:41:10','2024-05-05 20:41:10'),(3,NULL,NULL,NULL,NULL,'2024-05-05 20:41:10','2024-05-05 20:41:10'),(4,'Calle Falsa 123','Temperley  ','Buenos Aires',1834,'2024-05-05 20:41:10','2024-05-05 20:41:10'),(5,NULL,NULL,NULL,NULL,'2024-05-05 20:41:10','2024-05-05 20:41:10'),(6,NULL,NULL,NULL,NULL,'2024-05-05 20:41:10','2024-05-05 20:41:10');
+INSERT INTO `addresses` VALUES (1,NULL,NULL,NULL,NULL,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(2,'Calle Falsa 123','Quilmes Oeste','Buenos Aires',1881,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(3,NULL,NULL,NULL,NULL,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(4,'Calle Falsa 123','Temperley  ','Buenos Aires',1834,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(5,NULL,NULL,NULL,NULL,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(6,NULL,NULL,NULL,NULL,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(7,NULL,NULL,NULL,NULL,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(8,NULL,NULL,NULL,NULL,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(9,NULL,NULL,NULL,NULL,'2024-05-06 19:14:19','2024-05-06 19:14:19');
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,8 +57,8 @@ CREATE TABLE `banners` (
   `title` varchar(100) DEFAULT NULL,
   `subtitle` varchar(100) DEFAULT NULL,
   `viewId` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:11',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:11',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `viewId` (`viewId`),
@@ -72,7 +72,7 @@ CREATE TABLE `banners` (
 
 LOCK TABLES `banners` WRITE;
 /*!40000 ALTER TABLE `banners` DISABLE KEYS */;
-INSERT INTO `banners` VALUES (1,'banner-1.png',NULL,NULL,1,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(2,'banner-2.png',NULL,NULL,1,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(3,'banner-3.png',NULL,NULL,1,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL);
+INSERT INTO `banners` VALUES (1,'banner-1.png',NULL,NULL,1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(2,'banner-2.png',NULL,NULL,1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(3,'banner-3.png',NULL,NULL,1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL);
 /*!40000 ALTER TABLE `banners` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,8 +137,8 @@ CREATE TABLE `imagesecondaries` (
   `id` int NOT NULL AUTO_INCREMENT,
   `file` varchar(45) DEFAULT NULL,
   `productId` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `productId` (`productId`),
@@ -152,7 +152,7 @@ CREATE TABLE `imagesecondaries` (
 
 LOCK TABLES `imagesecondaries` WRITE;
 /*!40000 ALTER TABLE `imagesecondaries` DISABLE KEYS */;
-INSERT INTO `imagesecondaries` VALUES (1,'Gigwi2.webp',1,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(2,'pelotaChuckit2.webp',2,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(3,'didactico2.webp',3,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(4,'tunel2.webp',4,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(5,'chapita2.webp',5,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(6,'pechera2.webp',6,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(7,'rascador2.webp',7,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(8,'pelota2.webp',8,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(9,'tabla.webp',9,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(10,'tabla.webp',10,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(11,'tabla.webp',11,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(12,'tabla.webp',12,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(13,'goma.webp',13,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(14,'imagesSecondary-1710302039306.jpg',14,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(15,'imagesSecondary-1710302039308.jpg',14,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(16,'imagesSecondary-1710302235110.jpeg',15,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(17,'imagesSecondary-1710449092093.webp',16,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(18,'imagesSecondary-1710302993110.webp',17,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(19,'imagesSecondary-1710303214274.webp',18,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(20,'imagesSecondary-1710303693543.webp',19,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(21,'imagesSecondary-171382177879745.jpg',20,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL);
+INSERT INTO `imagesecondaries` VALUES (1,'Gigwi2.webp',1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(2,'pelotaChuckit2.webp',2,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(3,'didactico2.webp',3,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(4,'tunel2.webp',4,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(5,'chapita2.webp',5,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(6,'pechera2.webp',6,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(7,'rascador2.webp',7,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(8,'pelota2.webp',8,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(9,'tabla.webp',9,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(10,'tabla.webp',10,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(11,'tabla.webp',11,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(12,'tabla.webp',12,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(13,'goma.webp',13,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(14,'imagesSecondary-1710302039306.jpg',14,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(15,'imagesSecondary-1710302039308.jpg',14,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(16,'imagesSecondary-1710302235110.jpeg',15,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(17,'imagesSecondary-1710449092093.webp',16,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(18,'imagesSecondary-1710302993110.webp',17,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(19,'imagesSecondary-1710303214274.webp',18,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(20,'imagesSecondary-1710303693543.webp',19,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(21,'imagesSecondary-171382177879745.jpg',20,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL);
 /*!40000 ALTER TABLE `imagesecondaries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,8 +168,8 @@ CREATE TABLE `orderproducts` (
   `orderId` int NOT NULL,
   `productId` int NOT NULL,
   `quantity` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   PRIMARY KEY (`id`),
   KEY `orderId` (`orderId`),
   KEY `productId` (`productId`),
@@ -184,7 +184,7 @@ CREATE TABLE `orderproducts` (
 
 LOCK TABLES `orderproducts` WRITE;
 /*!40000 ALTER TABLE `orderproducts` DISABLE KEYS */;
-INSERT INTO `orderproducts` VALUES (1,1,16,2,'2024-05-05 20:41:10','2024-05-05 20:41:10'),(2,1,13,1,'2024-05-05 20:41:10','2024-05-05 20:41:10'),(3,2,20,1,'2024-05-05 20:41:10','2024-05-05 20:41:10');
+INSERT INTO `orderproducts` VALUES (1,1,16,2,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(2,1,13,1,'2024-05-06 19:14:19','2024-05-06 19:14:19'),(3,2,20,1,'2024-05-06 19:14:19','2024-05-06 19:14:19');
 /*!40000 ALTER TABLE `orderproducts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,8 +200,8 @@ CREATE TABLE `orders` (
   `total` decimal(10,0) DEFAULT NULL,
   `userId` int NOT NULL,
   `state` varchar(45) DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
@@ -215,7 +215,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,21400,4,'pending','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(2,75000,2,'completed','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL);
+INSERT INTO `orders` VALUES (1,21400,4,'pending','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(2,75000,2,'completed','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,8 +231,8 @@ CREATE TABLE `otherimages` (
   `name` varchar(100) DEFAULT NULL,
   `type` varchar(10) DEFAULT NULL,
   `viewId` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:11',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:11',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `viewId` (`viewId`),
@@ -246,7 +246,7 @@ CREATE TABLE `otherimages` (
 
 LOCK TABLES `otherimages` WRITE;
 /*!40000 ALTER TABLE `otherimages` DISABLE KEYS */;
-INSERT INTO `otherimages` VALUES (1,'FAQ.jpg','petsection',1,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(2,'vet-gato.jpg','petsection',1,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(3,'accesorios.png','category',1,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(4,'indumentaria.png','category',1,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(5,'juguetes.png','category',1,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(6,'fondoSearchNotFound.jpg','background',2,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(7,'fondo-login.jpeg','background',4,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL),(8,'fondo-login.jpeg','background',5,'2024-05-05 20:41:11','2024-05-05 20:41:11',NULL);
+INSERT INTO `otherimages` VALUES (1,'FAQ.jpg','petsection',1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(2,'vet-gato.jpg','petsection',1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(3,'accesorios.png','category',1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(4,'indumentaria.png','category',1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(5,'juguetes.png','category',1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(6,'fondoSearchNotFound.jpg','background',2,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(7,'fondo-login.jpeg','background',4,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(8,'fondo-login.jpeg','background',5,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL);
 /*!40000 ALTER TABLE `otherimages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,8 +269,8 @@ CREATE TABLE `products` (
   `available` tinyint(1) DEFAULT NULL,
   `color` varchar(255) DEFAULT NULL,
   `imagePrincipal` varchar(100) DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `categoryId` (`categoryId`),
@@ -286,7 +286,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Juguete Para Perro Gigwi Duraspikes Conejo Celeste Extra Durable',2,3,'La serie de juguetes Gigwi Duraspikes se caracteriza por su resistencia, lo que la hace ideal para perros de mordida fuerte. Se presentan en diferentes modelos y colores, y permitirán que tu mascota limpie sus dientes al mismo tiempo que se divierte gracias a sus \'espinas\' de caucho de alta dureza.',25534.00,7,23,1,'LightBlue','Gigwi.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(2,'Pelota Chuckit Kick Fetch',2,3,'Esta pelota tiene una forma especial que facilita a tu perro la tarea de agarrarla y alcanzártela para una diversión sin límites. Está fabricado con espuma súper resistente y sus costuras se encuentran reforzadas para garantizar su durabilidad. Medidas de diámetro: 14 cm.',35903.00,5,25,1,'Coral','pelotaChuckit.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(3,'Juguetes Didacticos Para Gatos',3,3,'Explorer es un juguete de habilidad para gatos, que estimula el instinto depredador del animal, favorece el ejercicio físico y mental y lo obliga a comer más despacio',44234.00,5,22,1,'White','didactico1.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(4,'Tunel Gato Combinable',3,3,'Este túnel para gatos permitirá que tu mascota juegue, se divierta durante horas, tenga su espacio y pueda descansar. Este accesorio es totalmente seguro y se pliega para poder almacenarlo y transportarlo.',6098.00,20,10,1,'Multicolor','tunel1.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(5,'Chapita Identificatoria Glam Small Bone',2,2,'Chapitas identificatorias esmaltadas en bronce y embellecidas con brillantes resplandecientes. Cada medalla es una pequeña joya realizada con materiales hipoalergénicos. Este producto se puede personalizar hasta con 4 líneas de 15 caracteres cada una en su parte posterior.',35093.00,10,19,1,'Multicolor','chapita.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(6,'Pechera Arnes Tela Talle 5',2,2,'Esta pechera es ideal para perros que disfruten de correr durante sus paseos o de acompañar a sus dueños en sus aventuras al aire libre. Tanto la parte superior como la inferior brindan un ajuste seguro alrededor del pecho y el cuello de su mascota.',30924.00,15,17,1,'Multicolor','pechera.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(7,'Rascador Para Gatos Fat Cat Carton Infinit',3,2,'Este rascador de Fat Cat le encantará a tu gato ya que contiene hierba gatera para atraerlo, que se divierta y así fortalecer sus uñas y cuidar tus muebles. Son adecuados para gatos de cualquier edad. Además, viene con un juguete para gatos gratis como valor agregado.',22517.00,20,8,1,'DarkGoldenrod','rascador.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(8,'Pack 6 Pelotas 3,5 Cm',2,2,'Surtido de pelotas en tela con un cascabel interior',3210.00,5,22,1,'Multicolor','pelota.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(9,'SWEATER LANA BEWARE',2,1,'Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.',20998.00,10,25,1,'OliveDrab','sweater.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(10,'SWEATER LANA BEWARE ROJO',2,1,'Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.',20998.00,10,23,1,'Red','sweater2.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(11,'SWEATER LANA GUARDAS ASPEN VERDE MILITAR',2,1,'Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.',20998.00,5,17,1,'OliveDrab','sweater3.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(12,'SWEATER LANA GUARDAS ASPEN BEIGE',2,1,'Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.',20998.00,5,19,1,'RosyBrown','sweater4.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(13,'Juguete Para Perro Kong Squeezz Hueso Medium C/Sonajero',2,3,'Kong Squeezz Hueso Medium C/Sonajero es un juguete dentalque que le ayudará a mantener limpios los dientes, sino que también aliviará el dolor de la dentición, medida Medium con Sonajero.',5400.00,5,15,1,'Blue','hueso.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(14,'Ratitas x 3',2,3,'Ratitas de goma para el entretenimiento de nuestra mascota, en variaos colores a elección.-',5000.00,5,20,1,'Multicolor','imagePrimary-1710302039305.jpg','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(15,'Rascadores',3,2,'Practico accesorio para nuestra mascota.  Se trata de un instinto que no pueden evitar porque además de afilarse las uñas, rascar es parte del proceso para marcar el territorio. Esto contribuye a la salud mental y emocional de tu gato.-',15000.00,10,30,1,'Black','imagePrimary-1710302235102.png','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(16,'Correa Star Wars Darth Vader Perro Peq',2,2,'Correa de paseo de Star Wars Darth Vader de la línea Disney con simpáticos estampados de la serie animada. Posee una hebilla resistente a los tirones, posee una arándela útil para colgar los accesorios para las bolsas de residuos. Medida aproximada: 100 cm.',8000.00,5,30,1,'Black','imagePrimary-1710449097063.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(17,'Indumentaria canina',2,1,'Indumentaria de calidad para nuestro perrudos de todo terreno, de raza pequeña a grande, varios modelos y colores, dependiendo también las estaciones del año.',12000.00,10,30,1,'Red','imagePrimary-1710302993109.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(18,'camas',1,2,'Casa de tela Nº 3 de máxima calidad y algodón. Estructura en placa poliéster de 20 mm, es un lugar ideal para tu mascota para descansar y jugar. Está revestida por una funda de peluche extra suave. El relleno es de goma espuma y base de nylon antideslizante. Medidas: 45 cm frente X 45 cm altura x 55 cm profundidad.\r\nRECOMENDADOS',35000.00,15,15,1,'Multicolor','imagePrimary-1710303214272.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(19,'Transportador',3,2,'Transportadores de alta calidad y resistentes.  Los transportadores son recomendado en particular para viajes largos. También para las visitas al vet. En esta última es necesario que tu gato se sienta resguardado ante la vulnerabilidad que ellos saben que presentan.',40000.00,10,15,1,'Multicolor','imagePrimary-1710303693542.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(20,'Rascador Para Gatos 2 Pisos 80 Cm',3,2,'Este rascador CanCat de dos niveles brindará diversión a tu gato, permitirá que pueda limar sus uñas, arañar y que tenga un lugar para jugar y descansar. Altura: 80 cm.',75000.00,20,15,1,'Black','imagePrimary-1711424077491.webp','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL);
+INSERT INTO `products` VALUES (1,'Juguete Para Perro Gigwi Duraspikes Conejo Celeste Extra Durable',2,3,'La serie de juguetes Gigwi Duraspikes se caracteriza por su resistencia, lo que la hace ideal para perros de mordida fuerte. Se presentan en diferentes modelos y colores, y permitirán que tu mascota limpie sus dientes al mismo tiempo que se divierte gracias a sus \'espinas\' de caucho de alta dureza.',25534.00,7,23,1,'LightBlue','Gigwi.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(2,'Pelota Chuckit Kick Fetch',2,3,'Esta pelota tiene una forma especial que facilita a tu perro la tarea de agarrarla y alcanzártela para una diversión sin límites. Está fabricado con espuma súper resistente y sus costuras se encuentran reforzadas para garantizar su durabilidad. Medidas de diámetro: 14 cm.',35903.00,5,25,1,'Coral','pelotaChuckit.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(3,'Juguetes Didacticos Para Gatos',3,3,'Explorer es un juguete de habilidad para gatos, que estimula el instinto depredador del animal, favorece el ejercicio físico y mental y lo obliga a comer más despacio',44234.00,5,22,1,'White','didactico1.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(4,'Tunel Gato Combinable',3,3,'Este túnel para gatos permitirá que tu mascota juegue, se divierta durante horas, tenga su espacio y pueda descansar. Este accesorio es totalmente seguro y se pliega para poder almacenarlo y transportarlo.',6098.00,20,10,1,'Multicolor','tunel1.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(5,'Chapita Identificatoria Glam Small Bone',2,2,'Chapitas identificatorias esmaltadas en bronce y embellecidas con brillantes resplandecientes. Cada medalla es una pequeña joya realizada con materiales hipoalergénicos. Este producto se puede personalizar hasta con 4 líneas de 15 caracteres cada una en su parte posterior.',35093.00,10,19,1,'Multicolor','chapita.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(6,'Pechera Arnes Tela Talle 5',2,2,'Esta pechera es ideal para perros que disfruten de correr durante sus paseos o de acompañar a sus dueños en sus aventuras al aire libre. Tanto la parte superior como la inferior brindan un ajuste seguro alrededor del pecho y el cuello de su mascota.',30924.00,15,17,1,'Multicolor','pechera.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(7,'Rascador Para Gatos Fat Cat Carton Infinit',3,2,'Este rascador de Fat Cat le encantará a tu gato ya que contiene hierba gatera para atraerlo, que se divierta y así fortalecer sus uñas y cuidar tus muebles. Son adecuados para gatos de cualquier edad. Además, viene con un juguete para gatos gratis como valor agregado.',22517.00,20,8,1,'DarkGoldenrod','rascador.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(8,'Pack 6 Pelotas 3,5 Cm',2,2,'Surtido de pelotas en tela con un cascabel interior',3210.00,5,22,1,'Multicolor','pelota.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(9,'SWEATER LANA BEWARE',2,1,'Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.',20998.00,10,25,1,'OliveDrab','sweater.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(10,'SWEATER LANA BEWARE ROJO',2,1,'Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.',20998.00,10,23,1,'Red','sweater2.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(11,'SWEATER LANA GUARDAS ASPEN VERDE MILITAR',2,1,'Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.',20998.00,5,17,1,'OliveDrab','sweater3.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(12,'SWEATER LANA GUARDAS ASPEN BEIGE',2,1,'Tejidos Veganos, Sweaters calidad Premium para los de cuatro patas.',20998.00,5,19,1,'RosyBrown','sweater4.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(13,'Juguete Para Perro Kong Squeezz Hueso Medium C/Sonajero',2,3,'Kong Squeezz Hueso Medium C/Sonajero es un juguete dentalque que le ayudará a mantener limpios los dientes, sino que también aliviará el dolor de la dentición, medida Medium con Sonajero.',5400.00,5,15,1,'Blue','hueso.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(14,'Ratitas x 3',2,3,'Ratitas de goma para el entretenimiento de nuestra mascota, en variaos colores a elección.-',5000.00,5,20,1,'Multicolor','imagePrimary-1710302039305.jpg','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(15,'Rascadores',3,2,'Practico accesorio para nuestra mascota.  Se trata de un instinto que no pueden evitar porque además de afilarse las uñas, rascar es parte del proceso para marcar el territorio. Esto contribuye a la salud mental y emocional de tu gato.-',15000.00,10,30,1,'Black','imagePrimary-1710302235102.png','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(16,'Correa Star Wars Darth Vader Perro Peq',2,2,'Correa de paseo de Star Wars Darth Vader de la línea Disney con simpáticos estampados de la serie animada. Posee una hebilla resistente a los tirones, posee una arándela útil para colgar los accesorios para las bolsas de residuos. Medida aproximada: 100 cm.',8000.00,5,30,1,'Black','imagePrimary-1710449097063.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(17,'Indumentaria canina',2,1,'Indumentaria de calidad para nuestro perrudos de todo terreno, de raza pequeña a grande, varios modelos y colores, dependiendo también las estaciones del año.',12000.00,10,30,1,'Red','imagePrimary-1710302993109.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(18,'camas',1,2,'Casa de tela Nº 3 de máxima calidad y algodón. Estructura en placa poliéster de 20 mm, es un lugar ideal para tu mascota para descansar y jugar. Está revestida por una funda de peluche extra suave. El relleno es de goma espuma y base de nylon antideslizante. Medidas: 45 cm frente X 45 cm altura x 55 cm profundidad.\r\nRECOMENDADOS',35000.00,15,15,1,'Multicolor','imagePrimary-1710303214272.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(19,'Transportador',3,2,'Transportadores de alta calidad y resistentes.  Los transportadores son recomendado en particular para viajes largos. También para las visitas al vet. En esta última es necesario que tu gato se sienta resguardado ante la vulnerabilidad que ellos saben que presentan.',40000.00,10,15,1,'Multicolor','imagePrimary-1710303693542.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(20,'Rascador Para Gatos 2 Pisos 80 Cm',3,2,'Este rascador CanCat de dos niveles brindará diversión a tu gato, permitirá que pueda limar sus uñas, arañar y que tenga un lugar para jugar y descansar. Altura: 80 cm.',75000.00,20,15,1,'Black','imagePrimary-1711424077491.webp','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -376,17 +376,17 @@ CREATE TABLE `users` (
   `password` varchar(100) DEFAULT NULL,
   `roleId` int DEFAULT '1',
   `avatar` varchar(30) DEFAULT 'perfilUser.png',
-  `phone` int DEFAULT NULL,
+  `phone` varchar(13) DEFAULT NULL,
   `addressId` int NOT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `roleId` (`roleId`),
   KEY `addressId` (`addressId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `users_ibfk_2` FOREIGN KEY (`addressId`) REFERENCES `addresses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -395,7 +395,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Nadia Perez','nadia@gmail.com','$2a$12$O2CKzd.IBo2TChZ7qwTOteRXqyLuiXGy8gEpln9sMG.yT/oN.AmCW',1,'perfilUser.png',0,1,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(2,'Gaston Ayala','gastonayala@gmail.com','$2a$12$XacbRN5iTgZzl8drF3RdOOfvGmnslAjjERiGZUDJL.iCS3ProRbNW',2,'avatar-1711948831309.jpg',0,2,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(3,'ADRIANA ESCUBILLA','escubilla@gmail.com','$2a$12$deNCD8sRPI2MFcPdceryZOLBeXRLNC8zXhIRnIt0r/Nvl3GqQZQnu',2,'avatar-1712043239095.jpg',0,3,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(4,'Omar Piñeiro','omarp@gmail.com','$2a$12$TfjaFgZTWjS32pZZkNYjsenaQYwS.iK3QZ/aEWoMg2LaNMzIy9.B6',1,'avatar-1712083308612.jpg',1125658045,4,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(5,'Ricardina Zabala','rica@gmail.com','$2a$12$JaSitbcjJ8MEgvoHIx2VmOWOMWC4M4VyHVG4vMYV.Y3Hm8ErZ0AtG',2,'avatar-1714199937620.gif',0,5,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(6,'Marcos Borquez','marcos@gmail.com','$2a$12$APovxajp4ES5jC6Cw/4okO.FJDFklLEDJNGkYcWoxCKh8AVXQ29Gm',2,'avatar-1713924989846.png',0,6,'2024-05-05 20:41:10','2024-05-05 20:41:10',NULL);
+INSERT INTO `users` VALUES (1,'Nadia Perez','nadia@gmail.com','$2a$12$O2CKzd.IBo2TChZ7qwTOteRXqyLuiXGy8gEpln9sMG.yT/oN.AmCW',1,'perfilUser.png','0',1,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(2,'Gaston Ayala','gastonayala@gmail.com','$2a$12$XacbRN5iTgZzl8drF3RdOOfvGmnslAjjERiGZUDJL.iCS3ProRbNW',2,'avatar-1711948831309.jpg','0',2,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(3,'ADRIANA ESCUBILLA','escubilla@gmail.com','$2a$12$deNCD8sRPI2MFcPdceryZOLBeXRLNC8zXhIRnIt0r/Nvl3GqQZQnu',2,'avatar-1712043239095.jpg','0',3,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(4,'Omar Piñeiro','omarp@gmail.com','$2a$12$TfjaFgZTWjS32pZZkNYjsenaQYwS.iK3QZ/aEWoMg2LaNMzIy9.B6',1,'avatar-1712083308612.jpg','1125658045',4,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(5,'Ricardina Zabala','rica@gmail.com','$2a$12$JaSitbcjJ8MEgvoHIx2VmOWOMWC4M4VyHVG4vMYV.Y3Hm8ErZ0AtG',2,'avatar-1714199937620.gif','0',5,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(6,'Marcos Borquez','marcos@gmail.com','$2a$12$APovxajp4ES5jC6Cw/4okO.FJDFklLEDJNGkYcWoxCKh8AVXQ29Gm',2,'avatar-1713924989846.png','0',6,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(7,'ADRIANA ESCUBILLA','adriana@gmail.com','$2a$12$G/y49YiH1Us9ngN0zGl59OklpufR1LgfSzcMN/y21LoNXntiy5fa.',2,'perfilUser.png','0',7,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(8,'Nicolas cri','nicolascrisanto65@gmail.com','$2a$12$FU7rjuS5z7lFN3zrZeA30uga340QbtJqnHhd7Uw7Gi33V/djYL5QK',2,'perfilUser.png','0',8,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(9,'Pedro','pedro@gmail.com','$2a$12$GD8B7Tur018xlIjEaTjFFenLD6t0p0MJNtK5WZjD7WbRTopL0Qteu',1,'avatar-1714989279256.gif','0',9,'2024-05-06 19:14:19','2024-05-06 19:14:19',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -410,8 +410,8 @@ CREATE TABLE `views` (
   `id` int NOT NULL AUTO_INCREMENT,
   `entity` varchar(100) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -423,7 +423,7 @@ CREATE TABLE `views` (
 
 LOCK TABLES `views` WRITE;
 /*!40000 ALTER TABLE `views` DISABLE KEYS */;
-INSERT INTO `views` VALUES (1,'other','home','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(2,'other','results','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(3,'other','faq','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(4,'authentication','login','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(5,'authentication','register','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(6,'users','profile','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(7,'products','listProduct','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL),(8,'products','productDetail','2024-05-05 20:41:10','2024-05-05 20:41:10',NULL);
+INSERT INTO `views` VALUES (1,'other','home','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(2,'other','results','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(3,'other','faq','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(4,'authentication','login','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(5,'authentication','register','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(6,'users','profile','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(7,'products','listProduct','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL),(8,'products','productDetail','2024-05-06 19:14:19','2024-05-06 19:14:19',NULL);
 /*!40000 ALTER TABLE `views` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -436,4 +436,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-05 17:44:51
+-- Dump completed on 2024-05-06 16:18:03

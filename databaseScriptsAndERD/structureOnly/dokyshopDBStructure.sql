@@ -28,10 +28,10 @@ CREATE TABLE `addresses` (
   `city` varchar(50) DEFAULT NULL,
   `province` varchar(50) DEFAULT NULL,
   `zipCode` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,8 +47,8 @@ CREATE TABLE `banners` (
   `title` varchar(100) DEFAULT NULL,
   `subtitle` varchar(100) DEFAULT NULL,
   `viewId` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:11',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:11',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `viewId` (`viewId`),
@@ -97,8 +97,8 @@ CREATE TABLE `imagesecondaries` (
   `id` int NOT NULL AUTO_INCREMENT,
   `file` varchar(45) DEFAULT NULL,
   `productId` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `productId` (`productId`),
@@ -118,8 +118,8 @@ CREATE TABLE `orderproducts` (
   `orderId` int NOT NULL,
   `productId` int NOT NULL,
   `quantity` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   PRIMARY KEY (`id`),
   KEY `orderId` (`orderId`),
   KEY `productId` (`productId`),
@@ -140,8 +140,8 @@ CREATE TABLE `orders` (
   `total` decimal(10,0) DEFAULT NULL,
   `userId` int NOT NULL,
   `state` varchar(45) DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
@@ -161,8 +161,8 @@ CREATE TABLE `otherimages` (
   `name` varchar(100) DEFAULT NULL,
   `type` varchar(10) DEFAULT NULL,
   `viewId` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:11',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:11',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `viewId` (`viewId`),
@@ -189,8 +189,8 @@ CREATE TABLE `products` (
   `available` tinyint(1) DEFAULT NULL,
   `color` varchar(255) DEFAULT NULL,
   `imagePrincipal` varchar(100) DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `categoryId` (`categoryId`),
@@ -256,17 +256,17 @@ CREATE TABLE `users` (
   `password` varchar(100) DEFAULT NULL,
   `roleId` int DEFAULT '1',
   `avatar` varchar(30) DEFAULT 'perfilUser.png',
-  `phone` int DEFAULT NULL,
+  `phone` varchar(13) DEFAULT NULL,
   `addressId` int NOT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `roleId` (`roleId`),
   KEY `addressId` (`addressId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `users_ibfk_2` FOREIGN KEY (`addressId`) REFERENCES `addresses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,8 +280,8 @@ CREATE TABLE `views` (
   `id` int NOT NULL AUTO_INCREMENT,
   `entity` varchar(100) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
-  `updatedAt` datetime NOT NULL DEFAULT '2024-05-05 20:41:10',
+  `createdAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
+  `updatedAt` datetime NOT NULL DEFAULT '2024-05-06 19:14:19',
   `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -296,4 +296,4 @@ CREATE TABLE `views` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-05 17:55:51
+-- Dump completed on 2024-05-06 16:17:46
