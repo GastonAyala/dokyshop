@@ -30,13 +30,6 @@ module.exports = (req, res) => {
                 })
             })
             .then(() => {
-                const oldAvatarPath = path.join(__dirname, "../../../public/images/avatar/" + userToEdit?.avatar)
-                const existOldImg = fs.existsSync(oldAvatarPath);
-                if (existOldImg) {
-                    if (userToEdit?.avatar !== "perfilUser.png" && avatarImage?.length) {
-                        fs.unlinkSync(oldAvatarPath);
-                    }
-                }
                 return res.redirect("/usuario/perfil")
             })
             .catch(err => {
