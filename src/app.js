@@ -18,7 +18,7 @@ const cartRoutes = require('./routes/cart.routes');
 const adminRoutes = require('./routes/admin.routes');
 const userRoutes = require('./routes/users.routes')
 
-
+const apiOrderRoutes = require('./routes/api/order.routes');
 
 
 /* CONFIGS */
@@ -45,6 +45,7 @@ app.use("/usuario", userRoutes)
 app.use("/carrito-compra", cartRoutes)
 app.use("/admin", adminRoutes);
 
+app.use('/api/order', apiOrderRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
