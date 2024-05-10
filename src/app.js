@@ -20,7 +20,9 @@ const adminRoutes = require('./routes/admin.routes');
 const userRoutes = require('./routes/users.routes')
 
 /* RUTAS API*/
-const apiRoutes = require("./routes/api/users.api.routes")
+const apiUsersRoutes = require("./routes/api/users.api.routes")
+
+const apiProductsRoutes = require('./routes/api/products.api')
 
 
 /* CONFIGS */
@@ -48,7 +50,9 @@ app.use("/carrito-compra", cartRoutes)
 app.use("/admin", adminRoutes);
 
 /* ENRUTADOR API */
-app.use("/api/users", apiRoutes)
+app.use("/api/users", apiUsersRoutes)
+
+app.use('/api/products', apiProductsRoutes)
 
 
 // catch 404 and forward to error handler
