@@ -1,10 +1,11 @@
 const router = require("express").Router()
-const { listApi } = require("../../controllers/api/users");
-const { uploadAvatar } = require("../../middleware/uploadAvatar")
+const { listApi, renderImg, } = require("../../controllers/api/users");
+
 
 
 //  /api/users
-router.get("/",uploadAvatar.fields([{name: "avatar"}]), listApi)
+router.get("/", listApi)
+router.get('/:image', renderImg)
 
 
 

@@ -1,3 +1,4 @@
 module.exports = {
-  listApi : require("./list.controller.api")  
+  listApi : require("./list.controller.api"),
+  renderImg: require("./renderImg.controller.api")  
 }
