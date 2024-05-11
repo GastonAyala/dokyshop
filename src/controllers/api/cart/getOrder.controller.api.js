@@ -1,5 +1,5 @@
 const { literal } = require("sequelize");
-const { getOrderPending } = require("../../utils");
+const { getOrderPending, getOriginUrl } = require("../../utils");
 
 module.exports = async (req, res) => {
     
@@ -14,10 +14,13 @@ module.exports = async (req, res) => {
                 include: [
                     {
                         association: 'products',
+                        attributes: {
+                            include: [[literal(`CONCAT('${getOriginUrl(req)}/api/products/', imagePrincipal)`),"imagePrincipal"]],
+                        },
                         include: [{
                             association: "imagesecondaries",
                             attributes: {
-                                include: 'file'
+                                include: [[literal(`CONCAT('${getOriginUrl(req)}/api/products/', file)`), "file"]]
                             }
                         }],
                         through: {
