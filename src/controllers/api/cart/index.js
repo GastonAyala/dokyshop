@@ -4,4 +4,6 @@ module.exports = {
     removeProductToOrder: require('./removeProductToOrder.controller.api'),
     moreQuantity: require('./moreQuantity.controller.api'),
     lessQuantity: require('./lessQuantity.controller.api'),
+    cancelOrder: require('./cancelOrder.controller.api'),
+    completeOrder: require('./completeOrder.controller.api'),
 };
