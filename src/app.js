@@ -10,7 +10,8 @@ const session = require('express-session');
 const createSessionFromCookie = require('./middleware/createSessionFromCookie');
 var app = express();
 
-/* RUTAS */
+
+/* RUTAS MVC*/
 const otherRoutes = require('./routes/other.routes');
 const productRoutes = require('./routes/product.routes');
 const authRoutes = require('./routes/auth.routes');
@@ -18,7 +19,9 @@ const cartRoutes = require('./routes/cart.routes');
 const adminRoutes = require('./routes/admin.routes');
 const userRoutes = require('./routes/users.routes')
 
-/* RUTAS APIs*/
+/* RUTAS API*/
+const apiUsersRoutes = require("./routes/api/users.api.routes")
+
 const apiProductsRoutes = require('./routes/api/products.api')
 const apiOrderRoutes = require('./routes/api/order.api');
 
@@ -39,7 +42,7 @@ app.use(session( {secret: "Mensaje secreto dokyshop", resave: false, saveUniniti
 app.use(createSessionFromCookie)
 app.use(insertDataLocals) // usuario logueado y tiene acceso a session
 
-/* ENRUTADORES */
+/* ENRUTADORES MVC */ 
 app.use("/", otherRoutes);
 app.use("/productos", productRoutes);
 app.use("/autenticacion", authRoutes)
@@ -47,7 +50,9 @@ app.use("/usuario", userRoutes)
 app.use("/carrito-compra", cartRoutes)
 app.use("/admin", adminRoutes);
 
-/* ENRUTADORES APIs */
+/* ENRUTADOR API */
+app.use("/api/users", apiUsersRoutes)
+
 app.use('/api/products', apiProductsRoutes)
 app.use('/api/order', apiOrderRoutes);
 
