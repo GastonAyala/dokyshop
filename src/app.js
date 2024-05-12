@@ -20,7 +20,7 @@ const userRoutes = require('./routes/users.routes')
 
 /* RUTAS APIs*/
 const apiProductsRoutes = require('./routes/api/products.api')
-const apiOrderRoutes = require('./routes/api/order.routes');
+const apiOrderRoutes = require('./routes/api/order.api');
 
 
 /* CONFIGS */

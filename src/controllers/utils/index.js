@@ -1,4 +1,4 @@
 module.exports = {
     getOrderPending: require('./getOrderPending'),
-    getOriginUrl: require('./getOriginUrl')
+    getTotalOrder: require('./getTotalOrder'),
 };
