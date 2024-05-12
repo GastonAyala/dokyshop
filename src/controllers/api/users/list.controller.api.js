@@ -34,8 +34,8 @@ module.exports = (req, res) =>{
                 ok: true,
                 pages,
                 count: total,
-                next: nextPage ? getOriginUrl(req) + '/api/user?page=' + nextPage : null,
-                prev: previousPage ? getOriginUrl(req) + '/api/user?page=' + previousPage : null,
+                next: nextPage ? getOriginUrl(req) + '/api/users?page=' + nextPage : null,
+                prev: previousPage ? getOriginUrl(req) + '/api/users?page=' + previousPage : null,
                 data: user
         })
     }).catch(err =>{
