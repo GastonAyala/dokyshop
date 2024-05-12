@@ -20,7 +20,7 @@ module.exports = (req, res) =>{
                 'imageAvatarAPI'
             ],
             [
-                literal(`CONCAT('${getOriginUrl(req)}/api/users/', user.id)`),
+                literal(`CONCAT('${getOriginUrl(req)}/api/users/detail/', user.id)`),
                 'detail'
             ]
         ]

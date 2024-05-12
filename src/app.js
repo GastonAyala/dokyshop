@@ -20,9 +20,8 @@ const adminRoutes = require('./routes/admin.routes');
 const userRoutes = require('./routes/users.routes')
 
 /* RUTAS API*/
-const apiUsersRoutes = require("./routes/api/users.api.routes")
-
-const apiProductsRoutes = require('./routes/api/products.api')
+const apiUsersRoutes = require("./routes/api/users.api.");
+const apiProductsRoutes = require('./routes/api/products.api');
 const apiOrderRoutes = require('./routes/api/order.api');
 
 
@@ -51,9 +50,8 @@ app.use("/carrito-compra", cartRoutes)
 app.use("/admin", adminRoutes);
 
 /* ENRUTADOR API */
-app.use("/api/users", apiUsersRoutes)
-
-app.use('/api/products', apiProductsRoutes)
+app.use("/api/users", apiUsersRoutes);
+app.use('/api/products', apiProductsRoutes);
 app.use('/api/order', apiOrderRoutes);
 
 

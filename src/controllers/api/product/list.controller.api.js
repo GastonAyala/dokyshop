@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
                         'imagePrincipalAPI'
                     ],
                     [
-                        literal(`CONCAT('${getOriginUrl(req)}/api/products/', product.id)`),
+                        literal(`CONCAT('${getOriginUrl(req)}/api/products/detail/', product.id)`),
                         'detail'
                     ]
                 ]

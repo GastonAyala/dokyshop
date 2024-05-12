@@ -4,16 +4,26 @@ const { getOriginUrl } = require("../../utils");
 
 module.exports = (req, res) =>{
     const { id } = req.params;
-    db.product.findByPk(id, { include: 'imagesecondaries', attributes:{
+    db.product.findByPk(id, { 
+        include: [
+            {
+                association: 'imagesecondaries',
+                attributes: {
+                    include: [
+                        [
+                            literal(`CONCAT('${getOriginUrl(req)}/api/products/', file)`),
+                                'imageSecondaryAPI'
+                        ],
+                    ],
+                },
+            },
+        ], 
+        attributes:{
         exclude: ['createdAt', 'updatedAt'],
         include: [
             [
                 literal(`CONCAT('${getOriginUrl(req)}/api/products/', imagePrincipal)`),
                 'imagePrincipalAPI'
-            ],
-            [
-                literal(`CONCAT('${getOriginUrl(req)}/api/products/', product.id)`),
-                'detail'
             ]
         ]
     }
