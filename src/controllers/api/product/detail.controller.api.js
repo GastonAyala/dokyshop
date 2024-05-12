@@ -1,5 +1,6 @@
 const { literal } = require("sequelize");
 const db = require("../../../database/models");
+const { getOriginUrl } = require("../../utils");
 
 module.exports = (req, res) =>{
     const { id } = req.params;
