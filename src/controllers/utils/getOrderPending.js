@@ -15,6 +15,7 @@ module.exports = async (req, res) => {
     },
     defaults: {
         userId: req.query.userId,
+        state: 'pending',
     },
     include: [
         {

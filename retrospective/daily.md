@@ -129,6 +129,75 @@ Hoy comencé con la refactorización de la edición de perfil de usuario.-
 - Que impedimentos tuve:
 Los impedimentos que tuve fueron tanto la imagen primaria como las secundarias que al momento de eliminarlas, solo se eliminaban de la base de datos, pero pude solucionarlo.-
 
+# DAILY 4 - 10/05/2024
+
+## Ricardina:
+- Que hice ayer:
+Ayer hice el listado de todos los productos
+- Que impedimentos tuve:
+No tuve impedimentos para realizarlo
+- Que voy a hacer hoy:
+Voy a realizar el paginado de productos 
+
+## Marcos:
+- Que hice ayer:
+Empece a realizar la tarea de crear endpoint del detalle de usuario
+- Que impedimentos tuve:
+Tuve impedimientos en la creación de la estructura de archivos y lo solucioné pidiendo ayuda a mis compañeros
+- Que voy a hacer hoy:
+Voy a continuar desarrollando la tarea iniciada
+
+## Adriana:
+- Que hice ayer: 
+Comencé con la tarea de crear el endpoint del listado de usuarios
+- Que impedimentos tuve:
+No tuve ningún impedimiento
+- Que voy a hacer hoy:
+Voy a implementar la paginación de usuarios
+
+## Gaston:
+- Que hice ayer:
+Ayer cree el endpoint y controlador getOrder para obtener las ordenes pendientes de un usuario
+- Que impedimentos tuve:
+No tuve impedimentos
+- Que voy a hacer hoy:
+Hoy voy a comenzar con la creación de los endpoints de agregar y remover productos de una orden
+
+# DAILY 5 - 12/05/2024
+
+## Ricardina:
+- Que hice ayer:
+Estuve implementando el campo countByCategory utilizando una query
+- Que impedimentos tuve:
+Tuve impedimentos en la implementación del mismo y tuve que recurrir a la documentación de sequelize y a varios foros de internet
+- Que voy a hacer hoy:
+Voy a hacer correciones generales en la pagina
+
+## Marcos:
+- Que hice ayer:
+Finalicé la creación del endpoint y controlador del detalle de usuario
+- Que impedimentos tuve:
+No tuve ningún impedimiento
+- Que voy a hacer hoy:
+Voy a comenzar la tarea de crear el endpoint del detalle de producto
+
+## Adriana
+- Que hice ayer: 
+Implemente la renderización de avatares de usuarios utilizando al funcion getOriginUrl
+- Que impedimentos tuve:
+No tuve ningún impedimiento
+- Que voy a hacer hoy:
+Voy a corregir un error de tipeo en la url que redirecciona al detalle de un usuario
+
+## Gaston
+
+- Que hice ayer:
+Ayer finalicé la tarea de agregar endpoints para agregar y remover productos de una orden
+- Que impedimentos tuve:
+No tuve impedimentos
+- Que voy a hacer hoy:
+Hoy voy a comenzar con la creación de los endpoints de aumentar y disminuir cantidad de productos de una orden
+
 
 
 
