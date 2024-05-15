@@ -203,6 +203,14 @@
     object-fit: contain;
 }
 
+.dashboard-content .listProduct-table tbody tr td.dashListDescription {
+    display: flex;
+    flex-wrap: wrap;
+}
+.dashboard-content .listProduct-table tbody tr td.dashListDescription .dashDescription-Paragrahp {
+    width: 290px;
+}
+
 .dashboard-content .listProduct-table tbody tr td.td-price {
     color: var(--amarillo);
 }

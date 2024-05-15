@@ -49,10 +49,10 @@
                             <a href="/">Inicio</a>
                         </li>
                         <li>
-                            <a href="#">Juguetes</a>
+                            <a href="#"><%= product.category.name %></a>
                         </li>
                         <li>
-                            <a href="#">Gatos</a>
+                            <a href="#"><%= product.subcategory.name %></a>
                         </li>
                         <li>
                             <a href="#"><%= product.title%></a>
@@ -61,7 +61,13 @@
                 </nav>
             </div>
             <h2 class="prodDetail-title"><%= product.title%></h2>
-            <p class="prodDetail-price">$<%= product.price%></p>
+            <div class="prodDetail-pricing">
+                <p class="prodDetail-price">$<%= toThousand(product.price - (product.price * product.sale / 100)) %></p>
+                <% if (product.sale && product.sale > 0) { %>
+                    <p class="prodDetail-sale"><%= product.sale %>% OFF</p>
+                <% } %>
+            </div>
+            
             <div class="prodDetail-colors">
                 <% if (product.color === 'Multicolor') { %>
                     <div class="imgMulticolorDiv"><img src="/images/products/multicolor.jpg" alt=""></div>
@@ -90,26 +96,7 @@
         </div>
 
         <div class="relatedProduct-container">
-            <h2 class="relatedProduct-title">Productos relacionados</h2>
-
-           <% for( let i = 0; i < listProduct.length && i< 4; i++ ) { %>
-            <% const product = listProduct[i] %>
-             <article class="relatedProd">
-                <figure class="relatedProd-img-container">
-                    <a href="/productos/detalle/<%= product.id%>">
-                        <img class="relatedProd-img" src="/images/products/<%= product.imagePrincipal%>" alt="related product 1">
-                    </a>
-                </figure>
-
-                <div class="relatedProd-description">
-                    <a href="/productos/detalle/<%= product.id%>">
-                        <h5><%= product.title%></h5>
-                    </a>
-                    <p>$ <%= product.price%></p>
-                    <a class="relatedProd-buycart" href="/carrito-compra"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>    
-            </article>
-            <% } %>
+            <%- include('../partials/cardSecondary') %>
         </div>
         
     </main>

@@ -1,4 +1,5 @@
 const db = require('../../database/models');
+const { toThousand } = require('../utils');
 
 module.exports = (req, res) => {
     let { page, offset } = req.query
@@ -39,7 +40,8 @@ module.exports = (req, res) => {
             page: plusPage,
             offset: plusOffset,
             lessPage,
-            lessOffset
+            lessOffset,
+            toThousand
 
         })
     })

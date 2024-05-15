@@ -55,6 +55,7 @@
     height: 300px;
     width: 306px;
     border-radius: 21px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .main-home .container-products .product .figure .product-name {
@@ -67,76 +68,6 @@
     border-radius: 6px;
     color: rgb(0 0 0 / 55%);
     background-color: var(--amarilloPastel);
-}
-
-
-.main-home .recommendedProd-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-home .recommendedProd-container h2 {
-    font-weight: bold;
-    color: var(--amarillo);
-    width: 100%;
-    text-align: center;
-}
-
-
-.main-home .recommendedProd-container .recommendedProd {
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid rgba(0,0,0,.125);
-    margin: 10px;
-    justify-content: center;
-    border-radius: 10px;
-    max-width: 300px;
-    height: 400px;
-}
-
-.main-home .recommendedProd-container .recommendedProd .recommended-img-container {}
-.main-home .recommendedProd-container .recommendedProd .recommended-img-container a {
-}
-
-.main-home .recommendedProd-container .recommendedProd .recommended-img-container a img {
-    border-radius: 10px;
-    width: 230px;
-}
-
-.main-home .recommendedProd-container .recommendedProd .recommendedProd-description {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.main-home .recommendedProd-container .recommendedProd .recommendedProd-description h5 {
-    text-align: center;
-    width: 100%;
-}
-
-.main-home .recommendedProd-container .recommendedProd .recommendedProd-description h5 a {}
-
-.main-home .recommendedProd-container .recommendedProd .recommendedProd-description p {
-    font-weight: bold;
-    color: var(--amarillo);
-    margin: 0;
-}
-
-.main-home .recommendedProd-container .recommendedProd .recommendedProd-description a.recommendedProd-buyCart {
-    background-color: var(--amarillo);
-    padding: 8px;
-    border-radius: 5px;
-}
-
-.main-home .recommendedProd-container .recommendedProd .recommendedProd-description a.recommendedProd-buyCarti {
-    margin: 0;
 }
 
 .additional-button-left {

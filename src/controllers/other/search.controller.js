@@ -1,5 +1,6 @@
 const db = require('../../database/models');
 const { Op }  = require('sequelize');
+const { toThousand } = require('../utils');
 
 module.exports = (req, res) => {
     let {productSearched, page, offset} = req.query
@@ -51,7 +52,8 @@ module.exports = (req, res) => {
             lessPage,
             lessOffset,
             offset: plusOffset,
-            totalPages
+            totalPages,
+            toThousand
         })
     })
     .catch(err => {

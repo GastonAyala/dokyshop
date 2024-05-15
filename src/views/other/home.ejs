@@ -39,23 +39,7 @@
 
         <%- include('../partials/categories') %>
 
-        <div class="recommendedProd-container">
-            <h2>Productos recomendados</h2>
-            <% products.forEach(p => { %>
-                <article class="recommendedProd">
-                    <figure class="recommended-img-container">
-                        <a href="/productos/detalle/<%= p.id %>"><img src="/images/products/<%= p.imagePrincipal%>" alt="recommended products" ></a>
-                    </figure>
-                    <div class="recommendedProd-description">
-                        <a href="/productos/detalle/<%= p.id %>">
-                            <h5><%= p.title%></h5>
-                        </a>
-                        <p>$ <%= p.price%></p>
-                        <a class="recommendedProd-buyCart" href="/carrito-compra"><i class="fa-solid fa-cart-plus"></i></a>
-                    </div>
-                </article>
-          <% }) %>
-        </div>
+        <%- include('../partials/cardSecondary') %>
 
         <div class="pet-section">
             <div class="image-with-list">

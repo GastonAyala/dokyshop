@@ -32,29 +32,10 @@
                 </ul>
             </nav>
 
-            <div class="listProd-container row">
-            <% products.forEach(p => { %>
-             
-           
-            <article class="listProduct col-6">
-                
-                <figure class="listProduct-img-container">
-                    <a href="/productos/detalle/<%= p.id %>"><img src="/images/products/<%= p.imagePrincipal%>" alt="recommended products" ></a>
-                </figure>
-                <div class="listProduct-description">
-                    <a href="/productos/detalle/<%= p.id %>">
-                        <h5><%= p.title%></h5>
-                    </a>
-                    <p>$ <%= p.price%></p>
-                    <a class="listProduct-buyCart" href="/carrito-compra"><i class="fa-solid fa-cart-plus"></i></a>
-                </div>
-            </article>
-            <% }) %> 
+            <%- include('../partials/cardPrincipal') %>
+            
         </div>
         </main>
-
-
-
 
         <%- include('../partials/footer') %>
 

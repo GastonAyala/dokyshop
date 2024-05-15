@@ -102,15 +102,28 @@
 .productDetail .prodDetail-container .prodDetail-title {
     width: 100%;
 }
+.productDetail .prodDetail-container .prodDetail-pricing {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-.productDetail .prodDetail-container .prodDetail-price {
+.productDetail .prodDetail-container .prodDetail-pricing .prodDetail-price {
     color: var(--amarillo);
     font-weight: bold;
-    width: 100%;
     font-size: 1.6rem;
+    margin: auto;
 }
+.productDetail .prodDetail-container .prodDetail-pricing .prodDetail-sale {
+    color: var(--verde);
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: auto;
+    padding: 20px;
+}
+
 .productDetail .prodDetail-container .prodDetail-colors{
-    width: 100%;
+    
+width: 100%;
 }
 .productDetail .prodDetail-container .prodDetail-colors .imgMulticolorDiv {
     width: 100%;
@@ -181,6 +194,7 @@
     order: 4;
 }
 
+
 .productDetail .description-container .description-title {
     color: var(--amarillo);
     width: 100%;
@@ -197,9 +211,9 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    order: 5;
     justify-content: center;
     align-content: center;
-    order: 5;
 }
 
 .productDetail .relatedProduct-container .relatedProduct-title {
@@ -486,15 +500,27 @@
 
     .productDetail .prodDetail-container .add-to-cart .btn-cart button {}
     
-    .productDetail .description-container {}
+    .productDetail .description-container {
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+}
     
     .productDetail .description-container .description-title {}
     
-    .productDetail .description-container .description-paragraph {}
+    .productDetail .description-container .description-paragraph {
+    max-width: 900px;
+    line-height: 25px;
+    font-size: 1.2rem;
+}
     
     /* -------- RELATED PRODUCTS -------- */
     
-    .productDetail .relatedProduct-container {}
+    .productDetail .relatedProduct-container {
+    /* margin: auto; */
+    display: inline-block;
+    width: 100%;
+}
     
     .productDetail .relatedProduct-container .relatedProduct-title {}
     
