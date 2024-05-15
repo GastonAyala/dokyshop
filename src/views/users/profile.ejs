@@ -1,78 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../partials/head', {view: "Perfil de Usuario", gliderCSSDisabled:true}) %>
-<body>
-    <%- include('../partials/header') %>
-    <main class="usersProfile">
-        <h1 class="text-center">Hola <%= locals.user?.name %></h1>
-        <div class="profile-container container my-2 mx-auto row ">
-            <form class="col-12 col-md-6 mx-auto my-4 gap-3 card" action="/usuario/perfil/editar/<%= locals.user?.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div class="avatarImg-container d-flex flex-column mb-3 mt-5">
-                    <label for="avatar">
-                        <p>Imagen de perfil</p>
-                        <img class="listUserAvatar" src="/images/avatar<% if ( locals.user?.avatar == 'perfilUser.png') { %>/default<% } %>/<%= locals.user?.avatar %>" alt="avatar image">
-                        <input type="file" class="form-control form-control-sm" name="avatar" id="avatar" accept="img/*">
-                        <% if (locals.errors) { %>
-                            <div class="form-text fs-5 text-danger"><%= errors?.avatar?.msg %></div>
-                        <% } %>
-                    </label>
-                    
-                </div>
-                <div class="userName-container d-flex flex-column mb-3">
-                    <label for="name">Nombre completo</label>
-                    <input type="text" class="form-control form-control-sm" name="name" id="name" value="<%= locals.errors ? locals.old.name : locals.user.name %>" placeholder="<%= locals.user?.name %>">
-                    <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.name?.msg %></div>
-                    <% } %>
-                </div>
-                <div class="userName-container d-flex flex-column mb-3">
-                    <label for="phone">Teléfono</label>
-                    <input type="text" class="form-control form-control-sm" name="phone" id="phone" value="<%= locals.errors ? locals.old.phone : locals.user.phone %>" placeholder="<%= locals.user?.phone %>">
-                    <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.phone?.msg %></div>
-                    <% } %>
+<%- include('../partials/head', {view: "Perfil de Usuario" , gliderCSSDisabled:true}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main class="usersProfile">
+                <h1 class="text-center">Hola <%= locals.user?.name %>
+                </h1>
+                <div class="div-form">
+                    <form class="form" action="/usuario/perfil/editar/<%= locals.user?.id %>?_method=PUT" method="POST"
+                        enctype="multipart/form-data">
+                        <div class="div-avatar">
+                            <label for="avatar">
+                                <p>Avatar</p>
+                                <img class="img"
+                                    src="/images/avatar<% if ( locals.user?.avatar == 'perfilUser.png') { %>/default<% } %>/<%= locals.user?.avatar %>"
+                                    alt="avatar image">
+                                <input type="file" class="img-input" name="avatar" id="avatar" accept="img/*">
+                                <% if (locals.errors) { %>
+                                    <div class="form-text fs-5 text-danger">
+                                        <%= errors?.avatar?.msg %>
+                                    </div>
+                                    <% } %>
+                            </label>
+                        </div>
+                        <div class="div-inputs">
+                            <div class="div-name">
+                                <label for="name">Nombre completo</label>
+                                <input type="text" class="input" name="name" id="name"
+                                    value="<%= locals.errors ? locals.old.name : locals.user.name %>"
+                                    placeholder="<%= locals.user?.name %>">
+                                <% if (locals.errors) { %>
+                                    <div class="form-text fs-5 text-danger">
+                                        <%= errors?.name?.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="div-tel">
+                                <label for="phone">Teléfono</label>
+                                <input type="text" class="input" name="phone" id="phone"
+                                    value="<%= locals.errors ? locals.old.phone : locals.user.phone %>"
+                                    placeholder="<%= locals.user?.phone %>">
+                                <% if (locals.errors) { %>
+                                    <div class="form-text fs-5 text-danger">
+                                        <%= errors?.phone?.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="div-address">
+                                <label for="street">Dirección</label>
+                                <input type="text" class="input" name="street" id="street"
+                                    value="<%= locals.errors ? locals.old.street : locals.user.address.street %>"
+                                    placeholder="<%= locals.user?.address.street %>">
+                                <% if (locals.errors) { %>
+                                    <div class="form-text fs-5 text-danger">
+                                        <%= errors?.street?.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="div-city">
+                                <label for="city">Ciudad</label>
+                                <input type="text" class="input" name="city" id="city"
+                                    value="<%= locals.errors ? locals.old.city : locals.user?.address.city %>"
+                                    placeholder="<%= locals.user?.city %>">
+                                <% if (locals.errors) { %>
+                                    <div class="form-text fs-5 text-danger">
+                                        <%= errors?.city?.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="div-province">
+                                <label for="province">Provincia</label>
+                                <input type="text" class="input" name="province" id="province"
+                                    value="<%= locals.errors ? locals.old.province : locals.user.address.province %>"
+                                    placeholder="<%= locals.user?.province %>">
+                                <% if (locals.errors) { %>
+                                    <div class="form-text fs-5 text-danger">
+                                        <%= errors?.province?.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="div-zipcode">
+                                <label for="zipcode">Código postal</label>
+                                <input type="text" class="input" name="zipcode" id="zipcode"
+                                    value="<%= locals.errors ? locals.old.zipcode : locals.user.address.zipCode %>"
+                                    placeholder="<%= locals.user?.zipCode %>">
+                                <% if (locals.errors) { %>
+                                    <div class="form-text fs-5 text-danger">
+                                        <%= errors?.zipcode?.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn btn-outline-dark button">Guardar cambios</button>
+                            <button type="reset" class="btn btn-outline-danger button">Cancelar cambios</button>
+                        </div>
+
+                    </form>
                 </div>
 
-                <div class="userName-container d-flex flex-column mb-3">
-                    <label for="street">Dirección</label>
-                    <input type="text" class="form-control form-control-sm" name="street" id="street" value="<%= locals.errors ? locals.old.street : locals.user.address.street %>" placeholder="<%= locals.user?.address.street %>">
-                    <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.street?.msg %></div>
-                    <% } %>
-                </div>
-                <div class="userName-container d-flex flex-column mb-3">
-                    <label for="city">Ciudad</label>
-                    <input type="text" class="form-control form-control-sm" name="city" id="city" value="<%= locals.errors ? locals.old.city : locals.user?.address.city %>" placeholder="<%= locals.user?.city %>">
-                    <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.city?.msg %></div>
-                    <% } %>
-                </div>
-                <div class="userName-container d-flex flex-column mb-3">
-                    <label for="province">Provincia</label>
-                    <input type="text" class="form-control form-control-sm" name="province" id="province" value="<%= locals.errors ? locals.old.province : locals.user.address.province %>" placeholder="<%= locals.user?.province %>">
-                    <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.province?.msg %></div>
-                    <% } %>
-                </div>
-                <div class="userName-container d-flex flex-column mb-3">
-                    <label for="zipcode">Código postal</label>
-                    <input type="text" class="form-control form-control-sm" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.address.zipCode %>" placeholder="<%= locals.user?.zipCode %>">
-                    <% if (locals.errors) { %>
-                        <div class="form-text fs-5 text-danger"><%= errors?.zipcode?.msg %></div>
-                    <% } %>
-                </div>
 
-                <div class="d-flex justify-content-center gap-2 my-5 usersBtn">
-                    <button type="submit" class="btn btn-outline-success usersSave">Guardar cambios</button>
-                    <button type="reset" class="btn btn-outline-danger userReset">Cancelar cambios</button>
-                </div>
-            </form>
-        </div>
+            </main>
+            <%- include('../partials/footer') %>
+                <%- include('../partials/scripts', {disabledGliderJS:true}) %>
 
+    </body>
 
-    </main>
-    <%- include('../partials/footer') %>
-    <%- include('../partials/scripts', {disabledGliderJS:true}) %>
-    
-</body>
 </html>

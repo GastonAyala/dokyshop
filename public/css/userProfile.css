@@ -1,57 +1,349 @@
-.usersProfile {}
+.usersProfile {
+}
 
 .usersProfile h1 {
     font-weight: bold;
     margin: 0;
     color: var(--amarillo);
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-.usersProfile .profile-container {}
+.usersProfile .div-form{
+    margin: 16px;
+}
 
-.usersProfile .profile-container form {
+.usersProfile .div-form .form{
+    margin: 0 auto;
     background-color: var(--amarillo);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    max-width: 415px;
+    border-radius: 14px;
 }
 
-.usersProfile .profile-container form label {
-    font-weight: bold;
-}
-.usersProfile .profile-container form .avatarImg-container {
+.usersProfile .div-form .form .div-avatar{
+    display: flex;
+    justify-content: center;
 }
 
-.usersProfile .profile-container form .avatarImg-container label {
+.usersProfile .div-form .form .div-avatar label{
     text-align: center;
 }
-.usersProfile .profile-container form .avatarImg-container label p {
-    margin: 0;
+
+.usersProfile .div-form .form .div-avatar label p{
+    text-align: center;
 }
 
-.usersProfile .profile-container form .avatarImg-container label img {
-    object-fit: contain;
+.usersProfile .div-form .form .div-avatar label img{
+    width: 200px;
     border-radius: 50%;
-    width: 60%;
-    margin: 15px auto;
+    display: flex;
+}
+
+.usersProfile .div-form .form .div-avatar label .img-input{
+    width: 152px;
+}
+
+.usersProfile .div-form .form .div-avatar label input[type="file"]::file-selector-button{
+    border: none;
+    margin: 10px 0;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: var(--naranjaig);
+    transition: 1s;
+}
+  
+.usersProfile .div-form .form .div-avatar  input[type="file"]::file-selector-button:hover {
+    background-color: var(--naranja);
+    color: var(--blanco);
+}
+
+.usersProfile .div-form .form .div-inputs{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.usersProfile .div-form .form .div-inputs .input{
+    width: 255px;
+    border: none;
+    border-radius: 6px;
+    padding: 4px;
+    }
+
+.usersProfile .div-form .form .div-inputs .div-name{
+}
+
+.usersProfile .div-form .form .div-inputs .div-name label{
+    display: block;
+}
+
+.usersProfile .div-form .form .div-inputs .div-name .input{
+}
+
+.usersProfile .div-form .form .div-inputs .div-tel{}
+
+.usersProfile .div-form .form .div-inputs .div-tel label{
+    display: block;
+}
+
+.usersProfile .div-form .form .div-inputs .div-tel.input{
+}
+
+.usersProfile .div-form .form .div-inputs .div-address{
+}
+
+.usersProfile .div-form .form .div-inputs .div-address label{
+    display: block;
+}
+
+.usersProfile .div-form .form .div-inputs .div-address .input{
+}
+
+.usersProfile .div-form .form .div-inputs .div-city{
+}
+
+.usersProfile .div-form .form .div-inputs .div-city label{
+    display: block;
+}
+
+.usersProfile .div-form .form .div-inputs .div-city .input{
+}
+
+.usersProfile .div-form .form .div-inputs .div-province{
+}
+
+.usersProfile .div-form .form .div-inputs .div-province label{
+    display: block;
+}
+
+.usersProfile .div-form .form .div-inputs .div-province .input{
+}
+
+.usersProfile .div-form .form .div-inputs .div-zipcode{
+}
+
+.usersProfile .div-form .form .div-inputs .div-zipcode label{
+    display: block;
+}
+
+.usersProfile .div-form .form .div-inputs .div-zipcode .input{
+}
+
+.usersProfile .div-form .form .buttons{
+    display: flex;
+    justify-content: center;
+    padding: 8px 0px;
+}
+
+.usersProfile .div-form .form .buttons .button{
+    margin: 2px;
+    padding: 3px !important;
 }
 
 
-.usersProfile .profile-container form.avatarImg-container label input {}
+@media (min-width: 426px) {
 
-
-.usersProfile .profile-container form .userName-container {}
-
-.usersProfile .profile-container form .userName-container label {}
-
-.usersProfile .profile-container form .userName-container input {}
-
-.usersProfile .profile-container form .usersBtn {
+    .usersProfile {
+    }
     
+    .usersProfile h1 {
+    }
+    
+    .usersProfile .div-form{
+    }
+    
+    .usersProfile .div-form .form{
+    }
+    
+    .usersProfile .div-form .form .div-avatar{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label p{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label img{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label .img-input{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label input[type="file"]::file-selector-button{
+    }
+    
+    .usersProfile .div-form .form .div-inputs{
+    display: flex;
+    justify-content: space-around;
+    }
+    
+    .usersProfile .div-form .form .div-inputs .input{
+    width: 182px;
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-name{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-name label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-name .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-tel{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-tel label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-tel.input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-address{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-address label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-address .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-city{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-city label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-city .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-province{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-province label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-province .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-zipcode{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-zipcode label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-zipcode .input{
+    }
+    
+    .usersProfile .div-form .form .buttons{
+    }
+    
+    .usersProfile .div-form .form .buttons .button{
+    }    
+
 }
 
-.usersProfile .profile-container form .usersBtn .usersSave {
-    font-weight: bold;
-}
 
-.usersProfile .profile-container form .usersBtn .userReset {
-    font-weight: bold;
+
+/* destok escritorio */
+
+@media (min-width: 768px) {
+    
+    .usersProfile {
+    }
+    
+    .usersProfile h1 {
+    }
+    
+    .usersProfile .div-form{
+    }
+    
+    .usersProfile .div-form .form{
+    }
+    
+    .usersProfile .div-form .form .div-avatar{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label p{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label img{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label .img-input{
+    }
+    
+    .usersProfile .div-form .form .div-avatar label input[type="file"]::file-selector-button{
+    }
+    
+    .usersProfile .div-form .form .div-inputs{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-name{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-name label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-name .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-tel{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-tel label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-tel.input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-address{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-address label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-address .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-city{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-city label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-city .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-province{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-province label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-province .input{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-zipcode{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-zipcode label{
+    }
+    
+    .usersProfile .div-form .form .div-inputs .div-zipcode .input{
+    }
+    
+    .usersProfile .div-form .form .buttons{
+    }
+    
+    .usersProfile .div-form .form .buttons .button{
+    }    
+
 }
