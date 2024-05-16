@@ -79,8 +79,19 @@
       <td><%= p.title %></td>
       <td><%= p.category.name %></td>
       <td><%= p.subcategory.name %></td>
-      <td class="td-description"><%= p.description %></td>
-      <td class="td-price"><%= p.price %></td>
+      <td class="dashListDescription">
+        <p class="dashDescription-Paragrahp">
+          <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="<%= "#prod" + p.id %>" aria-expanded="false" aria-controls="<%= "prod" + p.id %>">
+            Leer
+          </button>
+        </p>
+        <div class="collapse" id="<%= "prod" + p.id %>">
+          <div class="card card-body">  
+            <p><%= p.description %></p>
+          </div>
+        </div>
+      </td>
+      <td class="td-price"><%= toThousand(p.price) %></td>
       <td class="td-sale"><%= p.sale %></td>
       <td class="td-quantity"><%= p.quantity %></td>
       <td class="td-colors">

@@ -1,0 +1,19 @@
+<div class="searchedProduct-container gap-3">
+    <h2>Productos recomendados</h2>
+    <% products.forEach(p => { %>
+            <article class="searchedProduct">
+                <figure class="searchedProd-imgContainer">
+                    <a href="/productos/detalle/<%= p.id %>">
+                        <img src="/images/products/<%= p.imagePrincipal %>" alt="product img">
+                    </a>
+                </figure>
+                <div class="searchedProduct-description">
+                    <a class="listProduct-titleLink" href="/productos/detalle/<%= p.id %>">
+                        <h5><%= p.title%></h5>
+                    </a>
+                    <p><%= toThousand(p.price) %></p>
+                    <a class="searchedProduct-buyCart" href="/carrito-compra"><i class="fa-solid fa-cart-plus"></i></a>
+                </div>
+            </article>
+    <% }) %>
+</div>

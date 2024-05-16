@@ -1,27 +1,40 @@
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { QueryTypes } = require('sequelize');
 const db = require('../../database/models');
+const { toThousand } = require('../utils');
 
-module.exports = (req, res)=>{
-    const {id} = req.params;
-    db.product.findByPk(id,{
-        attributes: {
-            exclude: [
-                "createdAt",
-                "updatedAt"
-            ]
-        },
-        include: [{
-            association: "imagesecondaries",
-            attributes: ["file"]
-        }],
-    })
-    .then(product => {
-        db.product.findAll({
+module.exports = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const product = await db.product.findByPk(id,{
+            attributes: {
+                exclude: [
+                    "createdAt",
+                    "updatedAt"
+                ]
+            },
+            include: [{
+                association: "imagesecondaries",
+                attributes: ["file"]
+            },
+            {
+                association: 'category'
+            },
+            {
+                association: 'subcategory'
+            }],
+        })
+
+        const countByCategory = await db.sequelize.query('SELECT categories.id, COUNT(categoryId) as count FROM products INNER JOIN categories ON categories.id = products.categoryId GROUP BY id', {
+            type: QueryTypes.SELECT
+        })
+
+        let index = product.categoryId - 1
+
+        const products = await db.product.findAll({
+            offset: Math.floor(Math.random() * countByCategory[index].count),
             limit: 4,
             attributes: {
                 exclude: [
-                    "categoryId",
-                    "subcategoryId",
                     "description",
                     "sale",
                     "quantity",
@@ -30,13 +43,13 @@ module.exports = (req, res)=>{
                     "createdAt",
                     "updatedAt"
                 ]
+            },
+            where: {
+                categoryId: product.categoryId
             }
         })
-        .then(products => {
-            res.render("products/productDetail", {product, toThousand, listProduct: products})
-        })
-        .catch(err => {
-            err.message
-        })
-    })
-}
+        return res.render("products/productDetail", {product, toThousand, products})
+    } catch (err) {
+        return res.send(err.message)
+    }
+};

@@ -1,6 +1,6 @@
 const db = require('../../database/models');
+const { toThousand } = require('../utils');
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = (req, res) => {
     const categoryPromise = db.category.findAll()
@@ -11,7 +11,7 @@ module.exports = (req, res) => {
                 include: ['imagesecondaries', 'category', 'subcategory']
             })
             .then(products => {
-                res.render("./admin/listProducts", { products, categories, subcategories },
+                res.render("./admin/listProducts", { products, categories, subcategories, toThousand },
                 (err, contentView) => {
                     err && res.send(err.message)
                     res.render("./partials/dashboard", {
