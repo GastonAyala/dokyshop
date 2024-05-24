@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../partials/head',  {view: "Iniciar sesión", bootstrapCSSDisabled:true, gliderCSSDisabled:true}) %>
+    <%- include('../partials/head',  {view: "Iniciar sesión", gliderCSSDisabled:true}) %>
 <body class="body-login">
     <%- include('../partials/header') %>
 
@@ -45,7 +45,7 @@
     </main>
     <%- include('../partials/footer') %>
 
-    <%- include('../partials/scripts', {disabledBootstrapJS:true, disabledGliderJS:true}) %>
+    <%- include('../partials/scripts', { disabledGliderJS:true }) %>
     <script src="/js/validations/login.js"></script>
 </body>
 </html>

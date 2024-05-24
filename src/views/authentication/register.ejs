@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head', {view: "Registrate" , bootstrapCSSDisabled:true, gliderCSSDisabled:true}) %>
+<%- include('../partials/head', {view: "Registrate" , gliderCSSDisabled:true}) %>
 
     <body>
         <%- include('../partials/header') %>
@@ -68,8 +68,7 @@
             
             <%- include('../partials/footer') %> 
 
-            <%- include('../partials/scripts', {disabledBootstrapJS:true, disabledGliderJS:true}) %>
-            <script src="/js/validations/register.js"></script>
+            <%- include('../partials/scripts', { disabledGliderJS:true }) %>
     </body>
 
 </html>
