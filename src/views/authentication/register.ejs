@@ -23,33 +23,28 @@
 
                         <div class="contenedor-form">
                             <div class="nombre">
-                                <% if (locals.errors) { %>
-                                        <p class="text-danger-error">
+                            
+                                        <input type="text" class="inputs" name="name" placeholder="Nombre completo"
+                                        id="nombre" value="<%= locals.old?.name %>" />
+                                        <p class="errName">
                                             <%= locals.errors?.name?.msg %>
                                         </p>
-                                        <% } %>
-                                            <input type="text" class="" name="name" placeholder="Nombre completo"
-                                                id="nombre" value="<%= locals.old?.name %>" />
                             </div>
 
                             <div class="email">
-                                <% if (locals.errors) { %>
-                                        <p class="text-danger-error">
-                                            <%= locals.errors?.email?.msg %>
-                                        </p>
-                                        <% } %>
-                                            <input class="" type="email" name="email" placeholder="Ingrese su email"
+                                <input class="inputs is-valid" type="email" name="email" placeholder="Ingrese su email"
                                                 id="email" value="<%= locals.old?.email %>" />
+                                    <p class="errEmail">
+                                    <%= locals.errors?.email?.msg %>
+                                </p>            
                             </div>
 
                             <div class="contrasenia">
-                                <% if (locals.errors) { %>
-                                        <p class="text-danger-error">
-                                            <%= locals.errors?.password?.msg %>
-                                        </p>
-                                        <% } %>
-                                            <input class="" type="password" name="password" id="contrasenia"
+                            <input class="inputs" type="password" name="password" id="contrasenia"
                                                 placeholder="Contraseña" value="<%= locals.old?.password %>" />
+                                    <p class="errPassword">
+                                            <%= locals.errors?.password?.msg %>
+                                        </p>            
                             </div>
                         </div>
 
@@ -69,6 +64,7 @@
             <%- include('../partials/footer') %> 
 
             <%- include('../partials/scripts', { disabledGliderJS:true }) %>
+            <script src="/js/validations/register.js"></script>
     </body>
 
 </html>
