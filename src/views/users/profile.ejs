@@ -8,103 +8,93 @@
                 <h1 class="text-center">Hola <%= locals.user?.name %>
                 </h1>
                 <div class="div-form">
-                    <form class="form" action="/usuario/perfil/editar/<%= locals.user?.id %>?_method=PUT" method="POST"
-                        enctype="multipart/form-data">
-                        <div class="div-avatar">
-                            <label for="avatar">
+                    <form class="form position-relative" action="/usuario/perfil/editar/<%= locals.user?.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                        <div class="div-avatar position-relative">
+                            <label class="" for="avatar">
                                 <p>Avatar</p>
-                                <img class="img"
-                                    src="/images/avatar<% if ( locals.user?.avatar == 'perfilUser.png') { %>/default<% } %>/<%= locals.user?.avatar %>"
-                                    alt="avatar image">
+                                <img class="img" src="/images/avatar<% if ( locals.user?.avatar == 'perfilUser.png') { %>/default<% } %>/<%= locals.user?.avatar %>" alt="avatar image">
                                 <input type="file" class="img-input" name="avatar" id="avatar" accept="img/*">
-                                <% if (locals.errors) { %>
-                                    <div class="form-text fs-5 text-danger">
-                                        <%= errors?.avatar?.msg %>
-                                    </div>
-                                    <% } %>
+                                <p class="errAvatar">
+                                    <%= locals.errors?.avatar?.msg %>
+                                </p>
                             </label>
+                            
                         </div>
+
                         <div class="div-inputs">
-                            <div class="div-name">
-                                <label for="name">Nombre completo</label>
-                                <input type="text" class="input" name="name" id="name"
-                                    value="<%= locals.errors ? locals.old.name : locals.user.name %>"
-                                    placeholder="<%= locals.user?.name %>">
-                                <% if (locals.errors) { %>
-                                    <div class="form-text fs-5 text-danger">
-                                        <%= errors?.name?.msg %>
-                                    </div>
-                                    <% } %>
+                            <div class="div-name position-relative">
+                                <label for="name ">Nombre completo</label>
+                                <input type="text" class="input form-control" name="name" id="name" value="<%= locals.errors ? locals.old.name : locals.user.name %>" placeholder="<%= locals.user?.name %>">
+                                <p class="errName">
+                                    <%= locals.errors?.name?.msg %>
+                                </p>
                             </div>
-                            <div class="div-tel">
-                                <label for="phone">Teléfono</label>
-                                <input type="text" class="input" name="phone" id="phone"
-                                    value="<%= locals.errors ? locals.old.phone : locals.user.phone %>"
-                                    placeholder="<%= locals.user?.phone %>">
-                                <% if (locals.errors) { %>
-                                    <div class="form-text fs-5 text-danger">
-                                        <%= errors?.phone?.msg %>
-                                    </div>
-                                    <% } %>
+
+                            <div class="div-tel position-relative">
+                                <label class="" for="phone">Teléfono</label>
+                                <input type="text" class="input form-control" name="phone" id="phone" value="<%= locals.errors ? locals.old.phone : locals.user.phone %>" placeholder="<%= locals.user?.phone %>">
+                                <p class="errPhone">
+                                    <%= locals.errors?.phone?.msg %>
+                                </p>
                             </div>
-                            <div class="div-address">
-                                <label for="street">Dirección</label>
-                                <input type="text" class="input" name="street" id="street"
-                                    value="<%= locals.errors ? locals.old.street : locals.user.address.street %>"
-                                    placeholder="<%= locals.user?.address.street %>">
-                                <% if (locals.errors) { %>
-                                    <div class="form-text fs-5 text-danger">
-                                        <%= errors?.street?.msg %>
-                                    </div>
-                                    <% } %>
+                            
+                            <div class="div-address position-relative">
+                                <label class="" for="street">Dirección</label>
+                                <input type="text" class="input form-control" name="street" id="street" value="<%= locals.errors ? locals.old.street : locals.user.address.street %>" placeholder="<%= locals.user?.address.street %>">
+                                <p class="errStreet">
+                                    <%= locals.errors?.street?.msg %>
+                                </p>
                             </div>
-                            <div class="div-city">
-                                <label for="city">Ciudad</label>
-                                <input type="text" class="input" name="city" id="city"
-                                    value="<%= locals.errors ? locals.old.city : locals.user?.address.city %>"
-                                    placeholder="<%= locals.user?.city %>">
-                                <% if (locals.errors) { %>
-                                    <div class="form-text fs-5 text-danger">
-                                        <%= errors?.city?.msg %>
-                                    </div>
+                            
+                            <div class="div-province position-relative">
+                                <label class="" for="province">Provincia</label>
+                                <select class="form-select form-select-sm input" name="province" id="province">
+                                    <% if (locals.user?.address.province) { %>
+                                        <option value="<%= locals.user?.address.province %>" selected hidden><%= locals.user?.address.province %></option>
+                                    <% } else { %>
+                                    <option value="" selected hidden>Seleccionar provincia</option>
                                     <% } %>
+                                </select>
+                                <p class="errProvince">
+                                    <%= locals.errors?.province?.msg %>
+                                </p>
                             </div>
-                            <div class="div-province">
-                                <label for="province">Provincia</label>
-                                <input type="text" class="input" name="province" id="province"
-                                    value="<%= locals.errors ? locals.old.province : locals.user.address.province %>"
-                                    placeholder="<%= locals.user?.province %>">
-                                <% if (locals.errors) { %>
-                                    <div class="form-text fs-5 text-danger">
-                                        <%= errors?.province?.msg %>
-                                    </div>
+                            
+                            <div class="div-city position-relative">
+                                <label class="" for="city">Ciudad</label>
+                                <select class="form-select form-select-sm input" name="city" id="city">
+                                    <% if (locals.user?.address.city) { %>
+                                        <option value="<%= locals.user?.address.city %>" selected hidden><%= locals.user?.address.city %></option>
+                                    <% } else { %>
+                                        <option value="" selected hidden>Seleccionar ciudad</option>
                                     <% } %>
+                                </select>
+                                <p class="errCity">
+                                    <%= locals.errors?.city?.msg %>
+                                </p>
                             </div>
-                            <div class="div-zipcode">
-                                <label for="zipcode">Código postal</label>
-                                <input type="text" class="input" name="zipcode" id="zipcode"
-                                    value="<%= locals.errors ? locals.old.zipcode : locals.user.address.zipCode %>"
-                                    placeholder="<%= locals.user?.zipCode %>">
-                                <% if (locals.errors) { %>
-                                    <div class="form-text fs-5 text-danger">
-                                        <%= errors?.zipcode?.msg %>
-                                    </div>
-                                    <% } %>
+                            
+                            <div class="div-zipcode position-relative">
+                                <label class="" for="zipcode">Código postal</label>
+                                <input type="text" class="input form-control" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.address.zipCode %>" placeholder="<%= locals.user?.zipCode %>">
+                                <p class="errZipcode">
+                                    <%= locals.errors?.zipcode?.msg %>
+                                </p>
                             </div>
+
                         </div>
                         <div class="buttons">
                             <button type="submit" class="btn btn-outline-dark button">Guardar cambios</button>
                             <button type="reset" class="btn btn-outline-danger button">Cancelar cambios</button>
                         </div>
-
+                        <p class="err-form-general"></p>
                     </form>
                 </div>
-
-
             </main>
-            <%- include('../partials/footer') %>
-                <%- include('../partials/scripts', {disabledGliderJS:true}) %>
-
+        <%- include('../partials/footer') %>
+        <%- include('../partials/scripts', {disabledGliderJS:true}) %>
+        <script src="/js/functions/validations/userProfile.js"></script>
     </body>
 
 </html>
