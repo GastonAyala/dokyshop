@@ -1,88 +1,138 @@
-
-const formulario = document.querySelector(".form-principal")
 const inputs = document.querySelectorAll(".inputs")
 const avatar = document.querySelector("[name='avatar']");
 const inputName = document.querySelector("[name='name']");
 const email = document.querySelector("[name='email']");
 const password = document.querySelector("[name='password']");
 
-const regExpFiles = /.png|.jpg|.jpeg|.webp|.gif/i;
-const exRegAlfanumeric = /^[a-zA-Z0-9\s]*$/;
-const exCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+const regExPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+
+const regexMail = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 
 window.addEventListener('load', function() {
     let existError = true;
 
-  const statusInvalid = (elementErr, msgErr, elementInput) => {
-    elementErr.querySelector("p").innerHTML = msgErr;
-    elementInput.classList.add("is-invalid");
-    existError = true;
-  };
-  
-
-  const statusValid = (elementErr, elementInput) => {
-    elementErr.innerHTML = null;
-    elementInput.classList.add("is-valid");
-    elementInput.classList.remove("is-invalid");
-    existError = false;
-  };
-
-    //--------input: 
-    formulario.addEventListener("submit", function(e){
-        e.preventDefault();
-    } )
-    
-    //---------name:
-    const divName = document.querySelector(".nombre");
-    
-  
-    
+    //----------avatar
    
+    const invalidAvatar = document.querySelector(".invalid-avatar")
+    avatar.addEventListener("change", function(){
+      console.log(this.files);
+      const regExpFiles = /.png|.jpg|.jpeg|.webp|.gif/i;
+      const files = Array.from(this.files);
+
+      switch(true){
+        case !files.length:
+          invalidAvatar.innerHTML = "Debes ingresar una imagen principal";
+        break;
+        case files.length > 1:
+          invalidAvatar.innerHTML = "No puedes ingresar mas de 1 archivo";
+        break;
+        case files.some((file) => !regExpFiles.test(file.name)):
+          invalidAvatar.innerHTML =  "El formato de la imagen principal es invalido"; 
+        break;
+        default: invalidAvatar.innerHTML = null;  
+      }
+    })
+   
+    //----------name:
+
     inputName.addEventListener("blur", function(){
 
         const value = this.value.trim();
+        const invalidName = document.querySelector(".invalid-name")
+
         switch(true){
           case value.length === 0:
-            statusInvalid(divName, "El campo nombre es requerido", this);
+            invalidName.innerHTML = "Es campo nombre es requerido" 
         break;
         case value.length < 5 || value.length > 50:
-            statusInvalid(divName, "Debe tener un mínimo de 5 y máximo 50 caracteres", this)
+            invalidName.innerHTML = "Debe tener un mínimo de 5 y máximo 50 caracteres";
         break;
-        default:statusValid(divName, this);
-        
+        default:invalidName.innerHTML = null;
         break;
         
         }
     })
-    //------------email "http://localhost:3030/api/users?page=1":
 
-    const divEmail = document.querySelector(".email")
+    //------------email
     
-    console.log(divEmail)
+    email.addEventListener("blur", async function(){
+      const invalidCorreo = document.querySelector(".invalid-correo")
+      const value = this.value.trim();
+
+      switch(true){
+        case value.length === 0:
+          invalidCorreo.innerHTML = "Es campo correo es requerido" 
+      break;
+      case !regexMail.test(value):
+          invalidCorreo.innerHTML = "Debe ingresar un mail valido";
+      break;
+      default:invalidCorreo.innerHTML = null;
+      break;
+      }
+
+      const {data} = await (await fetch('http://localhost:3030/api/users')).json()  
+
+      data.forEach(user =>{
+        if(user.email === value){
+          invalidCorreo.innerHTML = "El usuario ya existe" 
+        }
+      })
+
     
+   
+})
+
+  //--------------password 
+  password.addEventListener("blur", function(){
+    const invalidPas = document.querySelector(".invalid-passwod")
+    const value = this.value.trim();
+
+    switch(true){
+      case value.length === 0:
+        invalidPas.innerHTML = "Es campo contraseña es requerido"; 
+    break;
+    case value.length < 8  || value.length > 16:
+      invalidPas.innerHTML = "Longitud invalida entre 8 y 16 caracteres!";
+    break;
+    case !regExPass.test(value):
+      invalidPas.innerHTML = "Contraseña debe contener al menos una mayuscula una minuscula y un numero!";
+    break; 
+    default:invalidPas.innerHTML = null;
+    break;       
+
+    }
+  }) 
   
-    email.addEventListener("blur", function(){
-        const value = this.value.trim();
-        switch(true){
-            case value.length === 0:
-              statusInvalid(email, "El campo email es requerido", this);
-               break;
-            case exCorreo:
-              statusInvalid(email, "Debe completar un email valido!", this)
-               break;
-            default:statusValid(email, this);
-            break;
+  
+  //--------------form
+   const formulario = document.querySelector(".form-principal")
+    const errFormGeneral = document.querySelector(".err-form-general");
+
+    formulario.addEventListener("submit", function (event){
+      const isAvatar = avatar.value.trim()
+      const isName = inputName.value?.trim();
+      const isEmail = email.value?.trim();
+      const isPassword = password.value?.trim();
+      event.preventDefault();
+
+      switch(true){
+        case !isAvatar:
+        case !isName:
+        case !isEmail:
+        case !isPassword:
+        
+          errFormGeneral.innerHTML = "Todos los campos son requeridos";
+          break;
+          default: errFormGeneral.innerHTML = null
+          break;
+        }
+
+        if(!existError){
+          this.submit();
           
-          }
-
-    })
+        
+        }
+    });
     
-      
-      
-
-
-      
-
-
-  
   })

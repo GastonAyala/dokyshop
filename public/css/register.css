@@ -10,6 +10,9 @@ body {}
     background-position: center;
     background-size: cover;
 }
+main.register-main p.is-invalid{
+    color: red;
+}
 
 .register-main .imgProductForm input[type="file"]::file-selector-button {
     border: none;

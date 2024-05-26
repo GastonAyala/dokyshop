@@ -16,25 +16,24 @@
                             </label>
                             <input class="registerAvatarInput" type="file" class="form-control" name="avatar"
                                 id="productImg" />
-                            <p class="text-danger-error registerAvatarError">
+                            <p class="text-danger-error registerAvatarError invalid-avatar">
                                 <%= locals.errors?.avatar?.msg %>
                             </p>
                         </div>
 
                         <div class="contenedor-form">
                             <div class="nombre">
-                            
-                                        <input type="text" class="inputs" name="name" placeholder="Nombre completo"
+                                   <input type="text" class="inputs" name="name" placeholder="Nombre completo"
                                         id="nombre" value="<%= locals.old?.name %>" />
-                                        <p class="errName">
+                                        <p class="invalid-name text-danger">
                                             <%= locals.errors?.name?.msg %>
                                         </p>
                             </div>
 
-                            <div class="email">
+                            <div class="email divEmail">
                                 <input class="inputs is-valid" type="email" name="email" placeholder="Ingrese su email"
-                                                id="email" value="<%= locals.old?.email %>" />
-                                    <p class="errEmail">
+                                        id="email" value="<%= locals.old?.email %>" />
+                                    <p class="invalid-correo text-danger">
                                     <%= locals.errors?.email?.msg %>
                                 </p>            
                             </div>
@@ -42,7 +41,7 @@
                             <div class="contrasenia">
                             <input class="inputs" type="password" name="password" id="contrasenia"
                                                 placeholder="Contraseña" value="<%= locals.old?.password %>" />
-                                    <p class="errPassword">
+                                    <p class="invalid-passwod text-danger">
                                             <%= locals.errors?.password?.msg %>
                                         </p>            
                             </div>
@@ -51,6 +50,7 @@
                         <div class="contenedor-button">
                             <div class="boton">
                                 <button class="submit" type="submit">Crear cuenta</button>
+                                <p class="text-danger col-12 text-center err-form-general"></p>
                             </div>
                             <div class="inicio">
                                 <p>¿Ya tienes cuenta?</p>
