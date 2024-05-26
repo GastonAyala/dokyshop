@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
-    const imgPrimary = document.querySelector("#imagePrimary");
-    const imgSecondary = document.querySelector("#imagesSecondary");
-    const title = document.querySelector("#title");
+    const imgPrimary = document.querySelector('#productImg');
+    const imgSecondary = document.querySelector('#imagesSecondary');
+    const title = document.querySelector('#title');
     const category = document.querySelector('#category');
     const subcategory = document.querySelector('#subcategory');
     const description = document.querySelector('#description');
@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
 
     const exRegAlfanumeric = /[^A-Za-z0-9áéíóúñÁÉÍÓÚÑ\s,.]/;
 
-    let existImgPrima = true;
+    let existImgPrima = false;
     let existImgSecon = false;
     let existTitleError = true;
     let existCateError = true;
@@ -21,28 +21,27 @@ window.addEventListener('load', () => {
     let existPriceError = true;
     let existSaleError = false;
     let existQuanError = true;
-    let existColorError = true;
-
+    let existColorError= true;
 
     const invalid = (elemErr, msgErr, elemInput) => {
         elemErr.innerHTML = msgErr;
         elemErr.style.position = 'unset';
         elemErr.classList.add('invalid-tooltip');
         elemInput.classList.add('is-invalid');
-    };
+    }
 
     const valid = (elemErr, elemInput) => {
         elemErr.innerHTML = null;
         elemInput.classList.add('is-valid');
         elemErr.classList.remove('invalid-tooltip');
         elemInput.classList.remove('is-invalid');
-    };
+    }
 
     const remove = (elemErr, elemInput) => {
         elemInput.classList.remove('is-valid');
-        elemErr.classList.remove('invalid-tooltip');
+        elemErr.classList.renove('invalid-tooltip');
         elemErr.innerHTML = null;
-    };
+    }
 
     //*IMAGEN PRIMARIA
 
@@ -51,15 +50,11 @@ window.addEventListener('load', () => {
         const regExpFiles = /.png|.jpg|.jpeg|.webp|.gif/i;
         const files = Array.from(this.files);
         switch (true) {
-            case !files.length:
-                invalid(errImgPrimary, 'Debes ingresar una imagen principal', this);
-                existImgPrima = true;
-                break;
             case files.length > 1:
-                invalid(errImgPrimary, 'No puedes ingresar más de 1 archivo', this);
+                invalid(errImgPrimary, 'No puedes ingresar más de 1 archivo', this)
                 existImgPrima = true;
                 break;
-            case files.some((file) => !regExpFiles.test(file.name)):
+            case files.some((file)=> !regExpFiles.test(file.name)):
                 invalid(errImgPrimary, 'El formato de la imagen principal es inválido. Formatos válidos: .png .jpg .jpeg .webp .gif', this);
                 existImgPrima = true;
                 break;
@@ -78,11 +73,11 @@ window.addEventListener('load', () => {
         const files = Array.from(this.files);
         switch (true) {
             case files.length > 3:
-                invalid(errImgSecondary, 'No puedes ingresar más de 3 archivos', this)
+                invalid(errImgSecondary, 'No puedes ingresar más de 3 archivos', this);
                 existImgSecon = true;
                 break;
             case files.some((file) => !regExpFiles.test(file.name)):
-                invalid(errImgSecondary, 'Uno de los archivos es inválido. Formatos válidos: .png .jpg .jpeg .webp .gif', this)
+                invalid(errImgSecondary, 'Uno de los archivos es inválido. Formatos válidos: .png .jpg .jpeg .webp .gif', this);
                 existImgSecon = true;
                 break;
             default:
@@ -118,7 +113,7 @@ window.addEventListener('load', () => {
     });
 
     title.addEventListener('focus', function (e) {
-        remove(errTitle, this);
+        remove(errTitle, this);        
     });
 
     //*CATEGORIA
@@ -169,11 +164,11 @@ window.addEventListener('load', () => {
                 valid(errDescription, this);
                 existDescripError = false;
                 break;
-        }
+        };      
     });
 
     description.addEventListener('focus', function (e) {
-        remove(errDescription, this)
+        remove(errDescription, this);        
     });
 
     //*PRECIO
@@ -198,13 +193,12 @@ window.addEventListener('load', () => {
                 valid(errPrice, this);
                 existPriceError = false;
                 break;
-        }
+        };
     });
 
     price.addEventListener('focus', function (e) {
-        remove(errPrice, this);
+        remove(errPrice, this)
     });
-
 
     //*DESCUENTO
 
@@ -242,15 +236,15 @@ window.addEventListener('load', () => {
                 existQuanError = true;
                 break;
             case isNaN(value):
-                invalid(errQuantity, 'La cantidad debe ser un número', this)
+                invalid(errQuantity, 'La cantidad debe ser un número', this);
                 existQuanError = true;
                 break;
             case value <= 0:
-                invalid(errQuantity, 'La cantidad debe ser un número positivo', this)
+                invalid(errQuantity, 'La cantidad debe ser un número positivo', this);
                 existQuanError = true;
-                break
+                break;
             default:
-                valid(errQuantity, this)
+                valid(errQuantity, this);
                 existQuanError = false;
                 break;
         };
@@ -275,9 +269,9 @@ window.addEventListener('load', () => {
 
     //*FORMULARIO
 
-    const formCreate = document.querySelector('#form');
+    const formUpdate = document.querySelector('#formUpdate');
     const errFormGeneral = document.querySelector('.err-form-general');
-    formCreate.addEventListener("submit", function (e) {
+    formUpdate.addEventListener("submit", function (e) {
 
         if (existImgPrima || existImgSecon || existTitleError || existCateError || existSubcaError || existDescripError || existPriceError || existSaleError || existQuanError || existColorError) {
             e.preventDefault();

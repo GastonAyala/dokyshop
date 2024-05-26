@@ -14,31 +14,32 @@
       <div class="col-6">
         <div class="imgProductForm col-12 my-5 px-5 position-relative">
           <label for="imagePrimary" class="form-label col-7">
-            Imagen principal
-            <span class="field-required"></span>
+            Imagen principal 
+            <span class="text-danger">*</span>
             <img src="/images/products/default/no-image.png" alt="default product img"/>
           </label>
-          <input type="file" class="form-control form-control-sm" name="imagePrimary" id="imagePrimary"
-            accept="img/*"/>
+          <input type="file" class="form-control form-control-sm" name="imagePrimary" id="imagePrimary" accept="img/*"/>
             <p class="err-imgPrimary">
             </p>
         </div>
 
         <div class="imgProductForm col-12 my-5 px-5 position-relative">
           <label for="imagesSecondary" class="form-label col-7">
-            Imagenes Secundarias
+            Imagenes Secundarias 
+            <span class="text-danger">*</span>
           </label>
           <input type="file" class="form-control form-control-sm" name="imagesSecondary" id="imagesSecondary"
             multiple />
-            <p class="err-imgSecondary">
+            <p class="err-imgSecondaries">
             </p>
         </div>
+
       </div>
-      <div class="createProductForm-options col-6">
+      <div class="createProductForm-options col-6 position-relative">
         <div class="createProductForm-title col-6 my-3 position-relative">
           <label for="title" class="form-label">
             Titulo
-            <span class="field-required text-danger">*</span>
+            <span class="text-danger">*</span>
           </label>
           <input type="text" class="form-control form-control-sm border-0 text-center" name="title" id="title" placeholder="Colocar el titulo del producto"/>
           <p class="err-title">
@@ -49,7 +50,7 @@
         <div class="createProductForm-category col-6 my-3 position-relative">
           <label for="category" class="form-label">
             Categoría 
-            <span class="field-required text-danger">*</span>
+            <span class="text-danger">*</span>
           </label>
           <select class="form-select form-select-sm text-center" name="category" aria-label="Desplegar las opciones"
             id="category">
@@ -66,7 +67,7 @@
         <div class="createProductForm-category col-6 my-3 position-relative">
           <label for="subcategory" class="form-label">
             Subcategoría 
-            <span class="field-required text-danger">*</span>
+            <span class="text-danger">*</span>
           </label>
           <select class="form-select form-select-sm text-center" name="subcategory" aria-label="Desplegar las opciones" id="subcategory">
             <% subcategory.forEach(sc=> { %>
@@ -81,7 +82,7 @@
         <div class="createProductForm-description col-6 my-3 position-relative">
           <label for="description" class="form-label">
             Descripción 
-            <span class="field-required text-danger">*</span>
+            <span class="text-danger">*</span>
           </label>
           <textarea class="form-control form-control-sm border-0 text-center" name="description" id="description" placeholder="Colocar la descripción del producto"></textarea>
           <p class="err-description">
@@ -91,7 +92,7 @@
         <div class="createProductForm-price col-6 my-3 position-relative">
           <label for="price" class="form-label">
             Precio 
-            <span class="field-required text-danger">*</span>
+            <span class="text-danger">*</span>
           </label>
           <input type="number" class="form-control form-control-sm border-0 text-center" name="price" id="price" value="0"/>
             <p class="err-price">
@@ -101,7 +102,7 @@
         <div class="createProductForm-sale col-6 my-3 position-relative">
           <label for="sale" class="form-label">
             Descuento 
-            <span class="field-required text-danger">*</span>
+            <span class="text-danger">*</span>
           </label>
           <input type="number" class="form-control form-control-sm border-0 text-center" name="sale" id="sale" value="0"/>
             <p class="err-sale">
@@ -111,7 +112,7 @@
         <div class="createProductForm-quantity col-6 my-3 position-relative">
           <label for="quantity" class="form-label">
             Cantidad 
-            <span class="field-required text-danger">*</span>
+            <span class="text-danger">*</span>
           </label>
           <input type="number" class="form-control form-control-sm border-0 text-center" name="quantity" id="quantity" value="1"/>
             <p class="err-quantity">
@@ -121,7 +122,7 @@
         <div class="createProductForm-color col-6 my-3 position-relative">
           <label for="color" class="form-label">
             Color 
-            <span class="field-required text-danger">*</span>
+            <span class="text-danger">*</span>
           </label>
           <select class="form-select" name="color" id="color" aria-label="multiple select color">
             <option selected value="Multicolor">Multicolor</option>
