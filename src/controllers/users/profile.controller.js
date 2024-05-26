@@ -4,7 +4,7 @@ module.exports = (req, res) => {
 
     db.user.findByPk(id, { include: "address" })
     .then((user) => {
-         res.render("users/profile", { user, address: user.address })
+        return res.render("users/profile", { user, address: user.address })
     })
     .catch((err) => {
         return res.send(err.message)
