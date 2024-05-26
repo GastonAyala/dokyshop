@@ -39,8 +39,8 @@ li {
     list-style: none;
 }
 
-.alert-danger {
-    background-color: rgba(220, 53, 69, .9);
+.alert-danger{
+    background-color: rgba(220, 53, 69, .9) !important;
     color: white;
     border: none;
     text-align: center;

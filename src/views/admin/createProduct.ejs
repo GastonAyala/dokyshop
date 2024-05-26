@@ -10,143 +10,130 @@
   </div>
 
   <div class="createProductForm-container container-fluid my-5 card">
-    <form class="createProductForm" action="/admin/crear-producto" method="post"  enctype="multipart/form-data">
+    <form class="createProductForm" id="form" action="/admin/crear-producto" method="post" enctype="multipart/form-data">
       <div class="col-6">
-        <div class="imgProductForm col-12 my-5 px-5">
-          <label for="imagePrimary" class="form-label col-7"
-            >Imagen principal 
-            <img src="/images/products/default/no-image.png" alt="default product img" />
+        <div class="imgProductForm col-12 my-5 px-5 position-relative">
+          <label for="imagePrimary" class="form-label col-7">
+            Imagen principal 
+            <span class="text-danger">*</span>
+            <img src="/images/products/default/no-image.png" alt="default product img"/>
           </label>
-          <input
-            type="file"
-            class="form-control form-control-sm"
-            name="imagePrimary"
-            id="imagePrimary"
-            accept="img/*"
-          />
-        </div>
-        <div class="imgProductForm col-12 my-5 px-5">
-          <label for="imagesSecondary" class="form-label col-7"
-            >Imagenes Secundarias
-          </label>
-          <input
-            type="file"
-            class="form-control form-control-sm"
-            name="imagesSecondary"
-            id="imagesSecondary" multiple
-          />
-        </div>
-      </div>
-      <div class="createProductForm-options col-6">
-        <div class="createProductForm-title col-6 my-3">
-          <label for="title" class="form-label"
-            >Titulo <span class="text-danger">*</span></label
-          >
-          <input
-            type="text"
-            class="form-control form-control-sm border-0 text-center"
-            name="title"
-            id="title"
-            value=""
-            placeholder=""
-          />
+          <input type="file" class="form-control form-control-sm" name="imagePrimary" id="imagePrimary" accept="img/*"/>
+            <p class="err-imgPrimary">
+            </p>
         </div>
 
+        <div class="imgProductForm col-12 my-5 px-5 position-relative">
+          <label for="imagesSecondary" class="form-label col-7">
+            Imagenes Secundarias 
+            <span class="text-danger">*</span>
+          </label>
+          <input type="file" class="form-control form-control-sm" name="imagesSecondary" id="imagesSecondary"
+            multiple />
+            <p class="err-imgSecondaries">
+            </p>
+        </div>
+
+      </div>
+      <div class="createProductForm-options col-6 position-relative">
+        <div class="createProductForm-title col-6 my-3 position-relative">
+          <label for="title" class="form-label">
+            Titulo
+            <span class="text-danger">*</span>
+          </label>
+          <input type="text" class="form-control form-control-sm border-0 text-center" name="title" id="title" placeholder="Colocar el titulo del producto"/>
+          <p class="err-title">
+          </p>
+        </div>
 
         <!-----category-->
-        <div class="createProductForm-category col-6 my-3">
-          <label for="category" class="form-label"
-            >Categoría <span class="text-danger">*</span></label>
-          <select
-            class="form-select form-select-sm text-center"
-            name="category"
-            aria-label="Desplegar las opciones"
+        <div class="createProductForm-category col-6 my-3 position-relative">
+          <label for="category" class="form-label">
+            Categoría 
+            <span class="text-danger">*</span>
+          </label>
+          <select class="form-select form-select-sm text-center" name="category" aria-label="Desplegar las opciones"
             id="category">
             <% category.forEach(c=> { %>
               <option <%=locals.old?.category===c.name ? "selected" : null %> value="<%= c.id %>"><%= c.name %>
               </option>
               <% }) %>
           </select>
+          <p class="err-category">
+          </p>
         </div>
 
-        <!-----category-->
-        <div class="createProductForm-category col-6 my-3">
-          <label for="subcategory" class="form-label"
-            >Categoría <span class="text-danger">*</span></label>
-          <select
-            class="form-select form-select-sm text-center"
-            name="subcategory"
-            aria-label="Desplegar las opciones"
-            id="subcategory">
+        <!-----subcategory-->
+        <div class="createProductForm-category col-6 my-3 position-relative">
+          <label for="subcategory" class="form-label">
+            Subcategoría 
+            <span class="text-danger">*</span>
+          </label>
+          <select class="form-select form-select-sm text-center" name="subcategory" aria-label="Desplegar las opciones" id="subcategory">
             <% subcategory.forEach(sc=> { %>
-              <option <%=locals.old?.subcategory===sc.name ? "selected" : null %> value="<%= sc.id %>"><%= sc.name %>
-              </option>
+              <option <%=locals.old?.subcategory===sc.name ? "selected" : null %> value="<%= sc.id %>"><%= sc.name %> </option>
               <% }) %>
           </select>
+          <p class="err-subcategory">
+          </p>
         </div>
 
         <!----description-->
-        <div class="createProductForm-description col-6 my-3">
-          <label for="description" class="form-label"
-            >Descripción <span class="text-danger">*</span></label
-          >
-          <textarea
-            class="form-control form-control-sm border-0 text-center"
-            name="description"
-            id="description"
-            placeholder="Colocar la descripción del producto"
-          ></textarea>
-        </div>
-        <div class="createProductForm-price col-6 my-3">
-          <label for="price" class="form-label"
-            >Precio <span class="text-danger">*</span></label
-          >
-          <input
-            type="number"
-            class="form-control form-control-sm border-0 text-center"
-            name="price"
-            id="price"
-            value="0"
-            placeholder=""
-          />
-        </div>
-        <div class="createProductForm-sale col-6 my-3">
-          <label for="sale" class="form-label"
-            >Descuento <span class="text-danger">*</span></label
-          >
-          <input
-            type="number"
-            class="form-control form-control-sm border-0 text-center"
-            name="sale"
-            id="sale"
-            value="0"
-            placeholder=""
-          />
-        </div>
-        <div class="createProductForm-quantity col-6 my-3">
-          <label for="quantity" class="form-label"
-            >Cantidad <span class="text-danger">*</span></label
-          >
-          <input
-            type="number"
-            class="form-control form-control-sm border-0 text-center"
-            name="quantity"
-            id="quantity"
-            value="0"
-            placeholder=""
-          />
+        <div class="createProductForm-description col-6 my-3 position-relative">
+          <label for="description" class="form-label">
+            Descripción 
+            <span class="text-danger">*</span>
+          </label>
+          <textarea class="form-control form-control-sm border-0 text-center" name="description" id="description" placeholder="Colocar la descripción del producto"></textarea>
+          <p class="err-description">
+          </p>
         </div>
 
-        <div class="createProductForm-color col-6 my-3">
-          <label for="color" class="form-label"
-            >Color <span class="text-danger">*</span>
+        <div class="createProductForm-price col-6 my-3 position-relative">
+          <label for="price" class="form-label">
+            Precio 
+            <span class="text-danger">*</span>
+          </label>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="price" id="price" value="0"/>
+            <p class="err-price">
+            </p>
+        </div>
+
+        <div class="createProductForm-sale col-6 my-3 position-relative">
+          <label for="sale" class="form-label">
+            Descuento 
+            <span class="text-danger">*</span>
+          </label>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="sale" id="sale" value="0"/>
+            <p class="err-sale">
+            </p>
+        </div>
+        
+        <div class="createProductForm-quantity col-6 my-3 position-relative">
+          <label for="quantity" class="form-label">
+            Cantidad 
+            <span class="text-danger">*</span>
+          </label>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="quantity" id="quantity" value="1"/>
+            <p class="err-quantity">
+            </p>
+        </div>
+
+        <div class="createProductForm-color col-6 my-3 position-relative">
+          <label for="color" class="form-label">
+            Color 
+            <span class="text-danger">*</span>
           </label>
           <select class="form-select" name="color" id="color" aria-label="multiple select color">
-            <option selected value="Multiclor">Multicolor</option>
-          <% colors.forEach(c => { %>
-            <option value="<%= c.name %>" style="background-color:<%= c.name %>"  ><%= c.name %></option>
-          <% }) %>
-        </select>
+            <option selected value="Multicolor">Multicolor</option>
+            <% colors.forEach(c=> { %>
+              <option value="<%= c.name %>" style="background-color:<%= c.name %>">
+                <%= c.name %>
+              </option>
+              <% }) %>
+          </select>
+          <p class="err-color">
+          </p>
         </div>
 
         <!---available-->
@@ -155,12 +142,12 @@
           <label class="form-check-label" for="available">Disponible</label>
         </div>
 
-        <button
-          type="submit"
-          class="createdProd-CreateBtn btn btn-success col-3 my-3 mx-auto">
+        <button type="submit" class="createdProd-CreateBtn btn btn-success col-3 my-3 mx-auto">
           Crear Producto
         </button>
       </div>
     </form>
+    <p class="err-form-general"></p>
   </div>
+  <script src="/js/validations/createProduct.js"></script>
 </div>
