@@ -28,9 +28,9 @@ window.addEventListener('load', function() {
       }
 
     const {data} = await (await fetch('http://localhost:3030/api/users')).json()  
-
+      console.log(data)
       data.forEach(user =>{
-        if(user.email == value){
+        if(user.email != value){
           invalidCorreo.innerHTML = "Usuario no existente" 
         }
       })
