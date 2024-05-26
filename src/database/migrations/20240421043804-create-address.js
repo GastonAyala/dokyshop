@@ -13,10 +13,10 @@ module.exports = {
         type: Sequelize.STRING(100)
       },
       city: {
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(100)
       },
       province: {
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(100)
       },
       zipCode: {
         type: Sequelize.INTEGER(4)
