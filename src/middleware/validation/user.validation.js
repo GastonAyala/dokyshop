@@ -7,20 +7,21 @@ const fieldAvatar = body('avatar')
     const lengthAvatar = req.files?.avatar?.length;
     if(lengthAvatar) {
         if (lengthAvatar > 1) 
-        throw new Error('No puedes ingresar mas de una imagen')
+        throw new Error('No puedes ingresar más de una imagen')
 
         const extAvatar = path.extname(req.files?.avatar[0]?.originalname);
         const isFormatSucess = regExpFiles.test(extAvatar);
 
-        if (!isFormatSucess) throw new Error("El formato de la imagen de perfil es inválido. formatos sopórtados: .png, .jpg, .jpeg, .webp");
+        if (!isFormatSucess) throw new Error("El formato de la imagen de perfil es inválido. formatos sopórtados: .png, .jpg, .jpeg, .webp, .gif");
 
     }
     return true;
 });
 
 const fieldName = body('name')
-    .notEmpty()
-    .withMessage("El campo Nombre es requerido")
+    .optional({checkFalsy: true})
+    .isAlpha("es-ES", {ignore: " "})
+    .withMessage("El campo no permite números ni caracteres especiales")
     .bail()
     .isLength({ min: 5, max: 50})
     .withMessage("Debe tener un mínimo de 5 y máximo 50 caracteres");
@@ -35,20 +36,20 @@ const fieldstreet = body("street")
 
 const fieldCity = body("city")
     .optional({checkFalsy: true})
-    .isAlpha("es-ES", {ignore: " "})
-    .withMessage("No se permiten caracteres especiales y números")
+    .isAlphanumeric("es-ES", {ignore: " "})
+    .withMessage("El campo Ciudad debe ser alfanumérico")
     .bail()
-    .isLength({ min: 5, max: 50})
-    .withMessage("El nombre de ciudad debe tener un mínimo de 5 y máximo de 50 caracteres");
+    .isLength({ min: 5, max: 100})
+    .withMessage("El nombre de la ciudad debe tener un mínimo de 5 y máximo de 100 caracteres");
 
 
 const fieldProvince = body("province")
     .optional({checkFalsy: true})
-    .isAlpha("es-ES", {ignore: " "})
-    .withMessage("No se permiten caracteres especiales y números")
+    .isAlphanumeric("es-ES", {ignore: " ,´"})
+    .withMessage("El campo Provincia debe ser alfanumérico")
     .bail()
-    .isLength({ min: 5, max: 50})
-    .withMessage("El nombre de ciudad debe tener un mínimo de 5 y máximo de 50 caracteres");
+    .isLength({ min: 5, max: 100})
+    .withMessage("El nombre de la provincia debe tener un mínimo de 5 y máximo de 100 caracteres");
 
 const fieldZipcode = body("zipcode")
    .optional({checkFalsy: true})
@@ -60,8 +61,8 @@ const fieldZipcode = body("zipcode")
 
 const fieldPhone = body("phone")
     .optional({checkFalsy: true})
-    .isNumeric()
-    .withMessage("El campo Teléfono postal debe ser numérico")
+    .isInt({ gt: 0})
+    .withMessage("El valor debe ser numérico positivo")
     .bail()
     .isLength({min: 10, max: 13})
     .withMessage("La longitud debe ser de mínimo 10 y máximo 13 numéros")
