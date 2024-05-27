@@ -38,8 +38,9 @@ module.exports = (req, res) => {
                         .catch(err => {
                             res.send(err.message)
                         })
+                } else {
+                    return res.redirect(`/admin/productos`)
                 }
-                return res.redirect(`/admin/productos`)
             })
     } else {
         const categoryPromise = db.category.findAll()

@@ -10,158 +10,159 @@
   </div>
 
   <div class="createProductForm-container container-fluid my-5 card">
-    <form class="createProductForm" action="/admin/editar-producto/<%= product.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+    <form class="createProductForm" id="formUpdate" action="/admin/editar-producto/<%= product.id %>?_method=PUT" method="post"
+      enctype="multipart/form-data">
       <div class="col-6">
-        <div class="imgProductForm col-12 my-5 px-5">
-          <label for="productImg" class="form-label col-7"
-            >Imagen principal 
+        <div class="imgProductForm col-12 my-5 px-5 position-relative">
+          <label for="productImg" class="form-label col-7">
+            Imagen principal
+            <span class="text-danger"> *</span>
             <img src="/images/products/<%= product.imagePrincipal %>" alt="product img" />
           </label>
-          <input type="file" class="form-control form-control-sm"
-          name="imagePrimary"
-          id="productImg"
-          accept="img/*"
-          />
+          <input type="file" class="form-control form-control-sm" name="imagePrimary" id="productImg" accept="img/*" />
+          <p class="err-imgPrimary">
+            <%= locals.error?.imagePrimary?.msg %>
+          </p>
         </div>
-        <div class="imgProductForm col-12 my-5 px-5"> 
-          <label for="productImg" class="form-label col-7"
-            >Imagen secundaria
+
+        <div class="imgProductForm col-12 my-5 px-5 position-relative">
+          <label for="productImg" class="form-label col-7">Imagen secundaria
           </label>
-          <input
-            type="file"
-            class="form-control form-control-sm"
-            name="imagesSecondary"
-            id="imagesSecondary"
-            accept="img/*"
-            multiple
-          />
+          <input type="file" class="form-control form-control-sm" name="imagesSecondary" id="imagesSecondary"
+            accept="img/*" multiple />
+          <p class="err-imgSecondaries">
+            <%= locals.error?.imagesSecondary?.msg %>
+          </p>
         </div>
       </div>
-      <div class="createProductForm-options col-6">
+
+      <div class="createProductForm-options col-6 position-relative">
         <div class="createProductForm-title col-6 my-3">
-          <label for="title" class="form-label"
-            >Titulo <span class="text-danger">*</span></label
-          >
-          <input
-            type="text"
-            class="form-control form-control-sm border-0 text-center"
-            name="title"
-            id="title"
-            value="<%= product.title %>"
-            placeholder=""
-          />
+          <label for="title" class="form-label">
+            Titulo
+            <span class="text-danger">*</span>
+          </label>
+          <input type="text" class="form-control form-control-sm border-0 text-center" name="title" id="title"
+            value="<%= product.title %>" placeholder="Colocar el titulo del producto" />
+          <p class="err-title">
+            <%= locals.error?.title?.msg %>
+          </p>
         </div>
-        <div class="createProductForm-category col-6 my-3">
-          <label for="category" class="form-label"
-            >Categoría <span class="text-danger">*</span></label
-          >
-          <select
-            class="form-select form-select-sm text-center"
-            name="category"
-            aria-label="Desplegar las opciones"
-            id="category"
-          >
-          <% categories.forEach(c => { %>
-          <option <%= product.category.name === c.name  ? "selected" : null %> value= "<%= c.id %>"><%= c.name %></option>
-          <% }) %>       
+
+        <div class="createProductForm-category col-6 my-3 position-relative">
+          <label for="category" class="form-label">
+            Categoría
+            <span class="text-danger">*</span>
+          </label>
+          <select class="form-select form-select-sm text-center" name="category" aria-label="Desplegar las opciones"
+            id="category">
+            <% categories.forEach(c=> { %>
+              <option <%=product.category.name===c.name ? "selected" : null %> value= "<%= c.id %>"><%= c.name %>
+              </option>
+              <% }) %>
           </select>
+          <p class="err-category">
+            <%= locals.error?.category?.msg %>
+          </p>
         </div>
-        <div class="createProductForm-category col-6 my-3">
-          <label for="subcategory" class="form-label"
-            >Subcategoría <span class="text-danger">*</span></label
-          >
-          <select
-            class="form-select form-select-sm text-center"
-            name="subcategory"
-            aria-label="Desplegar las opciones"
-            id="subcategory"
-          >
-          <% subcategories.forEach(sc => { %>
-          <option <%= product.subcategory.name === sc.name  ? "selected" : null %> value= "<%= sc.id %>"><%= sc.name %></option>
-          <% }) %>
+
+        <div class="createProductForm-category col-6 my-3 position-relative">
+          <label for="subcategory" class="form-label">
+            Subcategoría
+            <span class="text-danger">*</span>
+          </label>
+          <select class="form-select form-select-sm text-center" name="subcategory" aria-label="Desplegar las opciones"
+            id="subcategory">
+            <% subcategories.forEach(sc=> { %>
+              <option <%=product.subcategory.name===sc.name ? "selected" : null %> value= "<%= sc.id %>"><%= sc.name %>
+              </option>
+              <% }) %>
           </select>
+          <p class="err-subcategory">
+            <%= locals.error?.subcategory?.msg %>
+          </p>
         </div>
-        <div class="createProductForm-description col-6 my-3">
-          <label for="description" class="form-label"
-            >Descripción <span class="text-danger">*</span></label
-          >
-          <textarea
-            class="form-control form-control-sm border-0 text-ce"
-            name="description"
-            id="description"
-            placeholder="Colocar la descripción del producto"
-          ><%= product.description %></textarea
-          >
+
+        <div class="createProductForm-description col-6 my-3 position-relative">
+          <label for="description" class="form-label">
+            Descripción
+            <span class="text-danger">*</span>
+          </label>
+          <textarea class="form-control form-control-sm border-0 text-ce" name="description" id="description" placeholder="Colocar la descripción del producto"><%= product.description %>
+            </textarea>
+          <p class="err-description">
+            <%= locals.error?.description?.msg %>
+          </p>
         </div>
-        <div class="createProductForm-price col-6 my-3">
-          <label for="price" class="form-label"
-            >Precio <span class="text-danger">*</span></label
-          >
-          <input
-            type="number"
-            class="form-control form-control-sm border-0 text-center"
-            name="price"
-            id="price"
-            value="<%= product.price %>"
-            placeholder=""
-          />
+
+        <div class="createProductForm-price col-6 my-3 position-relative">
+          <label for="price" class="form-label">
+            Precio 
+            <span class="text-danger">*</span>
+          </label>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="price" id="price" value="<%= product.price %>" placeholder=""/>
+          <p class="err-price">
+            <%= locals.error?.price?.msg %>
+          </p>
         </div>
-        <div class="createProductForm-sale col-6 my-3">
-          <label for="sale" class="form-label"
-            >Descuento <span class="text-danger">*</span></label
-          >
-          <input
-            type="number"
-            class="form-control form-control-sm border-0 text-center"
-            name="sale"
-            id="sale"
-            value="<%= product.sale %>"
-            placeholder=""
-          />
+
+        <div class="createProductForm-sale col-6 my-3 position-relative">
+          <label for="sale" class="form-label">
+            Descuento 
+            <span class="text-danger">*</span>
+          </label>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="sale" id="sale" value="<%= product.sale %>" placeholder=""/>
+          <p class="err-sale">
+            <%= locals.error?.sale?.msg %>
+          </p>
         </div>
-        <div class="createProductForm-quantity col-6 my-3">
-          <label for="quantity" class="form-label"
-            >Cantidad <span class="text-danger">*</span></label
-          >
-          <input
-            type="number"
-            class="form-control form-control-sm border-0 text-center"
-            name="quantity"
-            id="quantity"
-            value="<%= product.quantity %>"
-            placeholder=""
-          />
+
+        <div class="createProductForm-quantity col-6 my-3 position-relative">
+          <label for="quantity" class="form-label">
+            Cantidad 
+            <span class="text-danger">*</span>
+          </label>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="quantity" id="quantity" value="<%= product.quantity %>" placeholder=""/>
+          <p class="err-quantity">
+            <%= locals.error?.quantity?.msg %>
+          </p>
         </div>
-        <div class="createProductForm-color col-6 my-3">
-          <label for="color" class="form-label"
-            >Color <span class="text-danger">*</span>
+
+        <div class="createProductForm-color col-6 my-3 position-relative">
+          <label for="color" class="form-label">
+            Color 
+            <span class="text-danger">*</span>
           </label>
           <select class="form-select" name="color" id="color" aria-label="multiple select color">
             <option selected value="Multiclor">Multicolor</option>
-          <% colors.forEach(c => { %>
-          <option <% if (product.color === c.name) { %> selected <% } %> value="<%= c.name %>" style="background-color:<%= c.name %>"  ><%= c.name %></option>
-          <% }) %>
-        </select>
+            <% colors.forEach(c=> { %>
+              <option <% if (product.color===c.name) { %> selected <% } %> value="<%= c.name %>"
+                    style="background-color:<%= c.name %>" ><%= c.name %>
+              </option>
+              <% }) %>
+          </select>
+          <p class="err-color">
+            <%= locals.error?.color?.msg %>
+          </p>
         </div>
+        
         <div class="mb-3 form-check form-switch col-4">
-          <input class="form-check-input" type="checkbox" id="available" name="available" <% if (product.available) { %> checked <% } %>>
-          <label class="form-check-label" for="available">Disponible</label>
+          <input class="form-check-input" type="checkbox" id="available" name="available" <% if (product.available) { %>
+          checked <% } %>>
+            <label class="form-check-label" for="available">Disponible</label>
         </div>
         <div class="d-flex text-center col-12">
-          <button
-            type="reset"
-            class="editProd-reset btn btn-danger col-3 my-3 mx-auto"
-          >
+          <button type="reset" class="editProd-reset btn btn-danger col-3 my-3 mx-auto">
             Borrar cambios
           </button>
-          <button
-            type="submit"
-            class="editProd-update btn btn-success col-3 my-3 mx-auto"
-          >
+
+          <button type="submit" class="editProd-update btn btn-success col-3 my-3 mx-auto">
             Editar Producto
           </button>
         </div>
       </div>
     </form>
+    <p class="err-form-general"></p>
   </div>
+  <!--<script src="/js/validations/updateProduct.js"></script>-->
 </div>

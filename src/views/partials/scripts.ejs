@@ -1,23 +1,22 @@
 <% if (!locals.disabledBootstrapJS) { %>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <% } %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<% } %>
 
-    <% if (!locals.disabledGliderJS) { %>
+<% if (!locals.disabledGliderJS) { %>
+  <!-- GLIDER SCRIPT -->
+  <script src="/js/library/glider.min.js" defer></script>
+ 
+  <!-- GLIDER CONFIG SCRIPT -->
+  <script src="/js/configs/glider.js" defer></script>
+<% } %>
 
-      <!-- GLIDER SCRIPT -->
-      <script src="/js/library/glider.min.js" defer></script>
-     
-      <!-- GLIDER CONFIG SCRIPT -->
-      <script src="/js/configs/glider.js" defer></script>
-      <% } %>
-      
-    <% if (!locals.disabledHamburgerJS) { %>
-      <!-- HAMBURGERS SCRIPT -->
-      <script src="/js/library/hamburgers.js" defer></script>
-    <% } %>
-      
-    <% if (locals.activeDotJS) { %>
-      <!-- DOT SCRIPT -->
-      <script src="/js/library/dot.js" defer></script>
-    <% } %>
+<% if (!locals.disabledHamburgerJS) { %>
+  <!-- HAMBURGERS SCRIPT -->
+  <script src="/js/library/hamburgers.js" defer></script>
+<% } %>
+
+<% if (locals.activeDotJS) { %>
+  <!-- DOT SCRIPT -->
+  <script src="/js/functions/dot.js" defer></script>
+<% } %>
 

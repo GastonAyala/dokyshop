@@ -26,10 +26,15 @@
 
 .usersProfile .div-form .form .div-avatar label{
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .usersProfile .div-form .form .div-avatar label p{
     text-align: center;
+    position: unset !important;
 }
 
 .usersProfile .div-form .form .div-avatar label img{
