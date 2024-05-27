@@ -16,46 +16,41 @@
                             </label>
                             <input class="registerAvatarInput" type="file" class="form-control" name="avatar"
                                 id="productImg" />
-                            <p class="text-danger-error registerAvatarError">
+                            <p class="text-danger-error registerAvatarError invalid-avatar">
                                 <%= locals.errors?.avatar?.msg %>
                             </p>
                         </div>
 
                         <div class="contenedor-form">
                             <div class="nombre">
-                                <% if (locals.errors) { %>
-                                        <p class="text-danger-error">
+                                   <input type="text" class="inputs" name="name" placeholder="Nombre completo"
+                                        id="nombre" value="<%= locals.old?.name %>" />
+                                        <p class="invalid-name text-danger">
                                             <%= locals.errors?.name?.msg %>
                                         </p>
-                                        <% } %>
-                                            <input type="text" class="" name="name" placeholder="Nombre completo"
-                                                id="nombre" value="<%= locals.old?.name %>" />
                             </div>
 
-                            <div class="email">
-                                <% if (locals.errors) { %>
-                                        <p class="text-danger-error">
-                                            <%= locals.errors?.email?.msg %>
-                                        </p>
-                                        <% } %>
-                                            <input class="" type="email" name="email" placeholder="Ingrese su email"
-                                                id="email" value="<%= locals.old?.email %>" />
+                            <div class="email divEmail">
+                                <input class="inputs is-valid" type="email" name="email" placeholder="Ingrese su email"
+                                        id="email" value="<%= locals.old?.email %>" />
+                                    <p class="invalid-correo text-danger">
+                                    <%= locals.errors?.email?.msg %>
+                                </p>            
                             </div>
 
                             <div class="contrasenia">
-                                <% if (locals.errors) { %>
-                                        <p class="text-danger-error">
-                                            <%= locals.errors?.password?.msg %>
-                                        </p>
-                                        <% } %>
-                                            <input class="" type="password" name="password" id="contrasenia"
+                            <input class="inputs" type="password" name="password" id="contrasenia"
                                                 placeholder="Contraseña" value="<%= locals.old?.password %>" />
+                                    <p class="invalid-passwod text-danger">
+                                            <%= locals.errors?.password?.msg %>
+                                        </p>            
                             </div>
                         </div>
 
                         <div class="contenedor-button">
                             <div class="boton">
                                 <button class="submit" type="submit">Crear cuenta</button>
+                                <p class="text-danger col-12 text-center err-form-general"></p>
                             </div>
                             <div class="inicio">
                                 <p>¿Ya tienes cuenta?</p>
@@ -69,6 +64,7 @@
             <%- include('../partials/footer') %> 
 
             <%- include('../partials/scripts', { disabledGliderJS:true }) %>
+            <script src="/js/validations/register.js"></script>
     </body>
 
 </html>

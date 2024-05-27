@@ -12,13 +12,13 @@
                 <div class="usuario">
                     <label class="usuario" for="usuario"></label>
                     <input class="usuario" type="email" name="email" placeholder="Email" id="email" value="<%= locals.old?.email %>">
-                    <p class="msg-error"><%= locals.errorsLog?.email?.msg %></p>
+                    <p class="msg-error errorEmail"><%= locals.errorsLog?.email?.msg %></p>
                 </div>
 
                 <div class="contrasenia">
                     <label for="password"></label>
                     <input class="contrasenia" type="password" name="password" id="password" placeholder="Contraseña">
-                    <p class="msg-error"><%= locals.errorsLog?.password?.msg %></p>
+                    <p class="msg-error errorPassword"><%= locals.errorsLog?.password?.msg %></p>
                 </div>   
             </div>
 
@@ -33,6 +33,7 @@
             <div class="contenedor-button">
                 <div class="boton">
                     <button class="submit" type="submit">Entrar</button>
+                    <p class="text-danger col-12 text-center err-form-general"></p>
                 </div>
 
                 <div class="inicio">   
@@ -46,5 +47,6 @@
     <%- include('../partials/footer') %>
 
     <%- include('../partials/scripts', { disabledGliderJS:true }) %>
+    <script src="/js/validations/login.js"></script>
 </body>
 </html>

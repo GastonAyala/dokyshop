@@ -1,10 +1,13 @@
 const db = require('../../../database/models');
 const path = require('path');
 const fs = require('fs')
+const { validationResult } = require("express-validator");
 
 module.exports = async (req, res) => {
     try {
         const { id } = req.params;
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
         const { name, role } = req.body; 
         const avatarImage = req.files?.avatar;
 
@@ -28,7 +31,22 @@ module.exports = async (req, res) => {
             };
         };
         return res.redirect("/admin/usuarios")
-
+    } else {
+        const user = await db.user.findByPk(id,
+            {
+                attributes: { exclude : ['password','addressId', 'createdAt', 'updatedAt', 'deletedAt']},
+                include: ['role', {association: 'address', attributes: { exclude: ['createdAt', 'updatedAt', 'deletedAt'] }}]
+            }
+        )
+        const roles = await db.role.findAll()
+        return res.render("admin/users/editUser", { user, roles, old: req.body, errors: errors.mapped() },
+            (err, contentView) => {
+            err && res.send(err.message)
+            return res.render("partials/dashboard", {
+                contentView
+            });
+        });
+    }
     } catch (err) {
         return res.send(err.message)
     }
