@@ -3,13 +3,14 @@ const router = express.Router();
 
 const { uploadProducts } = require("../middleware/uploadFiles");
 const { uploadAvatar } = require('../middleware/uploadAvatar');
-
 const { checkIsAdmin } = require('../middleware');
+
+const { productValidationStore, productValidationUpdate, updateUserValidation } = require('../middleware/validation');
+
 
 const { list, search, create, store, edit, update, deleteProduct, destroy } = require('../controllers/admin');
 const { userList, userEdit, editProcess, deleteUser, destroyUser, userSearch } = require('../controllers/admin/users');
 const { orderList, searchOrder } = require('../controllers/admin/orders');
-const { updateUserValidation } = require('../middleware/validation/user.validation');
 
 // /admin
 router.get("/productos", checkIsAdmin, list);
@@ -18,14 +19,14 @@ router.get("/productos/buscar", checkIsAdmin, search);
 router.get("/crear-producto", checkIsAdmin, create);
 router.post("/crear-producto", checkIsAdmin, uploadProducts.fields([
     { name: "imagePrimary", maxCount: 1 },
-    { name: "imagesSecondary", maxCount: 3 }]), store);
+    { name: "imagesSecondary", maxCount: 3 }]), productValidationStore, store);
 
 
 router.get("/editar-producto/:id", checkIsAdmin, edit);
 router.put("/editar-producto/:id", checkIsAdmin, uploadProducts.fields([
     { name: "imagePrimary", maxCount: 1 },
     { name: "imagesSecondary", maxCount: 3 }
-]), update);
+]), productValidationUpdate, update);
 
 router.get('/eliminar', checkIsAdmin, deleteProduct);
 router.delete('/eliminar/:id', checkIsAdmin, destroy);

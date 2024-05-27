@@ -68,7 +68,7 @@ const loginEmail = body("email")
             })
     
             if (!userFind.length) {
-                throw new Error("Datos ingresados incorrectos!")
+                throw new Error("Credenciales inválidas")
             }
         } catch (error) {
             throw error
@@ -77,11 +77,7 @@ const loginEmail = body("email")
 
 const logindPassword = body("password")
     .notEmpty()
-    .withMessage("El campo contraseña es requerido!").bail()
-    .isLength({ min: 8, max: 16 })
-    .withMessage("Longitud invalida!").bail()
-    .matches(regExPass)
-    .withMessage("Dato invalido")
+    .withMessage("El campo contraseña es requerido!")
     .bail()
     .custom(async (value, { req }) => {
         try {
@@ -89,9 +85,12 @@ const logindPassword = body("password")
             const userFind = await db.user.findAll({
                 where: { email }
             })
-            
-            const isValidPassword = compareSync(value, userFind[0].password)
-            if (!isValidPassword) {
+            if (userFind.length) {
+                const isValidPassword = compareSync(value, userFind[0].password)
+                if (!isValidPassword) {
+                    throw new Error("Credenciales inválidas");
+                }
+            } else {
                 throw new Error("Credenciales inválidas");
             }
         } catch (error) {

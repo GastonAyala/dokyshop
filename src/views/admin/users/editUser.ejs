@@ -11,31 +11,46 @@
 <div class="editUser-container container-fluid my-5 card">
     <form action="/admin/editar-usuario/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="row">
-            <div class="userAvatarInput col-12 my-5 px-5">
+ 
+            <div class="userAvatarInput col-12 my-5 px-5 position-relative">
                 <label class="form-label" for="avatar">
                     Foto de perfil
                     <div class="userAvatarimg-Container">
                         <img src="/images/avatar<% if (user.avatar == 'perfilUser.png') { %>/default<% } %>/<%= user.avatar %>" alt="user avatar">
                     </div>
                     <input type="file" name="avatar" id="avatar" accept="img/*">
+                    <p class="errAvatar">
+                        <%= locals.errors?.avatar?.msg %>
+                    </p>
                 </label>
             </div>
-            <div class="col-6 my-3">
+
+            <div class="col-6 my-3 position-relative">
                 <label class="form-label" for="name">Nombre</label>
                 <input class="form-control form-control-sm text-center" type="text" name="name" id="name" value="<%= user.name %>" placeholder="<%= user.name %>">
+                <p class="errName">
+                    <%= locals.errors?.name?.msg %>
+                </p>
             </div>
-            <div class="col-6 my-3">
+
+            <div class="col-6 my-3 position-relative">
                 <label class="form-label" for="role">Rol</label>
                 <select class="form-select form-select-sm text-center" name="role" aria-label="Desplegar las opciones" id="role">
                     <% roles.forEach(r => { %>
                         <option  <% if (user.roleId == r.id) { %><%= 'selected' %><% } %> value="<%= r.id %>"><%= r.name %></option>
                     <% }) %>
                 </select>
+                <p class="errRole">
+                    <%= locals.errors?.role?.msg %>
+                </p>
             </div>
+
         </div>
         <div class="d-flex justify-content-center gap-2 my-5 usersBtn">
             <button type="submit" class="btn btn-outline-success usersSave">Guardar cambios</button>
             <button type="reset" class="btn btn-outline-danger userReset">Cancelar cambios</button>
         </div>
+        <p class="err-form-general"></p>
     </form>
+    <script src="/js/validations/adminUserProfile.js"></script>
 </div>
