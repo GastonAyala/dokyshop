@@ -40,7 +40,7 @@ window.addEventListener('load', async function () {
     // VALIDATION INPUT AVATAR
     let existsAvatarErr = false;
     const errAvatar = document.querySelector('.errAvatar');
-    avatar.addEventListener('blur', function (e) {
+    avatar.addEventListener('change', function (e) {
         const regExpFiles = /.png|.jpg|.jpeg|.webp|.gif/i;
         const files = Array.from(this.files);
         switch (true) {
@@ -207,13 +207,11 @@ window.addEventListener('load', async function () {
     // FORM PREVENT DEFAULT
     const form = document.querySelector('.form');
     form.addEventListener('submit', function(e) {
-        if (existsNameErr || existsPhoneErr || existsStreetErr || existsZipcodeErr || existsProvinceErr || existsCityErr) {
+        if (existsAvatarErr || existsNameErr || existsPhoneErr || existsStreetErr || existsZipcodeErr || existsProvinceErr || existsCityErr) {
             e.preventDefault();
             errGeneral.innerHTML = 'Corrija los errores antes de enviar el formulario';
             errGeneral.classList.add("alert", "alert-danger");
             return;
-        } else {
-            form.submit();
         }
     })
 
