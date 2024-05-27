@@ -21,7 +21,7 @@
           </label>
           <input type="file" class="form-control form-control-sm" name="imagePrimary" id="productImg" accept="img/*" />
           <p class="err-imgPrimary">
-            <%= locals.error?.imagePrimary?.msg %>
+            <%= locals.errors?.imagePrimary?.msg %>
           </p>
         </div>
 
@@ -31,7 +31,7 @@
           <input type="file" class="form-control form-control-sm" name="imagesSecondary" id="imagesSecondary"
             accept="img/*" multiple />
           <p class="err-imgSecondaries">
-            <%= locals.error?.imagesSecondary?.msg %>
+            <%= locals.errors?.imagesSecondary?.msg %>
           </p>
         </div>
       </div>
@@ -43,9 +43,9 @@
             <span class="text-danger">*</span>
           </label>
           <input type="text" class="form-control form-control-sm border-0 text-center" name="title" id="title"
-            value="<%= product.title %>" placeholder="Colocar el titulo del producto" />
+            value="<%= locals.old?.title || product.title %>" placeholder="Colocar el titulo del producto" />
           <p class="err-title">
-            <%= locals.error?.title?.msg %>
+            <%= locals.errors?.title?.msg %>
           </p>
         </div>
 
@@ -57,12 +57,12 @@
           <select class="form-select form-select-sm text-center" name="category" aria-label="Desplegar las opciones"
             id="category">
             <% categories.forEach(c=> { %>
-              <option <%=product.category.name===c.name ? "selected" : null %> value= "<%= c.id %>"><%= c.name %>
+              <option <%= product.category.name===c.name ?  "selected" : null  %> value= "<%= c.id %>"><%= c.name %>
               </option>
               <% }) %>
           </select>
           <p class="err-category">
-            <%= locals.error?.category?.msg %>
+            <%= locals.errors?.category?.msg %>
           </p>
         </div>
 
@@ -79,7 +79,7 @@
               <% }) %>
           </select>
           <p class="err-subcategory">
-            <%= locals.error?.subcategory?.msg %>
+            <%= locals.errors?.subcategory?.msg %>
           </p>
         </div>
 
@@ -88,10 +88,9 @@
             Descripción
             <span class="text-danger">*</span>
           </label>
-          <textarea class="form-control form-control-sm border-0 text-ce" name="description" id="description" placeholder="Colocar la descripción del producto"><%= product.description %>
-            </textarea>
+          <textarea class="form-control form-control-sm border-0 text-ce" name="description" id="description" placeholder="Colocar la descripción del producto"><%= locals.old?.description || product.description %></textarea>
           <p class="err-description">
-            <%= locals.error?.description?.msg %>
+            <%= locals.errors?.description?.msg %>
           </p>
         </div>
 
@@ -100,9 +99,9 @@
             Precio 
             <span class="text-danger">*</span>
           </label>
-          <input type="number" class="form-control form-control-sm border-0 text-center" name="price" id="price" value="<%= product.price %>" placeholder=""/>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="price" id="price" value="<%= locals.old?.price || product.price %>" placeholder=""/>
           <p class="err-price">
-            <%= locals.error?.price?.msg %>
+            <%= locals.errors?.price?.msg %>
           </p>
         </div>
 
@@ -111,9 +110,9 @@
             Descuento 
             <span class="text-danger">*</span>
           </label>
-          <input type="number" class="form-control form-control-sm border-0 text-center" name="sale" id="sale" value="<%= product.sale %>" placeholder=""/>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="sale" id="sale" value="<%= locals.old?.sale || product.sale %>" placeholder=""/>
           <p class="err-sale">
-            <%= locals.error?.sale?.msg %>
+            <%= locals.errors?.sale?.msg %>
           </p>
         </div>
 
@@ -122,9 +121,9 @@
             Cantidad 
             <span class="text-danger">*</span>
           </label>
-          <input type="number" class="form-control form-control-sm border-0 text-center" name="quantity" id="quantity" value="<%= product.quantity %>" placeholder=""/>
+          <input type="number" class="form-control form-control-sm border-0 text-center" name="quantity" id="quantity" value="<%= locals.old?.quantity || product.quantity %>" placeholder=""/>
           <p class="err-quantity">
-            <%= locals.error?.quantity?.msg %>
+            <%= locals.errors?.quantity?.msg %>
           </p>
         </div>
 
@@ -142,7 +141,7 @@
               <% }) %>
           </select>
           <p class="err-color">
-            <%= locals.error?.color?.msg %>
+            <%= locals.errors?.color?.msg %>
           </p>
         </div>
         

@@ -11,7 +11,7 @@ const fieldTitulo = check("title")
     .withMessage("El título debe ser alfanumérico")
     .bail()
     .isLength({ min: 5, max: 100 })
-    .withMessage("El título debe tener un mínimo de 5 caracteres");
+    .withMessage("El título debe tener un mínimo de 5 caracteres y un máximo de 100 caracteres");
 
 const fieldCategoria = check("category")
     .notEmpty()
@@ -21,7 +21,7 @@ const fieldSubcategoria = check("subcategory")
     .notEmpty()
     .withMessage("La subcategoría es requerida");
 
-const fieldDescripcion = check("descrition")
+const fieldDescripcion = check("description")
     .notEmpty()
     .withMessage("La descripción es requerida")
     .bail()
@@ -56,21 +56,14 @@ const fieldColor = check("color")
     .notEmpty()
     .withMessage("El color es requerido");
 
-const fieldDisponible = check("available")
-    .notEmpty()
-    .withMessage("El campo Disponible es requerido")
-    .bail()
-    .isBoolean()
-    .withMessage("Disponible debe ser un valor booleano");
-
-const fieldImagePrincipalStore = body("imageprincipal")
+const fieldImagePrincipalStore = body("imagePrimary")
     .custom((value, { req }) => {
-    const lengthImages = req.files?.imagePrincipal?.length;
+    const lengthImages = req.files?.imagePrimary?.length;
 
     if (!lengthImages) throw new Error("Debes ingresar una imagen principal");
     if (lengthImages > 1) throw new Error("No puedes ingresar más de 1 archivo");
 
-    const extFile = path.extname(req.files.imagePrincipal[0].originalname);
+    const extFile = path.extname(req.files.imagePrimary[0].originalname);
     const isFormatSuccess = regExpFiles.test(extFile);
 
     if (!isFormatSuccess) throw new Error("El formato de la imagen principal es inválido");
@@ -80,21 +73,23 @@ const fieldImagePrincipalStore = body("imageprincipal")
 const fieldImagesSecondaryStore = body("imagesSecondary")
     .custom((value, { req }) => {
     const lengthImages = req.files?.imagesSecondary?.length;
+    
+    if (lengthImages) {
+        if (lengthImages > 3) throw new Error("No puedes ingresar más de 3 archivos");
 
-    if (!lengthImages) throw new Error("Debes ingresar imágenes secundarias");
-    if (lengthImages > 3) throw new Error("No puedes ingresar más de 3 archivos");
+        const imagesSecondary = req.files?.imagesSecondary;
+        const existSomeFormatInvalid = imagesSecondary.some((img) => {
+            const extFile = path.extname(img.originalname);
+            return !regExpFiles.test(extFile);
+        });
+        if (existSomeFormatInvalid) throw new Error("Uno de los archivos es inválido. Formatos válidos: .png .jpg .jpeg .webp .gif");
 
-    const imagesSecondary = req.files.imagesSecondary;
-    const existSomeFormatInvalid = imagesSecondary.some((img) => {
-        const extFile = path.extname(img.originalname);
-        return !regExpFiles.test(extFile);
-    });
-
-    if (existSomeFormatInvalid) throw new Error("Uno de los archivos es inválido. Formatos válidos: .png .jpg .jpeg .webp .gif");
+    }
     return true;
 });
 
-const fieldImagePrincipalUpdate = body("imagePrincipal").custom((value, { req }) => {
+const fieldImagePrincipalUpdate = body("imagePrincipal")
+.custom((value, { req }) => {
     const lengthImages = req.files?.imagePrincipal?.length;
 
     if (lengthImages) {
@@ -134,7 +129,6 @@ const defaultValidationFields = [
     fieldDescuento,
     fieldCantidad,
     fieldColor,
-    fieldDisponible,
 ];
 
 module.exports = {
