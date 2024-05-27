@@ -6,55 +6,60 @@ const regexMail = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+
 
 
 window.addEventListener('load', function() {
-    let existError = true;
+
 
  
     //------------email
-    
+    let existsEmailError = false;
     inputEmail.addEventListener("blur", async function(){
       const invalidCorreo = document.querySelector(".errorEmail")
-      console.log(invalidCorreo)
+      const {data} = await (await fetch('http://localhost:3030/api/users')).json() 
       const value = this.value.trim();
+      const userFinded = data.find(u =>{
+        return u.email === value})
 
       switch(true){
         case value.length === 0:
-          invalidCorreo.innerHTML = "Es campo correo es requerido" 
-      break;
-      case !regexMail.test(value):
+            invalidCorreo.innerHTML = "Es campo correo es requerido"
+            existsEmailError = true;
+        break;
+        case !regexMail.test(value):
           invalidCorreo.innerHTML = "Debe ingresar un mail valido";
-      break;
-      default:invalidCorreo.innerHTML = null;
-      break;
+          existsEmailError = true;
+          break;
+        case  !userFinded:
+          invalidCorreo.innerHTML = "El usuario no existe"
+          existsEmailError = true;
+          break;
+          default:         existsEmailError = false;
+        invalidCorreo.innerHTML = null 
+          break;
       }
-
-    const {data} = await (await fetch('http://localhost:3030/api/users')).json()  
-      console.log(data)
-      data.forEach(user =>{
-        if(user.email != value){
-          invalidCorreo.innerHTML = "Usuario no existente" 
-        }
-      })
-
-    
    
+    
 })
 
   //--------------password 
+  let existsPassError = false;
   inputPas.addEventListener("blur", function(){
     const invalidPas = document.querySelector(".errorPassword")
     const value = this.value.trim();
 
     switch(true){
       case value.length === 0:
-        invalidPas.innerHTML = "Es campo contraseña es requerido"; 
+        invalidPas.innerHTML = "Es campo contraseña es requerido";
+        existsPassError = true; 
     break;
     case value.length < 8  || value.length > 16:
-      invalidPas.innerHTML = "Longitud invalida entre 8 y 16 caracteres!";
+      invalidPas.innerHTML = "Datos ingresados incorrectos!";
+      existsPassError = true;
     break;
     case !regExPass.test(value):
-      invalidPas.innerHTML = "Contraseña debe contener al menos una mayuscula una minuscula y un numero!";
+      invalidPas.innerHTML = "Datos ingresados incorrectos!";
+      existsPassError = true;
     break; 
     default:invalidPas.innerHTML = null;
+    existsPassError = false;
     break;       
 
     }
@@ -63,32 +68,14 @@ window.addEventListener('load', function() {
   
   //--------------form
    const formulario = document.querySelector(".form-principal")
-    const errFormGeneral = document.querySelector(".err-form-general");
+   
 
     formulario.addEventListener("submit", function (event){
-      const isAvatar = avatar.value.trim()
-      const isName = inputName.value?.trim();
-      const isEmail = email.value?.trim();
-      const isPassword = password.value?.trim();
-      event.preventDefault();
-
-      switch(true){
-        case !isAvatar:
-        case !isName:
-        case !isEmail:
-        case !isPassword:
-        
-          errFormGeneral.innerHTML = "Todos los campos son requeridos";
-          break;
-          default: errFormGeneral.innerHTML = null
-          break;
-        }
-
-        if(!existError){
-          this.submit();
-          errFormGeneral.innerHTML = null
-        
-        }
+      
+      if(existsEmailError || existsPassError){
+        event.preventDefault();
+       
+      }
     });
-    
+     
   })
