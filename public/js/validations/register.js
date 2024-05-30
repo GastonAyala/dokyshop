@@ -46,7 +46,7 @@ window.addEventListener('load', function() {
 
         switch(true){
           case value.length === 0:
-            invalidName.innerHTML = "Es campo nombre es requerido"
+            invalidName.innerHTML = "El campo nombre es requerido"
             existsNameError = true; 
         break;
         case value.length < 5 || value.length > 50:
@@ -72,11 +72,11 @@ window.addEventListener('load', function() {
 
       switch(true){
         case value.length === 0:
-          invalidCorreo.innerHTML = "Es campo correo es requerido"
+          invalidCorreo.innerHTML = "El campo correo es requerido"
           existsEmailError = true; 
       break;
       case !regexMail.test(value):
-          invalidCorreo.innerHTML = "Debe ingresar un mail valido";
+          invalidCorreo.innerHTML = "Debe ingresar un email valido";
           existsEmailError = true;
       break;
       default:invalidCorreo.innerHTML = null;

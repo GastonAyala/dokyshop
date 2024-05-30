@@ -68,13 +68,13 @@
       <th scope="col">Imagen</th>
       <th scope="col">Imagenes Secundarias</th>
       <th scope="col">Titulo</th>
-      <th scope="col">Subcategoría</th>
       <th scope="col">Categoría</th>
+      <th scope="col">Subcategoría</th>
       <th scope="col">Descripción</th>
       <th scope="col">Precio</th>
       <th scope="col">Descuento</th>
       <th scope="col">Cantidad</th>
-      <th scope="col">Colores</th>
+      <th scope="col">Color</th>
       <th scope="col">Disponible</th>
       <th scope="col">Acciones</th>
     </tr>
@@ -84,20 +84,40 @@
   <% products.forEach(p => { %>
     <tr>
       <th scope="row"><%=p.id%></th>
-      <td><img class="dash-img-product" src="/images/products/<%= p.imagePrincipal %>" alt="product image"/></td>
+      <td>
+        <img class="dash-img-product" src="/images/products/<% if (p.imagePrincipal === "no-image.png") { %>default/<% }%><%= p.imagePrincipal %>" alt="product image"/>
+      </td>
+      
       <td>
          <% p.imagesecondaries.forEach(img => { %>
-      <img class="dash-img-product" src="/images/products/<%= img.file %>" alt="product image"/>
+      <img class="dash-img-product" src="/images/products/<% if (img.file === "no-image.png") { %>default/<% }%><%= img.file %>" alt="product secondary image"/>
       <% }) %>
     </td>
       <td><%= p.title %></td>
       <td><%= p.category.name %></td>
       <td><%= p.subcategory.name %></td>
-      <td class="td-description"><%= p.description %></td>
-      <td class="td-price"><%= p.price %></td>
+      <td class="dashListDescription">
+        <p class="dashDescription-Paragrahp">
+          <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="<%= "#prod" + p.id %>" aria-expanded="false" aria-controls="<%= "prod" + p.id %>">
+            Leer
+          </button>
+        </p>
+        <div class="collapse divDashDescription" id="<%= "prod" + p.id %>">
+          <div class="card card-body">  
+            <p><%= p.description %></p>
+          </div>
+        </div>
+      </td>
+      <td class="td-price"><%= toThousand(p.price) %></td>
       <td class="td-sale"><%= p.sale %></td>
       <td class="td-quantity"><%= p.quantity %></td>
-      <td class="td-colors"><%= p.colorId %></td>
+      <td class="td-colors">
+        <% if (p.color === 'Multicolor') { %>
+          <div class="imgMulticolorDiv"><img src="/images/products/multicolor.jpg" alt=""></div>
+        <% } else { %>
+        <i style="color: <%= p.color %>;border:  1px solid black;border-radius: 10px;" class="fa-solid fa-circle"></i>
+        <% } %>
+      </td>
       <td><%= p.available %></td>
       <td>
         <div class="dash-actionButtons btn-group" role="group">
@@ -127,6 +147,6 @@
         </div>
       </td>
     </tr>
-   <% }) %>
+   <% }) %> 
   </tbody>
 </table>
