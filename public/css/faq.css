@@ -20,6 +20,7 @@
     text-align: center;
 }
 
+
 .main-faq .main-div .accordion h1{
     font-size: 24px;
 }
@@ -103,10 +104,10 @@
     display: flex;
     }
     
-    .main-faq .main-div .accordion{
-    width: 590px;
-    margin-right: 30px;
-    height: 500px;
+    .main-faq .main-div .faq-left{
+        width: 590px;
+        margin-right: 30px;
+        height: 500px;
     }
     
     .main-faq .main-div .accordion h1{

@@ -212,7 +212,33 @@
 .main-header .main-nav .main-list li.list-products {
     border-bottom: 0;
 }
-.main-header .main-nav .main-list li.list-contact {}
+
+.main-header .main-nav .main-list .list-contact {
+    border-top: 3px solid var(--negro);
+    border-bottom: 3px solid var(--negro);
+}
+
+.main-header .main-nav .main-list .list-contact .btn-header {
+    font-weight: bold;
+    background-color: unset;
+    border: none;
+}
+
+.main-header .main-nav .main-list ul {
+
+}
+
+.main-header .main-nav .main-list ul li.li-btn-contact {
+    border: none;
+}
+
+.main-header .main-nav .main-list ul li a {
+
+}
+
+.main-header .main-nav .main-list ul li a i{
+
+}
 
 
 .main-header .main-nav .main-list li a {
@@ -353,12 +379,17 @@
     .main-header .main-nav .main-list li.list-index {}
 
     .main-header .main-nav .main-list li.list-products {}
+    .main-header .main-nav .main-list .list-contact {
+        border: none;
+    }
 
-    .main-header .main-nav .main-list li.list-contact {}
+    .main-header .main-nav .main-list .list-contact .btn-header {
+        font-size: calc(0.53rem + 0.6vw);
+    }
 
     .main-header .main-nav .main-list li a {
-    font-size: calc(0.53rem + 0.6vw);
-}
+        font-size: calc(0.53rem + 0.6vw);
+    }
     
     .main-header .main-nav .main-list li .a-index {}
 
@@ -470,7 +501,9 @@
 
     .main-header .main-nav .main-list li.list-products {}
     
-    .main-header .main-nav .main-list li.list-contact {}
+    .main-header .main-nav .main-list .list-contact .btn-header{
+        font-size: calc(0.8rem + 0.6vw);
+    }
 
     .main-header .main-nav .main-list li a {
         font-size: calc(0.8rem + 0.6vw);

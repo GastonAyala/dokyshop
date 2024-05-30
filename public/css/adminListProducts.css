@@ -1,7 +1,7 @@
 .dashboard-content {
-    padding: 1rem;
-    margin: 0 auto;
+    padding: 0 1rem;
     text-align: center;
+    margin: 0;
 }
 
 .dashboard-content h1 {
@@ -9,6 +9,8 @@
     color: var(--amarillo);
     font-weight: 1000;
     letter-spacing: 1px;
+    margin: 10px;
+    padding: 10px;
 }
 
 /* BUSCADOR DE PRODUCTOS */
@@ -26,13 +28,13 @@
     padding: 10px;
     border-radius: 20px;
     font-weight: bold;
-    width: 50%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     align-content: center;
     border: 2px solid rgba(0, 0, 0, 0);
+    width: calc(50% - 25vw);
 }
 
 .dashboard-content .dash-topbar .dash-searchForm:hover {
@@ -206,10 +208,17 @@
 .dashboard-content .listProduct-table tbody tr td.dashListDescription {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
+
 .dashboard-content .listProduct-table tbody tr td.dashListDescription .dashDescription-Paragrahp {
     width: 290px;
 }
+
+.dashboard-content .listProduct-table tbody tr td.dashListDescription .divDashDescription {
+    max-width: 350px;
+}
+
 
 .dashboard-content .listProduct-table tbody tr td.td-price {
     color: var(--amarillo);

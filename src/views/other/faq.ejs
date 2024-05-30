@@ -7,7 +7,7 @@
 
             <main class="main-faq">
                 <div class="main-div">
-                    <div class="accordion">
+                    <div class="accordion faq-left">
                         <h1>Preguntas frecuentes</h1>
                         <p>En <var>DokyShop</var>, entendemos que tus perros y gatos son más que simples mascotas; son
                             parte de tu familia. Por eso, nos esforzamos por ofrecer productos de alta calidad que
@@ -15,7 +15,7 @@
                             <code>experiencia</code> posible con nosotros, hemos recopilado una lista de preguntas
                             frecuentes que abordan diversos temas relacionados con nuestro sitio.</p>
                     </div>
-                    <div>
+                    <div class="accordion">
                         <% faqs.forEach(f=> { %>
                             <div class="accordion-item" id="<%= f.class %>">
                                 <h2 class="accordion-header" id="panelsStayOpen-heading<%= f.class %>">

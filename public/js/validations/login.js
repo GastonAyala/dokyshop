@@ -20,11 +20,11 @@ window.addEventListener('load', function() {
 
       switch(true){
         case value.length === 0:
-            invalidCorreo.innerHTML = "Es campo correo es requerido"
+            invalidCorreo.innerHTML = "El campo correo es requerido"
             existsEmailError = true;
         break;
         case !regexMail.test(value):
-          invalidCorreo.innerHTML = "Debe ingresar un mail valido";
+          invalidCorreo.innerHTML = "Debe ingresar un email valido";
           existsEmailError = true;
           break;
         case  !userFinded:
@@ -47,7 +47,7 @@ window.addEventListener('load', function() {
 
     switch(true){
       case value.length === 0:
-        invalidPas.innerHTML = "Es campo contraseña es requerido";
+        invalidPas.innerHTML = "El campo contraseña es requerido";
         existsPassError = true; 
     break;
     case value.length < 8  || value.length > 16:

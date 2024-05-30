@@ -25,6 +25,7 @@ main.login-main h1.titulo-login{
   color: var(--grisOscuro);
   font-size: 22px;
   padding-top: 20px;
+  font-weight: bold;
 }
 
 main.login-main form.form-principal{

@@ -213,8 +213,8 @@
 }
 
 .main-footer .newsletter-container form.newsletter-form .suscribe-container button {
-    border: 5px solid var(--negro);
-    border-radius: 20px;
+    border: 3px solid var(--negro);
+    border-radius: 10px;
     background-color: var(--negro);
     color: var(--amarillo);
     font-family: var(--familyOpenSans);
@@ -320,7 +320,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
     }
     
     .main-footer .newsletter-container form.newsletter-form div.newsletter-title-container {
@@ -334,6 +333,7 @@
     .main-footer .newsletter-container .newsletter-form .text-container p {}
     
     .main-footer .newsletter-container .newsletter-form div.email-container {
+    /* flex-direction: row; */
     }
     
     .main-footer .newsletter-container form.newsletter-form .email-container input {}
