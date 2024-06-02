@@ -28,7 +28,7 @@ window.addEventListener('load', function() {
           existsAvatarError = true;
         break;
         case files.some((file) => !regExpFiles.test(file.name)):
-          invalidAvatar.innerHTML =  "El formato de la imagen principal es invalido";
+          invalidAvatar.innerHTML =  "El formato de la imagen es inválido.";
           existsAvatarError = true; 
         break;
         default: invalidAvatar.innerHTML = null;

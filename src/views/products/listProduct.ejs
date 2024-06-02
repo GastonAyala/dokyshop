@@ -9,8 +9,8 @@
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center m-5">
                     <li class="page-item <% if(lessPage == 0) { %> <%= 'disabled' %> <% } %>">
-                        <a class="page-link  link-warning link-danger-custom" href="/productos?page=<%= lessPage %>&offset=<%= lessOffset %>" aria-label="Previous">
-                          <span aria-hidden="true">&laquo;</span>
+                        <a class="page-link  link-warning link-danger-custom" href="/productos<%= subcategory ? "?subcategory=" + subcategory + "&" : "?" %>page=<%= lessPage %>&offset=<%= lessOffset %>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
     
@@ -18,14 +18,14 @@
                     <% for( let i = 1; i <= totalPages ; i++ ) { %>
                         
                     <li class="page-item">
-                        <a class="page-link link-warning link-danger-custom <% if (page - 1 === i ) { %> <%= "link-active" %><% } %>" href="/productos?page=<%= i %>&offset=<%= sendOffset %>"><%= i %></a>
+                        <a class="page-link link-warning link-danger-custom <% if (page - 1 === i ) { %> <%= "link-active" %><% } %>" href="/productos<%= subcategory ? "?subcategory=" + subcategory + "&" : "?" %>page=<%= i %>&offset=<%= sendOffset %>"><%= i %></a>
                     </li>
     
                     <% sendOffset = sendOffset + 5  %>
     
                     <% } %>
                     <li class="page-item <% if (page === totalPages + 1) { %> <%= 'disabled' %> <% } %>">
-                        <a class="page-link  link-warning link-danger-custom" href="/productos?page=<%= page %>&offset=<%= offset %>" aria-label="Next">
+                        <a class="page-link  link-warning link-danger-custom" href="/productos<%= subcategory ? "?subcategory=" + subcategory + "&" : "?" %>page=<%= page %>&offset=<%= offset %>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
