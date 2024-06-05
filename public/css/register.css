@@ -6,7 +6,7 @@ body {}
     rgba(200, 205, 218, 0)), 
     url(/images/authentication/fondo-login.jpeg);
     background-repeat: no-repeat;
-    height: 800px;
+    height: 880px;
     background-position: center;
     background-size: cover;
 }
@@ -171,7 +171,6 @@ main.register-main form.form-principal .contenedor-button .inicio {
 
 main.register-main form.form-principal .contenedor-button p {
     margin: 0;
-    width: 50%;
     text-align: center;
 }
 
@@ -219,7 +218,9 @@ main.register-main label.form-label {
 @media (min-width: 426px) {
     body {}
 
-    main.register-main {}
+    main.register-main {
+    height: 740px;
+}
 
     main.register-main h1 {}
 
