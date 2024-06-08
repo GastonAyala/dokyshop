@@ -12,7 +12,7 @@ body{
     rgba(200, 205, 218, 0)), 
     url(/images/authentication/fondo-login.jpeg);
     background-repeat: no-repeat;
-    height: 800px;
+    height: 880px;
     background-position: center;
     background-size: cover;
 }
@@ -143,8 +143,7 @@ main.login-main form.form-principal .contenedor-button .inicio a.crear-cuenta{
 
 /*LOGIN TABLET */
 @media (min-width: 426px) {
-main.login-main{
-}
+main.login-main{height: 740px;}
 main .div-contenedor{
 }
 
