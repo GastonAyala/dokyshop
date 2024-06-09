@@ -4,6 +4,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
+const cors = require('cors');
+
 const partials = require("express-partials");
 const methodOverride =  require('method-override');
 const insertDataLocals = require('./middleware/insertDataLocals');
@@ -21,6 +24,7 @@ const adminRoutes = require('./routes/admin.routes');
 const userRoutes = require('./routes/users.routes')
 
 /* RUTAS API*/
+const apiOtherRoutes = require('./routes/api/other.api');
 const apiUsersRoutes = require("./routes/api/users.api.");
 const apiProductsRoutes = require('./routes/api/products.api');
 const apiOrderRoutes = require('./routes/api/order.api');
@@ -31,6 +35,7 @@ app.set("views", path.join(__dirname, "/views"))
 app.set('view engine', 'ejs');
 
 /* MIDDLEWARE */
+app.use(cors());
 app.use(partials())
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(logger('dev'));
@@ -51,6 +56,7 @@ app.use("/carrito-compra", cartRoutes)
 app.use("/admin", adminRoutes);
 
 /* ENRUTADOR API */
+app.use('/api', apiOtherRoutes);
 app.use("/api/users", apiUsersRoutes);
 app.use('/api/products', apiProductsRoutes);
 app.use('/api/order', apiOrderRoutes);
