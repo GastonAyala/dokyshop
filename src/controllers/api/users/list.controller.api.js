@@ -1,6 +1,7 @@
 const db = require("../../../database/models");
 const { literal } = require('sequelize');
 const getOriginUrl = require('../../utils/getOriginUrl');
+const { ErrorCustom } = require('../../utils/createError');
 
 module.exports = (req, res) => {
     const { page } = req.query;
@@ -20,9 +21,13 @@ module.exports = (req, res) => {
             })
         })
     } else {
+        const { page = "1", limit = "10" } = req.query;
+        if(isNaN(+page) || isNaN(+limit)) {
+            throw new ErrorCustom(400, 'El formato de página o límite no es válido');
+        }
         db.user.paginate({
             page: +page,
-            paginate:10,
+            paginate: +limit,
             include: [{
                 association: "address",
             },
