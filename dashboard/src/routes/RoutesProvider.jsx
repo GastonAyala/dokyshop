@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "../pages/Root";
 import Dashboard from "../pages/Dashboard";
 import { RoutesCharts } from "./RoutesCharts";
-import { RoutesGenres } from "./RoutesGenres";
+import { RoutesCategories } from "./RoutesCategories";
 import { RoutesProducts } from "./RoutesProducts";
 import { ErrorPage } from "../components/Extras/ErrorPage";
 
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <Dashboard />
       },
       ...RoutesCharts,
-      ...RoutesGenres,
+      ...RoutesCategories,
       ...RoutesProducts,
     ]
   },
