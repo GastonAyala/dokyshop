@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Spinner = () => {
+export const Spinner = ({containerClassName}) => {
     return (
-        <div class="spinner-grow text-info" role="status">
+        <div className={`spinner-grow text-info ${containerClassName}`} role="status">
             
         </div>
     );

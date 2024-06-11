@@ -12,7 +12,9 @@ function ContentRowCenter(){
             {/*<!-- End content row last movie in Data Base -->*/}
 
             {/*<!-- Categories in DB -->*/}
+            <div className="col-lg-6">
             <ListCategories />
+            </div>
 
         </div>
     )

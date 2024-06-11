@@ -2,7 +2,7 @@ import Categories from "../pages/Categories";
 
 export const RoutesCategories = [
     {
-        path: "/categories",
+        path: "/categorias",
         element: <Categories />
     },
 ]
