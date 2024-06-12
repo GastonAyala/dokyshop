@@ -38,7 +38,7 @@
 .productDetail .breadcrumb-container .breadcrum ul li::after {
     content: "\f0da";
     font-family: "FontAwesome";
-    color: var(--amarillo);
+    color: var(--celeste);
     padding: 0 5px;
 }
 
@@ -78,13 +78,13 @@
 .productDetail .prodDetail-glider-container .glider-prev {}
 
 .productDetail .prodDetail-glider-container .glider-prev i {
-    color: var(--amarillo);
+    color: var(--celeste);
 }
 
 .productDetail .prodDetail-glider-container .glider-next {}
 
 .productDetail .prodDetail-glider-container .glider-next i {
-    color: var(--amarillo);
+    color: var(--celeste);
 }
 
 .productDetail .prodDetail-glider-container .dots {}
@@ -108,7 +108,7 @@
 }
 
 .productDetail .prodDetail-container .prodDetail-pricing .prodDetail-price {
-    color: var(--amarillo);
+    color: var(--celeste);
     font-weight: bold;
     font-size: 1.6rem;
     margin: auto;
@@ -138,14 +138,14 @@ width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background-color: var(--amarillo);
-    border: 7px solid var(--amarillo);
+    background-color: var(--celeste);
+    border: 7px solid var(--celeste);
     border-radius: 20px;
     justify-content: center;
 }
 
 .productDetail .prodDetail-container .product-quantity-container .decrease-button {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     border:none;
     padding: 0 5px;
 }
@@ -158,7 +158,7 @@ width: 100%;
 .productDetail .prodDetail-container .product-quantity-container .quantity input {
     text-align: center;
     font-weight: bold;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     border: none;
     width: 25px;
     margin: 0;
@@ -169,7 +169,7 @@ width: 100%;
 }
 
 .productDetail .prodDetail-container .product-quantity-container .increase-button {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     border:none;
     padding: 0 5px;
 }
@@ -179,9 +179,9 @@ width: 100%;
 .productDetail .prodDetail-container .add-to-cart .btn-cart {}
 
 .productDetail .prodDetail-container .add-to-cart .btn-cart button {
-    border: 7px solid var(--amarillo);
+    border: 7px solid var(--celeste);
     border-radius: 20px;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     color: var(--negro);
     font-weight: bold;
     text-align: center;
@@ -195,7 +195,7 @@ width: 100%;
 
 
 .productDetail .description-container .description-title {
-    color: var(--amarillo);
+    color: var(--celeste);
     width: 100%;
 }
 
@@ -216,7 +216,7 @@ width: 100%;
 }
 
 .productDetail .relatedProduct-container .relatedProduct-title {
-    color: var(--amarillo);
+    color: var(--celeste);
     width: 100%;
 }
 
@@ -256,12 +256,12 @@ width: 100%;
 }
 
 .productDetail .relatedProduct-container .relatedProd .relatedProd-description p {
-    color: var(--amarillo);
+    color: var(--celeste);
     font-weight: bold;
 }
 
 .productDetail .relatedProduct-container .relatedProd .relatedProd-description a.relatedProd-buycart {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     padding: 6px 12px;
     border-radius: 5px;
 }

@@ -109,7 +109,7 @@ main.main-carrito .contenedor-pro .contenedor-boton button.compra{
 display: flex;
 margin: auto;
 padding: 10px;
-background-color: var(--amarillo);
+background-color: var(--celeste);
 border: none;
 transition: all 400ms;
 }

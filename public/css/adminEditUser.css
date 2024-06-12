@@ -2,7 +2,7 @@
 }
 
 .dashUser-topbar .dashUser-container {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     padding: 10px;
     border-radius: 20px;
     font-weight: bold;
@@ -18,7 +18,7 @@
 .dashUser-topbar .dashUser-container a i {}
 
 .editUser-container {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     max-width: 1200px;
     display: flex;
 }

@@ -6,7 +6,7 @@
 
 .dashboard-content h1 {
     text-align: center;
-    color: var(--amarillo);
+    color: var(--celeste);
     font-weight: 1000;
     letter-spacing: 1px;
     margin: 10px;
@@ -24,7 +24,7 @@
 }
 
 .dashboard-content .dash-topbar .dash-searchForm {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     padding: 10px;
     border-radius: 20px;
     font-weight: bold;
@@ -47,14 +47,14 @@
     width: 90%;
     border: none;
     outline: none;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     font-weight: bold;
     font-size: 1rem;
 }
 
 
 .dashboard-content .dash-topbar .dash-searchForm button {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     border: none;font-size: 1.1rem;
 }
 
@@ -62,7 +62,7 @@
 
  /* FILTRO DE PRODUCTO */
 .dashboard-content .dash-topbar .dash-filter {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     border-radius: 20px;
     font-weight: bold;
     color: var(--gris);
@@ -91,7 +91,7 @@
     border: none;
     padding-right: 10px;
     outline: none;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     font-weight: bold;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .dashboard-content .dash-topbar .dash-filter .dash-filterForm button {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     border: none;
     font-weight: bold;
     padding-left: 15px;
@@ -108,7 +108,7 @@
 
 /* CREAR PRODUCTO */
 .dashboard-content .dash-topbar .dash-addProduct-container {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     padding: 10px;
     border-radius: 20px;
     font-weight: bold;
@@ -221,7 +221,7 @@
 
 
 .dashboard-content .listProduct-table tbody tr td.td-price {
-    color: var(--amarillo);
+    color: var(--celeste);
 }
 
 .dashboard-content .listProduct-table tbody tr td.td-sale {

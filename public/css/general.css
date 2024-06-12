@@ -1,13 +1,13 @@
 :root {
     /* COLORES */
-    --amarillo: #FDBC00;
-    --amarilloSuave:#eae2b7;
+    --celeste: #407FB9;
+    --celesteRGBA: rgba(64, 127, 185, 0.5);
+    --celesteClaro: #A0C5E8;
     --marron: #EFB810;
-    --amarilloPastel: #F8DF94;
-    --marronclaro: #fff2cc;
     --rosa: #FED7D7;
     --blanco: #FFFFFF;
     --gris: #6D6D6D;
+    --grisClaro: #e0e0e0d6;
     --negro: #000000;
     --grisOscuro: #363636;
     --azulfb: #0866ff;

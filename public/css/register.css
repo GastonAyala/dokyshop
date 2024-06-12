@@ -18,7 +18,7 @@ main.register-main p.is-invalid{
     border: none;
     padding: 8px;
     border-radius: 8px;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     transition: 1s;
   }
   

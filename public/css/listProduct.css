@@ -1,3 +1,7 @@
+.body-listProducts {  
+    background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
+}
+
 .list-product {height: 100%;}
 
 .list-product .listProd-container {
@@ -11,7 +15,7 @@
 
 .list-product .listProd-container h2 {
     font-weight: bold;
-    color: var(--amarillo);
+    color: var(--celeste);
     width: 100%;
     text-align: center;
 }
@@ -56,12 +60,12 @@
 
 .list-product .listProd-container .listProduct .listProduct-description p {
     font-weight: bold;
-    color: var(--amarillo);
+    color: var(--celeste);
     margin: 0;
 }
 
 .list-product .listProd-container .listProduct .listProduct-description a.listProduct-buyCart {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     padding: 8px;
     border-radius: 5px;
 }

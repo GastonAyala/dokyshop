@@ -7,7 +7,7 @@
 }
 
 .dashUser-topbar .dash-searchForm {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     padding: 10px;
     border-radius: 20px;
     font-weight: bold;
@@ -32,13 +32,13 @@
     width: 90%;
     border: none;
     outline: none;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     font-weight: bold;
     font-size: 1rem;
 }
 
 .dashUser-topbar .dash-searchForm button {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     border: none;
     font-size: 1.1rem;
 }
@@ -46,7 +46,7 @@
 .dashUser-topbar .dash-searchForm button i {}
 
 .dashUser-topbar .dashUserFilter {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     color: var(--gris);
     border-radius: 20px;
     font-weight: bold;
@@ -74,7 +74,7 @@
 .dashUser-topbar .dashUserFilter .dashUserFilter-form select {
     border: none;
     outline: none;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     font-weight: bold;
     padding-right: 10px;
 }
@@ -84,7 +84,7 @@
 }
 
 .dashUser-topbar .dashUserFilter .dashUserFilter-form button {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     font-weight: bold;
     border: none;
     padding-left: 15px;

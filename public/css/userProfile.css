@@ -4,7 +4,7 @@
 .usersProfile h1 {
     font-weight: bold;
     margin: 0;
-    color: var(--amarillo);
+    color: var(--celesteClaro);
     margin-top: 15px;
 }
 
@@ -14,7 +14,7 @@
 
 .usersProfile .div-form .form{
     margin: 0 auto;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     max-width: 415px;
     border-radius: 14px;
 }
@@ -22,6 +22,7 @@
 .usersProfile .div-form .form .div-avatar{
     display: flex;
     justify-content: center;
+    padding-top: 20px;
 }
 
 .usersProfile .div-form .form .div-avatar label{
@@ -75,8 +76,7 @@
     padding: 4px;
     }
 
-.usersProfile .div-form .form .div-inputs .div-name{
-}
+.usersProfile .div-form .form .div-inputs .div-name{}
 
 .usersProfile .div-form .form .div-inputs .div-name label{
     display: block;
@@ -181,6 +181,7 @@
     .usersProfile .div-form .form .div-inputs{
     display: flex;
     justify-content: space-around;
+    color: var(--celesteClaro);
     }
     
     .usersProfile .div-form .form .div-inputs .input{

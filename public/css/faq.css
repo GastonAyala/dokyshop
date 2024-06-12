@@ -23,10 +23,13 @@
 
 .main-faq .main-div .accordion h1{
     font-size: 24px;
+    background-color: var(--celesteRGBA);
+    border-radius: 20px;
+    color: var(--blanco);
+    font-weight: 600;
 }
 
-.main-faq .main-div .accordion p{
-}
+.main-faq .main-div .accordion p{font-family: var(--familyMontserrat);}
 
 .main-faq .main-div .accordion-item{
 }
@@ -38,10 +41,13 @@
 .main-faq .main-div .accordion-item .accordion-header{
 }
 
-.main-faq .main-div .accordion-item .accordion-header .accordion-button{}
+.main-faq .main-div .accordion-item .accordion-header .accordion-button{
+    font-family: var(--familyOpenSans);
+    font-weight: 600;
+}
 
 .main-faq .main-div .accordion-item .accordion-header .accordion-button:not(.collapsed){
-    color: var(--marron);
+    color: var(--celeste));
     font-weight: 600;
     background-color: unset;
 }
@@ -49,8 +55,7 @@
 .main-faq .main-div .accordion-item .accordion-collapse{
 }
 
-.main-faq .main-div .accordion-item .accordion-body{
-}
+.main-faq .main-div .accordion-item .accordion-body{color: var(--negro);font-family: var(--familyMontserrat);}
 
 /* -------- TABLET VIEW -------- */
 

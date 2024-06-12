@@ -11,9 +11,12 @@ if (hamburgers.length > 0) {
             var nav = document.querySelector("#navigation");
             const userNav = document.querySelector("#user-nav");
             const mainList = document.querySelector("#main-list");
+            const cart = document.querySelector('#buy-cart');
+
             nav.classList.toggle("active");
             userNav.classList.toggle("active");
-            mainList.classList.toggle("active")
+            mainList.classList.toggle("active");
+            cart.classList.toggle("active");
         }, false);
     });
 }

@@ -3,7 +3,7 @@
 .main-footer {
     font-family: var(--familyOpenSans);
     font-weight: bold !important;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -43,8 +43,7 @@
     text-align: center;
 }
 
-.main-footer div.links-container nav.links-nav {
-}
+.main-footer div.links-container nav.links-nav {}
 
 .main-footer div.links-container .links-nav ul {
     text-align: center;
@@ -54,11 +53,11 @@
 .main-footer div.links-container .links-nav ul li {}
 
 .main-footer div.links-container .links-nav ul li a {
-    
+    color: var(--celesteClaro);
 }
 
 .main-footer div.links-container .links-nav ul li a:hover {
-    border-bottom: 3px solid var(--amarilloPastel);
+    border-bottom: 3px solid var(--celesteClaro);
 }
 
 /* ----- CONTACTO ----- */
@@ -76,7 +75,8 @@
     text-align: center;
 }
 
-.main-footer .contact-container nav.contact-nav {}
+.main-footer .contact-container nav.contact-nav {
+}
 
 .main-footer .contact-container .contact-nav ul {
     padding-left: 0;
@@ -89,11 +89,13 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    color: var(--celesteClaro);
 }
 
 .main-footer .contact-container .contact-nav ul li a i {
     margin: 5px;
     font-size: 1.5rem;
+    color: var(--negro);
 }
 
 
@@ -131,7 +133,7 @@
 }
 
 .main-footer .socials-container .socials-nav ul li:hover {
-    border: 8px solid var(--amarilloPastel);
+    border: 8px solid var(--celesteClaro);
 }
 
 .main-footer .socials-container .socials-nav ul li a {
@@ -185,9 +187,9 @@
 .main-footer .newsletter-container .newsletter-form div.email-container {display: flex;flex-direction: column;flex-wrap: wrap;align-items: center;}
 
 .main-footer .newsletter-container form.newsletter-form .email-container input {
-    border: 3px solid var(--marronclaro);
+    border: 3px solid var(--celesteClaro);
     border-radius: 10px;
-    background-color: var(--marronclaro);
+    background-color: var(--celesteClaro);
     font-family: var(--familyOpenSans);
     font-weight: bold;
     transition: all 0.5s;
@@ -216,13 +218,13 @@
     border: 3px solid var(--negro);
     border-radius: 10px;
     background-color: var(--negro);
-    color: var(--amarillo);
+    color: var(--celeste);
     font-family: var(--familyOpenSans);
     font-weight: bold;
     transition: all 0.5s;
 }
 .main-footer .newsletter-container form.newsletter-form .suscribe-container button:hover {
-    border: 5px solid var(--amarilloPastel);
+    border: 5px solid var(--celesteClaro);
 }
 
 /* ----- COPYRIGHT ----- */
@@ -267,7 +269,8 @@
     
     .main-footer div.links-container .links-nav ul li {}
     
-    .main-footer div.links-container .links-nav ul li a {}
+    .main-footer div.links-container .links-nav ul li a {
+}
 
     .main-footer div.links-container .links-nav ul li a:hover {}
     
@@ -381,7 +384,8 @@
     
     .main-footer div.links-container .links-nav ul li {}
     
-    .main-footer div.links-container .links-nav ul li a {}
+    .main-footer div.links-container .links-nav ul li a {
+}
 
     .main-footer div.links-container .links-nav ul li a:hover {}
     

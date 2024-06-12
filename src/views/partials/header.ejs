@@ -12,11 +12,14 @@
         <div class="search-bar">
             <form class="search-form" action="/buscar" method="get">
                 <label for="productSearched"></label>
-                <input type="text" name="productSearched" id="productSearched" placeholder="¿Que estas buscando?">
+                <input type="search" name="productSearched" id="productSearched" placeholder="¿Que estas buscando?">
                 <button type="submit" class="search-icon">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
+        </div>
+        <div class="buy-cart-container" id="buy-cart">
+            <a class="buy-cart" href="/carrito-compra"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
         </div>
         <nav class="user-nav" id="user-nav">
             <ul class="user-list">
@@ -37,9 +40,6 @@
               <% } %> 
             </ul>
         </nav>
-        <div class="buy-cart-container">
-            <a class="buy-cart" href="/carrito-compra"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-        </div>
     </div>
     
     <nav class="main-nav" id="navigation">

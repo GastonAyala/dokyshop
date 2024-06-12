@@ -1,4 +1,6 @@
-
+.body-results {
+    background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
+}
 
 .results-main {
     
@@ -13,7 +15,7 @@
 .results-main .container .row .SearchTitleContainer {}
 
 .results-main .container .row .SearchTitleContainer .searchTitle {
-    color: var(--amarillo);
+    color: var(--celeste);
     font-weight: bold;
 }
 
@@ -76,12 +78,12 @@
 
 .results-main .container .row .searchedProduct-container .searchedProduct .searchedProduct-description p {
     font-weight: bold;
-    color: var(--amarillo);
+    color: var(--celeste);
     margin: 0;
 }
 
 .results-main .container .row .searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     padding: 8px;
     border-radius: 5px;
 }

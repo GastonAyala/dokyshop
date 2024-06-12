@@ -1,11 +1,14 @@
 .link-danger-custom {
     font-weight: bold;
+    color: var(--celesteClaro) !important;
 }
 
 .link-danger-custom:hover {
-    background-color: var(--negro) !important;
+    background-color: var(--celeste) !important;
+    color: var(--celesteClaro) !important;
 }
 
 .link-active {
-    background-color: var(--negro) !important;
+    background-color: var(--celeste) !important;
+    color: var(--celesteClaro) !important;
 }

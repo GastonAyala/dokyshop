@@ -1,3 +1,7 @@
+.body-home{
+    background-image: url('../images/other/puppy-dog-seamless-pattern.jpg');
+}
+
 .main-home {
     position: relative;
 }
@@ -12,19 +16,27 @@
 
 .main-home .icons-container {
     display: flex;
-    justify-content: space-around;
     margin-top: 20px;
+    background-color: var(--grisClaro);
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: var(--celesteRGBA);
 }
 
 .main-home .icons {
     text-align: center;
     max-width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 .main-home .titles-container {
     display: flex;
     flex-wrap: wrap;
     margin: 20px 0;
+    background-color: var(--celesteRGBA);
 }
 
 .main-home .titles-container .welcome-title {
@@ -35,7 +47,7 @@
 }
 
 .main-home .titles-container .sale-title {
-    color: var(--amarillo);
+    color: var(--blanco);
     width: 100%;
     text-align: center;
     font-weight: bold;
@@ -66,8 +78,7 @@
     box-sizing: border-box;
     font-weight: bold;
     border-radius: 6px;
-    color: rgb(0 0 0 / 55%);
-    background-color: var(--amarilloPastel);
+    background-color: var(--celesteClaro);
 }
 
 .additional-button-left {
@@ -105,7 +116,7 @@
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 20px;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     border-radius: 30px;
     color: black;
     border: 1px solid black;
@@ -132,15 +143,15 @@
     font-size: 20px;
 }
 
-.icons h4 {
-    font-size: 10px;
+.icons h5 {
+    font-weight: bold;
     margin: 0;
 }
 
 .icons p {
-    margin: 5px;
-    font-family:var(--familyOpenSans) ;
-  font-size: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
 }
 
 /* sección de productos recomendados */
@@ -157,6 +168,7 @@
     width: 85%;
     height: 270px;
     overflow: hidden;
+    border-radius: 25px;
 }
 
 .new-image-container img {
@@ -233,7 +245,7 @@
 
     .main-home .pet-section .image-with-list {
         position: relative;
-        width: 85%;
+        width: 90%;
         height: 270px;
         overflow: hidden;
     }
@@ -243,6 +255,7 @@
         height: 100%;
         display: block;
         object-fit: cover;
+        border-radius: 25px;
     }
 
     .main-home .pet-section .image-with-list .pet-content {
@@ -251,13 +264,16 @@
         left: 0;
         width: 100%;
         padding: 10px;
-        box-sizing: border-box;
+        background-color: var(--celesteRGBA);
+        border-radius: 25px;
+        height: 100%;
     }
 
     .main-home .pet-section .image-with-list .pet-content .pet-list {
         list-style-type: none;
         padding: 0;
         margin: 0;
+        height: 100%;
     }
 
     .main-home .pet-section .image-with-list .pet-content .pet-list li {

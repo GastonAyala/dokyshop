@@ -3,7 +3,7 @@
 
 <%- include('../partials/head', {view: "Articulos para mascotas", gliderCSSDisabled:true}) %>
 
-<body>
+<body class="body-home">
     <%- include('../partials/dot') %>
 
     <%- include('../partials/header') %>
@@ -12,35 +12,34 @@
         <!-- Carousel -->
         <%- include('../partials/carousel') %>
 
-        <div class="icons-container">
-            <div class="icons">
-                <i class="fa-solid fa-truck-fast"></i>
-                <h4>ENVIOS SIN CARGO</h4>
-                <p>Envíos en toda CABA y alrededores</p>
-            </div>
-
-            <div class="icons">
-                <i class="fa-solid fa-dollar-sign"></i>
-                <h4>DESCUENTO EXTRA</h4>
-                <p>Pagando tus compras en efectivo</p>
-            </div>
-
-            <div class="icons">
-                <i class="fa-solid fa-credit-card"></i>
-                <h4>PAGA CON TARJETA</h4>
-                <p>También puedes pagar en cuotas</p>
-            </div>
-        </div>
-
         <div class="titles-container">
             <h1 class="welcome-title">BIENVENIDOS A DOKY SHOP</h1>
             <h5 class="sale-title">VENTA DE LOS MEJORES Y MAS LINDOS PRODUCTOS PARA TUS MASCOTAS!</h5>
         </div>
 
         <%- include('../partials/categories') %>
+        <div class="icons-container">
+            <div class="icons">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h5>ENVIOS SIN CARGO</h5>
+                <p>Envíos en toda CABA y alrededores</p>
+            </div>
 
+            <div class="icons">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <h5>DESCUENTO EXTRA</h5>
+                <p>Pagando tus compras en efectivo</p>
+            </div>
+
+            <div class="icons">
+                <i class="fa-solid fa-credit-card"></i>
+                <h5>PAGA CON TARJETA</h5>
+                <p>También puedes pagar en cuotas</p>
+            </div>
+        </div>
+        
         <%- include('../partials/cardSecondary') %>
-
+        
         <div class="pet-section">
             <div class="image-with-list">
                 <% otherImages.forEach(otherImg => { %>
@@ -59,19 +58,6 @@
                         </li>
                     <% }) %>
                     </ul>
-                </div>
-            </div>
-            <div class="new-image-container">
-                <% otherImages.forEach(otherImg => { %>
-                    <% if (otherImg.name === 'vet-gato.jpg') { %>
-                        <img src="/images/other/<%= otherImg.name %>" alt="veterinary image">
-                    <% } %>
-                <% }) %>
-                <div class="overlay-content">
-                    <h3 class="overlay-text">Te recomendamos los mejores veterinarios</h3>
-                    <button class="overlay-button-left">Ver más</button>
-                    <button class="overlay-button-right">Ver más</button>
-                    <p class="additional-text-right">Peluquería canina</p>
                 </div>
             </div>
         </div>

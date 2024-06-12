@@ -3,7 +3,7 @@
 }
 
 .main-dashboard .dashboard-panel {
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     display: flex;
     height: 100vh;
     flex-direction: column;
