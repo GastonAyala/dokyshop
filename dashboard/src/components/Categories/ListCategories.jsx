@@ -9,9 +9,9 @@ export const ListCategories = () => {
   const { pathname } = useLocation();
 
   // useState
-  const [styleClass, setStyleClass] = useState([""]);
+  const [styleClass, setStyleClass] = useState("");
   const [loading, setLoading] = useState(true);
-  const [stateCategories, setStatesCategories] = useState({
+  const [stateCategories, setStateCategories] = useState({
     categories: [],
     count: [],
     error: "",
@@ -29,7 +29,7 @@ export const ListCategories = () => {
 
         if (!ok) throw new Error(msg);
 
-        ok && setStatesCategories({
+        ok && setStateCategories({
           ...stateCategories,
           categories: data,
           count: countByCategory,
@@ -38,7 +38,7 @@ export const ListCategories = () => {
         setTimeout(() => setLoading(false), 1100);
 
       } catch (error) {
-        setStatesCategories({
+        setStateCategories({
           ...stateCategories,
           error: error.message,
         });
@@ -52,19 +52,19 @@ export const ListCategories = () => {
     <div className={`text-center ${styleClass}`}>
       {!loading ? <div className="card shadow mb-4">
         <div className="card-header py-3">
-          <h5 className="m-0 font-weight-bold text-gray-800 text-left">
+          <h5 className="m-0 font-weight-bold text-gray-800 text-left" style={{ fontSize: "calc(0.94756rem + 0.3vw)"}}>
             Categorías
           </h5>
         </div>
         <div className="card-body">
           <div className="row">
             {stateCategories.categories.map((c, i) => (
-              stateCategories.count.map((countByCat, i) => countByCat.name === c.name ? <PanelCard key={i} {...c} countByCat={countByCat.count} /> : "")
+              stateCategories.count.map((countByCat, i) => countByCat.name === c.name ? <PanelCard key={i} {...c} countBy={countByCat.count} /> : "")
             ))}
           </div>
         </div>
       </div>
-        : <Spinner />
+        : <Spinner containerClassName={"my-5"} />
       }
       {stateCategories.error && <Alert message={stateCategories.error} />}
     </div>

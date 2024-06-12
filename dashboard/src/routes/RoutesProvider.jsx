@@ -5,6 +5,7 @@ import { RoutesCharts } from "./RoutesCharts";
 import { RoutesCategories } from "./RoutesCategories";
 import { RoutesProducts } from "./RoutesProducts";
 import { ErrorPage } from "../components/Extras/ErrorPage";
+import { RoutesSubcategories } from "./RoutesSubcategories";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       },
       ...RoutesCharts,
       ...RoutesCategories,
+      ...RoutesSubcategories,
       ...RoutesProducts,
     ]
   },

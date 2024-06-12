@@ -29,6 +29,7 @@ const apiUsersRoutes = require("./routes/api/users.api.");
 const apiProductsRoutes = require('./routes/api/products.api');
 const apiOrderRoutes = require('./routes/api/order.api');
 const apiCategoriesRoutes = require('./routes/api/categories.api');
+const apiSubcategoriesRoutes = require('./routes/api/subcategories.api');
 
 
 /* CONFIGS */
@@ -62,6 +63,7 @@ app.use("/api/users", apiUsersRoutes);
 app.use('/api/products', apiProductsRoutes);
 app.use('/api/order', apiOrderRoutes);
 app.use('/api/categories', apiCategoriesRoutes);
+app.use('/api/subcategories', apiSubcategoriesRoutes);
 
 
 // catch 404 and forward to error handler

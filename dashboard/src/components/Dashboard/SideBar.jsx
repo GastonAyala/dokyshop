@@ -44,6 +44,13 @@ function SideBar() {
                     </Link>
                 </li>
 
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="/subcategorias">
+                        <i className="fa-solid fa-list"></i>
+                        <span>Subcategorías</span>
+                    </Link>
+                </li>
+
                 {/*<!-- Nav Item - Last Movie in DB -->*/}
                 <li className="nav-item">
                     <Link className="nav-link collapsed" to="/Products/last">
