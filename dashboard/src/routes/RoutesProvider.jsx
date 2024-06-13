@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "../pages/Root";
 import Dashboard from "../pages/Dashboard";
-import { RoutesGenres } from "./RoutesGenres";
+import { RoutesCategories } from "./RoutesCategories";
 import { RoutesProducts } from "./RoutesProducts";
 import { ErrorPage } from "../components/Extras/ErrorPage";
+import { RoutesSubcategories } from "./RoutesSubcategories";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
         path: "/",
         element: <Dashboard />
       },
-      ...RoutesGenres,
+      ...RoutesCategories,
+      ...RoutesSubcategories,
       ...RoutesProducts,
     ]
   },

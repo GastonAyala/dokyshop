@@ -38,9 +38,16 @@ function SideBar() {
 
                 {/*<!-- Nav Item - Genres in DB -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/genres">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Categorias</span>
+                    <Link className="nav-link collapsed" to="/categorias">
+                        <i className="fa-solid fa-table-list"></i>
+                        <span>Categorías</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="/subcategorias">
+                        <i className="fa-solid fa-list"></i>
+                        <span>Subcategorías</span>
                     </Link>
                 </li>
 
