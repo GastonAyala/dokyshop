@@ -1,5 +1,6 @@
 import ContentRowProducts from "../components/Products/ContentRowProducts";
 import LastMovieInDb from "../components/Products/LastProductInDb";
+import Product from "../pages/Products";
 
 export const RoutesProducts = [
     {
@@ -9,5 +10,9 @@ export const RoutesProducts = [
     {
         path: "/contentRowProducts",
         element: <ContentRowProducts />
+    },
+    {
+        path: "/productos",
+        element: <Product/>
     }
 ]
