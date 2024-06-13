@@ -15,6 +15,9 @@ module.exports = async (req, res) => {
                         association: "category"
                     },
                     {
+                        association: 'subcategory'
+                    },
+                    {
                         association: 'imagesecondaries',
                         attributes: {
                             include: [
@@ -56,6 +59,9 @@ module.exports = async (req, res) => {
                 include: [
                     {
                         association: "category"
+                    },
+                    {
+                        association: 'subcategory'
                     },
                     {
                         association: 'imagesecondaries',

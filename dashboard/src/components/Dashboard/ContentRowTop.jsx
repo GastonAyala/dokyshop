@@ -1,7 +1,6 @@
 import React from 'react';
 import ContentRowCenter from './ContentRowCenter';
 import ContentRowProducts from '../Products/ContentRowProducts';
-import Chart from '../Charts/index'
 function ContentRowTop(){
     return(
         <React.Fragment>
@@ -14,7 +13,6 @@ function ContentRowTop(){
 					{/*<!-- Content Row Products-->*/}
 					<ContentRowProducts />
 					<ContentRowCenter />
-					<Chart />
 	
 				</div>
 				{/*<!--End Content Row Top-->*/}

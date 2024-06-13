@@ -31,7 +31,7 @@ function SideBar() {
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/charts">
+                    <Link className="nav-link" to="/productos">
                     <i className="fa-solid fa-box-open"></i>
                         <span>Productos</span></Link>
                 </li>
