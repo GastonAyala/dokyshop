@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { Spinner } from '../components/reusable/Spinner';
 import { Alert } from '../components/reusable/Alert'
 
@@ -52,7 +52,10 @@ function Product() {
         return {
           field: key,
           headerName: headerNameTable[key],
-          width: 100,
+          headerAlign: 'center',
+          align: 'center',
+          renderHeader: () => <strong>{headerNameTable[key]}</strong>,
+          width: 120,
           type: typeof value,
           renderCell: (params) => {
             if (key === 'imagePrincipalAPI') {
@@ -94,7 +97,7 @@ function Product() {
   return (
     <>
       <Container sx={{marginBottom:'30px'}}>
-        <h1>Todos los productos</h1>
+        <Typography mb={2} variant="h3">Todos los productos</Typography>
         <Box sx={{ height: 648, width: '100%' }}>
           {statesProducts.error ? <Alert message={statesProducts.error} /> : null}
           {
