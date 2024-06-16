@@ -8,6 +8,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    height: max-content;
 }
 
 .main-footer .logo-container {
@@ -361,7 +362,8 @@
 /* -------- DESKTOP VIEW -------- */
 
 @media (min-width: 769px) {
-    .main-footer {}
+    .main-footer {
+    }
 
     .main-footer .logo-container {}
 
