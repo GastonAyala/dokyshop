@@ -53,7 +53,7 @@ function SideBar() {
 
                 {/*<!-- Nav Item - Last Movie in DB -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/Products/last">
+                    <Link className="nav-link collapsed" to="/usuarios">
                     <i className="fa-solid fa-user"></i>
                         <span>Usuarios</span>
                     </Link>
