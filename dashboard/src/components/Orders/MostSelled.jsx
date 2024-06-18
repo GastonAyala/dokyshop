@@ -19,7 +19,7 @@ export const MostSelled = () => {
 
                 ok && setOrders(data);
 
-                setTimeout(() => setLoading(false), 1100);
+                setTimeout(() => setLoading(false), 1300);
                 
             } catch (error) {
                 setStateError(error.message)
@@ -47,13 +47,13 @@ export const MostSelled = () => {
                     </h5>
                 </div>
                 <div className="card-body">
-                    <div className="row">
+                    <div className="row align-items-center">
                         {mostSaled.map((p, i) => {
                             return <div key={i} className="col-lg-4 mb-4 p-2">
                                 <div className="card bg-dark text-white shadow">
-                                    <div className="card-body d-flex flex-wrap">
+                                    <div className="card-body">
                                         <a href={`http://localhost:3030/productos/detalle/${p.id}`}>
-                                            <span className='w-100 mb-1' style={{ fontSize: "calc(0.53rem + 0.6vw)", color: "white" }}>{p.title.substring(0, 35) + "..."}</span>
+                                            <span className='w-100 mb-1' style={{color: "white" }}>{p.title.substring(0, 35)}{p.title.length > 35 ? "..." : null}</span>
                                         </a>
                                     </div>
                                 </div>

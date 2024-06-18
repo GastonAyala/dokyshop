@@ -1,50 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SmallCard from './SmallCard';
-
-/*  Cada set de datos es un objeto literal */
-
-/* <!-- Products in DB --> */
-
-let ProductsInDB = {
-    title: 'Products in Data Base',
-    color: 'primary',
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total awards --> */
-
-let totalAwards = {
-    title: ' Total awards',
-    color: 'success',
-    cuantity: '79',
-    icon: 'fa-award'
-}
-
-/* <!-- Actors quantity --> */
-
-let actorsQuantity = {
-    title: 'Actors quantity',
-    color: 'warning',
-    cuantity: '49',
-    icon: 'fa-user-check'
-}
-
-let cartProps = [ProductsInDB, totalAwards, actorsQuantity];
+import { Spinner } from '../reusable/Spinner';
+import { Alert } from '../reusable/Alert';
 
 function ContentRowProducts() {
+    const [stateMetrics, setStateMetrics] = useState({
+        metrics: [],
+        error: ""
+    });
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const endpoint = "http://localhost:3030/api/metrics";
+        const getMetrics = async () => {
+            try {
+                const { ok, data = [], msg = null } = await fetch(endpoint).then(res => res.json());
+
+                if (!ok) throw new Error(msg);
+
+                ok && setStateMetrics({
+                    ...stateMetrics,
+                    metrics: data
+                });
+
+                setTimeout(() => setLoading(false), 800);
+
+            } catch (error) {
+                setStateMetrics({
+                    ...stateMetrics,
+                    error: error.message
+                });
+            }
+        };
+
+        getMetrics();
+    }, [])
+
     return (
-
         <div className="row">
-
-            {cartProps.map((movie, i) => {
-
-                return <SmallCard {...movie} key={i} />
-
-            })}
-
+            {
+                !loading ? stateMetrics.metrics.map((metric, i) => {
+                    return <SmallCard {...metric} key={i} />
+                }) : <Spinner containerClassName={'d-flex m-auto'} />
+            }
+            {stateMetrics.error && <Alert message={stateMetrics.error} />}
         </div>
     )
-}
+};
 
 export default ContentRowProducts;
