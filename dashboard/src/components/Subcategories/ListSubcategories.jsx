@@ -18,7 +18,7 @@ export const ListSubcategories = () => {
     });
 
     // useEffect
-    useEffect(() => pathname === '/subcategorias' ? setStyleClass('m-auto w-75') : setStyleClass('mb-4'))
+    useEffect(() => pathname === '/subcategorias' ? setStyleClass('m-auto w-75') : setStyleClass('mb-4'));
 
     useEffect(() => {
         const endpoint = 'http://localhost:3030/api/subcategories';
@@ -35,7 +35,7 @@ export const ListSubcategories = () => {
                     count: countBySubcategory,
                 });
 
-                setTimeout(() => setLoading(false), 1100);
+                setTimeout(() => setLoading(false), 1200);
 
             } catch (error) {
                 setStateSubcategories({
@@ -45,14 +45,14 @@ export const ListSubcategories = () => {
             }
         };
 
-        getSubcategories()
+        getSubcategories();
     }, []);
 
     return (
         <div className={`text-center ${styleClass}`}>
             {!loading ? <div className='card shadow mb-4'>
                 <div className='card-header py-3'>
-                    <h5 className='m-0 font-weight-bold text-gray-800 text-left' style={{ fontSize: "calc(0.94756rem + 0.3vw)"}}>
+                    <h5 className='m-0 font-weight-bold text-gray-800 text-left' style={{ fontSize: "calc(0.94756rem + 0.3vw)" }}>
                         Subcategorías
                     </h5>
                 </div>
@@ -69,4 +69,4 @@ export const ListSubcategories = () => {
             {stateSubcategories.error && <Alert message={stateSubcategories.error} />}
         </div>
     )
-}
+};

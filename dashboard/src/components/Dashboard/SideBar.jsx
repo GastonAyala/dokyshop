@@ -11,7 +11,7 @@ function SideBar() {
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3030/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" style={{height: 80 + "px"}} src={image} alt="Digital House" />
+                        <img className="w-100" style={{height: 80 + "px"}} src={image} alt="Dokyshop" />
                     </div>
                 </a>
 
@@ -28,15 +28,12 @@ function SideBar() {
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider" />
 
-
-                {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/charts">
+                    <Link className="nav-link" to="/productos">
                     <i className="fa-solid fa-box-open"></i>
                         <span>Productos</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Genres in DB -->*/}
                 <li className="nav-item">
                     <Link className="nav-link collapsed" to="/categorias">
                         <i className="fa-solid fa-table-list"></i>
@@ -51,19 +48,11 @@ function SideBar() {
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Last Movie in DB -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/Products/last">
+                    <Link className="nav-link collapsed" to="/usuarios">
                     <i className="fa-solid fa-user"></i>
                         <span>Usuarios</span>
                     </Link>
-                </li>
-
-                {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item">
-                    <a className="nav-link" href="/">
-                    <i className="fa-solid fa-cart-shopping"></i>
-                        <span>Ordenes</span></a>
                 </li>
 
                 {/*<!-- Divider -->*/}

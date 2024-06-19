@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "../pages/Root";
 import Dashboard from "../pages/Dashboard";
-import { RoutesCharts } from "./RoutesCharts";
 import { RoutesCategories } from "./RoutesCategories";
 import { RoutesProducts } from "./RoutesProducts";
 import { ErrorPage } from "../components/Extras/ErrorPage";
 import { RoutesSubcategories } from "./RoutesSubcategories";
+import { RoutesUsers } from "./RoutesUsers";
 
 const router = createBrowserRouter([
   {
@@ -17,10 +17,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Dashboard />
       },
-      ...RoutesCharts,
       ...RoutesCategories,
       ...RoutesSubcategories,
       ...RoutesProducts,
+      ...RoutesUsers
     ]
   },
 ]);

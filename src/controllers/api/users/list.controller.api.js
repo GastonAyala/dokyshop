@@ -7,7 +7,20 @@ module.exports = (req, res) => {
     const { page } = req.query;
 
     if (!req.query.page) {
-        db.user.findAll()
+        db.user.findAll(
+            {
+                include:["address", "role"],
+                attributes: {
+                exclude: ["password"],
+                include: [
+                    [
+                        literal(`CONCAT('${getOriginUrl(req)}/api/users/', avatar)`),
+                        'imageAvatarAPI'
+                    ]
+                ]
+              }
+            }
+        )
         .then(users => {
             res.status(200).json({
                 ok: true,
@@ -32,7 +45,6 @@ module.exports = (req, res) => {
                 association: "address",
             },
         ],
-               
         attributes: {
             exclude: ["createdAt", "updatedAt", "deletedAt", "password"],
             include: [
