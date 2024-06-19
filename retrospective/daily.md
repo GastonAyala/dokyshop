@@ -196,7 +196,197 @@ Ayer finalicé la tarea de agregar endpoints para agregar y remover productos de
 - Que impedimentos tuve:
 No tuve impedimentos
 - Que voy a hacer hoy:
-Hoy voy a comenzar con la creación de los endpoints de aumentar y disminuir cantidad de productos de una orden
+Hoy voy a comenzar con la creación de los endpoints de aumentar y disminuir cantidad de productos de una orden.-
+
+#  SPRINT 8  PARTE 1 -- DAILY 1- 11/05
+## Gaston
+
+- Que hice ayer:
+Comence a agregar los endpoints del carrito de compras con sus funcionalidades.
+
+- Que impedimentos tuve:
+No tuve impedimentos.-
+
+- Que voy a hacer hoy:
+Terminar los ultimos detalles que me faltan y subir los cambios.-
+
+## Adriana
+
+- Que hice ayer:
+Comence con la creacion de endpoint del listado de usuarios. 
+
+- Que impedimentos tuve:
+No tuve impedimentos
+
+- Que voy a hacer hoy:
+Continuar para terminar el paginado.-
+
+## Ricardina
+
+- Que hice ayer:
+Comence con la creacion del endpoint del listado de productos.-
+
+- Que impedimentos tuve:
+No tuve impedimentos.-
+
+- Que voy a hacer hoy:
+Continuar con el paginado.- 
+
+## Marcos
+
+- Que hice ayer:
+Comence con la creacion del endpoint del datalle de un usuario.-
+
+- Que impedimentos tuve:
+No tuve inconvenientes
+
+- Que voy a hacer hoy:
+Comenzar a crear el endpoint del detalle de un producto.-
+
+#  SPRINT 7 -- DAILY 1- 24/05
+## Gaston
+
+- Que hice ayer:
+Actualice bootstrap a la version 5.2.3, lo active en la vista login y register y modifique el controlador api de listado de usaurios para listar todos los ususarios sin paginación.
+
+- Que impedimentos tuve:
+No tuve impedimentos.-
+
+- Que voy a hacer hoy:
+Voy a ver optimizar las rutas de api.-
+
+## Adriana
+
+- Que hice ayer:
+Comencé la implementación de las validaciones de Register.
+
+- Que impedimentos tuve:
+Tuve inconvenientes con las validaciones, puntualmente comparar los datos si coinciden con la base de Datos. 
+
+- Que voy a hacer hoy:
+Continuar para terminar las validaciones de Register.-
+
+## Ricardina
+
+- Que hice ayer:
+Comence con las validaciones del formulario de edicion de productos del lado del front-end.-
+
+- Que impedimentos tuve:
+No tuve impedimentos.-
+
+- Que voy a hacer hoy:
+Terminar las validaciones de editar productos.- 
+
+## Marcos
+
+- Que hice ayer:
+Comence con la implementacion de validaciones back-end de formulario de creacion de productos(express validator).-
+
+- Que impedimentos tuve:
+Experimente inconvenientes con las validaciones debido al desconocimiento de algunos aspectos.
+
+- Que voy a hacer hoy:
+ Continuar con mis tareas para poder adelantar lo mas que pueda.-
+
+#  SPRINT 7 -- DAILY 2- 25/05
+## Gaston
+
+- Que hice ayer:
+Empeze con la tarea de agregar validacioens front-end en el formulario de perfil de usuario.- 
+
+- Que impedimentos tuve:
+Tuve inconvenientes con las expresiones regulares y lo solucione buscando en internet.-
+
+- Que voy a hacer hoy:
+ Terminé con la tarea de agregar validaciones front-end en el formulario de perfil de usuario y voy a solucionar errores generales del proyecto.-
+
+## Adriana
+
+- Que hice ayer:
+Comencé con las Validaciones de Login
+
+- Que impedimentos tuve:
+Tuve impedimentos para comparar el correo ingresado en el formulario con el existente en la base de Datos. 
+
+- Que voy a hacer hoy:
+Tratar de terminar las Validaciones.-
+
+## Ricardina
+
+- Que hice ayer:
+Comenzar con la implementacion de las validaciones del formulario de creacion de productos del lado del front-end.-
+
+- Que impedimentos tuve:
+No tuve impedimentos
+
+- Que voy a hacer hoy:
+Terminar con las validaciones de creacion de productos.-
+
+## Marcos
+
+- Que hice ayer:
+Solucione el problema anterior y empecé con las validaciones de front-end en el formulario de editar producto
+
+- Que impedimentos tuve:
+ Tuve algunos inconvenientes con los errores que tenian que tirar los inputs
+
+- Que voy a hacer hoy:
+Pude solucionar los inconvenientes que tuve y subi los cambios.- 
+
+
+
+
+#  SPRINT 8 PARTE 2 -- DAILY 1- 24/05
+
+## Gaston
+
+- Que hice ayer:
+Crear panel del listado de categorias con el total de productos.-
+
+- Que impedimentos tuve:
+No tuve impedimentos
+
+- Que voy a hacer hoy:
+Terminar de corregir pequeños errores.-
+
+
+## Adriana
+
+- Que hice ayer:
+Comence con la creacion del panel en la vista de dashboard que muestre el detalle del ultimo producto.-
+
+- Que impedimentos tuve:
+Tuve algunos impedimentos como no poder mostrar la imagen del ultimo producto.-
+
+- Que voy a hacer hoy:
+Terminar de implementar mi tarea.-
+
+## Ricardina
+
+- Que hice ayer:
+Comence con la creacion del panel que muestre el listado de todos los productos.-
+
+- Que impedimentos tuve:
+No tuve impedimentos.-
+
+- Que voy a hacer hoy:
+Terminar la tarea del lsitado de todos los proiductos
+
+## Marcos
+
+- Que hice ayer:
+Comence con el panel que lsite el total de los productos vendidos.-
+
+- Que impedimentos tuve:
+No tuve impedimentos.-
+
+- Que voy a hacer hoy:
+Terminar con el panel que muestre los ultimos 5 productos vendidos.-
+
+
+
+
+
 
 
 

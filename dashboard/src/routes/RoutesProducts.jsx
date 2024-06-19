@@ -1,11 +1,12 @@
 import ContentRowProducts from "../components/Products/ContentRowProducts";
-import LastMovieInDb from "../components/Products/LastProductInDb";
+import LastProductInDb from "../components/Products/LastProductInDb";
 import Product from "../pages/Products";
+import Users from "../pages/Users";
 
 export const RoutesProducts = [
     {
-        path: "/Products/last",
-        element: <LastMovieInDb />
+        path: "/productos/ultimo",
+        element: <LastProductInDb />
     },
     {
         path: "/contentRowProducts",
