@@ -5,6 +5,7 @@ import { RoutesCategories } from "./RoutesCategories";
 import { RoutesProducts } from "./RoutesProducts";
 import { ErrorPage } from "../components/Extras/ErrorPage";
 import { RoutesSubcategories } from "./RoutesSubcategories";
+import { RoutesUsers } from "./RoutesUsers";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       ...RoutesCategories,
       ...RoutesSubcategories,
       ...RoutesProducts,
+      ...RoutesUsers
     ]
   },
 ]);

@@ -35,7 +35,7 @@ export const ListCategories = () => {
           count: countByCategory,
         });
 
-        setTimeout(() => setLoading(false), 1100);
+        setTimeout(() => setLoading(false), 1000);
 
       } catch (error) {
         setStateCategories({
@@ -45,14 +45,14 @@ export const ListCategories = () => {
       }
     };
 
-    getCategories()
+    getCategories();
   }, []);
 
   return (
     <div className={`text-center ${styleClass}`}>
       {!loading ? <div className="card shadow mb-4">
         <div className="card-header py-3">
-          <h5 className="m-0 font-weight-bold text-gray-800 text-left" style={{ fontSize: "calc(0.94756rem + 0.3vw)"}}>
+          <h5 className="m-0 font-weight-bold text-gray-800 text-left" style={{ fontSize: "calc(0.94756rem + 0.3vw)" }}>
             Categorías
           </h5>
         </div>
