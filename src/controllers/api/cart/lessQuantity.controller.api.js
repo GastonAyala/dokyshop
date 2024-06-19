@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
                 include: [
                     {
                         association: "products",
-                        throung: {
+                        through: {
                             attributes: ["quantity"],
                         },
                     },
