@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
         });
 
         order.total = 0;
-        await order.save
+        await order.save()
 
         res.status(200).json({
             ok: true,

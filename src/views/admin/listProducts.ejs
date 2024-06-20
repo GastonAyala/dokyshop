@@ -98,7 +98,7 @@
         <% if (p.color === 'Multicolor') { %>
           <div class="imgMulticolorDiv"><img src="/images/products/multicolor.jpg" alt=""></div>
         <% } else { %>
-        <i style="color: <%= p.color %>;border: 1px solid black;border-radius: 10px;" class="fa-solid fa-circle"></i>
+        <i style="color: '<%= p.color %>';border: 1px solid black;border-radius: 10px;" class="fa-solid fa-circle"></i>
         <% } %>
       </td>
       <td><%= p.available %></td>

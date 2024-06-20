@@ -64,8 +64,7 @@ window.addEventListener("load", async (e) => {
                 method: "PATCH"
             }).then(res => res.json());
 
-            ok && processReloadCart(containerProducts);
-            ouputTotal.innerHTML = 0
+            ok && processReloadCart(containerProducts, ouputTotal);
         } catch (error) {
             console.error(error.message);
         }
@@ -101,5 +100,15 @@ const moreProduct = async (id) => {
 };
 
 const removeProductCart = async (id) => {
+    const containerProducts = $(".contenedor-pro");
+    const ouputTotal = $("#show-total");
+    try {
+        const { ok, msg } = await fetch(`/api/order/remove/${id}`, {
+            method: "PATCH"
+        }).then(res => res.json());
 
+        ok && processReloadCart(containerProducts, ouputTotal);
+    } catch (error) {
+        console.error(error.message);
+    }
 };
