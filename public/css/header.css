@@ -120,6 +120,7 @@
     font-size: 1.4rem;
     padding: 0 10px;
     font-size: calc(0.8rem + 0.6vw);
+    color: var(--celesteClaro);
 }
 .main-header .top-bar .user-nav .user-list li a:hover {
     border-bottom: 3px solid var(--celesteClaro);
@@ -487,7 +488,6 @@
 
     .main-header .top-bar .user-nav .user-list li a {
         font-size: .98rem;
-        color: var(--celesteClaro);
     }
     
     .main-header .top-bar .user-nav .user-list li span {
