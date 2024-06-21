@@ -29,7 +29,7 @@ main.login-main h1.titulo-login{
 }
 
 main.login-main form.form-principal{
-  background-color: rgb(253 200 37 / 70%);
+  background-color: var(--celesteClaroTraslucido);
   border-radius: 10px;
   margin: auto;
   max-width: 75vw;
@@ -104,15 +104,15 @@ main.login-main form.form-principal .contenedor-button .boton{
 main.login-main form.form-principal .contenedor-button .boton button.submit{
   padding: 7px 7px;
   width: 100%;
-  background-color: var(--naranjaig);
-  color: white;
+  background-color: var(--celeste);
+  color: var(--blanco);
   border-radius: 8px;
   border: none;
   transition: all 420ms;
 }
 
 main.login-main form.form-principal .contenedor-button .boton button.submit:hover{
-  background-color: chocolate;
+  background-color: var(--celesteRGBA);
 }
 
 main.login-main form.form-principal .contenedor-button .inicio{
@@ -129,10 +129,16 @@ main.login-main form.form-principal .contenedor-button .inicio a.crear-cuenta{
   text-decoration: none;
   text-align: center;
   font-size: 14px;
-  color: var(--naranja);
+  color: var(--celeste);
   font-weight: bold;
   padding-bottom: 10px;
+  transition: all 400ms;
 }
+
+main.login-main form.form-principal .contenedor-button .inicio a.crear-cuenta:hover {
+    color: var(--grisOscuro);
+}
+
 
 .form-principal p.msg-error {
   color: var(--rojo);
