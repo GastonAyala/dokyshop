@@ -72,7 +72,7 @@
                 <% if (product.color === 'Multicolor') { %>
                     <div class="imgMulticolorDiv"><img src="/images/products/multicolor.jpg" alt=""></div>
                   <% } else { %>
-                  <i style="color: <%= product.color %>;border: 1px solid black;border-radius: 10px;" class="fa-solid fa-circle"></i>
+                  <i style="color: '<%= product.color %>';border: 1px solid black;border-radius: 10px;" class="fa-solid fa-circle"></i>
                 <% } %>
             </div>
         
@@ -102,7 +102,7 @@
     </main>
     <%- include('../partials/footer') %>
 
-    <%- include('../partials/scripts') %>
+    <%- include('../partials/scripts', {activeAddProduct:true}) %>
     
 </body>
 </html>

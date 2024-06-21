@@ -2,11 +2,11 @@ const db = require('../../database/models');
 const { Op } = require('sequelize');
 
 module.exports = async (req, res) => {
-   const dataOrder = await db.order.findOrCreate({
+    const dataOrder = await db.order.findOrCreate({
     where: {
         [Op.and]: [
             {
-                userId: req.query.userId
+                userId: req.session.userLogin?.id || req.query.userId
             },
             {
                 state: "pending"
@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
         ]
     },
     defaults: {
-        userId: req.query.userId,
+        userId: req.session.userLogin?.id || req.query.userId,
         state: 'pending',
     },
     include: [

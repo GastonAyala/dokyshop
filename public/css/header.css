@@ -185,6 +185,7 @@
     font-family: var(--familyOpenSans);
     height: 0;
     opacity: 0;
+    display: none;
 }
 
 .main-header .main-nav.active {

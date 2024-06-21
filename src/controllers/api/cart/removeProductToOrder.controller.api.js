@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
         const total = getTotalOrder(order.products);
 
         order.total = total;
-        await order.save
+        await order.save()
 
         res.status(200).json({
             ok: true,

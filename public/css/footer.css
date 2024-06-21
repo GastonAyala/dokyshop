@@ -53,7 +53,7 @@
 .main-footer div.links-container .links-nav ul li {}
 
 .main-footer div.links-container .links-nav ul li a {
-    color: var(--celesteClaro);
+    color: var(--celesteClaro);
 }
 
 .main-footer div.links-container .links-nav ul li a:hover {
@@ -184,7 +184,12 @@
 
 .main-footer .newsletter-container .newsletter-form .text-container p {}
 
-.main-footer .newsletter-container .newsletter-form div.email-container {display: flex;flex-direction: column;flex-wrap: wrap;align-items: center;}
+.main-footer .newsletter-container .newsletter-form div.email-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
 .main-footer .newsletter-container form.newsletter-form .email-container input {
     border: 3px solid var(--celesteClaro);

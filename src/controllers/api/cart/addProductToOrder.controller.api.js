@@ -10,7 +10,8 @@ module.exports = async (req, res) => {
      
         await db.orderproduct.create({
          orderId: order.id,
-         productId
+         productId,
+         quantity: 1
         });
         order = await order.reload({
          include: [

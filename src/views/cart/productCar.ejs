@@ -1,57 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include('../partials/head',  {view: "Carrito de compras", gliderCSSDisabled:true}) %>
-<body>
-
+<html lang="es">
+  <%- include('../partials/head', {view: "Carrito de compras",
+  gliderCSSDisabled:true}) %>
+  <body>
     <%- include('../partials/header') %>
-    <main class="main-carrito">
-        <div class="titulo">
-           <h1>Carrito de compras</h1>
-        </div>
-
+    <main class="main-carrito d-flex flex-wrap">
+      <div class="container-cart">
         <div class="contenedor-pro">
-            <h3>Productos</h3>
-
-            <div class="producto">
-                <figure>
-                    <img src="/images/products/ratitas.png" alt="foto producto">
-                </figure>
-                <h4>Ratita Piel con cola x 3</h4>
-                <a href="">Eliminar</a>
-                <p class="cantidad">- 1 +</p>
-                <p class="precio">$ 3.500</p>
-                <p class="conEnvio">Envio</p>
-                <p class="costoEnvio">$500,0</p>
-            </div>
-
-            <div class="producto">
-                <figure>
-                    <img src="/images/products/rascador.jpeg" alt="foto producto">
-                </figure>
-                <h4>Rascador de gatos</h4>
-                <a href="">Eliminar</a>
-                <p class="cantidad">- 1 +</p>
-                <p class="precio">$ 5.500</p>
-                <p class="conEnvio">Envio</p>
-                <p class="costoEnvio">$1.000</p>
-            </div>
-
-            <div class="contenedor-total">
-                <p class="total">Total</p>
-                <p class="monto">$ 10.500</p>
-            </div>
-
-            <div class="contenedor-boton">
-                <button class="compra" type="submit">Continuar compra</button>
-                <a href="/" class="masProd">Ver mas Productos</a>
-            </div>
+          
         </div>
+      </div>
+
+      <div class="cartButtonsContainer card d-flex m-auto">
+        <div class="card-body d-flex justify-content-evenly align-items-center flex-wrap">
+          <button class="btn btnClear mb-2" id="clear-cart">
+            Vaciar Carrito
+          </button>
+          <button class="btn btnBuy mb-2" id="btn-buy">Comprar</button>
+          <a href="/productos" class="viewMoreLink mb-2">Ver más productos</a>
+          <h5 class="card-title">Total</h5>
+          <p class="card-text">$ <output id="show-total">0</output></p>
+        </div>
+      </div>
     </main>
 
-    <%- include('../partials/footer') %>
-
-    <%- include('../partials/scripts', {disabledGliderJS:true}) %>
-
-        
-</body>
+    <%- include('../partials/footer') %> <%- include('../partials/scripts',
+    {disabledGliderJS:true}) %>
+    <script src="./js/functions/cart.js"></script>
+  </body>
 </html>
