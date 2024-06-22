@@ -1,127 +1,217 @@
 [
-   {
-      "id": 1,
-      "name": "Nadia Perez",
-      "email": "nadia@gmail.com",
-      "password": "$2a$12$O2CKzd.IBo2TChZ7qwTOteRXqyLuiXGy8gEpln9sMG.yT/oN.AmCW",
-      "role": "REGULAR",
-      "avatar": "perfilUser.png",
-      "phone": "",
-      "addresses": {
-         "street": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
-      }
-   },
-   {
-      "id": 2,
-      "name": "Gaston Ayala",
-      "email": "gastonayala@gmail.com",
-      "password": "$2a$12$XacbRN5iTgZzl8drF3RdOOfvGmnslAjjERiGZUDJL.iCS3ProRbNW",
-      "role": "ADMIN",
-      "avatar": "avatar-1711948831309.jpg",
-      "phone": "",
-      "addresses": {
-         "street": "Calle Falsa 123",
-         "city": "Quilmes Oeste",
-         "province": "Buenos Aires",
-         "zipcode": "1881"
-      }
-   },
-   {
-      "id": 3,
-      "name": "ADRIANA ESCUBILLA",
-      "email": "escubilla@gmail.com",
-      "password": "$2a$12$deNCD8sRPI2MFcPdceryZOLBeXRLNC8zXhIRnIt0r/Nvl3GqQZQnu",
-      "role": "ADMIN",
-      "avatar": "avatar-1712043239095.jpg",
-      "phone": "",
-      "addresses": {
-         "street": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
-      }
-   },
-   {
-      "id": 4,
-      "name": "Omar Piñeiro",
-      "email": "omarp@gmail.com",
-      "password": "$2a$12$TfjaFgZTWjS32pZZkNYjsenaQYwS.iK3QZ/aEWoMg2LaNMzIy9.B6",
-      "role": "REGULAR",
-      "avatar": "avatar-1712083308612.jpg",
-      "phone": "1125658045",
-      "addresses": {
-         "street": "Calle Falsa 123",
-         "city": "Temperley  ",
-         "province": "Buenos Aires",
-         "zipcode": "1834"
-      }
-   },
-   {
-      "id": 5,
-      "name": "Ricardina Zabala",
-      "email": "rica@gmail.com",
-      "password": "$2a$12$JaSitbcjJ8MEgvoHIx2VmOWOMWC4M4VyHVG4vMYV.Y3Hm8ErZ0AtG",
-      "role": "ADMIN",
-      "avatar": "avatar-1714199937620.gif",
-      "phone": "",
-      "addresses": {}
-   },
-   {
-      "id": 6,
-      "name": "Marcos Borquez",
-      "email": "marcos@gmail.com",
-      "password": "$2a$12$APovxajp4ES5jC6Cw/4okO.FJDFklLEDJNGkYcWoxCKh8AVXQ29Gm",
-      "role": "ADMIN",
-      "avatar": "avatar-1713924989846.png",
-      "phone": "",
-      "addresses": {}
-   },
-   {
-      "id": 7,
-      "name": "ADRIANA ESCUBILLA",
-      "email": "adriana@gmail.com",
-      "password": "$2a$12$G/y49YiH1Us9ngN0zGl59OklpufR1LgfSzcMN/y21LoNXntiy5fa.",
-      "role": "ADMIN",
-      "avatar": "perfilUser.png",
-      "phone": "",
-      "addresses": {
-         "street": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
-      }
-   },
-   {
-      "id": 8,
-      "name": "Nicolas cri",
-      "email": "nicolascrisanto65@gmail.com",
-      "password": "$2a$12$FU7rjuS5z7lFN3zrZeA30uga340QbtJqnHhd7Uw7Gi33V/djYL5QK",
-      "role": "ADMIN",
-      "avatar": "perfilUser.png",
-      "phone": "",
-      "addresses": {
-         "street": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
-      }
-   },
-   {
-      "id": 9,
-      "name": "Pedro",
-      "email": "pedro@gmail.com",
-      "password": "$2a$12$GD8B7Tur018xlIjEaTjFFenLD6t0p0MJNtK5WZjD7WbRTopL0Qteu",
-      "role": "REGULAR",
-      "avatar": "avatar-1714989279256.gif",
-      "phone": "",
-      "addresses": {
-         "street": "",
-         "city": "",
-         "province": "",
-         "zipcode": ""
-      }
-   }
+	{
+		"id": 1,
+		"name": "Nadia Perez",
+		"email": "nadia@gmail.com",
+		"password": "$2a$12$O2CKzd.IBo2TChZ7qwTOteRXqyLuiXGy8gEpln9sMG.yT/oN.AmCW",
+		"role": "REGULAR",
+		"avatar": "perfilUser.png",
+		"phone": "",
+		"addresses": {
+			"street": "",
+			"city": "",
+			"province": "",
+			"zipcode": ""
+		}
+	},
+	{
+		"id": 2,
+		"name": "Gaston Ayala",
+		"email": "gastonayala@gmail.com",
+		"password": "$2a$12$XacbRN5iTgZzl8drF3RdOOfvGmnslAjjERiGZUDJL.iCS3ProRbNW",
+		"role": "ADMIN",
+		"avatar": "avatar-1711948831309.jpg",
+		"phone": "",
+		"addresses": {
+			"street": "Calle Falsa 123",
+			"city": "Quilmes Oeste",
+			"province": "Buenos Aires",
+			"zipcode": "1881"
+		}
+	},
+	{
+		"id": 3,
+		"name": "ADRIANA ESCUBILLA",
+		"email": "escubilla@gmail.com",
+		"password": "$2a$12$deNCD8sRPI2MFcPdceryZOLBeXRLNC8zXhIRnIt0r/Nvl3GqQZQnu",
+		"role": "ADMIN",
+		"avatar": "avatar-1712043239095.jpg",
+		"phone": "",
+		"addresses": {
+			"street": "",
+			"city": "",
+			"province": "",
+			"zipcode": ""
+		}
+	},
+	{
+		"id": 4,
+		"name": "Omar Piñeiro",
+		"email": "omarp@gmail.com",
+		"password": "$2a$12$TfjaFgZTWjS32pZZkNYjsenaQYwS.iK3QZ/aEWoMg2LaNMzIy9.B6",
+		"role": "REGULAR",
+		"avatar": "avatar-1712083308612.jpg",
+		"phone": "1125658045",
+		"addresses": {
+			"street": "Calle Falsa 123",
+			"city": "Temperley  ",
+			"province": "Buenos Aires",
+			"zipcode": "1834"
+		}
+	},
+	{
+		"id": 5,
+		"name": "Ricardina Zabala",
+		"email": "rica@gmail.com",
+		"password": "$2a$12$JaSitbcjJ8MEgvoHIx2VmOWOMWC4M4VyHVG4vMYV.Y3Hm8ErZ0AtG",
+		"role": "ADMIN",
+		"avatar": "avatar-1714199937620.gif",
+		"phone": "",
+		"addresses": {}
+	},
+	{
+		"id": 6,
+		"name": "Marcos Borquez",
+		"email": "marcos@gmail.com",
+		"password": "$2a$12$APovxajp4ES5jC6Cw/4okO.FJDFklLEDJNGkYcWoxCKh8AVXQ29Gm",
+		"role": "ADMIN",
+		"avatar": "avatar-1713924989846.png",
+		"phone": "",
+		"addresses": {}
+	},
+	{
+		"id": 7,
+		"name": "ADRIANA ESCUBILLA",
+		"email": "adriana@gmail.com",
+		"password": "$2a$12$G/y49YiH1Us9ngN0zGl59OklpufR1LgfSzcMN/y21LoNXntiy5fa.",
+		"role": "ADMIN",
+		"avatar": "perfilUser.png",
+		"phone": "",
+		"addresses": {
+			"street": "",
+			"city": "",
+			"province": "",
+			"zipcode": ""
+		}
+	},
+	{
+		"id": 8,
+		"name": "Nicolas cri",
+		"email": "nicolascrisanto65@gmail.com",
+		"password": "$2a$12$FU7rjuS5z7lFN3zrZeA30uga340QbtJqnHhd7Uw7Gi33V/djYL5QK",
+		"role": "ADMIN",
+		"avatar": "perfilUser.png",
+		"phone": "",
+		"addresses": {
+			"street": "",
+			"city": "",
+			"province": "",
+			"zipcode": ""
+		}
+	},
+	{
+		"id": 9,
+		"name": "Pedro",
+		"email": "pedro@gmail.com",
+		"password": "$2a$12$GD8B7Tur018xlIjEaTjFFenLD6t0p0MJNtK5WZjD7WbRTopL0Qteu",
+		"role": "REGULAR",
+		"avatar": "avatar-1714989279256.gif",
+		"phone": "",
+		"addresses": {
+			"street": "",
+			"city": "",
+			"province": "",
+			"zipcode": ""
+		}
+	},
+	{
+		"id": 10,
+		"name": "Franco Mireles",
+		"email": "francomireles@gmail.com",
+		"password": "$2a$12$6vFc7Goym2jmjQoCwHZwPeORc1DxvY5VGz1RP/JZUEt0qq9o0C2YS",
+		"role": "REGULAR",
+		"avatar": "perfilUser.png",
+		"phone": "1152175854",
+		"addresses": {
+			"street": "Caseros 113",
+			"city": "El Chorro",
+			"province": "Formosa",
+			"zipCode": 3625
+		}
+	},
+	{
+		"id": 11,
+		"name": "Gael Pedroza",
+		"email": "gaelpedroza5@gmail.com",
+		"password": "$2a$12$oBhrS5G2cF7DWVdcAIxZbeRaC36kcOUn2kZNI6w.c20NlVBc6ZBwq",
+		"role": "REGULAR",
+		"avatar": "perfilUser.png",
+		"phone": null,
+		"addresses": {
+			"street": null,
+			"city": null,
+			"province": null,
+			"zipCode": null
+		}
+	},
+	{
+		"id": 12,
+		"name": "Daniela Guardado",
+		"email": "danielaguardado89@gmail.com",
+		"password": "$2a$12$qVcBTA274Z7podLRqGBDXe8hTSZMwOWWeQw.sFHKl2SIQ8NaJX5PG",
+		"role": "REGULAR",
+		"avatar": "perfilUser.png",
+		"phone": "1152466365",
+		"addresses": {
+			"street": "La Matanza Partido",
+			"city": "La Matanza",
+			"province": "Buenos Aires",
+			"zipCode": 2315
+		}
+	},
+	{
+		"id": 13,
+		"name": "Pedro Salgado",
+		"email": "pedrosalgado@gmail.com",
+		"password": "$2a$12$E36JEROlrbm.rrk1TN95W.GNdWPz1TmJIT4B1VtaejJS44FMRZkr2",
+		"role": "REGULAR",
+		"avatar": "perfilUser.png",
+		"phone": null,
+		"addresses": {
+			"street": null,
+			"city": null,
+			"province": null,
+			"zipCode": null
+		}
+	},
+	{
+		"id": 14,
+		"name": "Juan Jose",
+		"email": "juanjose1@gmail.com",
+		"password": "$2a$12$v27Q/2jLA/ESMP.y5gOxY.Kq4MLlsHZSrDGPEmYqkZx7QsoHoIoPO",
+		"role": "REGULAR",
+		"avatar": "avatar-1718947625533.png",
+		"phone": "1152175966",
+		"addresses": {
+			"street": "Av Raul Scalabrini Ortiz",
+			"city": "Comuna 14",
+			"province": "Ciudad Autónoma de Buenos Aires",
+			"zipcode": 1425
+		}
+	},
+	{
+		"id": 15,
+		"name": "admin",
+		"email": "admin@gmail.com",
+		"password": "$2a$12$tqGOXkXLpE2bGAIrcU6AyuNfdJt5j05tLLyY.Vd9pR2yl802PtBF2",
+		"role": "ADMIN",
+		"avatar": "avatar-1718948647628.webp",
+		"phone": null,
+		"addresses": {
+			"street": null,
+			"city": null,
+			"province": null,
+			"zipcode": null
+		}
+	}
 ]

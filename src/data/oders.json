@@ -26,5 +26,81 @@
                 "quantity": 1
             }
         ]
+    },
+    {
+        "id": 3,
+        "total": 160000,
+        "user": "gastonayala@gmail.com",
+        "state": "pending",
+        "products": [
+            {
+                "name": "Transportador",
+                "quantity": 4
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "total": 67551,
+        "user": "juanjose1@gmail.com",
+        "state": "pending",
+        "products": [
+            {
+                "name": "Rascador Para Gatos Fat Cat Carton Infinit",
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "total": 20998,
+        "user": "gaelpedroza5@gmail.com",
+        "state": "pending",
+        "products": [
+            {
+                "name": "SWEATER LANA GUARDAS ASPEN VERDE MILITAR",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "total": 12000,
+        "user": "pedro@gmail.com",
+        "state": "completed",
+        "products": [
+            {
+                "name": "Indumentaria canina",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "total": 50093,
+        "user": "danielaguardado89@gmail.com",
+        "state": "completed",
+        "products": [
+            {
+                "name": "Rascadores",
+                "quantity": 1
+            },
+            {
+                "name": "Chapita Identificatoria Glam Small Bone",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "total": 20998,
+        "user": "pedrosalgado@gmail.com",
+        "state": "canceled",
+        "products": [
+            {
+                "name": "SWEATER LANA BEWARE",
+                "quantity": 1
+            }
+        ]
     }
 ]
