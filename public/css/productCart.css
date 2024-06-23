@@ -1,6 +1,21 @@
-.main-carrito {justify-content: center;margin-bottom: 10px;}
+.main-carrito {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-content: center;
+    align-items: center;
+}
 
-.container-cart{display: flex;width: 95%;margin: 20px auto;border-radius: 20px;box-shadow: 0px 0px 4px rgb(100, 100, 100);}
+.container-cart{
+    width: 50%;
+    max-width: 670px;
+    min-height: 500px;
+    min-width: 300px;
+    display: flex;
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 4px rgb(100, 100, 100);
+}
 
 .container-cart .titulo{
     width: 100%;
@@ -25,9 +40,7 @@
 }
 
 .container-cart .contenedor-pro {
-    width: 90%;
-    /* margin: auto; */
-    padding: 1rem;
+    padding: 12px;
     flex: 1 1 auto;
 }
 
@@ -38,11 +51,9 @@
 
 .container-cart .contenedor-pro .producto{
     display: flex;
-    border-radius: 20px;
+    border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, .125);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    /* max-width: 700px; */
-    width: 100%;
     min-height: 210px;
     margin: auto;
     margin-bottom: 15px;
@@ -65,6 +76,16 @@
     align-items: center;
 }
 
+.container-cart .contenedor-pro .producto .info-container .btn{
+    background-color: var(--celeste);
+    color: var(--blanco);
+    transition: all 500ms;
+}
+
+.container-cart .contenedor-pro .producto .info-container .btn:hover{
+    background-color: var(--celesteRGBA);
+}
+
 .container-cart .contenedor-pro .producto .info-container .close-button {
     top: 0;
     right: 1px;
@@ -72,18 +93,13 @@
 }
 
 .container-cart .contenedor-pro .producto .info-container .close-button i {
-    padding: 2px;
+    padding: 3px;
 }
 
 .container-cart .contenedor-pro .producto .info-container h5 {
-
-/* margin: 0; */
-
-padding: 13px;
-
-width: 100%;
-
-margin: auto;
+    width: 100%;
+    margin: auto;
+    font-size: calc(0.8rem + 0.6vw);
 }
 
 .container-cart .contenedor-pro .producto .info-container .quantity-container {
@@ -103,20 +119,11 @@ margin: auto;
 }
 
 .container-cart .contenedor-pro .producto .info-container .viewMore {
-
-width: 50%;
-
-min-width: 120px;
-
-max-width: 120px;
-
-margin: auto;
-
-font-weight: bold;
-
-padding: 2px;
-
-margin-bottom: 10px;
+    width: 50%;
+    margin: auto;
+    font-weight: bold;
+    padding: 2px;
+    margin-bottom: 10px;
 }
 
 .container-cart .contenedor-pro .producto h4{
@@ -127,7 +134,7 @@ margin-bottom: 10px;
     width: 100%;
     text-align: center;
     text-decoration: none;
-    color: var(--naranjaig);
+    /* color: var(--naranjaig); */
     font-weight: bolder;
 }
 
@@ -182,29 +189,32 @@ margin-bottom: 10px;
 .cartButtonsContainer .btnClear {
     margin: auto;
     padding: 5px;
-    background-color: var(--naranja);
+    color: var(--blanco);
+    background-color: var(
+    --celeste);
     border: none;
     font-weight: bold;
-    transition: all 400ms;
+    transition: all 600ms;
 }
 
 .cartButtonsContainer .btnClear:hover {
-    background-color: var(--naranjaig);
-    color: white;
+    background-color: var(--celesteRGBA);
+    color: var(--blanco);
 }
 
 .cartButtonsContainer button.btnBuy {
     margin: auto;
     padding: 5px;
-    background-color: var(--amarillo);
+    color: var(--blanco);
+    background-color: var(--celeste);
     border: none;
     font-weight: bold;
     transition: all 400ms;
 }
 
 .cartButtonsContainer button.btnBuy:hover {
-    background-color: var(--naranjaig);
-    color: white;
+    background-color: var(--celesteRGBA);
+    color: var(--blanco);
 }
 
 .cartButtonsContainer h5 {
@@ -217,162 +227,40 @@ margin-bottom: 10px;
     font-weight: bold;
     font-size: 1.5rem;
     width: 50%;
-    text-align: center;
+}
+.cartButtonsContainer p output {
 }
 
-main.main-carrito .contenedor-pro .producto p.conEnvio{
-    width: 50%;
-    text-align: center;
-}
-
-main.main-carrito .contenedor-pro .producto p.costoEnvio{
-    width: 50%;
-    text-align: center;
-}
-
-main.main-carrito .contenedor-pro .contenedor-total{
-    display: flex;
-    margin: 20px 0;
-    border-top: 1px solid gray;
-    padding-top: 20px;
-}
-
-main.main-carrito .contenedor-pro .contenedor-total p.total{
-    width: 50%;
-    text-align: center;
-    font-weight: bolder;
-}
-
-main.main-carrito .contenedor-pro .contenedor-total p.monto{
-    width: 50%;
-    text-align: center;
-}
-
-main.main-carrito .contenedor-pro .contenedor-boton{padding-bottom: 40px;display: flex;align-items: center;color: var(--naranjaig);}
-
-main.main-carrito .contenedor-pro .contenedor-boton button.compra{
-display: flex;
-margin: auto;
-padding: 10px;
-background-color: var(--celeste);
-border: none;
-transition: all 400ms;
-}
-
-main.main-carrito .contenedor-pro .contenedor-boton button.compra:hover{
-    background-color: var(--naranjaig);
-    color: white;
-}
-
-main.main-carrito .contenedor-pro .contenedor-boton a.masProd{
-    font-size: 12px;
+.cartButtonsContainer a.viewMoreLink {
+    font-size: 15px;
     display: inline-block;
     width: 100%;
     text-align: center;
     text-decoration: none;
-    color: var(--naranjaig);
+    color: var(--celeste);
+    transition: all 600ms;
+}
+
+.cartButtonsContainer a.viewMoreLink:hover {
+    color: var(--grisOscuro);
 }
 
 .main-carrito .cartButtonsContainer {
     display: flex;
     margin: 10px !important;
-    border-radius: 20px;
+    border-radius: 12px;
     text-align: center;
+    max-width: 324px;
+    max-height: 140px;
     box-shadow: 0px 0px 4px rgb(100, 100, 100);
 }
 
-@media (min-width: 426px) {
-    .main-carrito {
-    
-    }
-
-    .container-cart{
-    width: 70%;
-}
-
-.container-cart .titulo{}
-
-.container-cart .titulo i.fa-arrow-left{}
-
-.container-cart .titulo h1{}
-
-.container-cart .titulo i.fa-cart-shopping{}
-
-.container-cart .contenedor-pro{}
-
-.container-cart .contenedor-pro h3{}
-
-.container-cart .contenedor-pro .producto{max-width: 475px;}
-
-.container-cart .contenedor-pro .producto figure{}
-
-.container-cart .contenedor-pro .producto figure img{}
-
-.container-cart .contenedor-pro .producto .info-container {
-}
-
-.container-cart .contenedor-pro .producto .info-container h5 {
-}
-
-.container-cart .contenedor-pro .producto .info-container .quantity-container {
-
-}
-
-.container-cart .contenedor-pro .producto .info-container .quantity-container label {
-
-}
-
-.container-cart .contenedor-pro .producto .info-container .quantity-container .btn-light {}
-
-.container-cart .contenedor-pro .producto .info-container .quantity-container output {}
-
-.container-cart .contenedor-pro .producto .info-container .close-button {
-}
-
-.container-cart .contenedor-pro .producto .info-container .close-button  i {}
-
-.container-cart .contenedor-pro .producto .info-container .viewMore {
-    
-}
-
-.container-cart .contenedor-pro .producto h4{}
-
-.container-cart .contenedor-pro .producto a{}
-
-.container-cart .contenedor-pro .producto p.cantidad{}
-
-.container-cart .contenedor-pro .producto p.precio{
-}
-
-.container-cart .contenedor-pro .producto p.conEnvio{}
-
-.container-cart .contenedor-pro .producto p.costoEnvio{}
-
-.container-cart .contenedor-pro .contenedor-total{}
-
-.container-cart .contenedor-pro .contenedor-total p.total{}
-
-.container-cart .contenedor-pro .contenedor-total p.monto{}
-
-.cartButtonsContainer{}
-
-.cartButtonsContainer button.btnBuy{}
-
-.cartButtonsContainer a.viewMoreLink{}
-
-.main-carrito .cartButtonsContainer {
-    text-align: center;
-    margin: 10px auto !important;
-    width: 70%;
-}
-
-}
-
 @media (min-width: 769px) {
-    .main-carrito {
-    }
+.main-carrito {
+}
     
-    .container-cart{width: 50%;}
+.container-cart{
+}
 
 .container-cart .titulo{
     width: 100%;
@@ -386,13 +274,11 @@ main.main-carrito .contenedor-pro .contenedor-boton a.masProd{
 .container-cart .titulo i.fa-cart-shopping{}
 
 .container-cart .contenedor-pro{
-    /* width: 60%; */
 }
 
 .container-cart .contenedor-pro h3{}
 
 .container-cart .contenedor-pro .producto{
-    max-width: 560px;
 }
 
 .container-cart .contenedor-pro .producto figure{}
@@ -449,14 +335,17 @@ main.main-carrito .contenedor-pro .contenedor-boton a.masProd{
 
 .cartButtonsContainer button.btnBuy{} 
 
-.cartButtonsContainer a.viewMoreLink{font-size: 18px;font-weight: bolder;}
-.main-carrito .cartButtonsContainer {width: unset;margin: auto !important;}
+.cartButtonsContainer a.viewMoreLink{
+    font-size: 18px;
+    font-weight: bolder;
+}
+.main-carrito .cartButtonsContainer {}
 
 }
 
 @media (min-width: 1024px) {
-    .container-cart{
-    min-height: 500px;
+
+.container-cart{
 }
 
 .container-cart .titulo{}
@@ -467,7 +356,8 @@ main.main-carrito .contenedor-pro .contenedor-boton a.masProd{
 
 .container-cart .titulo i.fa-cart-shopping{}
 
-.container-cart .contenedor-pro{}
+.container-cart .contenedor-pro{
+}
 
 .container-cart .contenedor-pro h3{}
 

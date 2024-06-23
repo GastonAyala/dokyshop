@@ -23,11 +23,11 @@ const getCardStructure = (p) => {
               <h5>${p.title}</h5>
               <p class="precio">$${toThousand(p.price)}</p>
               <div class="d-flex align-items-center quantity-container">
-                <button onclick="lessProduct(${p.id})" class="btn btn-warning">-</button>
+                <button onclick="lessProduct(${p.id})" class="btn">-</button>
                 <output class="quantity form-control form-control-sm text-center">${p.orderproducts.quantity}</output>
-                <button onclick="moreProduct(${p.id})" class="btn btn-warning">+</button>
+                <button onclick="moreProduct(${p.id})" class="btn">+</button>
               </div>
-              <a href="/productos/detalle/${p.id}" class="btn btn-warning viewMore">Ver más</a>
+              <a href="/productos/detalle/${p.id}" class="btn viewMore">Ver más</a>
             </div>
         </div>`
 };
