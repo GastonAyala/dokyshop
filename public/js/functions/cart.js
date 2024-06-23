@@ -2,12 +2,29 @@ const $ = (element) => document.querySelector(element);
 const server = `http://localhost:3030`;
 let productsCart = [];
 
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": true,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": true,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "2000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 const converMoneyArg = (num = 0) => num.toLocaleString({
-        currency: "ARS",
-        style: "currency"
-    })
-
+    currency: "ARS",
+    style: "currency"
+})
 
 const getShoppingCart = async (server) => fetch(`${server}/api/order`).then(res => res.json());
 
@@ -56,6 +73,7 @@ window.addEventListener("load", async (e) => {
         processReloadCart(containerProducts, ouputTotal);
     } catch (error) {
         console.error(error.message);
+        toastr["error"]("Ops... algo ha salido mal 😥");
     }
 
     btnClearCart.addEventListener('click', async () => {
@@ -65,10 +83,30 @@ window.addEventListener("load", async (e) => {
             }).then(res => res.json());
 
             ok && processReloadCart(containerProducts, ouputTotal);
+            ok && toastr["success"]("El carrito fue vaciado con éxito");
         } catch (error) {
             console.error(error.message);
+            toastr["error"]("Ops... algo ha salido mal 😥");
         }
     });
+
+    btnBuy.addEventListener('click', async () => {
+        try {
+            const { ok, msg } = await fetch(`/api/order/complete/`, {
+                method: "PATCH"
+            }).then(res => res.json());
+
+            ok && processReloadCart(containerProducts, ouputTotal);
+            ok && toastr["success"]("La compra fue realizada con éxito");
+            setTimeout(() => {
+                location.href = "/"    
+            }, 3000);
+        } catch (error) {
+            console.error(error.message);
+            toastr["error"]("Ops... algo ha salido mal 😥");
+        }
+    });
+
 });
 
 const lessProduct = async (id) => {
@@ -82,6 +120,7 @@ const lessProduct = async (id) => {
         ok && processReloadCart(containerProducts, ouputTotal);
     } catch (error) {
         console.error(error.message);
+        toastr["error"]("Ops... algo ha salido mal 😥");
     }
 };
 
@@ -96,6 +135,7 @@ const moreProduct = async (id) => {
         ok && processReloadCart(containerProducts, ouputTotal);
     } catch (error) {
         console.error(error.message);
+        toastr["error"]("Ops... algo ha salido mal 😥");
     }
 };
 
@@ -110,5 +150,6 @@ const removeProductCart = async (id) => {
         ok && processReloadCart(containerProducts, ouputTotal);
     } catch (error) {
         console.error(error.message);
+        toastr["error"]("Ops... algo ha salido mal 😥");
     }
 };

@@ -84,6 +84,7 @@
     background-color: var(--amarillo);
     padding: 8px;
     border-radius: 5px;
+    border: none;
 }
 
 .results-main .container .row .searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart i {
