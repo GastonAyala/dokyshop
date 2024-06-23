@@ -23,8 +23,9 @@ const addProductCart = async (id) => {
 
         ok && 
         toastr["success"]("Producto agregado al carrito con éxito");
+        if(!ok) throw Error("Debes iniciar sesión para agregar productos al carrito")
     } catch (error) {
         console.error(error.message);
-        toastr["error"]("Ops... algo ha salido mal 😥");
+        toastr["error"](error.message);
     }
 };
