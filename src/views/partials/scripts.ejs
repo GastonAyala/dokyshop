@@ -4,24 +4,33 @@
 
 <% if (!locals.disabledGliderJS) { %>
   <!-- GLIDER SCRIPT -->
-  <script src="/js/library/glider.min.js" defer></script>
+  <script src="/js/library/glider.min.js"></script>
  
   <!-- GLIDER CONFIG SCRIPT -->
-  <script src="/js/configs/glider.js" defer></script>
+  <script src="/js/configs/glider.js"></script>
 <% } %>
 
 <% if (!locals.disabledHamburgerJS) { %>
   <!-- HAMBURGERS SCRIPT -->
-  <script src="/js/library/hamburgers.js" defer></script>
+  <script src="/js/library/hamburgers.js"></script>
 <% } %>
 
 <% if (locals.activeDotJS) { %>
   <!-- DOT SCRIPT -->
-  <script src="/js/functions/dot.js" defer></script>
+  <script src="/js/functions/dot.js"></script>
 <% } %>
-
 
 <% if (locals.activeAddProduct) { %>
   <!-- CART ADD PRODUCT SCRIPT -->
-  <script src="/js/functions/addProductToCart.js"> defer</script>
+  <script src="/js/functions/addProductToCart.js"></script>
+<% } %>
+
+<% if (!locals.disabledJqueryJS) { %>
+  <!-- jquery SCRIPT -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<% } %>
+
+<% if (!locals.disabledToastrJS) { %>
+  <!-- toastr SCRIPT -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <% } %>

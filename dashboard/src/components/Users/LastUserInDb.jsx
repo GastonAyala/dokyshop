@@ -1,23 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "../reusable/Spinner";
+import { Link } from "react-router-dom";
 import { Alert } from "../reusable/Alert";
 
-export const LastProductInDb = () => {
-  const [lastProduct, setLastProduct] = useState({});
+export const lastUserInDb = () => {
+  const [lastUser, setlastUser] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const getLastProduct = async () => {
+    const getlastUser = async () => {
       try {
         const endpoint =
-          "http://localhost:3030/api/query?q=SELECT * FROM products WHERE createdAt = (SELECT MAX(createdAt) FROM products) LIMIT 1";
+          "http://localhost:3030/api/query?q=SELECT name, avatar, email, createdAt FROM users WHERE createdAt = (SELECT MAX(createdAt) FROM users) LIMIT 1";
         const {
           ok,
-          data: [product],
+          data: [user],
         } = await fetch(endpoint).then((res) => res.json());
 
-        ok && setLastProduct(product);
+        if (ok) {
+          const createdAtDate = new Date(user.createdAt);
+          const createdAtCutted = createdAtDate.toISOString().split("T")[0];
+          setlastUser({
+            ...user,
+            createdAtCutted
+          });
+        }
 
         setTimeout(() => {
           setLoading(false);
@@ -29,9 +37,8 @@ export const LastProductInDb = () => {
       }
     };
 
-    getLastProduct();
+    getlastUser();
   }, [])
-
 
   return (
     <div className={`col-lg-6 text-center `}>
@@ -39,27 +46,30 @@ export const LastProductInDb = () => {
         <div className="card shadow mb-4">
           <div className="card-header py-3">
             <h5 className="m-0 font-weight-bold text-gray-800">
-              Último producto creado
+              Último usuario registrado
             </h5>
           </div>
           <div className="card-body">
             <h5 className="m-0 font-weight-bold text-gray-800">
-              {lastProduct.title}
+              {lastUser.name}
             </h5>
             <div className="text-center">
               <img
                 className="img-fluid px-3 px-sm-4 mt-3 mb-4"
                 style={{ width: "250px" }}
-                src={`http://localhost:3030/api/products/${lastProduct.imagePrincipal}`}
-                alt="Imagen de producto"
+                src={`http://localhost:3030/api/users/${lastUser.avatar}`}
+                alt=" Avatar de usuario"
               />
             </div>
             <p>
-              {lastProduct.description}
+              {lastUser.email}
             </p>
-            <a className="btn btn-danger" target="_blank" rel="nofollow" href={`http://localhost:3030/productos/detalle/${lastProduct.id}`}>
-              Ver más
-            </a>
+            <p>
+              Creado en: {lastUser.createdAtCutted}
+            </p>
+            <Link className="btn btn-danger" to="/usuarios">
+              Ver lista de usuarios
+            </Link>
           </div>
         </div>
         : <Spinner containerClassName={"m-auto"} />}
@@ -68,4 +78,4 @@ export const LastProductInDb = () => {
   );
 };
 
-export default LastProductInDb;
+export default lastUserInDb;

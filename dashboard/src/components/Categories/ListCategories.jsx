@@ -49,7 +49,7 @@ export const ListCategories = () => {
   }, []);
 
   return (
-    <div className={`text-center ${styleClass}`}>
+    <div className={`col-lg-6 text-center ${styleClass}`}>
       {!loading ? <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h5 className="m-0 font-weight-bold text-gray-800 text-left" style={{ fontSize: "calc(0.94756rem + 0.3vw)" }}>
