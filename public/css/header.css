@@ -38,7 +38,7 @@
 }
 
 .main-header .top-bar .logo-container {
-    margin: auto;
+    /* margin: auto; */
     order: 2;
     z-index: 99;
 }
@@ -46,22 +46,21 @@
 .main-header .top-bar .logo-container a {}
 
 .main-header .top-bar .logo-container a img {
-    width: 100%;
-    height: 90px;
+    margin-bottom: 6px;
+    max-width: 64px;
 }
      /* ----- SEARCH-BAR ----- */
 .main-header .search-bar {
+    min-width: 145px;
+    width: 100%;
     order: 4;
     margin: auto;
 }
 
-.main-header .search-bar .search-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.main-header .search-bar .search-form {display: flex;flex-direction: row;justify-content: center;}
 
-.main-header .search-bar .search-form label {}
+.main-header .search-bar .search-form label {
+}
 
 .main-header .search-bar .search-form input {
     text-align: center;
@@ -70,6 +69,7 @@
     border: none;
     border-radius: 20px;
     padding: 10px;
+    width: 100%;
 }
 .main-header .search-bar .search-form input::placeholder {
     font-family: var(--familyOpenSans);
@@ -89,7 +89,6 @@
 }
      /* ----- USER-NAV ----- */
 .main-header .top-bar .user-nav {
-    margin: auto;
     font-weight: bold;
     font-family: var(--familyOpenSans);
     z-index: 99;
@@ -123,7 +122,7 @@
     color: var(--celesteClaro);
 }
 .main-header .top-bar .user-nav .user-list li a:hover {
-    border-bottom: 3px solid var(--celesteClaro);
+    color: var(--grisOscuro);
 }
 .main-header .top-bar .user-nav .user-list .user-avatar-list  {
     
@@ -165,18 +164,20 @@
     display: block;
     margin: auto;
     font-size: 2rem;
-    width: 22%;
     order: 3;
-    padding-left: 38px;
 }
 
 .main-header .top-bar .buy-cart-container.active {
     display: none;
 }
 
-.main-header .top-bar .buy-cart-container .buy-cart {}
+.main-header .top-bar .buy-cart-container .buy-cart {
+    padding: 21px;
+}
 
-.main-header .top-bar .buy-cart-container .buy-cart i {vertical-align: baseline;}
+.main-header .top-bar .buy-cart-container .buy-cart i {
+    vertical-align: baseline;
+}
 
      /* ----- MAIN-NAV ----- */
 
@@ -239,7 +240,23 @@
 }
 
 .main-header .main-nav .main-list .list-contact .btn-header:hover {
-    border-bottom: 3px solid var(--celesteClaro);
+    color: var(--grisOscuro);
+}
+
+.main-header .main-nav .main-list .list-contact .dropdown-menu{
+    background-color: rgb(255 255 255 / 75%);
+}
+
+.main-header .main-nav .main-list .list-contact .dropdown-menu .li-btn-contact{
+
+}
+
+.main-header .main-nav .main-list .list-contact .dropdown-menu .li-btn-contact a{
+    color: var(--celeste);
+}
+
+.main-header .main-nav .main-list .list-contact .dropdown-menu .li-btn-contact a i{
+    color: var(--grisOscuro);
 }
 
 .main-header .main-nav .main-list ul {
@@ -266,13 +283,13 @@
 }
 
 .main-header .main-nav .main-list li .a-index:hover {
-    border-bottom: 3px solid var(--celesteClaro);
+    color: var(--grisOscuro);
 }
 .main-header .main-nav .main-list li .a-products {
 }
 
 .main-header .main-nav .main-list li .a-products:hover {
-    border-bottom: 3px solid var(--celesteClaro);
+    color: var(--grisOscuro);
 }
 .main-header .main-nav .main-list li .a-contact {}
 
@@ -297,16 +314,18 @@
     }
     
     .main-header .top-bar .logo-container {
+        padding-left: 20px;
         order: 1;
     }
 
     .main-header .top-bar .logo-container a {}
 
-    .main-header .top-bar .logo-container a img {}
+    .main-header .top-bar .logo-container a img {
+}
 
     /* ----- SEARCH-BAR ----- */
     .main-header .search-bar {
-        /* width: unset; */
+        width: 35%;
         order: 2;
     }
     
@@ -368,6 +387,11 @@
     
     .main-header .top-bar .buy-cart-container .buy-cart i {
         font-size: calc(1.2rem + 0.6vw);
+        transition: all 400ms;
+    }
+
+    .main-header .top-bar .buy-cart-container .buy-cart i:hover{
+        color: var(--grisOscuro);
     }
 
     /* ----- MAIN-NAV ----- */
@@ -383,7 +407,6 @@
     
 
     .main-header .main-nav .main-list {
-        font-size: 1rem;
         gap: 20px;
         display: flex;
         align-content: center;
@@ -405,11 +428,11 @@
     }
 
     .main-header .main-nav .main-list .list-contact .btn-header {
-        font-size: calc(0.53rem + 0.6vw);
+    font-size: calc(0.53rem + 0.6vw);
     }
 
     .main-header .main-nav .main-list li a {
-        /* font-size: calc(0.53rem + 0.6vw); */
+        font-size: calc(0.53rem + 0.6vw);
     }
     
     .main-header .main-nav .main-list li .a-index {}
@@ -434,7 +457,7 @@
     /* ----- TOB-BAR ----- */
     
     .main-header .top-bar {
-        margin: auto;
+        /* margin: auto; */
     }
     
     .main-header .top-bar .free-ship {
@@ -444,20 +467,23 @@
     .main-header .top-bar .burger-menu {}
 
     .main-header .top-bar .logo-container {
-        margin: auto;
+        margin-right: 100px;
         order: 2;
     }
 
     .main-header .top-bar .logo-container a {}
 
-    .main-header .top-bar .logo-container a img {}
+    .main-header .top-bar .logo-container a img {
+    max-width: 90px;
+}
 
     /* ----- SEARCH-BAR ----- */
     
     .main-header .search-bar {
-        width: 35%;
-        order: 3;
-        padding-left: 106px;
+        max-width: 355px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .main-header .search-bar .search-form {}
@@ -465,7 +491,6 @@
     .main-header .search-bar .search-form label {}
 
     .main-header .search-bar .search-form input {
-        width: 700px;
     }
 
     .main-header .search-bar .search-form .search-icon {
@@ -477,11 +502,9 @@
     
     .main-header .top-bar .user-nav {
         order: 4;
-        margin: auto;
     }
     
     .main-header .top-bar .user-nav .user-list {
-        gap: 7px;
     }
 
     .main-header .top-bar .user-nav .user-list li {
@@ -505,7 +528,9 @@
         padding-right: 40px;
     }
     
-    .main-header .top-bar .buy-cart-container .buy-cart {}
+    .main-header .top-bar .buy-cart-container .buy-cart {
+    padding: 0px;
+}
     
     .main-header .top-bar .buy-cart-container .buy-cart i {font-size: calc(1.4rem + 0.6vw);}
 
@@ -522,7 +547,7 @@
     .main-header .main-nav .main-list li.list-products {}
     
     .main-header .main-nav .main-list .list-contact .btn-header{
-        font-size: calc(0.8rem + 0.6vw);
+    font-size: calc(0.8rem + 0.6vw);
     }
 
     .main-header .main-nav .main-list li a {

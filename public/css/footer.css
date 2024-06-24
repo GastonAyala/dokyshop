@@ -57,7 +57,7 @@
 }
 
 .main-footer div.links-container .links-nav ul li a:hover {
-    border-bottom: 3px solid var(--celesteClaro);
+    color: var(--grisOscuro);
 }
 
 /* ----- CONTACTO ----- */
@@ -133,7 +133,7 @@
 }
 
 .main-footer .socials-container .socials-nav ul li:hover {
-    border: 8px solid var(--celesteClaro);
+    border: 8px solid var(--gris);
 }
 
 .main-footer .socials-container .socials-nav ul li a {
@@ -197,11 +197,11 @@
     background-color: var(--celesteClaro);
     font-family: var(--familyOpenSans);
     font-weight: bold;
-    transition: all 0.5s;
+    transition: all 400ms;
 }
 
 .main-footer .newsletter-container form.newsletter-form .email-container input:hover {
-    border: 3px solid var(--negro);
+    border: 3px solid var(--grisClaro);
 }
 
 .main-footer .newsletter-container form.newsletter-form .email-container input::placeholder {
@@ -226,10 +226,11 @@
     color: var(--celeste);
     font-family: var(--familyOpenSans);
     font-weight: bold;
-    transition: all 0.5s;
+    transition: all 400ms;
 }
 .main-footer .newsletter-container form.newsletter-form .suscribe-container button:hover {
-    border: 5px solid var(--celesteClaro);
+    border: 3px solid var(--grisOscuro);
+
 }
 
 /* ----- COPYRIGHT ----- */

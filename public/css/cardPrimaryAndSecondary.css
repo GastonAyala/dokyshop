@@ -34,6 +34,7 @@
 }
 
 .searchedProduct-container .searchedProduct .searchedProd-imgContainer a {
+
 }
 
 .searchedProduct-container .searchedProduct .searchedProd-imgContainer a img{
@@ -53,7 +54,14 @@
     margin-bottom: 10px;
 }
 
-.searchedProduct-container .searchedProduct .searchedProduct-description .listProduct-titleLink {width: 100%;}
+.searchedProduct-container .searchedProduct .searchedProduct-description .listProduct-titleLink {
+    width: 100%;
+    transition: all 200ms;
+}
+
+.searchedProduct-container .searchedProduct .searchedProduct-description .listProduct-titleLink:hover{
+    color:var(--gris);
+}
 
 .searchedProduct-container .searchedProduct .searchedProduct-description .listProduct-titleLink h5 {
     text-align: center;
@@ -71,6 +79,12 @@
     background-color: var(--celeste);
     padding: 8px;
     border-radius: 5px;
+    transition: all 400ms;
+}
+
+.searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart:hover{
+    color: var(--grisOscuro);
+    background-color: var(--celesteRGBA);
 }
 
 .searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart i {
