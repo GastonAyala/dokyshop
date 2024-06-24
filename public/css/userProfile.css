@@ -53,13 +53,13 @@
     margin: 10px 0;
     padding: 4px;
     border-radius: 8px;
-    background-color: var(--naranjaig);
-    transition: 1s;
+    background-color: var(--celesteClaro);
+    transition: 400ms;
 }
   
 .usersProfile .div-form .form .div-avatar  input[type="file"]::file-selector-button:hover {
-    background-color: var(--naranja);
-    color: var(--blanco);
+    background-color: var(--celesteClaroTraslucido);
+    color: var(--grisOscuro);
 }
 
 .usersProfile .div-form .form .div-inputs{

@@ -6,12 +6,12 @@ function SideBar() {
     return (
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul style={{backgroundColor: '#407FB9'}} className="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3030/">
+                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3030/" style={{height:'100px'}}>
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" style={{height: 80 + "px"}} src={image} alt="Dokyshop" />
+                        <img className="w-100" style={{height:"90px"}} src={image} alt="Dokyshop" />
                     </div>
                 </a>
 
