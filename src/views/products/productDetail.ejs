@@ -75,15 +75,6 @@
                   <i style="color: '<%= product.color %>';border: 1px solid black;border-radius: 10px;" class="fa-solid fa-circle"></i>
                 <% } %>
             </div>
-        
-            <div class="product-quantity-container">
-                    <button class="decrease-button">-</button>
-                    <div class="quantity">  
-                        <label for="quantity"></label>
-                        <input type="number" name="quantity" id="quantity" value="1" min="1">
-                    </div>
-                    <button class="increase-button">+</button>
-            </div>
             <div class="add-to-cart">
                 <div class="btn-cart">
                     <button onclick="addProductCart('<%=product.id %>')">AGREGAR AL CARRITO</button>

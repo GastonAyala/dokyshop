@@ -11,7 +11,7 @@ function SideBar() {
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3030/" style={{height:'100px'}}>
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" style={{height:"90px"}} src={image} alt="Dokyshop" />
+                        <img className="w-100" style={{height:"80px"}} src={image} alt="Dokyshop" />
                     </div>
                 </a>
 

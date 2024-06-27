@@ -66,6 +66,10 @@ app.use('/api/categories', apiCategoriesRoutes);
 app.use('/api/subcategories', apiSubcategoriesRoutes);
 
 
+app.use((req,res, next) => {
+    res.status(404).render("./other/notFound") 
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));

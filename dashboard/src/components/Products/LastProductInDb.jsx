@@ -57,7 +57,7 @@ export const LastProductInDb = () => {
             <p>
               {lastProduct.description}
             </p>
-            <a className="btn btn-danger" target="_blank" rel="nofollow" href={`http://localhost:3030/productos/detalle/${lastProduct.id}`}>
+            <a className="btn btn-outline-primary" target="_blank" rel="nofollow" href={`http://localhost:3030/productos/detalle/${lastProduct.id}`}>
               Ver más
             </a>
           </div>

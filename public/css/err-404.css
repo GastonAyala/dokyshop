@@ -1,0 +1,62 @@
+.body-err404{
+    background-image: url('/images/other/puppy-dog-seamless-pattern.jpg');
+}
+
+.main-err-404{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-err-404 .div{ 
+    margin: auto;
+    padding: 7px;
+    border-radius: 15px;
+    background-color: var(--blanco);
+    max-width: 500px;
+}
+
+.main-err-404 .div .contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.main-err-404 .div .contenedor .titulo-404{
+    text-align: center;
+    font-weight: bold;
+    margin: 0px;
+    font-size: calc(3rem + 0.6vw);
+}
+
+.main-err-404 .div .contenedor h2{
+    text-align: center;
+    font-size: calc(1rem + 0.4vw);
+    margin-bottom: 15px;
+}
+
+.main-err-404 .div .contenedor .gif-gato{
+    width: 220px;
+    margin: auto;
+    padding-left: 50px;
+}
+
+.main-err-404 .div .contenedor-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.main-err-404 .div .contenedor-btn .btn{
+    margin-bottom: 10px;
+    border: 1px solid var(--celeste);
+    color: var(--celeste);
+    transition: all 400ms;
+}
+
+.main-err-404 .div .contenedor-btn .btn:hover{
+    background-color: var(--celeste);
+    color: var(--blanco);
+}

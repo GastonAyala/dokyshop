@@ -38,9 +38,9 @@ export const MostSelled = () => {
                         {mostSaled.map((p, i) => {
                             return <div key={i} className="col-lg-4 mb-4 p-2">
                                 <div className="card bg-dark text-white shadow">
-                                    <div className="card-body d-flex flex-wrap justify-content-center">
+                                    <div style={{ backgroundColor:'#407FB9', fontWeight:'500'}} className="card-body d-flex flex-wrap justify-content-center">
                                         <a href={`http://localhost:3030/productos/detalle/${p.id}`}>
-                                            <span className='w-100 mb-1' style={{ color: "white" }}>{p.title.substring(0, 35)}{p.title.length > 35 ? "..." : null}</span>
+                                            <span className='w-100 mb-1' style={{ color: "WHITE" }}>{p.title.substring(0, 35)}{p.title.length > 35 ? "..." : null}</span>
                                         </a>
                                             <span className='w-100 m-auto'>{p.totalSales}</span>
                                     </div>

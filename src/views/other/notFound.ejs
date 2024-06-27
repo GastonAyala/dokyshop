@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {view: "Preguntas frecuentes" , gliderCSSDisabled:true}) %>
+
+    <body class="body-err404">
+        <%- include('../partials/header') %>
+
+            <main class="main-err-404">
+                <div class="div">
+                    <div class="contenedor">
+                        <img class="gif-gato" src="../../../images/other/gato.404.gif" alt="error-404">
+                        <h1 class="titulo-404">
+                            404
+                        </h1>
+                        <h2>
+                            Página no encontrada
+                        </h2>
+                    </div>
+                    <div class="contenedor-btn">
+                        <form action="/">
+                            <button type="submit" class="btn">
+                                Volver al inicio
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <%- include('../partials/footer') %> <%- include('../partials/scripts', {disabledGliderJS:true}) %>
+    </body>
+
+</html>

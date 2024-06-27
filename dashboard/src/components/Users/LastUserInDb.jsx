@@ -67,7 +67,7 @@ export const lastUserInDb = () => {
             <p>
               Creado en: {lastUser.createdAtCutted}
             </p>
-            <Link className="btn btn-danger" to="/usuarios">
+            <Link className="btn btn-outline-primary" to="/usuarios">
               Ver lista de usuarios
             </Link>
           </div>

@@ -27,6 +27,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    padding: 0;
 }
 
 .productDetail .breadcrumb-container .breadcrum ul li {
@@ -134,46 +135,6 @@ width: 100%;
     width: 20px;
 }
 
-.productDetail .prodDetail-container .product-quantity-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: var(--celeste);
-    border: 7px solid var(--celeste);
-    border-radius: 20px;
-    justify-content: center;
-}
-
-.productDetail .prodDetail-container .product-quantity-container .decrease-button {
-    background-color: var(--celeste);
-    border:none;
-    padding: 0 5px;
-}
-
-.productDetail .prodDetail-container .product-quantity-container .quantity {
-}
-
-.productDetail .prodDetail-container .product-quantity-container .quantity label {}
-
-.productDetail .prodDetail-container .product-quantity-container .quantity input {
-    text-align: center;
-    font-weight: bold;
-    background-color: var(--celeste);
-    border: none;
-    width: 25px;
-    margin: 0;
-}
-
-.productDetail .prodDetail-container .product-quantity-container .quantity input::-webkit-outer-spin-button, .productDetail .prodDetail-container .product-quantity-container .quantity input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
-.productDetail .prodDetail-container .product-quantity-container .increase-button {
-    background-color: var(--celeste);
-    border:none;
-    padding: 0 5px;
-}
-
 .productDetail .prodDetail-container .add-to-cart {}
 
 .productDetail .prodDetail-container .add-to-cart .btn-cart {}
@@ -207,6 +168,7 @@ width: 100%;
 /* -------- RELATED PRODUCTS -------- */
 
 .productDetail .relatedProduct-container {
+    width: 100%;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
@@ -342,18 +304,6 @@ width: 100%;
     
     .productDetail .prodDetail-container .prodDetail-price {}
     
-    .productDetail .prodDetail-container .product-quantity-container {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .decrease-button {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .quantity {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .quantity label {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .quantity input {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .increase-button {}
-    
     .productDetail .prodDetail-container .add-to-cart {}
     
     .productDetail .prodDetail-container .add-to-cart .btn-cart {}
@@ -480,18 +430,6 @@ width: 100%;
     .productDetail .prodDetail-container .prodDetail-title { }
     
     .productDetail .prodDetail-container .prodDetail-price {}
-    
-    .productDetail .prodDetail-container .product-quantity-container {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .decrease-button {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .quantity {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .quantity label {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .quantity input {}
-    
-    .productDetail .prodDetail-container .product-quantity-container .increase-button {}
     
     .productDetail .prodDetail-container .add-to-cart {}
     
