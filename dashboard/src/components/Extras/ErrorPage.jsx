@@ -1,9 +1,31 @@
-import React from "react";;
-import imagenError from "../../assets/images/imagenError.jpg";
+import React from "react";
+import gato from '../../assets/images/gato.404.gif';
+import '../../assets/css/notFound.css';
 export const ErrorPage = () => {
     return (
-        <div style={{backgroundColor : 'black'}}> 
-            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 100 +'vw', height: 100 +'vh'}} src={imagenError} alt=" Star Wars - Mandalorian "/>
-        </div>
+        <>
+            <body className="body-err404">
+                <main className="main-err-404">
+                    <div className="div">
+                        <div className="contenedor">
+                            <img className="gif-gato" src={gato} alt="error-404" />
+                            <h1 className="titulo-404">
+                                404
+                            </h1>
+                            <h2>
+                                Página no encontrada
+                            </h2>
+                        </div>
+                        <div className="contenedor-btn">
+                            <form action="/">
+                                <button type="submit" className="btn">
+                                    Volver al inicio
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+            </body>
+        </>
     )
 }
