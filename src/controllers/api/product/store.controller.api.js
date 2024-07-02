@@ -3,13 +3,14 @@ const db = require('../../../database/models');
 module.exports = async (req, res) => {
     try {
         const { title, category, subcategory, description, price, sale, quantity, color, available } = req.body;
-        let newImages = [];
-        if (req.files?.imagesSecondary?.length) {
-            newImages = req.files.imagesSecondary?.map((img) => {
-                return {
-                    file: img.filename,
-                }
-            });
+        const newImages = [];
+
+        if (req.files.imagesSecondary) {
+            for (let i = 0; i < req.files.imagesSecondary.length; i++) {
+                newImages.push({
+                    file: req.files.imagesSecondary[i].filename,
+                });
+            }
         }
 
         await db.product.create({
@@ -21,7 +22,7 @@ module.exports = async (req, res) => {
             sale: +sale,
             quantity: +quantity,
             color,
-            available: available === "on",
+            available: available === "true" || available === "on",
             imagePrincipal: req.files.imagePrimary?.length ? req.files.imagePrimary[0]?.filename : "no-image.png",
             imagesecondaries: newImages,
         }, {

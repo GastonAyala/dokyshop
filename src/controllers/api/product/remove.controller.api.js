@@ -15,11 +15,15 @@ module.exports = async (req, res) => {
 
         if (!product) throw new ErrorCustom(404, 'El producto no existe');
 
-        if (product.imagePrincipal) fs.unlinkSync(path.join(__dirname, "../../../../public/images/products/" + product.imagePrincipal));
+        if (product.imagePrincipal && product.imagePrincipal !== "no-image.png" && fs.existsSync(path.join(__dirname, "../../../../public/images/products/" + product.imagePrincipal))) {
+            fs.unlinkSync(path.join(__dirname, "../../../../public/images/products/" + product.imagePrincipal));
+        }
 
         if (product.imagesecondaries) {
-            product.imagesecondaries.forEach(i => {
-                fs.unlinkSync(path.join(__dirname, "../../../../public/images/products/" + i.file));
+            product.imagesecondaries.forEach((img) => {
+                if (fs.existsSync(path.join(__dirname, "../../../../public/images/products/" + img.file))) {
+                    fs.unlinkSync(path.join(__dirname, "../../../../public/images/products/" + img.file));
+                }
             });
         }
 
