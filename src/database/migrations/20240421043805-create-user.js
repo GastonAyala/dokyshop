@@ -9,6 +9,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      socialId: {
+        type: Sequelize.STRING
+      },
+      provider:{
+        type: Sequelize.STRING
+      },
       name: {
         type: Sequelize.STRING(50)
       },
@@ -31,7 +37,7 @@ module.exports = {
         onUpdate: 'CASCADE'
       },
       avatar: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING,
         defaultValue: 'perfilUser.png'
       },
       phone: {

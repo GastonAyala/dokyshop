@@ -12,7 +12,7 @@
 
                         <div class="div-avatar position-relative">
                             <label class="" for="avatar">
-                                <img class="img" src="/images/avatar<% if ( locals.user?.avatar == 'perfilUser.png') { %>/default<% } %>/<%= locals.user?.avatar %>" alt="avatar image">
+                                <img class="img" src="<%= /http/.test(user.avatar) ? user.avatar : `/images/avatar${user.avatar == 'perfilUser.png' ? '/default' : ''}/${user.avatar}` %>" alt="avatar image">
                                 <input type="file" class="img-input" name="avatar" id="avatar" accept="img/*">
                                 <p class="errAvatar">
                                     <%= locals.errors?.avatar?.msg %>

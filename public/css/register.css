@@ -157,6 +157,7 @@ main.register-main form.form-principal .contenedor-button {
 
 main.register-main form.form-principal .contenedor-button .boton {
     text-align: center;
+    margin: 20px auto;
 }
 
 main.register-main form.form-principal .contenedor-button .boton a.whatsApp {
@@ -178,12 +179,7 @@ main.register-main form.form-principal .contenedor-button button.submit:hover {
 }
 
 main.register-main form.form-principal .contenedor-button .inicio {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: space-evenly;
-    align-items: center;
+    text-align: center;
     padding: 10px 0;
 }
 
@@ -193,12 +189,8 @@ main.register-main form.form-principal .contenedor-button p {
 }
 
 main.register-main form.form-principal .contenedor-button a.inicio-session {
-    margin: 0;
     color: var(--celeste);
-    width: 50%;
-    display: inline-block;
     font-size: 14px;
-    text-align: center;
     transition: all 0.5s;
     font-weight: bold;
     text-decoration: none;
@@ -219,16 +211,48 @@ p.text-danger-error {
 }
 
 main.register-main label.form-label {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     width: 100%;
 }
 
+
+main.register-main .contenedor-registro .contenedor-button .iniciar-google{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+main.register-main .contenedor-registro .contenedor-button .iniciar-google a{
+    color: var(--negro);
+}
+
+main.register-main .contenedor-registro .contenedor-button .iniciar-google a:hover{
+  color: var(--gris);
+}
+
+main.register-main .contenedor-registro .contenedor-button .iniciar-google a .btn{
+    display: flex;
+    padding: 6px;
+    background-color: var(--blanco);
+    border-radius: 8px;
+    transition: all 400ms;
+    align-items: center;
+}
+
+main.register-main .contenedor-registro .contenedor-button .iniciar-google a .btn:hover{
+ border: solid 1px var(--gris);
+}
+
+main.register-main .contenedor-registro .contenedor-button .iniciar-google a .btn .logo-google{
+    padding-right: 3px;
+}
+
+main.register-main .contenedor-registro .contenedor-button .iniciar-google a .btn p{
+    margin: 0px;
+    padding: 0px;
+}
 
 
 /* tablet register */

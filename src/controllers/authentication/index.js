@@ -4,4 +4,5 @@ module.exports = {
     registerProcess: require('./registerProcess.controller'),
     loginProcess: require('./loginProcess.controller'),
     logout: require("./logout.controller"),
+    loginAndRegisterGoogle: require('./loginAndRegisterGoogle.controller')
 };

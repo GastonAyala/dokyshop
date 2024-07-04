@@ -4,6 +4,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const passport = require("passport");
+const { configServiceLoginGoogle } = require('./service/google.service');
 
 const cors = require('cors');
 
@@ -13,7 +15,7 @@ const insertDataLocals = require('./middleware/insertDataLocals');
 const session = require('express-session');
 const createSessionFromCookie = require('./middleware/createSessionFromCookie');
 var app = express();
-
+configServiceLoginGoogle()
 
 /* RUTAS MVC*/
 const otherRoutes = require('./routes/other.routes');
@@ -31,7 +33,6 @@ const apiOrderRoutes = require('./routes/api/order.api');
 const apiCategoriesRoutes = require('./routes/api/categories.api');
 const apiSubcategoriesRoutes = require('./routes/api/subcategories.api');
 
-
 /* CONFIGS */
 app.set("views", path.join(__dirname, "/views"))
 app.set('view engine', 'ejs');
@@ -48,6 +49,8 @@ app.use(methodOverride('_method'));
 app.use(session( {secret: "Mensaje secreto dokyshop", resave: false, saveUninitialized: false}));
 app.use(createSessionFromCookie)
 app.use(insertDataLocals) // usuario logueado y tiene acceso a session
+app.use(passport.initialize())
+app.use(passport.session())
 
 /* ENRUTADORES MVC */ 
 app.use("/", otherRoutes);

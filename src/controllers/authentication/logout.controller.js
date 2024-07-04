@@ -8,10 +8,12 @@ module.exports = async (req, res) => {
         const sessionAvatar = req.session.userLogin.avatar
         const user = await db.user.findByPk(id)
         const oldAvatarPath = path.join(__dirname, "../../../public/images/avatar/" + sessionAvatar)
-    
-        if(sessionAvatar !== user.avatar) {
+        const googleImg = /http/
+
+        if (!googleImg.test(oldAvatarPath) && sessionAvatar !== user.avatar) {
             fs.unlinkSync(oldAvatarPath)
         }
+        
         req.session.destroy();
         res.cookie("userLogin", "", { maxAge: -1 });
 

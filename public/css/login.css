@@ -102,7 +102,7 @@ main.login-main form.form-principal .contenedor-button .boton{
 }
 
 main.login-main form.form-principal .contenedor-button .boton button.submit{
-  padding: 7px 7px;
+  padding: 7px;
   width: 100%;
   background-color: var(--celeste);
   color: var(--blanco);
@@ -115,23 +115,17 @@ main.login-main form.form-principal .contenedor-button .boton button.submit:hove
   background-color: var(--celesteRGBA);
 }
 
-main.login-main form.form-principal .contenedor-button .inicio{
-  margin-top: 20px;
-}
+main.login-main form.form-principal .contenedor-button .inicio{text-align: center;padding: 10px 0;}
 
 main.login-main form.form-principal .contenedor-button .inicio p{
-  text-align: center;
-  margin-top: 10px;
+    margin: 0;
 }
 
 main.login-main form.form-principal .contenedor-button .inicio a.crear-cuenta{
-  display: block;
   text-decoration: none;
-  text-align: center;
   font-size: 14px;
   color: var(--celeste);
   font-weight: bold;
-  padding-bottom: 10px;
   transition: all 400ms;
 }
 
@@ -145,6 +139,43 @@ main.login-main form.form-principal .contenedor-button .inicio a.crear-cuenta:ho
   width: 100%;
   text-align: center;
 }
+
+main.login-main form.form-principal .contenedor-button .iniciar-google{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google a{
+    color: var(--negro);
+}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google a:hover{
+  color: var(--gris);
+}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google a .btn{
+    display: flex;
+    padding: 6px;
+    background-color: var(--blanco);
+    border-radius: 8px;
+    transition: all 400ms;
+    align-items: center;
+}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google a .btn:hover{
+ border: solid 1px var(--gris);
+}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google a .btn .logo-google{
+    padding-right: 3px;
+}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google a .btn p{
+    margin: 0px;
+    padding: 0px;
+}
+
 
 
 /*LOGIN TABLET */
@@ -179,30 +210,33 @@ main.login-main form.form-principal .contenedor-form .contrasenia{}
 
 main.login-main form.form-principal .contenedor-form .contrasenia label.contrasenia{}
 
-main.login-main form.form-principal .contenedor-form .contrasenia input.contrasenia{
-}
+main.login-main form.form-principal .contenedor-form .contrasenia input.contrasenia{}
 
-main.login-main form.form-principal .recordar{
-}
+main.login-main form.form-principal .recordar{}
 
-main.login-main form.form-principal .recordar input.checkbox{
-
-}
+main.login-main form.form-principal .recordar input.checkbox{}
 
 main.login-main form.form-principal .recordar label.recordar{}
 
-main.login-main form.form-principal .recordar a.recordarContra{
-}
+main.login-main form.form-principal .recordar a.recordarContra{}
 
 main.login-main form.form-principal .contenedor-button{}
 
-main.login-main form.form-principal .contenedor-button .boton{
- 
-}
+main.login-main form.form-principal .contenedor-button .boton{}
 
-main.login-main form.form-principal .contenedor-button .boton button.submit{
-  
-}
+main.login-main form.form-principal .contenedor-button .boton button.submit{}
+
+main.login-main form.form-principal .contenedor-button .div-o{}
+
+main.login-main form.form-principal .contenedor-button .div-o .span-o{}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google{}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google div{}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google div .logo-google{}
+
+main.login-main form.form-principal .contenedor-button .iniciar-google a{}
 
 main.login-main form.form-principal .contenedor-button .inicio{}
 
