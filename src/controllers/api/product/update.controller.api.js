@@ -7,7 +7,6 @@ module.exports = async (req, res) => {
         const { id } = req.params;
         const { title, category, subcategory, description, price, sale, quantity, color, available } = req.body;
 
-        // product
         await db.product.update({
             title: title?.trim(),
             categoryId: +category,
@@ -17,41 +16,52 @@ module.exports = async (req, res) => {
             sale: +sale,
             quantity: +quantity,
             color: color,
-            available: available === "on",
-            imagePrincipal: req.files.imagePrimary?.length && req.files.imagePrimary[0]?.filename,
+            available: available === "true" || available === "on",
         }, {
             where: {
                 id: +id
             }
-        })
-
-        // images & delete old images
-        let newImages = [];
-        const product = await db.product.findByPk(id, {
-            include: ["imagesecondaries"]
         });
-        req.files.imagePrimary?.length && fs.existsSync(path.join(__dirname, "../../../../public/images/products/" + product.imagePrincipal)) && fs.unlinkSync(path.join(__dirname, "../../../../public/images/products/" + product.imagePrincipal));
 
-        if (req.files.imagesSecondary?.length) {
-            product.imagesecondaries.forEach((img) => {
-                fs.existsSync(path.join(__dirname, "../../../../public/images/products/" + img.file)) && img.file !== "no-image.png" && fs.unlinkSync(path.join(__dirname, "../../../../public/images/products/" + img.file));
-            })
-        }
-
-        if (req.files.imagesSecondary?.length) {
-            newImages = req.files.imagesSecondary.map((img) => {
-                return {
-                    file: img.filename,
-                    productId: +id
+        // Actualizar imagen principal
+        if (req.files.imagePrimary) {
+            const product = await db.product.findByPk(id);
+            if (product.imagePrincipal !== 'no-image.png') {
+                fs.existsSync(path.join(__dirname, "../../../../public/images/products/" + product.imagePrincipal)) &&
+                    fs.unlinkSync(path.join(__dirname, "../../../../public/images/products/" + product.imagePrincipal));
+            }
+            await db.product.update({
+                imagePrincipal: req.files.imagePrimary[0].filename
+            }, {
+                where: {
+                    id: +id
                 }
-            })
+            });
         }
 
-        newImages.length && await db.imagesecondary.destroy({ where: { productId: +id } });
+        // Actualizar imágenes secundarias
+        if (req.files.imagesSecondary?.length) {
+            const product = await db.product.findByPk(id, {
+                include: ["imagesecondaries"]
+            });
 
-        newImages.length && await db.imagesecondary.bulkCreate(newImages);
+            // Eliminar imágenes secundarias antiguas
+            await Promise.all(product.imagesecondaries.map(async (img) => {
+                if (img.file !== 'no-image.png') {
+                    fs.existsSync(path.join(__dirname, "../../../../public/images/products/" + img.file)) &&
+                        fs.unlinkSync(path.join(__dirname, "../../../../public/images/products/" + img.file));
+                }
+            }));
 
-        // response
+            // Crear nuevas imágenes secundarias
+            const newImages = req.files.imagesSecondary.map((img) => ({
+                file: img.filename,
+                productId: +id
+            }));
+            await db.imagesecondary.destroy({ where: { productId: +id } });
+            await db.imagesecondary.bulkCreate(newImages);
+        }
+
         return res.status(200).json({
             ok: true,
             msg: "Producto actualizado con éxito"
