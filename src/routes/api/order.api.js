@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const { getOrder, addProductToOrder, removeProductToOrder, moreQuantity, lessQuantity, cancelOrder, completeOrder, clearCart } = require('../../controllers/api/cart');
-const { getCompletedOrder } = require('../../controllers/api/orders');
+const { getCompletedOrder, listOrders } = require('../../controllers/api/orders');
 
 
 router.get('/', getOrder);
@@ -14,5 +14,7 @@ router.patch('/cancel', cancelOrder);
 router.patch('/complete', completeOrder);
 
 router.get('/completed', getCompletedOrder);
+
+router.get('/list', listOrders);
 
 module.exports = router;

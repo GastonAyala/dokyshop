@@ -9,11 +9,7 @@ module.exports = async (req, res) => {
                 attributes: {
                     exclude: ['description', 'quantity', 'color', 'imagePrincipal', 'available', 'createdAt', 'updatedAt', 'deletedAt']
                 }
-            },
-            ],
-            where: {
-                state: "completed"
-            }
+            }]
         })
 
         return res.status(200).json({

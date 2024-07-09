@@ -6,6 +6,7 @@ import { RoutesProducts } from "./RoutesProducts";
 import { ErrorPage } from "../components/Extras/ErrorPage";
 import { RoutesSubcategories } from "./RoutesSubcategories";
 import { RoutesUsers } from "./RoutesUsers";
+import { RoutesOrders } from "./RoutesOrders";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
       ...RoutesCategories,
       ...RoutesSubcategories,
       ...RoutesProducts,
-      ...RoutesUsers
+      ...RoutesUsers,
+      ...RoutesOrders
     ]
   },
 ]);

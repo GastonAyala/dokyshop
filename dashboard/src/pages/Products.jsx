@@ -185,6 +185,7 @@ function Product() {
               },
             }}
             pageSizeOptions={[10]}
+            disableRowSelectionOnClick
             slots={{
               toolbar: (props) => (
                 <CreateForm {...props} refreshProducts={refreshProducts} setRefreshProducts={setRefreshProducts} />

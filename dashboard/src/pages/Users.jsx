@@ -179,7 +179,7 @@ function Users() {
               },
             }}
             pageSizeOptions={[10]}
-            checkboxSelection
+            disableRowSelectionOnClick
           /> : <Spinner containerClassName={'d-flex m-auto'} />
           }
         </Box>

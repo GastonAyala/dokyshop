@@ -22,17 +22,12 @@ function SideBar() {
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Panel de control</span></Link>
+                        <span>Panel de control</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider" />
-
-                <li className="nav-item">
-                    <Link className="nav-link" to="/productos">
-                    <i className="fa-solid fa-box-open"></i>
-                        <span>Productos</span></Link>
-                </li>
 
                 <li className="nav-item">
                     <Link className="nav-link collapsed" to="/categorias">
@@ -49,9 +44,23 @@ function SideBar() {
                 </li>
 
                 <li className="nav-item">
+                    <Link className="nav-link" to="/productos">
+                    <i className="fa-solid fa-box-open"></i>
+                        <span>Productos</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
                     <Link className="nav-link collapsed" to="/usuarios">
                     <i className="fa-solid fa-user"></i>
                         <span>Usuarios</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="/ordenes">
+                    <i className="fa-regular fa-newspaper"></i>
+                        <span>Ordenes</span>
                     </Link>
                 </li>
 
