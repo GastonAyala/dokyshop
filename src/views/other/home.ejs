@@ -49,12 +49,12 @@
                 <% }) %>
                 <div class="pet-content">
                     <ul class="pet-list">
-                        <li>
-                            <a href="/preguntas-frecuentes"> PREGUNTAS FRECUENTES:</a>
+                        <li class="list-title">
+                            <a href="/preguntas-frecuentes">PREGUNTAS FRECUENTES:</a>
                         </li>
                     <% faqs.forEach(f => { %>
-                        <li>
-                            <a href="/preguntas-frecuentes#<%= f.class %>"><i class="fa-solid fa-paw"></i> <%= f.title %></a>
+                        <li class="list-ques">
+                            <a href="/preguntas-frecuentes#<%= f.class %>"><i class="fa-solid fa-paw"></i><%= f.title %></a>
                         </li>
                     <% }) %>
                     </ul>

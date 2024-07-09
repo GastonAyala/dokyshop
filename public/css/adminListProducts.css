@@ -268,7 +268,7 @@
 .dashboard-content .listProduct-table tbody tr td .dash-actionButtons .editButton {
     padding: 5px 15px;
     border-radius: 10%;
-    background-color: var(--marron);
+    background-color: var(--azul);
     transition: all 0.5s;
 }
 .dashboard-content .listProduct-table tbody tr td .dash-actionButtons .editButton:hover {
@@ -278,7 +278,7 @@
 .dashboard-content .listProduct-table tbody tr td .dash-actionButtons .deleteButton {
     padding: 5px 15px;
     border-radius: 10%;
-    background-color: var(--naranjaig);
+    background-color: var(--azul);
     transition: all 0.5s;
 }
 

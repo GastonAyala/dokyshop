@@ -1,11 +1,13 @@
 import React from "react";
 import gato from '../../assets/images/gato.404.gif';
 import '../../assets/css/notFound.css';
+import { Link } from 'react-router-dom';
+
 export const ErrorPage = () => {
     return (
         <>
-            <body className="body-err404">
-                <main className="main-err-404">
+            <main className="body-err404">
+                <div className="main-err-404">
                     <div className="div">
                         <div className="contenedor">
                             <img className="gif-gato" src={gato} alt="error-404" />
@@ -17,15 +19,15 @@ export const ErrorPage = () => {
                             </h2>
                         </div>
                         <div className="contenedor-btn">
-                            <form action="/">
+                            <Link to="/">
                                 <button type="submit" className="btn">
                                     Volver al inicio
                                 </button>
-                            </form>
+                            </Link>
                         </div>
                     </div>
-                </main>
-            </body>
+                </div>
+            </main>
         </>
     )
 }

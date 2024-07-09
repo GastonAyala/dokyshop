@@ -43,7 +43,7 @@
 }
 
 .listOrdertable tbody tr td .orderProductsTitle {
-    color: var(--naranja) !important;
+    color: var(--celeste) !important;
 
 }
 
@@ -52,7 +52,7 @@
 .listOrdertable tbody tr td .dashOrder-Actions .editUserButton {
     padding: 5px 15px;
     border-radius: 10%;
-    background-color: var(--marron);
+    background-color: var(--azul);
     transition: all 0.5s;
 }
 
@@ -63,7 +63,7 @@
 .listOrdertable tbody tr td .dashOrder-Actions .deleteUserButton {
     padding: 5px 15px;
     border-radius: 10%;
-    background-color: var(--naranjaig);
+    background-color: var(--azul);
     transition: all 0.5s;
 }
 

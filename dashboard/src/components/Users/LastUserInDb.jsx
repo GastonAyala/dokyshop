@@ -57,7 +57,7 @@ export const lastUserInDb = () => {
               <img
                 className="img-fluid px-3 px-sm-4 mt-3 mb-4"
                 style={{ width: "250px" }}
-                src={`http://localhost:3030/api/users/${lastUser.avatar}`}
+                src={/http/.test(lastUser.avatar) ? lastUser.avatar : `/images/avatar${ lastUser.avatar == "perfilUser.png" ? "/default" : ""}/${lastUser.avatar}`}
                 alt=" Avatar de usuario"
               />
             </div>

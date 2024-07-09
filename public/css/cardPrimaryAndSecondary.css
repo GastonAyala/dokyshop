@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     margin: 50px 0px;
-    gap: 20px;
     align-content: center;
 }
 
@@ -77,16 +76,18 @@
 
 .searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart {
     background-color: var(--celeste);
+    border: none;
     padding: 8px;
     border-radius: 5px;
     transition: all 400ms;
 }
 
-.searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart:hover{
+.searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart:hover {
     color: var(--grisOscuro);
     background-color: var(--celesteRGBA);
 }
 
-.searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart i {
-    margin: 0
+.searchedProduct-container .searchedProduct .searchedProduct-description .searchedProduct-buyCart:hover i {
+    transform: rotatey(360deg);
+    transition: transform 700ms;
 }
