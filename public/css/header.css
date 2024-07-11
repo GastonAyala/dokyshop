@@ -57,7 +57,11 @@
     margin: auto;
 }
 
-.main-header .search-bar .search-form {display: flex;flex-direction: row;justify-content: center;}
+.main-header .search-bar .search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 .main-header .search-bar .search-form label {
 }
@@ -74,7 +78,7 @@
 .main-header .search-bar .search-form input::placeholder {
     font-family: var(--familyOpenSans);
     font-weight: 500;
-    color: var(--negro);
+    color: var(--grisOscuro);
 }
 
 .main-header .search-bar .search-form .search-icon {
@@ -121,9 +125,11 @@
     font-size: calc(0.8rem + 0.6vw);
     color: var(--celesteClaro);
 }
+
 .main-header .top-bar .user-nav .user-list li a:hover {
     color: var(--grisOscuro);
 }
+
 .main-header .top-bar .user-nav .user-list .user-avatar-list  {
     
 }
@@ -382,8 +388,7 @@
         text-align: end;
     }
     
-    .main-header .top-bar .buy-cart-container .buy-cart {
-}
+    .main-header .top-bar .buy-cart-container .buy-cart {}
     
     .main-header .top-bar .buy-cart-container .buy-cart i {
         font-size: calc(1.2rem + 0.6vw);
@@ -422,6 +427,7 @@
     .main-header .main-nav .main-list li.list-index {}
 
     .main-header .main-nav .main-list li.list-products {}
+
     .main-header .main-nav .main-list .list-contact {
         border: none;
         font-size: calc(0.8rem + 0.6vw);
@@ -474,8 +480,8 @@
     .main-header .top-bar .logo-container a {}
 
     .main-header .top-bar .logo-container a img {
-    max-width: 90px;
-}
+        max-width: 90px;
+    }
 
     /* ----- SEARCH-BAR ----- */
     
@@ -507,8 +513,7 @@
     .main-header .top-bar .user-nav .user-list {
     }
 
-    .main-header .top-bar .user-nav .user-list li {
-}
+    .main-header .top-bar .user-nav .user-list li {}
 
     .main-header .top-bar .user-nav .user-list li a {
         font-size: .98rem;
@@ -529,10 +534,12 @@
     }
     
     .main-header .top-bar .buy-cart-container .buy-cart {
-    padding: 0px;
-}
+        padding: 0px;
+    }
     
-    .main-header .top-bar .buy-cart-container .buy-cart i {font-size: calc(1.4rem + 0.6vw);}
+    .main-header .top-bar .buy-cart-container .buy-cart i {
+        font-size: calc(1.4rem + 0.6vw);
+    }
 
     /* ----- MAIN-NAV ----- */
     
@@ -547,7 +554,7 @@
     .main-header .main-nav .main-list li.list-products {}
     
     .main-header .main-nav .main-list .list-contact .btn-header{
-    font-size: calc(0.8rem + 0.6vw);
+        font-size: calc(0.8rem + 0.6vw);
     }
 
     .main-header .main-nav .main-list li a {

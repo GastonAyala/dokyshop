@@ -32,7 +32,7 @@ window.addEventListener('load', function(e) {
 
     let existEmailError = false;
     const errEmail = document.querySelector('.err-email');
-    email.addEventListener('blur', function(e) {
+    email.addEventListener('keyup', function(e) {
         const value = this.value.trim();
         switch (true) {
             case !emailRegex.test(value):

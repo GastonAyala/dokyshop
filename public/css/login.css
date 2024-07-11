@@ -1,23 +1,22 @@
-body{
-    box-sizing: border-box;
-    font-family: var(--familyMontserrat);
+.body-login {
+  background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
 }
 
-.body-login{
-}
 
 .login-main{
-    background: linear-gradient(
+    /* background: linear-gradient(
     rgba(200, 205, 218, 0.5), 
     rgba(200, 205, 218, 0)), 
-    url(/images/authentication/fondo-login.jpeg);
-    background-repeat: no-repeat;
-    height: 880px;
-    background-position: center;
-    background-size: cover;
+    url(/images/authentication/fondo-login.jpeg); */
+    /* background-repeat: no-repeat; */
+    /* height: 880px; */
+    /* background-position: center; */
+    /* background-size: cover; */
+    min-height: 500px;
 }
+
 main .div-contenedor{
-  padding-top: 10em;
+  /* padding-top: 10em; */
 }
 
 main.login-main h1.titulo-login{
@@ -31,7 +30,7 @@ main.login-main h1.titulo-login{
 main.login-main form.form-principal{
   background-color: var(--celesteClaroTraslucido);
   border-radius: 10px;
-  margin: auto;
+  margin: 16px auto;
   max-width: 75vw;
 }
 
@@ -76,9 +75,12 @@ main.login-main form.form-principal .recordar{
 
 main.login-main form.form-principal .recordar .div{
   display: flex;
+  gap: 4px;
 }
 
-main.login-main form.form-principal .recordar input.checkbox{}
+main.login-main form.form-principal .recordar input.checkbox{
+    margin: auto;
+}
 
 main.login-main form.form-principal .recordar label.recordar{
   font-weight: bold;
@@ -180,7 +182,7 @@ main.login-main form.form-principal .contenedor-button .iniciar-google a .btn p{
 
 /*LOGIN TABLET */
 @media (min-width: 426px) {
-main.login-main{height: 740px;}
+main.login-main{/* height: 740px; */}
 main .div-contenedor{
 }
 

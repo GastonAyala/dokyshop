@@ -1,81 +1,97 @@
-const inputEmail = document.querySelector("[name='email']")
-const inputPas = document.querySelector("[name='password']")
+window.addEventListener('load', function () {
+  const inputEmail = document.querySelector("[name='email']")
+  const inputPas = document.querySelector("[name='password']")
 
-const regExPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
-const regexMail = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const regExPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+  const regexMail = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+  const invalid = (elementErr, msgErr, elementInput) => {
+    elementErr.innerHTML = msgErr;
+    elementErr.style.position = "unset";
+    elementErr.classList.add("invalid-tooltip");
+    elementInput.classList.add("is-invalid");
+  };
 
-window.addEventListener('load', function() {
+  const valid = (elementErr, elementInput) => {
+    elementErr.innerHTML = null;
+    elementInput.classList.add("is-valid");
+    elementErr.classList.remove("invalid-tooltip");
+    elementInput.classList.remove("is-invalid");
+  };
 
+  const remove = (elementErr, elementInput) => {
+    elementInput.classList.remove("is-valid");
+    elementErr.classList.remove('invalid-tooltip');
+    elementErr.innerHTML = null;
+  };
 
- 
-    //------------email
-    let existsEmailError = false;
-    inputEmail.addEventListener("blur", async function(){
-      const invalidCorreo = document.querySelector(".errorEmail")
-      const {data} = await (await fetch('http://localhost:3030/api/users')).json() 
-      const value = this.value.trim();
-      const userFinded = data.find(u =>{
-        return u.email === value})
+  const focus = (elementErr, elementInput,) => {
+    elementInput.addEventListener('focus', function (e) {
+      remove(elementErr, this);
+    });
+  };
 
-      switch(true){
-        case value.length === 0:
-            invalidCorreo.innerHTML = "El campo correo es requerido"
-            existsEmailError = true;
-        break;
-        case !regexMail.test(value):
-          invalidCorreo.innerHTML = "Debe ingresar un email valido";
-          existsEmailError = true;
-          break;
-        case  !userFinded:
-          invalidCorreo.innerHTML = "El usuario no existe"
-          existsEmailError = true;
-          break;
-          default:         existsEmailError = false;
-        invalidCorreo.innerHTML = null 
-          break;
-      }
-   
-    
-})
-
-  //--------------password 
-  let existsPassError = false;
-  inputPas.addEventListener("blur", function(){
-    const invalidPas = document.querySelector(".errorPassword")
+  //------------email
+  let existsEmailError = true;
+  const invalidCorreo = document.querySelector(".errorEmail")
+  inputEmail.addEventListener("keyup", function () {
     const value = this.value.trim();
 
-    switch(true){
+    switch (true) {
       case value.length === 0:
-        invalidPas.innerHTML = "El campo contraseña es requerido";
-        existsPassError = true; 
-    break;
-    case value.length < 8  || value.length > 16:
-      invalidPas.innerHTML = "Datos ingresados incorrectos!";
-      existsPassError = true;
-    break;
-    case !regExPass.test(value):
-      invalidPas.innerHTML = "Datos ingresados incorrectos!";
-      existsPassError = true;
-    break; 
-    default:invalidPas.innerHTML = null;
-    existsPassError = false;
-    break;       
-
+        invalid(invalidCorreo, "El campo correo es requerido", this);
+        existsEmailError = true;
+        break;
+      case !regexMail.test(value):
+        invalid(invalidCorreo, "Debe ingresar un email valido", this);
+        existsEmailError = true;
+        break;
+      default:
+        valid(invalidCorreo, this);
+        existsEmailError = false;
+        break;
     }
-  }) 
-  
-  
-  //--------------form
-   const formulario = document.querySelector(".form-principal")
-   
+  });
 
-    formulario.addEventListener("submit", function (event){
-      
-      if(existsEmailError || existsPassError){
-        event.preventDefault();
-       
-      }
-    });
-     
-  })
+  focus(invalidCorreo, inputEmail);
+
+  //--------------password 
+  let existsPassError = true;
+  const invalidPas = document.querySelector(".errorPassword");
+
+  inputPas.addEventListener("keyup", function () {
+    const value = this.value.trim();
+    switch (true) {
+      case value.length === 0:
+        invalid(invalidPas, "El campo contraseña es requerido", this);
+        existsPassError = true;
+        break;
+      case value.length < 8 || value.length > 16:
+        invalid(invalidPas, "Longitud invalida entre 8 y 16 caracteres", this);
+        existsPassError = true;
+        break;
+      case !regExPass.test(value):
+        invalid(invalidPas, "La Contraseña debe contener al menos una mayuscula una minuscula y un numero", this);
+        existsPassError = true;
+        break;
+      default:
+        valid(invalidPas, this);
+        existsPassError = false;
+        break;
+    }
+  });
+
+  focus(invalidPas, inputPas);
+
+  //--------------form
+  const formulario = document.querySelector(".form-principal");
+  const errFormGeneral = document.querySelector(".err-form-general");
+
+  formulario.addEventListener("submit", function (event) {
+    if (existsEmailError || existsPassError) {
+      event.preventDefault();
+      errFormGeneral.innerHTML = "Todos los campos son requeridos";
+      errFormGeneral.classList.add("alert", "alert-danger");
+    }
+  });
+})

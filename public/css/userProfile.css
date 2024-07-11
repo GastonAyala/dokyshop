@@ -1,6 +1,10 @@
 .usersProfile {
 }
 
+.body-userProfile{
+    background-image: url('../images/other/puppy-dog-seamless-pattern.jpg');
+}
+
 .usersProfile h1 {
     font-weight: bold;
     margin: 0;
@@ -12,7 +16,7 @@
     margin: 16px;
 }
 
-.usersProfile .div-form .form{
+.usersProfile .div-form .form {
     margin: 0 auto;
     background-color: var(--celeste);
     max-width: 415px;

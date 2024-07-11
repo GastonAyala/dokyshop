@@ -47,6 +47,8 @@ window.addEventListener('load', () => {
     //*IMAGEN PRIMARIA
 
     const errImgPrimary = document.querySelector('.err-imgPrimary');
+    const imgElement = document.querySelector('.imagePrimary');
+    
     imgPrimary.addEventListener('change', function (e) {
         const regExpFiles = /.png|.jpg|.jpeg|.webp|.gif/i;
         const files = Array.from(this.files);
@@ -66,6 +68,13 @@ window.addEventListener('load', () => {
             default:
                 valid(errImgPrimary, this);
                 existImgPrima = false;
+                if (this.files && this.files[0]) {
+                    let reader = new FileReader();
+                    reader.onload = function (e) {
+                        imgElement.setAttribute('src', e.target.result);
+                    };
+                    reader.readAsDataURL(this.files[0]);
+                };
                 break;
         };
     });
@@ -95,7 +104,7 @@ window.addEventListener('load', () => {
     //*TITULO
 
     const errTitle = document.querySelector('.err-title');
-    title.addEventListener('blur', function (e) {
+    title.addEventListener('keyup', function (e) {
         const value = this.value.trim();
         switch (true) {
             case !value.length:
@@ -124,7 +133,7 @@ window.addEventListener('load', () => {
     //*CATEGORIA
 
     const errCategory = document.querySelector('.err-category');
-    category.addEventListener('blur', function (e) {
+    category.addEventListener('keyup', function (e) {
         if (!this.options[this.selectedIndex].value) {
             invalid(errCategory, 'La categoría es requerida', this);
             existCateError = true;
@@ -137,7 +146,7 @@ window.addEventListener('load', () => {
     //*SUBCATEGORIA
 
     const errSubcategory = document.querySelector('.err-subcategory');
-    subcategory.addEventListener('blur', function (e) {
+    subcategory.addEventListener('keyup', function (e) {
         if (!this.options[this.selectedIndex].value) {
             invalid(errSubcategory, 'La subcategoría es requerida', this);
             existSubcaError = true;
@@ -150,7 +159,7 @@ window.addEventListener('load', () => {
     //*DESCRIPCIÓN
 
     const errDescription = document.querySelector('.err-description');
-    description.addEventListener('blur', function (e) {
+    description.addEventListener('keyup', function (e) {
         const value = this.value.trim();
         switch (true) {
             case !value.length:
@@ -179,7 +188,7 @@ window.addEventListener('load', () => {
     //*PRECIO
 
     const errPrice = document.querySelector('.err-price');
-    price.addEventListener('blur', function (e) {
+    price.addEventListener('keyup', function (e) {
         const value = this.value.trim();
         switch (true) {
             case !value.length:
@@ -209,7 +218,7 @@ window.addEventListener('load', () => {
     //*DESCUENTO
 
     const errSale = document.querySelector('.err-sale');
-    sale.addEventListener('blur', function (e) {
+    sale.addEventListener('keyup', function (e) {
         const value = this.value.trim();
         switch (true) {
             case !value.length:
@@ -234,7 +243,7 @@ window.addEventListener('load', () => {
     //*CANTIDAD
 
     const errQuantity = document.querySelector('.err-quantity');
-    quantity.addEventListener('blur', function (e) {
+    quantity.addEventListener('keyup', function (e) {
         const value = this.value.trim();
         switch (true) {
             case !value.length:
@@ -263,7 +272,7 @@ window.addEventListener('load', () => {
     //*COLOR
 
     const errColor = document.querySelector('.err-color');
-    color.addEventListener('blur', function (e) {
+    color.addEventListener('keyup', function (e) {
         if (!this.options[this.selectedIndex].value) {
             invalid(errColor, 'El color es requerido', this);
             existColorError = true;

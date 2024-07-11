@@ -2,7 +2,7 @@
 <html lang="es">
 <%- include('../partials/head', {view: "Perfil de Usuario" , gliderCSSDisabled:true}) %>
 
-    <body>
+    <body class="body-userProfile">
         <%- include('../partials/header') %>
             <main class="usersProfile">
                 <h1 class="text-center">Hola <%= locals.user?.name %>
@@ -11,43 +11,42 @@
                     <form class="form position-relative" action="/usuario/perfil/editar/<%= locals.user?.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                         <div class="div-avatar position-relative">
-                            <label class="" for="avatar">
+                            <label for="avatar">
                                 <img class="img" src="<%= /http/.test(user.avatar) ? user.avatar : `/images/avatar${user.avatar == 'perfilUser.png' ? '/default' : ''}/${user.avatar}` %>" alt="avatar image">
                                 <input type="file" class="img-input" name="avatar" id="avatar" accept="img/*">
                                 <p class="errAvatar">
                                     <%= locals.errors?.avatar?.msg %>
                                 </p>
                             </label>
-                            
                         </div>
 
                         <div class="div-inputs">
                             <div class="div-name position-relative">
-                                <label for="name ">Nombre completo</label>
-                                <input type="text" class="input form-control" name="name" id="name" value="<%= locals.errors ? locals.old.name : locals.user.name %>" placeholder="<%= locals.user?.name %>">
+                                <label for="name">Nombre completo</label>
+                                <input type="text" class="input form-control" name="name" id="name" value="<%= locals.errors ? locals.old.name : locals.user.name %>" placeholder="<%= locals.user?.name %>" autocomplete="on">
                                 <p class="errName">
                                     <%= locals.errors?.name?.msg %>
                                 </p>
                             </div>
 
                             <div class="div-tel position-relative">
-                                <label class="" for="phone">Teléfono</label>
-                                <input type="text" class="input form-control" name="phone" id="phone" value="<%= locals.errors ? locals.old.phone : locals.user.phone %>" placeholder="<%= locals.user?.phone %>">
+                                <label for="phone">Teléfono</label>
+                                <input type="text" class="input form-control" name="phone" id="phone" value="<%= locals.errors ? locals.old.phone : locals.user.phone %>" placeholder="<%= locals.user?.phone %>" autocomplete="on">
                                 <p class="errPhone">
                                     <%= locals.errors?.phone?.msg %>
                                 </p>
                             </div>
                             
                             <div class="div-address position-relative">
-                                <label class="" for="street">Dirección</label>
-                                <input type="text" class="input form-control" name="street" id="street" value="<%= locals.errors ? locals.old.street : locals.user.address.street %>" placeholder="<%= locals.user?.address.street %>">
+                                <label for="street">Dirección</label>
+                                <input type="text" class="input form-control" name="street" id="street" value="<%= locals.errors ? locals.old.street : locals.user.address.street %>" placeholder="<%= locals.user?.address.street %>" autocomplete="on">
                                 <p class="errStreet">
                                     <%= locals.errors?.street?.msg %>
                                 </p>
                             </div>
                             
                             <div class="div-province position-relative">
-                                <label class="" for="province">Provincia</label>
+                                <label for="province">Provincia</label>
                                 <select class="form-select form-select-sm input" name="province" id="province">
                                     <% if (locals.user?.address.province) { %>
                                         <option value="<%= locals.user?.address.province %>" selected hidden><%= locals.user?.address.province %></option>
@@ -61,7 +60,7 @@
                             </div>
                             
                             <div class="div-city position-relative">
-                                <label class="" for="city">Ciudad</label>
+                                <label for="city">Ciudad</label>
                                 <select class="form-select form-select-sm input" name="city" id="city">
                                     <% if (locals.user?.address.city) { %>
                                         <option value="<%= locals.user?.address.city %>" selected hidden><%= locals.user?.address.city %></option>
@@ -76,7 +75,7 @@
                             
                             <div class="div-zipcode position-relative">
                                 <label class="" for="zipcode">Código postal</label>
-                                <input type="text" class="input form-control" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.address.zipCode %>" placeholder="<%= locals.user?.zipCode %>">
+                                <input type="text" class="input form-control" name="zipcode" id="zipcode" value="<%= locals.errors ? locals.old.zipcode : locals.user.address.zipCode %>" placeholder="<%= locals.user?.zipCode %>" autocomplete="on">
                                 <p class="errZipcode">
                                     <%= locals.errors?.zipcode?.msg %>
                                 </p>

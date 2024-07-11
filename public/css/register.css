@@ -1,20 +1,23 @@
-body {}
+.body-register {
+    background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
+}
 
 .register-main {
-    background: linear-gradient(
+    /* background: linear-gradient(
     rgba(200, 205, 218, 0.5), 
     rgba(200, 205, 218, 0)), 
-    url(/images/authentication/fondo-login.jpeg);
-    background-repeat: no-repeat;
-    height: 880px;
-    background-position: center;
-    background-size: cover;
+    url(/images/authentication/fondo-login.jpeg); */
+    /* background-repeat: no-repeat; */
+    /* height: 880px; */
+    /* background-position: center; */
+    /* background-size: cover; */
 }
+
 main.register-main p.is-invalid{
     color: red;
 }
 
-.register-main .imgProductForm input[type="file"]::file-selector-button {
+.register-main .avatar input[type="file"]::file-selector-button {
     border: none;
     padding: 8px;
     border-radius: 8px;
@@ -23,13 +26,12 @@ main.register-main p.is-invalid{
     color: var(--blanco);
   }
   
-.register-main .imgProductForm input[type="file"]::file-selector-button:hover {
+.register-main .avatar input[type="file"]::file-selector-button:hover {
     background-color:var(--celesteRGBA);
     color: var(--blanco);
 }
 
 main .contenedor-registro{
-    padding-top: 2.5rem;
 }
     
 main.register-main h1 {
@@ -41,7 +43,7 @@ main.register-main h1 {
     text-align: center;
 }
 
-.imgProductForm {
+.avatar {
     width: 100%;
     margin: 0 auto;
     height: auto;
@@ -50,7 +52,7 @@ main.register-main h1 {
     justify-content: center;
 }
 
-.imgProductForm label.form-label img {
+.avatar label.form-label img {
     width: 100px;
     border-radius: 50%;
     margin: 20px;
@@ -59,8 +61,9 @@ main.register-main h1 {
 main.register-main form.form-principal {
     background-color: var(--celesteClaroTraslucido);
     border-radius: 10px;
-    margin: auto;
+    /* margin: auto; */
     max-width: 75vw;
+    margin: 16px auto;
 }
 
 main.register-main form.form-principal .registerAvatarInput {
@@ -261,7 +264,7 @@ main.register-main .contenedor-registro .contenedor-button .iniciar-google a .bt
     body {}
 
     main.register-main {
-    height: 740px;
+    /* height: 740px; */
 }
 
     main.register-main h1 {}

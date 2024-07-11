@@ -10,20 +10,18 @@
                     <form class="form-principal" action="/autenticacion/iniciar" method="post">
                         <h1 class="titulo-login">Iniciar Sesión </h1>
                         <div class="contenedor-form">
-                            <div class="usuario">
-                                <label class="usuario" for="usuario"></label>
-                                <input class="usuario" type="email" name="email" placeholder="Email" id="email"
-                                    value="<%= locals.old?.email %>">
-                                <p class="msg-error errorEmail">
+                            <div class="usuario position-relative">
+                                <label class="usuario" for="email"></label>
+                                <input class="usuario input form-control" type="email" name="email" placeholder="Email" id="email" value="<%= locals.old?.email %>" autocomplete="on">
+                                <p class="errorEmail">
                                     <%= locals.errorsLog?.email?.msg %>
                                 </p>
                             </div>
 
-                            <div class="contrasenia">
+                            <div class="contrasenia position-relative">
                                 <label for="password"></label>
-                                <input class="contrasenia" type="password" name="password" id="password"
-                                    placeholder="Contraseña">
-                                <p class="msg-error errorPassword">
+                                <input class="contrasenia input form-control" type="password" name="password" id="password" placeholder="Contraseña">
+                                <p class="errorPassword">
                                     <%= locals.errorsLog?.password?.msg %>
                                 </p>
                             </div>
@@ -31,7 +29,7 @@
 
                         <div class="recordar">
                             <div class="div">
-                                <input class="checkbox" type="checkbox" name="remember" id="recuerdamelo"
+                                <input class="checkbox form-check-input" type="checkbox" name="remember" id="recuerdamelo"
                                     value="recuerdamelo">
                                 <label class="recordar" for="recuerdamelo">Recordarme</label>
                             </div>
@@ -41,7 +39,7 @@
                         <div class="contenedor-button">
                             <div class="boton">
                                 <button class="submit" type="submit">Entrar</button>
-                                <p class="text-danger col-12 text-center err-form-general"></p>
+                                <p class="col-12 text-center err-form-general"></p>
                             </div>
 
                             <div class="iniciar-google">
@@ -62,9 +60,7 @@
                                                 d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z">
                                             </path>
                                         </svg>
-                                        <p>
-                                            Ingresar con Google
-                                        </p>
+                                        <p>Ingresar con Google</p>
                                     </div>
                                 </a>
                             </div>
@@ -77,10 +73,9 @@
                     </form>
                 </div>
             </main>
-            <%- include('../partials/footer') %>
-
-                <%- include('../partials/scripts', { disabledGliderJS:true }) %>
-                    <script src="/js/validations/login.js"></script>
+        <%- include('../partials/footer') %>
+        <%- include('../partials/scripts', { disabledGliderJS:true }) %>
+        <script src="/js/validations/login.js"></script>
     </body>
 
 </html>

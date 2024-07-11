@@ -1,56 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <%- include('../partials/head', {view: "Registrate" , gliderCSSDisabled:true}) %>
-
-    <body>
+    <body class="body-register">
         <%- include('../partials/header') %>
 
             <main class="register-main">
                 <div class="contenedor-registro">
-                    <form class="form-principal" action="/autenticacion/registro" method="post"
-                        enctype="multipart/form-data">
+                    <form class="form-principal" action="/autenticacion/registro" method="post" enctype="multipart/form-data">
                         <h1>Registrarse</h1>
-                        <div class="imgProductForm">
-                            <label for="productImg" class="form-label">
-                                <img src="/images/avatar/default/perfilUser.png" alt="default product img" />
+                        <div class="avatar position-relative">
+                            <label for="avatar" class="form-label">
+                                <img class="avatarImg" src="/images/avatar/default/perfilUser.png" alt="default product img" />
                             </label>
-                            <input class="registerAvatarInput" type="file" class="form-control" name="avatar"
-                                id="productImg" />
-                            <p class="text-danger-error registerAvatarError invalid-avatar">
+                            <input class="registerAvatarInput" type="file" class="form-control" name="avatar" id="avatar" />
+                            <p class="invalid-avatar">
                                 <%= locals.errors?.avatar?.msg %>
                             </p>
                         </div>
 
-                        <div class="contenedor-form">
+                        <div class="contenedor-form position-relative">
                             <div class="nombre">
-                                   <input type="text" class="inputs" name="name" placeholder="Nombre completo"
-                                        id="nombre" value="<%= locals.old?.name %>" />
-                                        <p class="invalid-name text-danger">
-                                            <%= locals.errors?.name?.msg %>
-                                        </p>
+                                <input type="text" class="inputs input form-control" name="name" placeholder="Nombre completo" id="nombre" value="<%= locals.old?.name %>" autocomplete="on" />
+                                <p class="invalid-name"><%= locals.errors?.name?.msg %></p>
                             </div>
 
-                            <div class="email divEmail">
-                                <input class="inputs is-valid" type="email" name="email" placeholder="Ingrese su email"
-                                        id="email" value="<%= locals.old?.email %>" />
-                                    <p class="invalid-correo text-danger">
-                                    <%= locals.errors?.email?.msg %>
-                                </p>            
+                            <div class="email divEmail position-relative">
+                                <input class="inputs input form-control" type="email" name="email" placeholder="Ingrese su email" id="email" value="<%= locals.old?.email %>" autocomplete="on" />
+                                <p class="invalid-email"><%= locals.errors?.email?.msg %></p>
                             </div>
 
-                            <div class="contrasenia">
-                            <input class="inputs" type="password" name="password" id="contrasenia"
-                                                placeholder="Contraseña" value="<%= locals.old?.password %>" />
-                                    <p class="invalid-passwod text-danger">
-                                            <%= locals.errors?.password?.msg %>
-                                        </p>            
+                            <div class="contrasenia position-relative">
+                                <input class="inputs input form-control" type="password" name="password" id="contrasenia" placeholder="Contraseña" value="<%= locals.old?.password %>" />
+                                <p class="invalid-password"><%= locals.errors?.password?.msg %></p>
                             </div>
                         </div>
 
                         <div class="contenedor-button">
                             <div class="boton">
                                 <button class="submit" type="submit">Crear cuenta</button>
-                                <p class="text-danger col-12 text-center err-form-general"></p>
+                                <p class="col-12 err-form-general"></p>
                             </div>
 
                             <div class="iniciar-google">
@@ -71,9 +59,7 @@
                                                 d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z">
                                             </path>
                                         </svg>
-                                        <p>
-                                            Registrarse con Google
-                                        </p>
+                                        <p>Registrarse con Google</p>
                                     </div>
                                 </a>
                             </div>
@@ -86,11 +72,9 @@
                     </form>
                 </div>
             </main>
-            
-            <%- include('../partials/footer') %> 
 
-            <%- include('../partials/scripts', { disabledGliderJS:true }) %>
-            <script src="/js/validations/register.js"></script>
+        <%- include('../partials/footer') %> 
+        <%- include('../partials/scripts', { disabledGliderJS:true }) %>
+        <script src="/js/validations/register.js"> </script>
     </body>
-
 </html>

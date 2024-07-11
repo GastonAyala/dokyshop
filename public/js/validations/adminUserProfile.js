@@ -61,7 +61,7 @@ window.addEventListener("load", function () {
     // VALIDATION INPUT NAME
     let existsNameErr = false;
     const errName = document.querySelector(".errName");
-    name.addEventListener("blur", function (e) {
+    name.addEventListener("keyup", function (e) {
         const value = this.value.trim();
         switch (true) {
             case !regexAlpha.test(value):
@@ -84,7 +84,7 @@ window.addEventListener("load", function () {
     // VALIDATION INPUT ROLE
     let existsRoleErr = false;
     const errRole = document.querySelector(".errRole");
-    role.addEventListener("blur", function (e) {
+    role.addEventListener("keyup", function (e) {
         const value = this.value.trim();
         switch (true) {
             case isNaN(value):

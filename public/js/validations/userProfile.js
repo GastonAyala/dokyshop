@@ -8,8 +8,8 @@ window.addEventListener('load', async function () {
     const zipcode = document.querySelector('#zipcode');
     const errGeneral = document.querySelector('.err-form-general');
 
-    const regexAlpha = /^[A-Za-z ]+$/;
-    const regexAlphanumeric = /[^A-Za-z0-9áéíóúñÁÉÍÓÚÑ\s,.]/;
+    const regexAlpha = /^[A-Za-zÀ-ÿ ]+$/;
+    const regexAlphanumeric = /[^A-Za-z0-9áéíóúñÁÉÍÓÚÑ\s,.-]/;
 
     const invalid = (elementErr, msgErr, elementInput) => {
         elementErr.innerHTML = msgErr;
@@ -40,6 +40,8 @@ window.addEventListener('load', async function () {
     // VALIDATION INPUT AVATAR
     let existsAvatarErr = false;
     const errAvatar = document.querySelector('.errAvatar');
+    const imgElement = document.querySelector('.img');
+    
     avatar.addEventListener('change', function (e) {
         const regExpFiles = /.png|.jpg|.jpeg|.webp|.gif/i;
         const files = Array.from(this.files);
@@ -55,6 +57,13 @@ window.addEventListener('load', async function () {
             default:
                 valid(errAvatar, this);
                 existsAvatarErr = false;
+                if (this.files && this.files[0]) {
+                    let reader = new FileReader();
+                    reader.onload = function (e) {
+                        imgElement.setAttribute('src', e.target.result);
+                    };
+                    reader.readAsDataURL(this.files[0]);
+                };
                 break;
         }
     });
@@ -62,7 +71,7 @@ window.addEventListener('load', async function () {
     // VALIDATION INPUT NAME
     let existsNameErr = false;
     const errName = document.querySelector('.errName');
-    name.addEventListener('blur', function (e) {
+    name.addEventListener('keyup', function (e) {
         const value = this.value.trim();
         switch (true) {
             case !regexAlpha.test(value):
@@ -85,7 +94,7 @@ window.addEventListener('load', async function () {
     // VALIDATION INPUT PHONE
     let existsPhoneErr = false;
     const errPhone = document.querySelector('.errPhone');
-    phone.addEventListener('blur', function (e) {
+    phone.addEventListener('keyup', function (e) {
         const value = this.value.trim()
         switch (true) {
             case isNaN(value):
@@ -112,7 +121,7 @@ window.addEventListener('load', async function () {
     // VALIDATION INPUT STREET
     let existsStreetErr = false;
     const errStreet = document.querySelector('.errStreet');
-    street.addEventListener('blur', function (e) {
+    street.addEventListener('keyup', function (e) {
         const value = this.value.trim()
         switch (true) {
             case regexAlphanumeric.test(value):
@@ -134,7 +143,7 @@ window.addEventListener('load', async function () {
     // VALIDATION INPUT ZIPCODE
     let existsZipcodeErr = false;
     const errZipcode = document.querySelector('.errZipcode');
-    zipcode.addEventListener('blur', function (e) {
+    zipcode.addEventListener('keyup', function (e) {
         const value = this.value.trim()
         switch (true) {
             case isNaN(value):
@@ -161,7 +170,7 @@ window.addEventListener('load', async function () {
     // VALIDATION INPUT PROVINCE
     let existsProvinceErr = false;
     const errProvince = document.querySelector('.errProvince');
-    selectProvince.addEventListener('blur', function (e) {
+    selectProvince.addEventListener('change', function (e) {
         const value = this.value
         switch (true) {
             case regexAlphanumeric.test(value):
@@ -184,7 +193,7 @@ window.addEventListener('load', async function () {
     // VALIDATION INPUT CITY
     let existsCityErr = false;
     const errCity = document.querySelector('.errCity');
-    selectCity.addEventListener('blur', function (e) {
+    selectCity.addEventListener('change', function (e) {
         const value = this.value.trim()
         switch (true) {
             case regexAlphanumeric.test(value):
@@ -206,7 +215,7 @@ window.addEventListener('load', async function () {
 
     // FORM PREVENT DEFAULT
     const form = document.querySelector('.form');
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         if (existsAvatarErr || existsNameErr || existsPhoneErr || existsStreetErr || existsZipcodeErr || existsProvinceErr || existsCityErr) {
             e.preventDefault();
             errGeneral.innerHTML = 'Corrija los errores antes de enviar el formulario';
@@ -217,23 +226,23 @@ window.addEventListener('load', async function () {
 
     // PROVINCES AND CITIES API FUNCTIONALITY
     if (!selectProvince.options[selectProvince.selectedIndex].value) {
-        selectCity.disabled = true;   
+        selectCity.disabled = true;
     }
-    
+
     const getOption = ({ nombre }) => `<option value="${nombre}">${nombre}</option>`;
-    
+
     const orderData = (a, b, keyData) => {
         return a[keyData].localeCompare(b[keyData], 'es', { sensitivity: 'base' });
     };
-    
+
     const insertOptions = (data, elementSelect, sortKeyName) => {
         data
-        .sort((a, b) => orderData(a, b, sortKeyName))
-        .forEach((d) => {
-            elementSelect.innerHTML += getOption(d);
-        });
+            .sort((a, b) => orderData(a, b, sortKeyName))
+            .forEach((d) => {
+                elementSelect.innerHTML += getOption(d);
+            });
     };
-    
+
     const { provincias } = await (await fetch('https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre')).json();
     insertOptions(provincias, selectProvince, "nombre");
 
