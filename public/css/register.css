@@ -153,6 +153,20 @@ main.register-main form.form-principal .contenedor-form .contrasenia input {
     width: 100%;
 }
 
+main.register-main form.form-principal .contenedor-form .contrasenia .fa-eye{
+    background-color: var(--blanco);
+    position: absolute;
+    top: 9px;
+    right: 10px;
+}
+  
+main.register-main form.form-principal .contenedor-form .contrasenia .fa-eye-slash{
+    background-color: var(--blanco);
+    position: absolute;
+    top: 9px;
+    right: 9px;
+}
+
 main.register-main form.form-principal .recaptcha {}
 
 main.register-main form.form-principal .contenedor-button {

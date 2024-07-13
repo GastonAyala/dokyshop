@@ -21,6 +21,9 @@
                             <div class="contrasenia position-relative">
                                 <label for="password"></label>
                                 <input class="contrasenia input form-control" type="password" name="password" id="password" placeholder="Contraseña">
+                                <span id="btn-eye">
+                                    <i class="fa-regular fa-eye" id="icon-eye"></i>
+                                </span>
                                 <p class="errorPassword">
                                     <%= locals.errorsLog?.password?.msg %>
                                 </p>
@@ -74,8 +77,9 @@
                 </div>
             </main>
         <%- include('../partials/footer') %>
-        <%- include('../partials/scripts', { disabledGliderJS:true }) %>
+        <%- include('../partials/scripts', { disabledGliderJS:true}) %>
         <script src="/js/validations/login.js"></script>
+        <script src="/js/functions/toggleLoginPassword.js"></script>
     </body>
 
 </html>
