@@ -10,8 +10,17 @@ module.exports = (req, res) => {
         const { id } = req.session?.userLogin;
         const { name, street, city, province, zipcode, phone } = req.body;
         const avatarImage = req.files?.avatar;
+
         db.user.findByPk(id)
         .then(userToEdit => {
+            console.log(userToEdit.avatar);
+            if (avatarImage?.length && userToEdit.avatar) {
+                const pathImage = path.resolve(__dirname, `../../../public/images/avatar/${userToEdit?.avatar}`);
+                if (fs.existsSync(pathImage)) {
+                    fs.unlinkSync(pathImage);
+                }
+            }
+
             db.user.update({
                 avatar: avatarImage?.length && avatarImage[0]?.filename,
                 name: name.trim() ? name : null,

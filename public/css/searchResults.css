@@ -1,6 +1,5 @@
 .body-results {
-    
-background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
+    background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
 }
 
 .results-main {
@@ -13,16 +12,27 @@ background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
 
 .results-main .container .row {}
 
-.results-main .container .row .SearchTitleContainer {}
-
-.results-main .container .row .SearchTitleContainer .searchTitle {
-    color: var(--celeste);
-    font-weight: bold;
+.results-main .container .row .SearchTitleContainer {
 }
 
-.results-main .container .row .searchTitleNotFound-container {}
+.SearchTitleContainer.col-12.text-center {}
 
-.results-main .container .row .searchTitleNotFound-container .searchTitleNotFound {}
+.results-main .container .row .SearchTitleContainer .searchTitle {
+    color: var(--blanco);
+    font-weight: bold;
+    background-color: var(--celesteRGBA);
+    border-radius: 20px;
+}
+
+.results-main .container .row .searchTitleNotFound-container {
+}
+
+.results-main .container .row .searchTitleNotFound-container .searchTitleNotFound {
+    border-radius: 20px;
+    padding: 5px;
+    background-color: var(--celesteRGBA);
+    font-weight: bolder;
+}
 
 
 /* --- PRODUCTS --- */

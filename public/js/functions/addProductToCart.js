@@ -1,4 +1,7 @@
 const addProductCart = async (id) => {
+    const goToCart = () => {
+        window.location.href = "/carrito-compra"
+    }
     toastr.options = {
         "closeButton": true,
         "debug": false,
@@ -6,7 +9,7 @@ const addProductCart = async (id) => {
         "progressBar": true,
         "positionClass": "toast-top-right",
         "preventDuplicates": false,
-        "onclick": null,
+        "onclick": goToCart,
         "showDuration": "300",
         "hideDuration": "1000",
         "timeOut": "3000",

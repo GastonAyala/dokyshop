@@ -38,7 +38,8 @@ const getCardStructure = (p) => {
                 <i class="rounded-circle btn-clear far fa-times-circle"></i>
               </button>
               <h5>${p.title}</h5>
-              <p class="precio">$${toThousand(p.price)}</p>
+              <p class="precio">$${toThousand(p.price - (p.price * p.sale / 100))}</p>
+              <p class="descuento">${p.sale}% OFF</p>
               <div class="d-flex align-items-center quantity-container">
                 <button onclick="lessProduct(${p.id})" class="btn">-</button>
                 <output class="quantity form-control form-control-sm text-center">${p.orderproducts.quantity}</output>

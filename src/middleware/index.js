@@ -6,4 +6,5 @@ module.exports = {
     checkIsAdmin: require('./checkIsAdmin'),
     checkIsGuest: require('./checkIsGuest'),
     checkIsLogged: require('./checkIsLogged'),
+    handleHeaderAvatar: require('./handleHeaderAvatar'),
 };

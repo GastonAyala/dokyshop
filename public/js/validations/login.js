@@ -32,7 +32,7 @@ window.addEventListener('load', function () {
   };
 
   //------------email
-  let existsEmailError = true;
+  let existsEmailError = false;
   const invalidCorreo = document.querySelector(".errorEmail")
   inputEmail.addEventListener("keyup", function () {
     const value = this.value.trim();
@@ -56,7 +56,7 @@ window.addEventListener('load', function () {
   focus(invalidCorreo, inputEmail);
 
   //--------------password 
-  let existsPassError = true;
+  let existsPassError = false;
   const invalidPas = document.querySelector(".errorPassword");
 
   inputPas.addEventListener("keyup", function () {

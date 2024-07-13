@@ -87,9 +87,8 @@
 }
 
 .container-cart .contenedor-pro .producto .info-container .close-button {
-    top: 0;
-    right: 1px;
-    position: absolute;
+    width: 100%;
+    text-align: end;
 }
 
 .container-cart .contenedor-pro .producto .info-container .close-button i {
@@ -100,6 +99,7 @@
     width: 100%;
     margin: auto;
     font-size: calc(0.8rem + 0.6vw);
+    text-align: center;
 }
 
 .container-cart .contenedor-pro .producto .info-container .quantity-container {
@@ -149,6 +149,12 @@
     font-weight: bold;
     font-size: 1.1rem;
     width: 50%;
+}
+
+.container-cart .contenedor-pro .producto .descuento{
+    color: var(--verde);
+    font-weight: bold;
+    margin: auto;
 }
 
 .container-cart .contenedor-pro .producto p.conEnvio{
