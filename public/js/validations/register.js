@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
   const email = document.querySelector("[name='email']");
   const password = document.querySelector("[name='password']");
 
-  const regExPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+  const regExPass = /^(?=.*\d)(?=.*[A-ZÑ])(?=.*[a-zñ])\S{16,25}$/;
   const regexAlpha = /^[A-Za-zÀ-ÿ ]+$/;
   const regexMail = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -139,12 +139,12 @@ window.addEventListener('load', function () {
         invalid(invalidPas, "El campo contraseña es requerido", this);
         existsPassError = true;
         break;
-      case value.length < 8 || value.length > 16:
-        invalid(invalidPas, "Longitud invalida entre 8 y 16 caracteres", this);
+      case value.length < 8 || value.length > 25:
+        invalid(invalidPas, "Longitud invalida entre 8 y 25 caracteres", this);
         existsPassError = true;
         break;
       case !regExPass.test(value):
-        invalid(invalidPas, "La Contraseña debe contener al menos una mayuscula una minuscula y un numero", this);
+        invalid(invalidPas, "La contraseña debe contener al menos una mayuscula, una minuscula y un número", this);
         existsPassError = true;
         break;
       default:
