@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
-          <%- include('../partials/head',  {view: "Listado de productos",gliderCSSDisabled:true}) %>
+    <%- include('../partials/head',  {view: "Listado de productos",gliderCSSDisabled:true}) %>
     <body class="body-listProducts">
+        <%- include('../partials/dot') %>
 
         <%- include('../partials/header') %>
+        <main class="list-product d-flex flex-wrap justify-content-center ">
+            <div class="dropdown-center categoryFilter">
+                <select class="form-select categorySelect" aria-label="Seleccionar categoría">
+                    <option value="0">Seleccionar categoría</option>
+                    <% locals.categories.forEach(c => { %>
+                        <option value="<%= c.id %>" <%= category == c.id ? 'selected' : '' %>><%= c.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            
+            <div class="dropdown-center subcategoryFilter">
+                <select class="form-select subcategorySelect" aria-label="Seleccionar subcategoría">
+                    <option value="0">Seleccionar subcategoría</option>
+                    <% locals.subcategories.forEach(sub => { %>
+                        <option value="<%= sub.id %>" <%= subcategory == sub.id ? 'selected' : '' %>><%= sub.name %></option>
+                    <% }) %>
+                </select>
+            </div>
 
-        <main class="list-product ">
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center m-5">
-                    <li class="page-item <% if(lessPage == 0) { %> <%= 'disabled' %> <% } %>">
-                        <a class="page-link link-danger-custom" href="/productos<%= subcategory ? "?subcategory=" + subcategory + "&" : "?" %>page=<%= lessPage %>&offset=<%= lessOffset %>" aria-label="Previous">
+            <nav class="paginationNav" aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item <% if(prev == null || page === 1) { %> <%= 'disabled' %> <% } %>">
+                        <a class="page-link link-danger-custom" href="/productos<%= prev ? prev : '' %>" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
     
-                    <% let sendOffset = 0 %>
-                    <% for( let i = 1; i <= totalPages ; i++ ) { %>
-                        
+                    <% for( let i = 1; i <= pages ; i++ ) { %>
                     <li class="page-item">
-                        <a class="page-link link-danger-custom <% if (page - 1 === i ) { %> <%= "link-active" %><% } %>" href="/productos<%= subcategory ? "?subcategory=" + subcategory + "&" : "?" %>page=<%= i %>&offset=<%= sendOffset %>"><%= i %></a>
+                        <a class="page-link link-danger-custom <% if (page == i ) { %> <%= "link-active" %><% } %>" href="/productos?<%= category ? 'category=' + category + '&' : '' %><%= subcategory ? 'subcategory=' + subcategory + '&' : '' %>page=<%= i %>"><%= i %></a>
                     </li>
-    
-                    <% sendOffset = sendOffset + 5  %>
-    
                     <% } %>
-                    <li class="page-item <% if (page === totalPages + 1) { %> <%= 'disabled' %> <% } %>">
-                        <a class="page-link link-danger-custom" href="/productos<%= subcategory ? "?subcategory=" + subcategory + "&" : "?" %>page=<%= page %>&offset=<%= offset %>" aria-label="Next">
+                    
+                    <li class="page-item <% if (next === null) { %> <%= 'disabled' %> <% } %>">
+                        <a class="page-link link-danger-custom" href="/productos<%= next %>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
                 </ul>
             </nav>
-
-            <%- include('../partials/cardPrincipal') %>
             
+            <%- include('../partials/cardPrincipal') %>
         </div>
         </main>
 
         <%- include('../partials/footer') %>
 
-        <%- include('../partials/scripts',{disabledGliderJS:true, activeAddProduct:true}) %>
-      
+        <%- include('../partials/scripts',{disabledGliderJS:true, activeAddProduct:true, activeDotJS:true}) %>
+        <script src="/js/functions/listProductsFilters.js"></script>
     </body>
 </html>

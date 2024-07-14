@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: DataTypes.INTEGER,
     subcategoryId: DataTypes.INTEGER,
     description: DataTypes.TEXT,
-    price: DataTypes.DECIMAL,
+    price: DataTypes.INTEGER,
     sale: DataTypes.INTEGER,
     quantity: DataTypes.INTEGER,
     available: DataTypes.BOOLEAN,

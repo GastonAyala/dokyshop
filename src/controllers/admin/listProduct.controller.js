@@ -1,5 +1,5 @@
 const db = require('../../database/models');
-const { toThousand } = require('../utils');
+const { converMoneyArg } = require('../utils');
 
 
 module.exports = (req, res) => {
@@ -11,7 +11,7 @@ module.exports = (req, res) => {
                 include: ['imagesecondaries', 'category', 'subcategory']
             })
             .then(products => {
-                res.render("./admin/listProducts", { products, categories, subcategories, toThousand },
+                res.render("./admin/listProducts", { products, categories, subcategories, converMoneyArg },
                 (err, contentView) => {
                     err && res.send(err.message)
                     res.render("./partials/dashboard", {

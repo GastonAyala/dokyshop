@@ -10,7 +10,7 @@
                     <a class="listProduct-titleLink" href="/productos/detalle/<%= p.id %>">
                         <h5><%= p.title%></h5>
                     </a>
-                    <p><%= toThousand(p.price) %></p>
+                    <p><%= converMoneyArg(p.price) %></p>
                     <button class="searchedProduct-buyCart" onclick="addProductCart('<%=p.id %>')"><i class="fa-solid fa-cart-plus"></i></button>
                 </div>
             </article>

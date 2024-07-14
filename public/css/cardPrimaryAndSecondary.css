@@ -5,6 +5,7 @@
     align-items: center;
     margin: 50px 0px;
     align-content: center;
+    min-height: 400px;
 }
 
 .searchedProduct-container h2 {

@@ -1,6 +1,6 @@
 const db = require('../../database/models');
 const { literal, QueryTypes } = require('sequelize');
-const { toThousand } = require('../utils');
+const { converMoneyArg } = require('../utils');
 
 module.exports = async (req, res) => {
     try {
@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
 
         const faqs = await db.faq.findAll()
         
-        return res.render("other/home", { banners: views.banners, otherImages: views.otherImages, subcategories, products, faqs, toThousand })
+        return res.render("other/home", { banners: views.banners, otherImages: views.otherImages, subcategories, products, faqs, converMoneyArg })
 
     } catch (err) {
         return res.send(err.message)

@@ -40,10 +40,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       price: {
-        type: Sequelize.DECIMAL({
-          precision: 7,
-          scale:2
-        })
+        type: Sequelize.INTEGER
       },
       sale: {
         type: Sequelize.INTEGER

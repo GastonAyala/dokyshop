@@ -20,7 +20,6 @@ toastr.options = {
     "hideMethod": "fadeOut"
 }
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 const converMoneyArg = (num = 0) => num.toLocaleString({
     currency: "ARS",
     style: "currency"
@@ -38,15 +37,18 @@ const getCardStructure = (p) => {
                 <i class="rounded-circle btn-clear far fa-times-circle"></i>
               </button>
               <h5>${p.title}</h5>
-              <p class="precio">$${toThousand(p.price - (p.price * p.sale / 100))}</p>
+              <p class="precio">$${converMoneyArg(p.price - (p.price * p.sale / 100))}</p>
               <p class="descuento">${p.sale}% OFF</p>
               <div class="d-flex align-items-center quantity-container">
-                <button onclick="lessProduct(${p.id})" class="btn">-</button>
-                <output class="quantity form-control form-control-sm text-center">${p.orderproducts.quantity}</output>
-                <button onclick="moreProduct(${p.id})" class="btn">+</button>
+              <button onclick="lessProduct(${p.id})" class="btn">-</button>
+              <output class="quantity form-control form-control-sm text-center">${p.orderproducts.quantity}</output>
+              <button onclick="moreProduct(${p.id})" class="btn">+</button>
               </div>
+              <p class="subtotal">Subtotal:
+              <span>$${converMoneyArg((p.price - (p.price * p.sale / 100)) * p.orderproducts.quantity)} </span>
+              </p>
               <a href="/productos/detalle/${p.id}" class="btn viewMore">Ver más</a>
-            </div>
+              </div>
         </div>`
 };
 

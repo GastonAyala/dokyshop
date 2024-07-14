@@ -148,13 +148,19 @@
     margin: auto;
     font-weight: bold;
     font-size: 1.1rem;
-    width: 50%;
+    /* width: 50%; */
 }
 
 .container-cart .contenedor-pro .producto .descuento{
     color: var(--verde);
     font-weight: bold;
     margin: auto;
+}
+
+.container-cart .contenedor-pro .producto .subtotal{
+    margin: auto;
+    color: var(--gris);
+    font-weight: bold;
 }
 
 .container-cart .contenedor-pro .producto p.conEnvio{

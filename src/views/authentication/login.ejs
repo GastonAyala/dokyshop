@@ -20,7 +20,7 @@
 
                             <div class="contrasenia position-relative">
                                 <label for="password"></label>
-                                <input class="contrasenia input form-control" type="password" name="password" id="password" placeholder="Contraseña">
+                                <input class="contrasenia input form-control" type="password" name="password" id="password" placeholder="Contraseña" value="<%= locals.old?.password %>" autocomplete="on">
                                 <span id="btn-eye">
                                     <i class="fa-regular fa-eye" id="icon-eye"></i>
                                 </span>

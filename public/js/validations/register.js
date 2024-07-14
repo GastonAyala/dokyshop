@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
   const email = document.querySelector("[name='email']");
   const password = document.querySelector("[name='password']");
 
-  const regExPass = /^(?=.*\d)(?=.*[A-ZÑ])(?=.*[a-zñ])\S{16,25}$/;
+  const regExPass = /^(?=.*\d)(?=.*[A-ZÑ])(?=.*[a-zñ])\S{8,25}$/;
   const regexAlpha = /^[A-Za-zÀ-ÿ ]+$/;
   const regexMail = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 

@@ -2,7 +2,11 @@
     background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
 }
 
-.list-product {height: 100%;}
+.list-product {height: 100%;gap: 10px;padding: 10px 0 0 0;}
+
+.list-product .paginationNav {
+    width: 100%;
+}
 
 .list-product .listProd-container {
     display: flex;

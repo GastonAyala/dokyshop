@@ -1,6 +1,6 @@
 const db = require('../../database/models');
 const { Op } = require('sequelize').Sequelize;
-const { toThousand } = require('../utils');
+const { converMoneyArg } = require('../utils');
 
 module.exports = (req, res) => {
     const { dashboardKeywords, categorySearch, subcategorySearch } = req.query;
@@ -25,7 +25,7 @@ module.exports = (req, res) => {
         const subcategoryPromise = db.subcategory.findAll()
         Promise.all([categoryPromise, subcategoryPromise])
         .then(([categories, subcategories]) => {
-            res.render("admin/searchProducResults", { products, dashboardKeywords, categorySearch, subcategorySearch, categories, subcategories, toThousand }, (err, contentView) => {
+            res.render("admin/searchProducResults", { products, dashboardKeywords, categorySearch, subcategorySearch, categories, subcategories, converMoneyArg }, (err, contentView) => {
                 err && res.send(err.message)
                 res.render("partials/dashboard", { contentView })
             })

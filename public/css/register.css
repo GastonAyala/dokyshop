@@ -2,18 +2,9 @@
     background-image: url(../images/other/puppy-dog-seamless-pattern.jpg);
 }
 
-.register-main {
-    /* background: linear-gradient(
-    rgba(200, 205, 218, 0.5), 
-    rgba(200, 205, 218, 0)), 
-    url(/images/authentication/fondo-login.jpeg); */
-    /* background-repeat: no-repeat; */
-    /* height: 880px; */
-    /* background-position: center; */
-    /* background-size: cover; */
-}
+.register-main {}
 
-main.register-main p.is-invalid{
+main.register-main p.is-invalid {
     color: red;
 }
 
@@ -275,7 +266,7 @@ main.register-main .contenedor-registro .contenedor-button .iniciar-google a .bt
 /* tablet register */
 
 @media (min-width: 426px) {
-    body {}
+    .body-register  {}
 
     main.register-main {
     /* height: 740px; */
@@ -335,7 +326,7 @@ main.register-main .contenedor-registro .contenedor-button .iniciar-google a .bt
 
 @media (min-width: 768px) {
 
-    body {
+    .body-register  {
     }
 
     main .contenedor-registro{

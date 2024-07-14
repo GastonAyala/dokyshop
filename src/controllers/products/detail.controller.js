@@ -1,6 +1,6 @@
 const { QueryTypes } = require('sequelize');
 const db = require('../../database/models');
-const { toThousand } = require('../utils');
+const { converMoneyArg } = require('../utils');
 
 module.exports = async (req, res) => {
     try {
@@ -48,7 +48,7 @@ module.exports = async (req, res) => {
                 categoryId: product.categoryId
             }
         })
-        return res.render("products/productDetail", {product, toThousand, products})
+        return res.render("products/productDetail", {product, converMoneyArg, products})
     } catch (err) {
         return res.send(err.message)
     }

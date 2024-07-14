@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
   const inputEmail = document.querySelector("[name='email']")
   const inputPas = document.querySelector("[name='password']")
 
-  const regExPass = /^(?=.*\d)(?=.*[A-ZÑ])(?=.*[a-zñ])\S{16,25}$/;
+  const regExPass = /^(?=.*\d)(?=.*[A-ZÑ])(?=.*[a-zñ])\S{8,25}$/;
   const regexMail = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const invalid = (elementErr, msgErr, elementInput) => {

@@ -62,7 +62,7 @@
             </div>
             <h2 class="prodDetail-title"><%= product.title%></h2>
             <div class="prodDetail-pricing">
-                <p class="prodDetail-price">$<%= toThousand(product.price - (product.price * product.sale / 100)) %></p>
+                <p class="prodDetail-price">$<%= converMoneyArg(product.price - (product.price * product.sale / 100)) %></p>
                 <% if (product.sale && product.sale > 0) { %>
                     <p class="prodDetail-sale"><%= product.sale %>% OFF</p>
                 <% } %>
