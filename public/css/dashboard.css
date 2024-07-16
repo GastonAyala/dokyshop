@@ -49,6 +49,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    color: var(--celesteClaro);
 }
 
 .main-dashboard .dashboard-panel .dash-ul li a:hover i {

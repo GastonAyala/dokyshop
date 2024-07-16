@@ -1,7 +1,7 @@
 .dashboard-content {
     padding: 0 1rem;
     text-align: center;
-    margin: 0;
+    margin: auto;
 }
 
 .dashboard-content h1 {
@@ -51,11 +51,16 @@
     font-weight: bold;
     font-size: 1rem;
 }
+.dashboard-content .dash-topbar .dash-searchForm input::placeholder {
+    color: var(--celesteClaro);
+}
 
 
 .dashboard-content .dash-topbar .dash-searchForm button {
     background-color: var(--celeste);
-    border: none;font-size: 1.1rem;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--celesteClaro);
 }
 
 .dashboard-content .dash-topbar .dash-searchForm button i {}
@@ -65,7 +70,7 @@
     background-color: var(--celeste);
     border-radius: 20px;
     font-weight: bold;
-    color: var(--gris);
+    color: var(--celesteClaro);
     display: flex;
     flex-wrap: wrap;
     border: 2px solid rgba(0, 0, 0, 0);
@@ -76,16 +81,23 @@
 }
 .dashboard-content .dash-topbar .dash-filter .dash-filterForm {
     
-    padding: 10px;
-    border-radius: 20px;
-    font-weight: bold;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    border: 2px solid rgba(0, 0, 0, 0);
-
+padding: 10px;
+    
+border-radius: 20px;
+    
+font-weight: bold;
+    
+display: flex;
+    
+flex-wrap: wrap;
+    
+align-items: center;
+    
+justify-content: center;
+    
+align-content: center;
+    
+border: 2px solid rgba(0, 0, 0, 0);
 }
 .dashboard-content .dash-topbar .dash-filter .dash-filterForm select {
     border: none;
@@ -93,6 +105,7 @@
     outline: none;
     background-color: var(--celeste);
     font-weight: bold;
+    color: var(--celesteClaroTraslucido);
 }
 
 .dashboard-content .dash-topbar .dash-filter .dash-filterForm select option {
@@ -104,6 +117,7 @@
     border: none;
     font-weight: bold;
     padding-left: 15px;
+    color: var(--celesteClaro);
 }
 
 /* CREAR PRODUCTO */
@@ -119,11 +133,10 @@
     border: 2px solid rgba(0, 0, 0, 1);
 }
 
-.dashboard-content .dash-topbar .dash-addProduct-container .dash-addProduct {
-}
+.dashboard-content .dash-topbar .dash-addProduct-container .dash-addProduct {color: var(--celesteClaro);}
 
 .dashboard-content .dash-topbar .dash-addProduct-container .dash-addProduct span {
-    color: var(--gris);
+    color: var(--celesteClaro);
     transition: all 0.4s;
 }
 .dashboard-content .dash-topbar .dash-addProduct-container .dash-addProduct span:hover {
@@ -269,6 +282,7 @@
     padding: 5px 15px;
     border-radius: 10%;
     background-color: var(--azul);
+    color: var(--blanco);
     transition: all 0.5s;
 }
 .dashboard-content .listProduct-table tbody tr td .dash-actionButtons .editButton:hover {
@@ -279,6 +293,7 @@
     padding: 5px 15px;
     border-radius: 10%;
     background-color: var(--azul);
+    color: var(--blanco);
     transition: all 0.5s;
 }
 

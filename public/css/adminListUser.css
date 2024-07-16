@@ -36,11 +36,14 @@
     font-weight: bold;
     font-size: 1rem;
 }
-
+.dashUser-topbar .dash-searchForm input::placeholder {
+    color: var(--celesteClaro);
+}
 .dashUser-topbar .dash-searchForm button {
     background-color: var(--celeste);
     border: none;
     font-size: 1.1rem;
+    color: var(--celesteClaro);
 }
 
 .dashUser-topbar .dash-searchForm button i {}
@@ -69,6 +72,7 @@
     justify-content: center;
     align-items: center;
     border: 2px solid rgba(0, 0, 0, 0);
+    color: var(--celesteClaro);
 }
 
 .dashUser-topbar .dashUserFilter .dashUserFilter-form select {
@@ -77,6 +81,7 @@
     background-color: var(--celeste);
     font-weight: bold;
     padding-right: 10px;
+    color: var(--celesteClaroTraslucido);
 }
 
 .dashUser-topbar .dashUserFilter .dashUserFilter-form select option {
@@ -88,6 +93,7 @@
     font-weight: bold;
     border: none;
     padding-left: 15px;
+    color: var(--celesteClaro);
 }
 
 
@@ -155,6 +161,7 @@
     border-radius: 10%;
     background-color: var(--azul);
     transition: all 0.5s;
+    color: var(--blanco);
 }
 
 .listUsertable tbody tr td .dashUser-Actions .editUserButton:hover {
@@ -166,6 +173,7 @@
     border-radius: 10%;
     background-color: var(--azul);
     transition: all 0.5s;
+    color: var(--blanco);
 }
 
 .listUsertable tbody tr td .dashUser-Actions .deleteUserButton:hover {
