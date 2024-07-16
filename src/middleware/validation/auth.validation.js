@@ -2,7 +2,7 @@ const db = require('../../database/models');
 const { body } = require('express-validator');
 const { compareSync } = require('bcryptjs');
 const path = require('path');
-const regExPass = /^(?=.*\d)(?=.*[A-ZÑ])(?=.*[a-zñ])\S{16,25}$/;
+const regExPass = /^(?=.*\d)(?=.*[A-ZÑ])(?=.*[a-zñ])\S{8,25}$/;
 const expReg = /.png|.jpg|.jpeg|.webp|.gif/i;
 
 const fieldEmaildDefault = body("email")
