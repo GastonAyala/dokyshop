@@ -4,12 +4,15 @@
   "description": "Somos un grupo de Programadores que nos encontramos con un desafio al cual queremos afrontar. La empresa \"H Venture Capitals\" solicita el desarrollo una pagina E-commerce orientado al publico que decea adquirir accesorios, vestimenta y juguetes para mascotas. La cual @Ecode nos encomienda el desarrollo de la misma.",
   "main": "./src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/bin/www",
-    "db:reset": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all",
+    "start": "npm run env:prod node ./src/bin/www",
+    "db:reset:dev": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all",
+    "db:reset:prod": "npm run env:prod sequelize db:drop & npm run env:prod sequelize db:create & npm run env:prod sequelize db:migrate & npm run env:prod sequelize db:seed:all",
+    "env:prod": "cross-env NODE_ENV=production",
     "server-dev": "nodemon ./src/bin/www",
+    "server-db-prod": "npm run env:prod nodemon ./src/bin/www",
     "client-dev": "cd dashboard & npm run dev",
-    "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\""
+    "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
+    "test": "cross-env NODE_ENV=production node ./src/bin/www"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "debug": "~2.6.9",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
@@ -50,5 +54,6 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
-  }
+  },
+  "packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728"
 }

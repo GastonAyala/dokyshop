@@ -1,5 +1,5 @@
 const $ = (element) => document.querySelector(element);
-const server = `http://localhost:3030`;
+const server = process.env.SERVER_HOST
 let productsCart = [];
 
 toastr.options = {
