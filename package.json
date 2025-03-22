@@ -1,7 +1,7 @@
 {
   "name": "e-commerce",
   "version": "1.0.0",
-  "description": "Somos un grupo de Programadores que nos encontramos con un desafio al cual queremos afrontar. La empresa \"H Venture Capitals\" solicita el desarrollo una pagina E-commerce orientado al publico que decea adquirir accesorios, vestimenta y juguetes para mascotas. La cual @Ecode nos encomienda el desarrollo de la misma.",
+  "description": "DokyShop es un E-commerce especializado en la venta de accesorios, vestimenta y juguetes para mascotas. Nuestro equipo de desarrollo ha diseñado esta plataforma con tecnologías modernas para garantizar una experiencia fluida y segura.",
   "main": "./src/app.js",
   "scripts": {
     "start": "npm run env:prod node ./src/bin/www",
@@ -16,15 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/facundocaro1826/grupo_5_e-commerce.git"
+    "url": "git+https://github.com/GastonAyala/dokyshop.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/facundocaro1826/grupo_5_e-commerce/issues"
-  },
-  "homepage": "https://github.com/facundocaro1826/grupo_5_e-commerce#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
@@ -54,6 +50,5 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
-  },
-  "packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728"
+  }
 }
