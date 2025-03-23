@@ -1,7 +1,6 @@
-import React from 'react'
 import ContentRowTop from '../components/Dashboard/ContentRowTop'
 
-const Dashboard = props => {
+const Dashboard = () => {
   return (
     <ContentRowTop />
   )

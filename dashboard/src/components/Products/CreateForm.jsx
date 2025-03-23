@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GridToolbarContainer, } from '@mui/x-data-grid';
 import { Box, TextField, Button, styled, Checkbox, FormControlLabel, Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 import { Modal, ModalClose, Sheet, DialogTitle } from '@mui/joy';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import Add from '@mui/icons-material/Add';
+import { API_HOST } from '../../environment';
 
 const style = {
   position: 'absolute',
@@ -88,10 +89,13 @@ export const CreateForm = (props) => {
 
   const fetchCategoriesAndSubcategories = async () => {
     try {
-      const { ok, data } = await fetch("http://localhost:3030/api/categories").then(res => res.json());
+    
+      const { ok, data } = await fetch(`${API_HOST}/api/categories`).then(
+        (res) => res.json()
+      );
       ok && setCategories(data);
 
-      const { ok: okSub, data: dataSub } = await fetch("http://localhost:3030/api/subcategories").then(res => res.json());
+      const { ok: okSub, data: dataSub } = await fetch(`${API_HOST}/api/subcategories`).then(res => res.json());
       okSub && setSubcategories(dataSub);
     } catch (error) {
       console.error(error.message);
@@ -114,7 +118,8 @@ export const CreateForm = (props) => {
   }, [open]);
 
   const handleCreateProduct = async (e, newProduct) => {
-    const endpoint = "http://localhost:3030/api/products/create"
+    const endpoint = `${API_HOST}/api/products/create`;
+
     try {
       e.preventDefault()
       let formData = new FormData();
@@ -133,7 +138,7 @@ export const CreateForm = (props) => {
       formData.append('category', newProduct.category);
       formData.append('subcategory', newProduct.subcategory);
 
-      const { ok, msg } = await fetch(endpoint, {
+      const { ok } = await fetch(endpoint, {
         method: "POST",
         body: formData,
       }).then(res => res.json());

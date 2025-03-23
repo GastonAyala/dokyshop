@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from '../reusable/Spinner';
 import { useLocation } from 'react-router-dom';
 import { Alert } from "../reusable/Alert";
 import { PanelCard } from "../reusable/PanelCard";
+import { API_HOST } from "../../environment";
 
 export const ListCategories = () => {
   // useLocation
@@ -21,7 +22,7 @@ export const ListCategories = () => {
   useEffect(() => pathname === "/categorias" ? setStyleClass("m-auto w-75") : setStyleClass("mb-4"), []);
 
   useEffect(() => {
-    const endpoint = "http://localhost:3030/api/categories";
+    const endpoint = `${API_HOST}/api/categories`;    
 
     const getCategories = async () => {
       try {
@@ -58,7 +59,7 @@ export const ListCategories = () => {
         </div>
         <div className="card-body">
           <div className="row">
-            {stateCategories.categories.map((c, i) => (
+            {stateCategories.categories.map((c) => (
               stateCategories.count.map((countByCat, i) => countByCat.name === c.name ? <PanelCard key={i} {...c} countBy={countByCat.count} /> : "")
             ))}
           </div>

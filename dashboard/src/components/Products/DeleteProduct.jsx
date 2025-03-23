@@ -1,10 +1,10 @@
-import React from 'react';
 import { Box, Button, Sheet, Typography, Modal, ModalClose,  } from '@mui/joy';
+import { API_HOST } from '../../environment';
 
 export const DeleteProduct = ({ open, onClose, productId, onDeleteSuccess }) => {
     const handleDelete = async () => {
         try {
-            const { ok, msg } = await fetch(`http://localhost:3030/api/products/delete/${productId}`, {
+            const { ok, msg } = await fetch(`${API_HOST}/api/products/delete/${productId}`, {
                 method: 'DELETE',
             }).then(res => res.json());
 

@@ -115,7 +115,7 @@ window.addEventListener('load', function () {
         break;
     }
     try {
-      const { data } = await (await fetch('http://localhost:3030/api/users')).json()
+      const { data } = await (await fetch('/api/users')).json()
       data.forEach(user => {
         if (user.email === value) {
           invalid(invalidCorreo, "El usuario ya existe", this);

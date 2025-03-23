@@ -1,4 +1,3 @@
-import React from 'react';
 import ContentRowCenter from './ContentRowCenter';
 import ContentRowProducts from '../Products/ContentRowProducts';
 function ContentRowTop() {

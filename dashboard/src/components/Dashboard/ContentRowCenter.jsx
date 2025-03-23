@@ -1,4 +1,3 @@
-import React from 'react';
 import LastProductInDb from '../Products/LastProductInDb';
 import LastUserInDb from '../Users/LastUserInDb';
 import { ListCategories } from '../Categories/ListCategories';

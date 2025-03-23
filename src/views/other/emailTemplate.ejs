@@ -9,7 +9,7 @@
 <body style="background-color: #407FB9; text-align: center;">
     <h1 style="color: white;">Te damos la bienvenida a Dokyshop</h1>
     <div style="margin: auto;">
-        <a href="http://localhost:3030">
+        <a href="<%= process.env.NODE_ENV === 'production' ? 'https://dokyshop.cleverapps.io' : `http://localhost:${process.env.PORT || 3030}` %>">
             <img style="width: 200px;" src="cid:logo@dokyshop.com" alt="Embedded Image">
         </a>
     </div>
@@ -18,7 +18,7 @@
         <br>
         <b>te estaremos enviando nuestras novedades</b>
     </div>
-    <a style="padding: 10px; background-color:  #a0c5e8c2; color: #334558; border-radius: 20px; text-decoration: none;" href="http://localhost:3030">DOKYSHOP</a>
+    <a style="padding: 10px; background-color:  #a0c5e8c2; color: #334558; border-radius: 20px; text-decoration: none;" href="<%= process.env.NODE_ENV === 'production' ? 'https://dokyshop.cleverapps.io' : `http://localhost:${process.env.PORT || 3030}` %>">DOKYSHOP</a>
     <br>
     <br>
 </body>

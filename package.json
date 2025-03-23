@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "description": "DokyShop es un E-commerce especializado en la venta de accesorios, vestimenta y juguetes para mascotas. Nuestro equipo de desarrollo ha diseñado esta plataforma con tecnologías modernas para garantizar una experiencia fluida y segura.",
   "main": "./src/app.js",
-  "scripts": {
-    "start": "npm run env:prod node ./src/bin/www",
-    "db:reset:dev": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all",
-    "db:reset:prod": "npm run env:prod sequelize db:drop & npm run env:prod sequelize db:create & npm run env:prod sequelize db:migrate & npm run env:prod sequelize db:seed:all",
-    "env:prod": "cross-env NODE_ENV=production",
-    "server-dev": "nodemon ./src/bin/www",
-    "server-db-prod": "npm run env:prod nodemon ./src/bin/www",
-    "client-dev": "cd dashboard & npm run dev",
-    "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
-    "test": "cross-env NODE_ENV=production node ./src/bin/www"
-  },
+ "scripts": {
+  "start": "npm run env:prod && node ./src/bin/www",
+  "db:reset:dev": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+  "db:reset:prod": "npm run env:prod && sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+  "env:prod": "cross-env NODE_ENV=production",
+  "server-dev": "nodemon ./src/bin/www",
+  "server-db-prod": "npm run env:prod && nodemon ./src/bin/www",
+  "client-dev": "cd dashboard && npm run dev",
+  "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
+  "test": "cross-env NODE_ENV=production node ./src/bin/www"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GastonAyala/dokyshop.git"

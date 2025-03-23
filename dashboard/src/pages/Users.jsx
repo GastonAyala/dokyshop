@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { Avatar, Box, Container, Typography } from '@mui/material';
+import { Alert, Avatar, Box, Container, Typography } from '@mui/material';
 import { Spinner } from '../components/reusable/Spinner';
+import { API_HOST } from '../environment';
 
 function Users() {
 
@@ -20,7 +21,8 @@ function Users() {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const endpoint = 'http://localhost:3030/api/users'
+        const endpoint = `${API_HOST}/api/users`
+        
         const { ok, data = [], msg = null } = await fetch(endpoint).then((res) => res.json())
 
         if (!ok) throw new Error(msg)
@@ -43,15 +45,6 @@ function Users() {
   }, [])
 
   useEffect(() => {
-    const getPropsFromArray = (arr = []) => {
-      return arr.reduce((newObj, obj, i) => {
-        return {
-          ...newObj,
-          ...getPropsFromObjects(obj, i)
-        };
-      }, {});
-    };
-    
     const getPropsFromObjects = (obj = {}, levelParams = 0, prefix = '') => {
       return Object.entries(obj).reduce((newObj, [key, value]) => {
         const uniqueKey = `${prefix}${key}${levelParams}`;
@@ -113,7 +106,7 @@ function Users() {
       }
       const listWrite = ['id00', 'name00', 'email00', 'role0_name00', 'imageAvatarAPI00', 'phone00', 'address0_street00', 'address0_city00', 'address0_province00', 'address0_zipCode00']
     
-    const columnsFormat = dataObjUser.filter(([key, value]) => listWrite.includes(key))
+    const columnsFormat = dataObjUser.filter(([key]) => listWrite.includes(key))
       .map(([key, value]) => {
           const renderHeader = () => <strong>{headerNameTable[key]}</strong>;
           const renderCell = (params) => {

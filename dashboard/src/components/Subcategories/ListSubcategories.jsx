@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { PanelCard } from '../reusable/PanelCard'
 import { Spinner } from '../reusable/Spinner'
 import { Alert } from '../reusable/Alert'
 import { useLocation } from 'react-router-dom'
+import { API_HOST } from '../../environment'
 
 export const ListSubcategories = () => {
     // useLocation
@@ -18,10 +19,10 @@ export const ListSubcategories = () => {
     });
 
     // useEffect
-    useEffect(() => pathname === '/subcategorias' ? setStyleClass('m-auto w-75') : setStyleClass('mb-4'));
+    useEffect(() => pathname === '/subcategorias' ? setStyleClass('m-auto w-75') : setStyleClass('mb-4'), [pathname]);
 
     useEffect(() => {
-        const endpoint = 'http://localhost:3030/api/subcategories';
+        const endpoint = `${API_HOST}/api/subcategories`;
 
         const getSubcategories = async () => {
             try {
@@ -46,6 +47,7 @@ export const ListSubcategories = () => {
         };
 
         getSubcategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -58,7 +60,7 @@ export const ListSubcategories = () => {
                 </div>
                 <div className='card-body'>
                     <div className='row'>
-                        {stateSubcategories.subcategories.map((c, i) => (
+                        {stateSubcategories.subcategories.map((c) => (
                             stateSubcategories.count.map((countBySubcat, i) => countBySubcat.name === c.name ? <PanelCard key={i} {...c} countBy={countBySubcat.count} /> : '')
                         ))}
                     </div>

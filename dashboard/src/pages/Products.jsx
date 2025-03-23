@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DataGrid, GridActionsCellItem } from '@mui/x-data-grid';
 import { Box, Container, Typography } from "@mui/material";
 import { Modal } from '@mui/joy';
@@ -6,10 +6,10 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Spinner } from '../components/reusable/Spinner';
 import { Alert } from '../components/reusable/Alert'
-import { Link, useNavigate } from 'react-router-dom';
 import { DeleteProduct } from '../components/Products/DeleteProduct';
 import { EditForm } from '../components/Products/EditForm';
 import { CreateForm } from '../components/Products/CreateForm';
+import { API_HOST } from '../environment';
 
 const style = {
   position: 'absolute',
@@ -52,8 +52,6 @@ function Product() {
     setRefreshProducts(true);
   }
 
-  const navigate = useNavigate();
-
   const handleEditButton = (product) => {
     setSelectedProduct(product);
     setOpenEditModal(true);
@@ -66,7 +64,8 @@ function Product() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const endpoint = 'http://localhost:3030/api/products'
+        const endpoint = `${API_HOST}/api/products`
+        
         const { ok, data = [], msg = null } = await fetch(endpoint).then((res) => res.json())
 
         if (!ok) throw new Error(msg)
@@ -93,7 +92,7 @@ function Product() {
     const dataObjProduct = Object.entries(statesProducts.products.length ? statesProducts.products[0] : {});
     const headerNameTable = { id: 'Id', imagePrincipalAPI: 'Imagen', imagesecondaries: 'Imagenes Secundarias', title: 'Título', category: 'Categoría', subcategory: 'Subcategoría', description: 'Descripción', price: 'Precio', sale: 'Descuento', quantity: 'Cantidad', available: 'Disponible' }
     const listWrite = ['id', 'imagePrincipalAPI', 'imagesecondaries', 'title', 'category', 'subcategory', 'description', 'price', 'sale', 'quantity', 'available']
-    const columnsFormat = dataObjProduct.filter(([key, value]) => listWrite.includes(key))
+    const columnsFormat = dataObjProduct.filter(([key]) => listWrite.includes(key))
       .map(([key, value]) => {
         return {
           field: key,
@@ -123,23 +122,25 @@ function Product() {
       })
 
     columnsFormat.push({
-      field: 'actions',
-      type: 'actions',
-      headerAlign: 'center',
-      align: 'center',
+      field: "actions",
+      type: "actions",
+      headerAlign: "center",
+      align: "center",
       renderHeader: () => <strong>Acciones</strong>,
       width: 100,
       getActions: (params) => [
         <GridActionsCellItem
+          key={params.row.id}
           icon={<EditIcon />}
           label="Edit"
           className="textPrimary"
           onClick={() => {
-            handleEditButton(params.row)
+            handleEditButton(params.row);
           }}
           color="inherit"
         />,
         <GridActionsCellItem
+          key={params.row.id}
           icon={<DeleteIcon />}
           label="Delete"
           onClick={() => {
@@ -148,7 +149,7 @@ function Product() {
           color="inherit"
         />,
       ],
-    })
+    });
 
     const rowsFormat = [];
     statesProducts.products.forEach((product) => {

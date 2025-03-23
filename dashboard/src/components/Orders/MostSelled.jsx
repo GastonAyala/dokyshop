@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Spinner } from '../reusable/Spinner';
 import { Alert } from '../reusable/Alert';
+import { API_HOST } from '../../environment';
 
 
 export const MostSelled = () => {
@@ -10,7 +11,8 @@ export const MostSelled = () => {
 
     useEffect(() => {
         const getMostSelled = async () => {
-            const endpoint = `http://localhost:3030/api/query?q=SELECT p.id, p.title, SUM(op.quantity) "totalSales" FROM dokyshop.orders o  INNER JOIN dokyshop.orderproducts op  ON o.id = op.orderId  INNER JOIN dokyshop.products p  ON op.productId = p.id WHERE o.state = "completed" GROUP BY p.id, p.title ORDER BY SUM(op.quantity) DESC LIMIT 5;`
+            const endpoint = `${API_HOST}/api/query?q=SELECT p.id, p.title, SUM(op.quantity) "totalSales" FROM dokyshop.orders o  INNER JOIN dokyshop.orderproducts op  ON o.id = op.orderId  INNER JOIN dokyshop.products p  ON op.productId = p.id WHERE o.state = "completed" GROUP BY p.id, p.title ORDER BY SUM(op.quantity) DESC LIMIT 5;`;
+            
             try {
                 const { ok, data = [], msg = null } = await fetch(endpoint).then(res => res.json());
                 if (!ok) throw new Error(msg);
@@ -39,7 +41,7 @@ export const MostSelled = () => {
                             return <div key={i} className="col-lg-4 mb-4 p-2">
                                 <div className="card bg-dark text-white shadow">
                                     <div style={{ backgroundColor:'#407FB9', fontWeight:'500'}} className="card-body d-flex flex-wrap justify-content-center">
-                                        <a href={`http://localhost:3030/productos/detalle/${p.id}`}>
+                                        <a href={`${API_HOST}/productos/detalle/${p.id}`}>
                                             <span className='w-100 mb-1' style={{ color: "WHITE" }}>{p.title.substring(0, 35)}{p.title.length > 35 ? "..." : null}</span>
                                         </a>
                                             <span className='w-100 m-auto'>{p.totalSales}</span>

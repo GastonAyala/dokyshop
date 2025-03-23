@@ -1,10 +1,11 @@
 import { Alert, Box, Container, Typography } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Spinner } from '../components/reusable/Spinner';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
+import { API_HOST } from '../environment';
 
 function Order() {
 
@@ -23,7 +24,7 @@ function Order() {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const endpoint = 'http://localhost:3030/api/order/list';
+        const endpoint = `${API_HOST}/api/order/list`;
         const { ok, data = [], msg = null } = await fetch(endpoint).then((res) => res.json());
 
         if (!ok) throw new Error(msg);
@@ -54,7 +55,7 @@ function Order() {
     const statusIcons = { pending: <ScheduleIcon style={{ color: '#FFA500' }} />, completed: <CheckCircleIcon style={{ color: '#008000' }} />, canceled: <CancelIcon style={{ color: '#FF0000' }} /> };
 
     const listWrite = ['id', 'total', 'userId', 'state', 'products','createdAt', 'updatedAt'];
-    const columnsFormat = dataObjOrders.filter(([key, value]) => listWrite.includes(key))
+    const columnsFormat = dataObjOrders.filter(([key]) => listWrite.includes(key))
       .map(([key, value]) => {
         return {
           field: key,

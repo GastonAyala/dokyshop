@@ -1,5 +1,4 @@
 const $ = (element) => document.querySelector(element);
-const server = process.env.SERVER_HOST
 let productsCart = [];
 
 toastr.options = {
@@ -25,7 +24,7 @@ const converMoneyArg = (num = 0) => num.toLocaleString({
     style: "currency"
 })
 
-const getShoppingCart = async (server) => fetch(`${server}/api/order`).then(res => res.json());
+const getShoppingCart = async () => fetch(`/api/order`).then(res => res.json());
 
 const getCardStructure = (p) => {
     return `<div class="producto">

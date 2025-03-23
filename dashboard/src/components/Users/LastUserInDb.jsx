@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "../reusable/Spinner";
 import { Link } from "react-router-dom";
 import { Alert } from "../reusable/Alert";
+import { API_HOST } from "../../environment";
 
-export const lastUserInDb = () => {
+export const LastUserInDb = () => {
   const [lastUser, setlastUser] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -11,8 +12,8 @@ export const lastUserInDb = () => {
   useEffect(() => {
     const getlastUser = async () => {
       try {
-        const endpoint =
-          "http://localhost:3030/api/query?q=SELECT name, avatar, email, createdAt FROM users WHERE createdAt = (SELECT MAX(createdAt) FROM users) LIMIT 1";
+        const endpoint = `${API_HOST}/api/query?q=SELECT name, avatar, email, createdAt FROM users WHERE createdAt = (SELECT MAX(createdAt) FROM users) LIMIT 1`;
+
         const {
           ok,
           data: [user],
@@ -54,7 +55,7 @@ export const lastUserInDb = () => {
               {lastUser.name}
             </h5>
             <div className="text-center">
-              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "250px" }} src={/http/.test(lastUser.avatar) ? lastUser.avatar : `http://localhost:3030/api/users/${lastUser.avatar}`} alt=" Avatar de usuario" />
+              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "250px" }} src={/http/.test(lastUser.avatar) ? lastUser.avatar : `${API_HOST}/api/users/${lastUser.avatar}`} alt=" Avatar de usuario" />
             </div>
             <p>
               {lastUser.email}
@@ -73,4 +74,4 @@ export const lastUserInDb = () => {
   );
 };
 
-export default lastUserInDb;
+export default LastUserInDb;

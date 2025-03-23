@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "../reusable/Spinner";
 import { Alert } from "../reusable/Alert";
+import { API_HOST } from "../../environment";
 
 export const LastProductInDb = () => {
   const [lastProduct, setLastProduct] = useState({});
@@ -10,8 +11,8 @@ export const LastProductInDb = () => {
   useEffect(() => {
     const getLastProduct = async () => {
       try {
-        const endpoint =
-          "http://localhost:3030/api/query?q=SELECT * FROM products WHERE createdAt = (SELECT MAX(createdAt) FROM products) LIMIT 1";
+        const endpoint = `${API_HOST}/api/query?q=SELECT * FROM products WHERE createdAt = (SELECT MAX(createdAt) FROM products) LIMIT 1`;
+          
         const {
           ok,
           data: [product],
@@ -50,14 +51,14 @@ export const LastProductInDb = () => {
               <img
                 className="img-fluid px-3 px-sm-4 mt-3 mb-4"
                 style={{ width: "250px" }}
-                src={`http://localhost:3030/api/products/${lastProduct.imagePrincipal}`}
+                src={`${API_HOST}/api/products/${lastProduct.imagePrincipal}`}
                 alt="Imagen de producto"
               />
             </div>
             <p>
               {lastProduct.description}
             </p>
-            <a className="btn btn-outline-primary" target="_blank" rel="nofollow" href={`http://localhost:3030/productos/detalle/${lastProduct.id}`}>
+            <a className="btn btn-outline-primary" target="_blank" rel="nofollow" href={`${API_HOST}/productos/detalle/${lastProduct.id}`}>
               Ver más
             </a>
           </div>
