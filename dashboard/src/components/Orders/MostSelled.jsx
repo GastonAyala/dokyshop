@@ -11,8 +11,7 @@ export const MostSelled = () => {
 
     useEffect(() => {
         const getMostSelled = async () => {
-            const endpoint = `${API_HOST}/api/query?q=SELECT p.id, p.title, SUM(op.quantity) "totalSales" FROM dokyshop.orders o  INNER JOIN dokyshop.orderproducts op  ON o.id = op.orderId  INNER JOIN dokyshop.products p  ON op.productId = p.id WHERE o.state = "completed" GROUP BY p.id, p.title ORDER BY SUM(op.quantity) DESC LIMIT 5;`;
-            
+        const endpoint = `${API_HOST}/api/query?q=SELECT p.id, p.title, SUM(op.quantity) AS totalSales FROM dokyshop.orders o INNER JOIN dokyshop.orderproducts op ON o.id = op.orderId INNER JOIN dokyshop.products p ON op.productId = p.id WHERE o.state = 'completed' GROUP BY p.id, p.title ORDER BY SUM(op.quantity) DESC LIMIT 5`;
             try {
                 const { ok, data = [], msg = null } = await fetch(endpoint).then(res => res.json());
                 if (!ok) throw new Error(msg);
