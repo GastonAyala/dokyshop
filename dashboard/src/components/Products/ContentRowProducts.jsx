@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import SmallCard from './SmallCard';
 import { Spinner } from '../reusable/Spinner';
 import { Alert } from '../reusable/Alert';
-import { API_HOST } from '../../environment';
 
 function ContentRowProducts() {
     const [stateMetrics, setStateMetrics] = useState({
@@ -12,7 +11,7 @@ function ContentRowProducts() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const endpoint = `${API_HOST}/api/metrics`;
+        const endpoint = `/api/metrics`;
         const getMetrics = async () => {
             try {
                 const { ok, data = [], msg = null } = await fetch(endpoint).then(res => res.json());

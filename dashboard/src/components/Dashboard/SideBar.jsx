@@ -1,7 +1,6 @@
 import React from 'react';
 import image from '../../assets/images/logo.png';
 import { Link } from 'react-router-dom';
-import { API_HOST } from '../../environment';
 
 function SideBar() {
     return (
@@ -10,7 +9,7 @@ function SideBar() {
             <ul style={{backgroundColor: '#407FB9'}} className="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href={API_HOST} style={{height:'100px'}}>
+                <a className="sidebar-brand d-flex align-items-center justify-content-center" href={"/"} style={{height:'100px'}}>
                     <div className="sidebar-brand-icon">
                         <img className="w-100" style={{height:"80px"}} src={image} alt="Dokyshop" />
                     </div>

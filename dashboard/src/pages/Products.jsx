@@ -9,7 +9,6 @@ import { Alert } from '../components/reusable/Alert'
 import { DeleteProduct } from '../components/Products/DeleteProduct';
 import { EditForm } from '../components/Products/EditForm';
 import { CreateForm } from '../components/Products/CreateForm';
-import { API_HOST } from '../environment';
 
 const style = {
   position: 'absolute',
@@ -64,7 +63,7 @@ function Product() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const endpoint = `${API_HOST}/api/products`
+        const endpoint = `/api/products`
         
         const { ok, data = [], msg = null } = await fetch(endpoint).then((res) => res.json())
 

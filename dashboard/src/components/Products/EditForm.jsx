@@ -2,7 +2,6 @@ import { useState, useEffect, forwardRef } from 'react';
 import { Box, TextField, Button, styled, Checkbox, FormControlLabel, Select, MenuItem, FormControl, InputLabel, Autocomplete } from "@mui/material";
 import { DialogTitle, ModalClose, Sheet } from '@mui/joy';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { API_HOST } from '../../environment';
 
 const HiddenInput = styled('input')({
   clip: 'rect(0 0 0 0)',
@@ -47,10 +46,10 @@ export const EditForm = forwardRef(({ product, onUpdate, onClose }, ref) => {
   useEffect(() => {
     const fetchCategoriesAndSubcategories = async () => {
       try {
-        const { ok, data } = await fetch(`${API_HOST}/api/categories`).then(res => res.json());
+        const { ok, data } = await fetch(`/api/categories`).then(res => res.json());
         ok && setCategories(data);
 
-        const { ok: okSub, data: dataSub } = await fetch(`${API_HOST}api/subcategories`).then((res) => res.json());
+        const { ok: okSub, data: dataSub } = await fetch(`api/subcategories`).then((res) => res.json());
         okSub && setSubcategories(dataSub);
       } catch (error) {
         console.error(error.message);
@@ -107,7 +106,7 @@ export const EditForm = forwardRef(({ product, onUpdate, onClose }, ref) => {
         });
       }
 
-      const { ok, msg } = await fetch(`${API_HOST}/api/products/update/${formData.id}`, {
+      const { ok, msg } = await fetch(`/api/products/update/${formData.id}`, {
         method: 'PUT',
         body: submitFormData,
       }).then(res => res.json());

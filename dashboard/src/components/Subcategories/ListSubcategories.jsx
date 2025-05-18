@@ -3,7 +3,6 @@ import { PanelCard } from '../reusable/PanelCard'
 import { Spinner } from '../reusable/Spinner'
 import { Alert } from '../reusable/Alert'
 import { useLocation } from 'react-router-dom'
-import { API_HOST } from '../../environment'
 
 export const ListSubcategories = () => {
     // useLocation
@@ -22,7 +21,7 @@ export const ListSubcategories = () => {
     useEffect(() => pathname === '/subcategorias' ? setStyleClass('m-auto w-75') : setStyleClass('mb-4'), [pathname]);
 
     useEffect(() => {
-        const endpoint = `${API_HOST}/api/subcategories`;
+        const endpoint = `/api/subcategories`;
 
         const getSubcategories = async () => {
             try {

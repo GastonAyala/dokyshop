@@ -3,7 +3,6 @@ import { Spinner } from '../reusable/Spinner';
 import { useLocation } from 'react-router-dom';
 import { Alert } from "../reusable/Alert";
 import { PanelCard } from "../reusable/PanelCard";
-import { API_HOST } from "../../environment";
 
 export const ListCategories = () => {
   // useLocation
@@ -22,7 +21,7 @@ export const ListCategories = () => {
   useEffect(() => pathname === "/categorias" ? setStyleClass("m-auto w-75") : setStyleClass("mb-4"), []);
 
   useEffect(() => {
-    const endpoint = `${API_HOST}/api/categories`;    
+    const endpoint = `/api/categories`;    
 
     const getCategories = async () => {
       try {

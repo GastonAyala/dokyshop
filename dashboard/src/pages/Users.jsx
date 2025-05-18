@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Alert, Avatar, Box, Container, Typography } from '@mui/material';
 import { Spinner } from '../components/reusable/Spinner';
-import { API_HOST } from '../environment';
 
 function Users() {
 
@@ -21,7 +20,7 @@ function Users() {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const endpoint = `${API_HOST}/api/users`
+        const endpoint = `/api/users`
         
         const { ok, data = [], msg = null } = await fetch(endpoint).then((res) => res.json())
 

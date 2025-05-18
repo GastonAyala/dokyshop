@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Spinner } from "../reusable/Spinner";
 import { Link } from "react-router-dom";
 import { Alert } from "../reusable/Alert";
-import { API_HOST } from "../../environment";
 
 export const LastUserInDb = () => {
   const [lastUser, setlastUser] = useState({});
@@ -12,7 +11,7 @@ export const LastUserInDb = () => {
   useEffect(() => {
     const getlastUser = async () => {
       try {
-        const endpoint = `${API_HOST}/api/query?q=SELECT name, avatar, email, createdAt FROM users WHERE createdAt = (SELECT MAX(createdAt) FROM users) LIMIT 1`;
+        const endpoint = `/api/query?q=SELECT name, avatar, email, createdAt FROM users WHERE createdAt = (SELECT MAX(createdAt) FROM users) LIMIT 1`;
 
         const {
           ok,
@@ -55,7 +54,7 @@ export const LastUserInDb = () => {
               {lastUser.name}
             </h5>
             <div className="text-center">
-              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "250px" }} src={/http/.test(lastUser.avatar) ? lastUser.avatar : `${API_HOST}/api/users/${lastUser.avatar}`} alt=" Avatar de usuario" />
+              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "250px" }} src={/http/.test(lastUser.avatar) ? lastUser.avatar : `/api/users/${lastUser.avatar}`} alt=" Avatar de usuario" />
             </div>
             <p>
               {lastUser.email}

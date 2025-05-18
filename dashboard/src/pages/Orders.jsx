@@ -5,7 +5,6 @@ import { Spinner } from '../components/reusable/Spinner';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { API_HOST } from '../environment';
 
 function Order() {
 
@@ -24,7 +23,7 @@ function Order() {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const endpoint = `${API_HOST}/api/order/list`;
+        const endpoint = `/api/order/list`;
         const { ok, data = [], msg = null } = await fetch(endpoint).then((res) => res.json());
 
         if (!ok) throw new Error(msg);
