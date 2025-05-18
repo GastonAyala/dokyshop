@@ -2,8 +2,8 @@ import Users from "../pages/Users";
 
 
 export const RoutesUsers = [
-    {
-        path: "/usuarios",
-        element: <Users />
-    },
-]
+  {
+    path: "/dashboard/usuarios",
+    element: <Users />,
+  },
+];

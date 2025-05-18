@@ -69,6 +69,11 @@ app.use('/api/categories', apiCategoriesRoutes);
 app.use('/api/subcategories', apiSubcategoriesRoutes);
 
 
+app.use('/dashboard', express.static(path.join(__dirname, '../public/dashboard')));
+app.get('/dashboard/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/dashboard/index.html'));
+});
+
 app.use((req,res, next) => {
     res.status(404).render("./other/notFound") 
 });

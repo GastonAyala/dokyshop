@@ -10,11 +10,11 @@ import { RoutesOrders } from "./RoutesOrders";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/dashboard",
     element: <Root />,
     children: [
       {
-        path: "/",
+        path: "/dashboard",
         element: <Dashboard />
       },
       {

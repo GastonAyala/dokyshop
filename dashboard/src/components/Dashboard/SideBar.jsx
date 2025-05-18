@@ -21,7 +21,7 @@ function SideBar() {
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/">
+                    <Link className="nav-link" to="/dashboard/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
                         <span>Panel de control</span>
                     </Link>
@@ -31,35 +31,35 @@ function SideBar() {
                 <hr className="sidebar-divider" />
 
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/categorias">
+                    <Link className="nav-link collapsed" to="/dashboard/categorias">
                         <i className="fa-solid fa-table-list"></i>
                         <span>Categorías</span>
                     </Link>
                 </li>
 
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/subcategorias">
+                    <Link className="nav-link collapsed" to="/dashboard/subcategorias">
                         <i className="fa-solid fa-list"></i>
                         <span>Subcategorías</span>
                     </Link>
                 </li>
 
                 <li className="nav-item">
-                    <Link className="nav-link" to="/productos">
+                    <Link className="nav-link" to="/dashboard/productos">
                     <i className="fa-solid fa-box-open"></i>
                         <span>Productos</span>
                     </Link>
                 </li>
 
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/usuarios">
+                    <Link className="nav-link collapsed" to="/dashboard/usuarios">
                     <i className="fa-solid fa-user"></i>
                         <span>Usuarios</span>
                     </Link>
                 </li>
 
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/ordenes">
+                    <Link className="nav-link collapsed" to="/dashboard/ordenes">
                     <i className="fa-regular fa-newspaper"></i>
                         <span>Ordenes</span>
                     </Link>

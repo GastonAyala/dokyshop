@@ -47,7 +47,9 @@
             <li class="list-index"><a class="a-index" href="/">INICIO</a></li>
             <li class="list-products"><a class="a-products" href="/productos">PRODUCTOS</a></li>
             <% if (locals.userLogin?.roleId === 2) { %>
-                <li class="list-index"><a class="a-index" href="http://localhost:5173/">ADMINISTRADOR</a></li>
+                <li class="list-index"><a class="a-index" href="/admin/productos">ADMINISTRADOR</a></li>
+                <li class="list-index"><a class="a-index" href="/dashboard">ADMINISTRADOR (REACT)</a></li>
+
             <% } %>
             <div class="dropdown list-contact">
                 <button class="btn-header dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">CONTACTO</button>
