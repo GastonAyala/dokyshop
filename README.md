@@ -75,5 +75,5 @@ Si hay conflictos, resolverlos antes de continuar.
 ## 🐾 Explorar DokyShop
 
 Podes visitar la versión desplegada de DokyShop aquí:
-👉 [DokyShop en producción](https://dokyshop.cleverapps.io/)
+👉 [DokyShop en producción](https://dokyshop.onrender.com/)
 
