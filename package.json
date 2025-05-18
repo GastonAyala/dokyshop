@@ -8,13 +8,12 @@
     "db:reset:dev": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "db:reset:prod": "npm run env:prod && sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "env:prod": "cross-env NODE_ENV=production",
-    "server-dev": "nodemon ./src/bin/www",
-    "server-db-prod": "npm run env:prod && nodemon ./src/bin/www",
-    "server-prod": "npm run env:prod && node ./src/bin/www",
-    "client-dev": "cd dashboard && npm run dev",
-    "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
-    "client-prod": "cd dashboard && npm run build",
-    "prod": "concurrently \"npm run server-prod\" \"npm run client-prod\"",
+    "server:dev": "nodemon ./src/bin/www",
+    "server:prod": "npm run env:prod && node ./src/bin/www",
+    "client:dev": "cd dashboard && npm run dev",
+    "client:prod": "cd dashboard && npm run build",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "prod": "npm run server:prod && npm run client:prod",
     "test": "cross-env NODE_ENV=production node ./src/bin/www"
   },
   "repository": {
@@ -26,6 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^9.1.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -50,8 +50,5 @@
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2",
     "sequelize-paginate": "^1.1.6"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
   }
 }
