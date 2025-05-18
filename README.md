@@ -35,13 +35,13 @@ $ npm install
 ### ▶️ Ejecutar el servidor de desarrollo
 
 ```bash
-npm run server-dev
+npm run server:dev
 ```
 
 ### 💻 Ejecutar el cliente de desarrollo
 
 ```bash
-npm run client-dev
+npm run client:dev
 ```
 
 ### 🔄 Ejecutar ambos en paralelo
@@ -53,7 +53,7 @@ npm run dev
 ### 🗑️ Reiniciar la base de datos (eliminar y volver a crear)
 
 ```bash
-npm run db:reset
+npm run db:reset:dev
 ```
 
 ---
