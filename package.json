@@ -10,8 +10,11 @@
     "env:prod": "cross-env NODE_ENV=production",
     "server-dev": "nodemon ./src/bin/www",
     "server-db-prod": "npm run env:prod && nodemon ./src/bin/www",
+    "server-prod": "npm run env:prod && node ./src/bin/www",
     "client-dev": "cd dashboard && npm run dev",
     "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
+    "client-prod": "cd dashboard && npm run build",
+    "prod": "concurrently \"npm run server-prod\" \"npm run client-prod\"",
     "test": "cross-env NODE_ENV=production node ./src/bin/www"
   },
   "repository": {
